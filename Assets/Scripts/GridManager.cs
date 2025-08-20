@@ -32,8 +32,6 @@ public class GridManager : MonoBehaviour
         //playerCam = Camera.main;
         currentGap = gridGap;
 
-        Debug.Log("Editor Started");
-
         foreach(var tile in tilemap.GetComponentsInChildren<GameTile>())
         {
             Debug.Log("A tile has been added to the tile list");
