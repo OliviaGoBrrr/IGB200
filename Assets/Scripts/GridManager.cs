@@ -19,6 +19,7 @@ public class GridManager : MonoBehaviour
     private int zMin;
     private int zMax;
 
+    // Grid tiles
     private List<GameTile> tiles = new List<GameTile>();
     private GameTileData[,] masterTileGrid;
 
@@ -27,11 +28,14 @@ public class GridManager : MonoBehaviour
 
     void Awake()
     {
+        // Initialize components
         grid = GetComponent<Grid>();
         tilemap = GetComponentInChildren<Tilemap>();
         //playerCam = Camera.main;
         currentGap = gridGap;
 
+
+        // Put tiles in a list and find the bounds of the grid
         foreach(var tile in tilemap.GetComponentsInChildren<GameTile>())
         {
             Debug.Log("A tile has been added to the tile list");
@@ -46,14 +50,11 @@ public class GridManager : MonoBehaviour
             else if(tile.transform.position.z < zMin) { zMin = (int)tile.transform.position.z; };
         }
 
+        // Generate grid
         if(tiles.Count <= 0)
-        {
-            Debug.LogError("No tiles found");
-        }
-        else
-        {
-            GenerateGrid();
-        }
+        { Debug.LogError("No tiles found");}
+        
+        else { GenerateGrid(); }
     }
 
     // When the something in the editor changes, update the map (Editor Only)
@@ -61,9 +62,8 @@ public class GridManager : MonoBehaviour
 
     void GenerateGrid()
     {
-        Debug.Log($"Grid Bounds = minBounds: X{xMin},Z{zMin} + maxBounds: X{xMax},Z{zMax}");
         Debug.Log("Generating Grid...");
-        
-        //var coordinates = new List<Vector3Int>();
+
+        Debug.Log($"Grid Bounds = minBounds: X{xMin},Z{zMin} + maxBounds: X{xMax},Z{zMax}");
     }
 }
