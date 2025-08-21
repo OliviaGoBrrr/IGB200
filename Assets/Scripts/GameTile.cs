@@ -1,3 +1,4 @@
+using UnityEditor.EditorTools;
 using UnityEngine;
 
 public class GameTile: MonoBehaviour
@@ -7,7 +8,6 @@ public class GameTile: MonoBehaviour
     [SerializeField] private bool canBeBurned;
     [SerializeField] private bool isBurning;
     private Vector3 tilePosition;
-
 
     private GameTileData tileData;
 

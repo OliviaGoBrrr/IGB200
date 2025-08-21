@@ -18,6 +18,7 @@ public class GridManager : MonoBehaviour
     private int xMax;
     private int zMin;
     private int zMax;
+    private int gridEdgeGap = 1;
 
     // Grid tiles
     private List<GameTile> tiles = new List<GameTile>();
@@ -25,6 +26,7 @@ public class GridManager : MonoBehaviour
 
     private Vector2 currentGap;
     private Vector2 gapVel;
+
 
     void Awake()
     {
@@ -42,12 +44,12 @@ public class GridManager : MonoBehaviour
             tiles.Add(tile);
 
             // Set horizontal bounds of the grid
-            if (tile.transform.position.x > xMax) { xMax = (int)tile.transform.position.x; }
-            else if(tile.transform.position.x < xMin) { xMin = (int)tile.transform.position.x; };
+            if (tile.transform.position.x > xMax) { xMax = (int)tile.transform.position.x + gridEdgeGap; }
+            else if(tile.transform.position.x < xMin) { xMin = (int)tile.transform.position.x - gridEdgeGap; };
 
             // Set vertical bounds of the grid
-            if(tile.transform.position.z > zMax) { zMax = (int)tile.transform.position.z;}
-            else if(tile.transform.position.z < zMin) { zMin = (int)tile.transform.position.z; };
+            if(tile.transform.position.z > zMax) { zMax = (int)tile.transform.position.z + gridEdgeGap; }
+            else if(tile.transform.position.z < zMin) { zMin = (int)tile.transform.position.z - gridEdgeGap; };
         }
 
         // Generate grid
