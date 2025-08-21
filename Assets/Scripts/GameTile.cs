@@ -14,18 +14,17 @@ public class GameTile: MonoBehaviour
         BURNING,
         BURNT
     }
-     
-    [SerializeField] private GridManager gridManager;
-    public int gridIndexX, gridIndexZ;
     [SerializeField] private int roundsToBurn;
-    [SerializeField] private int spreadRadius;
     [SerializeField] private TileStates tileState;
     [SerializeField] private Material[] tileMaterials;
+    [SerializeField] private GridManager gridManager;
+    public int gridIndexX, gridIndexZ;
+
     private Renderer renderer;
     private Vector3 tilePosition;
     
     public GameTileData tileData;
-    public List<GameTile> tileNeighbours = new List<GameTile>();
+    private List<GameTile> tileNeighbours = new List<GameTile>();
 
     void Awake()
     {
