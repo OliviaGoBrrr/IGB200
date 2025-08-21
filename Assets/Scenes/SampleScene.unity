@@ -1320,6 +1320,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1681397220}
     m_Modifications:
+    - target: {fileID: 1499804109185907319, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: aa8a2692fa4cecb4b883ddd4d9c470c2, type: 2}
+    - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: tileState
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: m_Name
       value: Tile1
@@ -1940,6 +1948,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1681397220}
     m_Modifications:
+    - target: {fileID: 1499804109185907319, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: dae756e026eafa04fa3e884945875caf, type: 2}
+    - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: tileState
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: m_Name
       value: Tile1
@@ -2982,6 +2998,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1681397220}
     m_Modifications:
+    - target: {fileID: 1499804109185907319, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: aa8a2692fa4cecb4b883ddd4d9c470c2, type: 2}
+    - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: tileState
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: m_Name
       value: Tile1
@@ -4685,9 +4709,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1681397220}
     m_Modifications:
+    - target: {fileID: 1499804109185907319, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: aa8a2692fa4cecb4b883ddd4d9c470c2, type: 2}
     - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: tileState
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: m_Name
@@ -6774,6 +6802,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1681397220}
     m_Modifications:
+    - target: {fileID: 1499804109185907319, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: aa8a2692fa4cecb4b883ddd4d9c470c2, type: 2}
+    - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: tileState
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: m_Name
       value: Tile1
