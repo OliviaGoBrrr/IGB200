@@ -2,7 +2,9 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.WSA;
 
+[RequireComponent(typeof(Grid))]
 public class GridManager : MonoBehaviour
 {
     [SerializeField] private Vector2Int gridSize;
@@ -10,22 +12,14 @@ public class GridManager : MonoBehaviour
     [SerializeField] private Tilemap tilemap;
 
     private bool requiresGeneration = true;
-    //private Camera playerCam;
     private Grid grid;
 
     // Grid Bounds
-    private int xMin;
-    private int xMax;
-    private int zMin;
-    private int zMax;
-    private int gridEdgeGap = 1;
+    public int xMin, xMax, zMin, zMax;
 
     // Grid tiles
     private List<GameTile> tiles = new List<GameTile>();
-    private GameTileData[,] masterTileGrid;
-
-    private Vector2 currentGap;
-    private Vector2 gapVel;
+    public GameTileData[,] masterTileGrid;
 
 
     void Awake()
@@ -33,24 +27,38 @@ public class GridManager : MonoBehaviour
         // Initialize components
         grid = GetComponent<Grid>();
         tilemap = GetComponentInChildren<Tilemap>();
-        //playerCam = Camera.main;
-        currentGap = gridGap;
 
+        
+        if(tilemap == null) {Debug.LogError("Tilemap is not attached to the GameGrid."); return;}
 
         // Put tiles in a list and find the bounds of the grid
         foreach(var tile in tilemap.GetComponentsInChildren<GameTile>())
         {
-            Debug.Log("A tile has been added to the tile list");
             tiles.Add(tile);
 
             // Set horizontal bounds of the grid
-            if (tile.transform.position.x > xMax) { xMax = (int)tile.transform.position.x + gridEdgeGap; }
-            else if(tile.transform.position.x < xMin) { xMin = (int)tile.transform.position.x - gridEdgeGap; };
+            if (tile.transform.position.x > xMax) { xMax = Mathf.CeilToInt(tile.transform.position.x); }
+            else if(tile.transform.position.x < xMin) { xMin = Mathf.FloorToInt(tile.transform.position.x); };
 
             // Set vertical bounds of the grid
-            if(tile.transform.position.z > zMax) { zMax = (int)tile.transform.position.z + gridEdgeGap; }
-            else if(tile.transform.position.z < zMin) { zMin = (int)tile.transform.position.z - gridEdgeGap; };
+            if(tile.transform.position.z > zMax) { zMax = Mathf.CeilToInt(tile.transform.position.z); }
+            else if(tile.transform.position.z < zMin) { zMin = Mathf.FloorToInt(tile.transform.position.z); };
         }
+
+        // Initialize grid array
+        masterTileGrid = new GameTileData[xMax, zMax];
+
+        // Fill array with tiles
+        foreach(var tile in tilemap.GetComponentsInChildren<GameTile>())
+        {
+            (int indexX, int indexZ) = GetGridIndex(tile.gameObject);
+            
+            masterTileGrid[indexX, indexZ] = tile.tileData;
+            tile.gridIndexX = indexX;
+            tile.gridIndexZ = indexZ;
+        }
+
+        //PrintGridInConsole();
 
         // Generate grid
         if(tiles.Count <= 0)
@@ -64,8 +72,24 @@ public class GridManager : MonoBehaviour
 
     void GenerateGrid()
     {
-        Debug.Log("Generating Grid...");
-
+        //Debug.Log("Generating Grid...");
         Debug.Log($"Grid Bounds = minBounds: X{xMin},Z{zMin} + maxBounds: X{xMax},Z{zMax}");
+    }
+
+    public (int indexX, int indexY) GetGridIndex(GameObject tile)
+    {
+        return (Mathf.FloorToInt(tile.transform.position.x / grid.cellSize.x), Mathf.FloorToInt(tile.transform.position.z / grid.cellSize.z)) ;
+    }
+
+    // Used for debugging the master grid
+    void PrintGridInConsole()
+    {
+        for(int i = 0; i < zMax; i++)
+        {
+            for (int j = 0; j < xMax; j++)
+            {
+                Debug.Log(masterTileGrid[j, i].TilePosition);
+            }
+        }
     }
 }

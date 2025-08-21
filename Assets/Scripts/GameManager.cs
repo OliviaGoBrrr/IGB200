@@ -2,15 +2,33 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public enum GameState
     {
-        
+        MAIN_MENU = 0,
+        PLAYING,
+        PAUSED,
+        GAME_OVER
     }
 
-    // Update is called once per frame
+    public GameState state;
+    public static event System.Action OnRoundAdvanced;
+
+
+    [SerializeField] private float burnTimer = 2.0f;
+    [SerializeField] private GridManager gridManager;
+    void Awake()
+    {
+        gridManager = FindAnyObjectByType<GridManager>();
+    }
+
     void Update()
     {
-        
+        burnTimer -= Time.deltaTime;
+
+        if(burnTimer <= 0)
+        {
+            OnRoundAdvanced?.Invoke();
+            burnTimer = 2.0f;
+        }
     }
 }
