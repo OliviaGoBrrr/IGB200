@@ -949,7 +949,6 @@ GameObject:
   m_Component:
   - component: {fileID: 985714307}
   - component: {fileID: 985714306}
-  - component: {fileID: 985714308}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -969,12 +968,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f078a1cbecfc6354a9f0c2452ab6b885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gridManager: {fileID: 0}
   sceneCamera: {fileID: 330585545}
   state: 0
   roundCount: 0
   maxActions: 3
-  windZone: {fileID: 985714308}
-  gridManager: {fileID: 0}
 --- !u!4 &985714307
 Transform:
   m_ObjectHideFlags: 0
@@ -990,20 +988,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!182 &985714308
-WindZone:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 985714305}
-  m_Enabled: 1
-  m_Mode: 0
-  m_Radius: 20
-  m_WindMain: 1
-  m_WindTurbulence: 1
-  m_WindPulseMagnitude: 0.5
-  m_WindPulseFrequency: 0.01
 --- !u!1 &1023479407
 GameObject:
   m_ObjectHideFlags: 0
@@ -1400,6 +1384,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 969967784923547518, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4218271492112321669, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

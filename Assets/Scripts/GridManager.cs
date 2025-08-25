@@ -7,11 +7,10 @@ using UnityEngine.WSA;
 [RequireComponent(typeof(Grid))]
 public class GridManager : MonoBehaviour
 {
+    // References
     [SerializeField] private Tilemap tilemap;
-
     [SerializeField] private GameObject mouseIndicator;
     [SerializeField] private GameManager gameManager;
-
     private Grid grid;
 
     // Grid Bounds
@@ -28,8 +27,6 @@ public class GridManager : MonoBehaviour
         // Initialize components
         grid = GetComponent<Grid>();
         tilemap = GetComponentInChildren<Tilemap>();
-
-        
         if(tilemap == null) {Debug.LogError("Tilemap is not attached to the GameGrid."); return;}
 
         GenerateGrid();

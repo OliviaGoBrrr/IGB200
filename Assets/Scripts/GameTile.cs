@@ -24,11 +24,18 @@ public class GameTile: MonoBehaviour
 
     // Tile Properties
     public GameTileData tileData;
-    [SerializeField] private int roundsToBurn;
-    [SerializeField] private int wetness;
-    [SerializeField] private TileStates tileState;
-    [SerializeField] private Material[] tileMaterials;
+    [SerializeField] 
+    private int roundsToBurn;
+    [SerializeField] 
+    private int wetness; // Not implemented yet
+    [SerializeField] 
+    private TileStates tileState;
+    [SerializeField] 
+    private Material[] tileMaterials;
+    
+    [HideInInspector]
     public int gridIndexX, gridIndexZ;
+
     private Vector3 tilePosition;
 
     // Neighbours
