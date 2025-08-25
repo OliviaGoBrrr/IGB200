@@ -10,25 +10,39 @@ public class GameManager : MonoBehaviour
         GAME_OVER
     }
 
+    [SerializeField] private GridManager gridManager;
+    public Camera sceneCamera;
     public GameState state;
     public static event System.Action OnRoundAdvanced;
 
-
-    [SerializeField] private float burnTimer = 2.0f;
-    [SerializeField] private GridManager gridManager;
+    public int roundCount = 1;
+    public int maxActions = 3;
+    
+    private Vector3 lastMousePosition;
     void Awake()
     {
         gridManager = FindAnyObjectByType<GridManager>();
+        
     }
 
-    void Update()
+    public void AdvanceRound()
     {
-        burnTimer -= Time.deltaTime;
-
-        if(burnTimer <= 0)
-        {
-            OnRoundAdvanced?.Invoke();
-            burnTimer = 2.0f;
-        }
+        roundCount++;
+        OnRoundAdvanced?.Invoke();
     }
+
+    public Vector3 GetSelectedGridPosition()
+    {
+        Vector3 mousePositon = Input.mousePosition;
+        mousePositon.z = sceneCamera.nearClipPlane;
+        Ray ray = sceneCamera.ScreenPointToRay(mousePositon);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 100))
+        {
+            lastMousePosition = hit.point;
+        }
+
+        return lastMousePosition;
+    }
+
 }
