@@ -1,0 +1,51 @@
+.panel {
+    background-color: rgba(164, 186, 72, 0.7);
+    align-items: auto;
+    align-content: auto;
+    flex-direction: column-reverse;
+    align-self: auto;
+    justify-content: flex-start;
+}
+
+.menu {
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.unity-button {
+    border-top-width: 8px;
+    border-right-width: 8px;
+    border-bottom-width: 8px;
+    border-left-width: 8px;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    border-bottom-left-radius: 24px;
+    width: 64px;
+    height: 64px;
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    border-left-color: rgb(57, 16, 5);
+    border-right-color: rgb(57, 16, 5);
+    border-top-color: rgb(57, 16, 5);
+    border-bottom-color: rgb(57, 16, 5);
+    background-color: rgb(114, 53, 24);
+    color: rgb(57, 16, 5);
+    transition-property: scale;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out-cubic;
+}
+
+.unity_button:hover {
+    background-color: rgb(142, 86, 43);
+    transition-timing-function: ease-out-cubic;
+    transition-duration: 0.2s;
+    transition-property: scale;
+    scale: 1.1 1.1;
+}
+
+.unity_button:active {
+    transition-property: scale, rotate;
+    transition-duration: 0.1s, 0s;
+}
