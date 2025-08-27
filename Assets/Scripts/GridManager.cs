@@ -11,7 +11,7 @@ public class GridManager : MonoBehaviour
     [SerializeField] private Tilemap tilemap;
     [SerializeField] private GameObject mouseIndicator;
     [SerializeField] private GameManager gameManager;
-    private Grid grid;
+    public Grid grid;
 
     // Grid Bounds
     [HideInInspector]
@@ -34,7 +34,7 @@ public class GridManager : MonoBehaviour
 
     void Update()
     {
-        Vector3 mousePosition = gameManager.GetSelectedGridPosition();
+        Vector3 mousePosition = gameManager.GetSelectedGridPosition(false);
         mouseIndicator.transform.position = mousePosition;
     }
 
@@ -74,6 +74,8 @@ public class GridManager : MonoBehaviour
             tile.gridIndexZ = indexZ;
         }
     }
+
+
 
     // Used for debugging the master grid
     void PrintGridInConsole()

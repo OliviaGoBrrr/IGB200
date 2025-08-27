@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
         OnRoundAdvanced?.Invoke();
     }
 
-    public Vector3 GetSelectedGridPosition()
+    public Vector3 GetSelectedGridPosition(bool snapToGrid = false)
     {
         Vector3 mousePositon = Input.mousePosition;
         mousePositon.z = sceneCamera.nearClipPlane;
@@ -40,6 +40,14 @@ public class GameManager : MonoBehaviour
         if (Physics.Raycast(ray, out hit, 100))
         {
             lastMousePosition = hit.point;
+
+            if (snapToGrid)
+            {
+                var snapX = Mathf.FloorToInt(lastMousePosition.x) + (gridManager.grid.cellSize.x / 2);
+                var snapZ = Mathf.FloorToInt(lastMousePosition.z) + (gridManager.grid.cellSize.z / 2);
+
+                lastMousePosition = new Vector3(snapX, lastMousePosition.y, snapZ);
+            }
         }
 
         return lastMousePosition;

@@ -20,7 +20,7 @@ public class GameTile: MonoBehaviour
     private GridManager gridManager;
     private GameManager gameManager;
     private Renderer renderer;
-    [SerializeField] private GameObject highlight;
+    [SerializeField] public GameObject highlight;
 
     // Tile Properties
     public GameTileData tileData;
@@ -28,8 +28,7 @@ public class GameTile: MonoBehaviour
     private int roundsToBurn;
     [SerializeField] 
     private int wetness; // Not implemented yet
-    [SerializeField] 
-    private TileStates tileState;
+    public TileStates tileState;
     [SerializeField] 
     private Material[] tileMaterials;
     
@@ -61,7 +60,7 @@ public class GameTile: MonoBehaviour
         tileNeighbours = GetNeighbours();
         if (tileState == TileStates.BURNING)
         {
-            renderer.material = tileMaterials[(int)TileStates.BURNING];
+            TileStateUpdate();
         }
     }
 
@@ -75,7 +74,7 @@ public class GameTile: MonoBehaviour
             if (roundsToBurn < 0)
             {
                 tileState = TileStates.BURNT;
-                renderer.material = tileMaterials[(int)TileStates.BURNT];
+                TileStateUpdate();
             }
             else
             {
@@ -93,17 +92,19 @@ public class GameTile: MonoBehaviour
             if (tileNeighbours[choice].tileState == TileStates.GRASS)
             {
                 tileNeighbours[choice].tileState = TileStates.BURNING;
-                tileNeighbours[choice].renderer.material = tileMaterials[(int)tileNeighbours[choice].tileState];
+                tileNeighbours[choice].TileStateUpdate();
                 break;
             }
             else if(tile.tileState == TileStates.GRASS)
             {
                 tile.tileState = TileStates.BURNING;
-                tile.renderer.material = tileMaterials[(int)tile.tileState];
+                tile.TileStateUpdate();
             }
         }
 
     }
+
+    public void TileStateUpdate() { renderer.material = tileMaterials[(int)tileState]; }
 
     public List<GameTile> GetNeighbours()
     {

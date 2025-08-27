@@ -284,6 +284,7 @@ MonoBehaviour:
   tilemap: {fileID: 0}
   mouseIndicator: {fileID: 0}
   gameManager: {fileID: 0}
+  grid: {fileID: 0}
   xMin: 0
   xMax: 0
   zMin: 0
