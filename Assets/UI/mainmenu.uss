@@ -1,10 +1,22 @@
 .panel {
-    background-color: rgba(164, 186, 72, 0.7);
+    background-color: rgb(114, 53, 24);
     align-items: auto;
     align-content: auto;
     flex-direction: column-reverse;
     align-self: auto;
     justify-content: flex-start;
+    border-left-color: rgb(57, 16, 5);
+    border-right-color: rgb(57, 16, 5);
+    border-top-color: rgb(57, 16, 5);
+    border-bottom-color: rgb(57, 16, 5);
+    border-top-width: 8px;
+    border-right-width: 8px;
+    border-bottom-width: 8px;
+    border-left-width: 8px;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    border-bottom-left-radius: 24px;
 }
 
 .menu {
@@ -37,15 +49,22 @@
     transition-timing-function: ease-out-cubic;
 }
 
-.unity_button:hover {
-    background-color: rgb(142, 86, 43);
-    transition-timing-function: ease-out-cubic;
-    transition-duration: 0.2s;
-    transition-property: scale;
-    scale: 1.1 1.1;
-}
-
-.unity_button:active {
+.unity-button-active:active {
     transition-property: scale, rotate;
     transition-duration: 0.1s, 0s;
+}
+
+.play-button-hover:hover {
+    width: 300px;
+    height: 140px;
+    transition-property: visibility;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out-cubic;
+    transition-delay: 0s;
+    visibility: hidden;
+}
+
+.unity-button-hover:hover {
+    background-color: rgb(142, 86, 43);
+    scale: 1 1;
 }
