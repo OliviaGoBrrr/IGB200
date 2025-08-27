@@ -1002,6 +1002,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 276446515688536170, guid: 05ae6b94b7653054597960ea782e8629, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 25b441db5a723ba48920b2a4dabe3236, type: 2}
     - target: {fileID: 4094109532660402550, guid: 05ae6b94b7653054597960ea782e8629, type: 3}
       propertyPath: m_Name
       value: MouseIndicator
@@ -1009,6 +1013,18 @@ PrefabInstance:
     - target: {fileID: 4094109532660402550, guid: 05ae6b94b7653054597960ea782e8629, type: 3}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590182619425280534, guid: 05ae6b94b7653054597960ea782e8629, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590182619425280534, guid: 05ae6b94b7653054597960ea782e8629, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590182619425280534, guid: 05ae6b94b7653054597960ea782e8629, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 5590182619425280534, guid: 05ae6b94b7653054597960ea782e8629, type: 3}
       propertyPath: m_LocalPosition.x

@@ -34,7 +34,7 @@ public class GridManager : MonoBehaviour
 
     void Update()
     {
-        Vector3 mousePosition = gameManager.GetSelectedGridPosition(false);
+        Vector3 mousePosition = gameManager.GetSelectedGridPosition(true);
         mouseIndicator.transform.position = mousePosition;
     }
 
