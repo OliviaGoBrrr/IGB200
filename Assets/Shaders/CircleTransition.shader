@@ -3,11 +3,11 @@ Shader "Unlit/CircleTransition"
     Properties
     {
         _MainTex("Texture", 2D) = "white" {}
-        _AnimationProgress("Animation Progress", Float) = 0.5
+        _AnimationProgress("Animation Progress", Range (0.0, 1.0)) = 0.5
         _Colour("Colour", Color) = (0, 0, 0, 1)
         _Spacing("Spacing", Float) = 50.0
         _DotSize("Dot Size", Float) = 1.0
-        
+        _Direction("Direction", Float) = 1.0
     }
     SubShader
     {
@@ -40,6 +40,7 @@ Shader "Unlit/CircleTransition"
             fixed4 _Colour;
             float _Spacing;
             float _DotSize;
+            float _Direction;
 
             float4 _MainTex_ST;
 
@@ -67,33 +68,43 @@ Shader "Unlit/CircleTransition"
                     discard;
                 }
                 
+                float direction = 1;
+                float uv_direction = 0;
+
+                if (_Direction == -1) {
+                    direction = -1;
+                    uv_direction = 1;
+                }
     
                 // getting screen and dividing it into a grid
                 float2 screen_size = _ScreenParams.xy;
                 float2 grid_count = floor(screen_size / _Spacing);
     
-                float2 uv = i.uv;
+                float2 uv = uv_direction + (i.uv * direction);
                 
+                // UV position of grid
                 float2 norm_pos = uv * screen_size / (grid_count * _Spacing);
     
                 float delay = (norm_pos.x + norm_pos.y) * 0.5;
-    
+
+
+                /*
                 float visible_threshold = delay * 0.1 + 0.01;
     
-                /*
                 if (_AnimationProgress < visible_threshold) {
                     discard;
                 }
                 */
-    
+                
+                
                 float transition = 0.3;
                 float scale = smoothstep(
                     delay - transition,
                     delay + transition,
-                    _AnimationProgress * (1.0 + transition)
+                    _AnimationProgress * (1 + transition)
                 );
     
-                
+
                 if (scale < 0.005) {
                     discard;
                 }
@@ -116,7 +127,6 @@ Shader "Unlit/CircleTransition"
                 
 
                 return fixed4(_Colour.rgb, alpha);
-    
             }
 
 
