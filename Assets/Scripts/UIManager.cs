@@ -4,7 +4,7 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     private Canvas canvas;
-
+    [SerializeField] private GameObject GameOverScreen;
     [SerializeField] private TMP_Text roundText;
     [SerializeField] private string roundsString;
     [SerializeField] private TMP_Text actionsText;
@@ -29,6 +29,7 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
+        // Warning timer
         if (warningTextObject.gameObject.activeSelf)
         {
             warningTimer -= Time.deltaTime;
@@ -47,6 +48,11 @@ public class UIManager : MonoBehaviour
         warningTimer = warningTime;
     }
 
+    private void DisplayGameOverUI()
+    {
+
+    }
+
     public void UpdatePlayerUI()
     {
         roundText.SetText(roundsString + " " + gameManager.roundCount);
@@ -58,6 +64,7 @@ public class UIManager : MonoBehaviour
         GameManager.OnRoundAdvanced += UpdatePlayerUI;
         GameManager.OnPlayerAction += UpdatePlayerUI;
         GameManager.OnActionCostTooHigh += DisplayWarning;
+        GameManager.OnGameOver += DisplayGameOverUI;
     }
 
     private void OnDisable()
@@ -65,5 +72,6 @@ public class UIManager : MonoBehaviour
         GameManager.OnRoundAdvanced -= UpdatePlayerUI;
         GameManager.OnPlayerAction -= UpdatePlayerUI;
         GameManager.OnActionCostTooHigh -= DisplayWarning;
+        GameManager.OnGameOver -= DisplayGameOverUI;
     }
 }

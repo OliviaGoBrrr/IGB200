@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 8027959816254752123}
+  canBeBurnt: 1
   roundsToBurn: 1
   wetness: 0
   tileState: 0
@@ -130,6 +131,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: aa8a2692fa4cecb4b883ddd4d9c470c2, type: 2}
   - {fileID: 2100000, guid: dae756e026eafa04fa3e884945875caf, type: 2}
   - {fileID: 2100000, guid: 414f8925fd05d8d42aa2aa4a908fcac9, type: 2}
+  - {fileID: 2100000, guid: 2b16eb735caae764ebe53646a615dea2, type: 2}
   gridIndexX: 0
   gridIndexZ: 0
   TL: 0

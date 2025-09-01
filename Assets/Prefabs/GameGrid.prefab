@@ -6356,6 +6356,10 @@ PrefabInstance:
       propertyPath: tileState
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: canBeBurnt
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: m_Name
       value: Tile1

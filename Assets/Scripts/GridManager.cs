@@ -14,7 +14,7 @@ public class GridManager : MonoBehaviour
     public Grid grid;
 
     // Grid Bounds
-    [HideInInspector]
+    //[HideInInspector]
     public int xMin, xMax, zMin, zMax;
 
     // Grid tiles
@@ -46,7 +46,7 @@ public class GridManager : MonoBehaviour
     private void GenerateGrid()
     {
         // Put tiles in a list and find the bounds of the grid
-        foreach (var tile in tilemap.GetComponentsInChildren<GameTile>())
+        foreach (GameTile tile in tilemap.GetComponentsInChildren<GameTile>())
         {
             tiles.Add(tile);
 

@@ -7,18 +7,20 @@ using static GameTile;
 using System;
 public struct GameTileData
 {
-    public GameTileData(GameTile gameTile, int burnRounds, TileStates tileState, Vector3 tilePosition)
+    public GameTileData(GameTile gameTile, int burnRounds, TileStates tileState, Vector3 tilePosition, bool canBeBurnt)
     {
         this.TileState = tileState;
         this.RoundsToBurn = burnRounds;
         this.TilePosition = tilePosition;
         this.GameTile = gameTile;
+        this.CanBeBurnt = canBeBurnt;
     }
 
     public GameTile GameTile;
     public int RoundsToBurn;
     public TileStates TileState;
     public Vector3 TilePosition;
+    public bool CanBeBurnt;
 }
 
 public class GameTile: MonoBehaviour
@@ -27,7 +29,8 @@ public class GameTile: MonoBehaviour
     {
         GRASS = 0,
         BURNING,
-        BURNT
+        BURNT,
+        ANIMAL,
     }
 
     // References
@@ -38,17 +41,12 @@ public class GameTile: MonoBehaviour
 
     // Tile Properties
     public GameTileData tileData;
-    [SerializeField] 
-    private int roundsToBurn;
-    [SerializeField] 
-    private int wetness; // Not implemented yet
+    [SerializeField] private bool canBeBurnt;
+    [SerializeField] private int roundsToBurn;
+    [SerializeField] private int wetness; // Not implemented yet
     public TileStates tileState;
-    [SerializeField] 
-    private Material[] tileMaterials;
-    
-    [HideInInspector]
-    public int gridIndexX, gridIndexZ;
-
+    [SerializeField] private Material[] tileMaterials;
+    [HideInInspector] public int gridIndexX, gridIndexZ;
     private Vector3 tilePosition;
 
     // Neighbours
@@ -63,62 +61,104 @@ public class GameTile: MonoBehaviour
 
     void Awake()
     {
+        gameManager = FindFirstObjectByType<GameManager>();
         gridManager = GetComponentInParent<GridManager>();
         tilePosition = transform.position;
-        tileData = new GameTileData(this, roundsToBurn, tileState, tilePosition);
+        tileData = new GameTileData(this, roundsToBurn, tileState, tilePosition, canBeBurnt);
         renderer = gameObject.GetComponent<Renderer>();
     }
 
     void Start()
     {
         tileNeighbours = GetNeighbours();
-        if (tileState == TileStates.BURNING)
-        {
-            TileStateUpdate();
-        }
+        TileStateUpdate();
     }
 
-    private void OnValidate() => gameObject.GetComponent<Renderer>().material = tileMaterials[(int)tileState];
+    private void OnValidate()
+    {
+        TileStateUpdate();
+    }
 
     public void RoundAdvanced()
     {
         if(tileState == TileStates.BURNING)
         {
             roundsToBurn -= 1;
+            AttemptFireSpread();
             if (roundsToBurn < 0)
             {
                 tileState = TileStates.BURNT;
                 TileStateUpdate();
-            }
-            else
-            {
-                AttemptFireSpread();
             }
         }
     }
 
     public void AttemptFireSpread()
     {
+        // THIS IS BAD LOGIC I KNOW IM SORRY
+
+        bool tileFound = false;
+
+        // Checks all the neighbours. If a neighbour can be spread to, set true
         foreach (var tile in tileNeighbours)
+        {
+            if(tile.canBeBurnt) { tileFound = true; break; }
+        }
+
+        // If no tile is found, don't spread
+        if (!tileFound) { return;}
+
+        // Try to find a valid partner
+        while (tileFound)
         {
             int choice = UnityEngine.Random.Range(0, tileNeighbours.Count);
 
-            if (tileNeighbours[choice].tileState == TileStates.GRASS)
+            if (tileNeighbours[choice].canBeBurnt)
             {
+                tileFound = false;
+                if(tileNeighbours[choice].tileState == TileStates.ANIMAL)
+                {
+                    gameManager.SetGameState(GameManager.GameState.GAME_OVER);
+                }
+
                 tileNeighbours[choice].tileState = TileStates.BURNING;
                 tileNeighbours[choice].TileStateUpdate();
-                break;
-            }
-            else if(tile.tileState == TileStates.GRASS)
-            {
-                tile.tileState = TileStates.BURNING;
-                tile.TileStateUpdate();
             }
         }
-
     }
 
-    public void TileStateUpdate() { renderer.material = tileMaterials[(int)tileState]; }
+    public void TileStateUpdate() 
+    { 
+        gameObject.GetComponent<Renderer>().material = tileMaterials[(int)tileState];
+        if (tileState == TileStates.BURNING || tileState == TileStates.BURNT)
+        {
+            canBeBurnt = false;
+        }
+        else
+        {
+            canBeBurnt = true;
+        }
+    }
+
+    private void OnEnable()
+    {
+        GameManager.OnRoundAdvanced += RoundAdvanced;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnRoundAdvanced -= RoundAdvanced;
+    }
+
+    private void OnMouseEnter()
+    {
+        highlight.SetActive(true);
+    }
+
+    private void OnMouseExit()
+    {
+        highlight.SetActive(false);
+    }
 
     public List<GameTile> GetNeighbours()
     {
@@ -208,27 +248,6 @@ public class GameTile: MonoBehaviour
 
         return neighbourResults;
     }
-
-    private void OnEnable()
-    {
-        GameManager.OnRoundAdvanced += RoundAdvanced;
-    }
-
-    private void OnDisable()
-    {
-        GameManager.OnRoundAdvanced -= RoundAdvanced;
-    }
-
-    private void OnMouseEnter()
-    {
-       highlight.SetActive(true);
-    }
-
-    private void OnMouseExit()
-    {
-        highlight.SetActive(false);
-    }
-
 }
 
 

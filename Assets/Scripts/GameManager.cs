@@ -4,8 +4,7 @@ public class GameManager : MonoBehaviour
 {
     public enum GameState
     {
-        MAIN_MENU = 0,
-        PLAYING,
+        PLAYING = 0,
         PAUSED,
         GAME_OVER
     }
@@ -14,6 +13,7 @@ public class GameManager : MonoBehaviour
     public static event System.Action OnRoundAdvanced;
     public static event System.Action OnPlayerAction;
     public static event System.Action OnActionCostTooHigh;
+    public static event System.Action OnGameOver;
 
     
     [SerializeField] private GridManager gridManager;
@@ -32,11 +32,60 @@ public class GameManager : MonoBehaviour
         currentActionCount = maxActions;
     }
 
+    void Start()
+    {
+        // Reposition camera to the center of the map 
+        Vector3 cameraPos = sceneCamera.transform.position;
+        cameraPos.x = (float)gridManager.xMax / 2;
+        sceneCamera.transform.position = cameraPos;
+
+        state = GameState.PLAYING;
+    }
+
     void Update()
     {
         if(currentActionCount == 0)
         {
             AdvanceRound();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(state == GameState.PLAYING)
+            {
+                SetGameState(GameState.PAUSED);
+            }
+            else if(state == GameState.PAUSED)
+            {
+                SetGameState(GameState.PLAYING);
+            }
+        }
+
+    }
+
+    public void SetGameState(GameState newState)
+    {
+        // Check if we're already in the state
+        if (state == newState)
+        {
+            return;
+        }
+
+        state = newState;
+
+        switch (state)
+        {
+            case GameState.PLAYING:
+                PlayGame();
+                break;
+
+            case GameState.PAUSED:
+                PauseGame();
+                break;
+
+            case GameState.GAME_OVER:
+                GameOver();
+                break;
         }
     }
 
@@ -73,6 +122,12 @@ public class GameManager : MonoBehaviour
             return;
         }
 
+        if(selectTile.tileState == GameTile.TileStates.ANIMAL)
+        {
+            // Show warning
+            return;
+        }
+
         // Update tile
         selectTile.tileState = changeState;
         selectTile.TileStateUpdate();
@@ -102,6 +157,25 @@ public class GameManager : MonoBehaviour
         }
 
         return lastMousePosition;
+    }
+
+    public void PlayGame()
+    {
+        // Play game logic
+        Debug.Log("Game is playing");
+    }
+
+    public void PauseGame()
+    {
+        // Pause game logic
+        Debug.Log("Game is paused");
+    }
+
+    public void GameOver()
+    {
+        Debug.Log("Game Over");
+        Time.timeScale = 0.0f;
+        OnGameOver?.Invoke();
     }
 
 }
