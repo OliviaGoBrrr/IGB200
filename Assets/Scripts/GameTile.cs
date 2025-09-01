@@ -36,7 +36,6 @@ public class GameTile: MonoBehaviour
     // References
     private GridManager gridManager;
     private GameManager gameManager;
-    private Renderer renderer;
     [SerializeField] public GameObject highlight;
 
     // Tile Properties
@@ -65,7 +64,6 @@ public class GameTile: MonoBehaviour
         gridManager = GetComponentInParent<GridManager>();
         tilePosition = transform.position;
         tileData = new GameTileData(this, roundsToBurn, tileState, tilePosition, canBeBurnt);
-        renderer = gameObject.GetComponent<Renderer>();
     }
 
     void Start()

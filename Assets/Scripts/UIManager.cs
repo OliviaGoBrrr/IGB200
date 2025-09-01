@@ -25,6 +25,7 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         UpdatePlayerUI();
+        GameOverScreen.SetActive(false);
     }
 
     void Update()
@@ -50,7 +51,7 @@ public class UIManager : MonoBehaviour
 
     private void DisplayGameOverUI()
     {
-
+        GameOverScreen.SetActive(true);
     }
 
     public void UpdatePlayerUI()
