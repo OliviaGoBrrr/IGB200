@@ -9,7 +9,14 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 {
     private GameObject draggingIcon;
     private RectTransform iconTransform;
+    public int actionCost;
     public GameTile.TileStates changeState;
+    private GameManager gameManager;
+
+    void Start()
+    {
+       gameManager = FindFirstObjectByType<GameManager>(); 
+    }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -54,21 +61,9 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnEndDrag(PointerEventData eventData) 
     {
-        var holdState = changeState;
         if (draggingIcon != null) { Destroy(draggingIcon); }
 
-        var tileGrid = FindFirstObjectByType<GridManager>().masterTileGrid;
-
-        Vector3 selectCellPos = FindFirstObjectByType<GameManager>().GetSelectedGridPosition();
-
-        int cellX = Mathf.FloorToInt(selectCellPos.x);
-        int cellZ = Mathf.FloorToInt(selectCellPos.z);
-
-        GameTile selectTile = tileGrid[cellX, cellZ].GameTile;
-
-        selectTile.tileState = holdState;
-        selectTile.TileStateUpdate();
-        
+        gameManager.PlayerActionTaken(changeState, actionCost);
     }
 
     static public T FindInParents<T>(GameObject go) where T : Component

@@ -658,6 +658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bb2e975348c5484791891d1924fc8be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actionCost: 1
   changeState: 1
 --- !u!222 &485985409
 CanvasRenderer:
@@ -985,6 +986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bb2e975348c5484791891d1924fc8be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actionCost: 2
   changeState: 2
 --- !u!222 &631479661
 CanvasRenderer:
@@ -1233,6 +1235,7 @@ MonoBehaviour:
   state: 0
   roundCount: 0
   maxActions: 3
+  currentActionCount: 0
 --- !u!4 &985714307
 Transform:
   m_ObjectHideFlags: 0
@@ -1680,7 +1683,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bb2e975348c5484791891d1924fc8be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeState: 0
+  actionCost: 1
+  changeState: 1
 --- !u!222 &1760667702
 CanvasRenderer:
   m_ObjectHideFlags: 0

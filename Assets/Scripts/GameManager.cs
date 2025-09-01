@@ -14,21 +14,61 @@ public class GameManager : MonoBehaviour
     public Camera sceneCamera;
     public GameState state;
     public static event System.Action OnRoundAdvanced;
+    public static event System.Action OnPlayerAction;
 
     public int roundCount = 1;
     public int maxActions = 3;
-    
+    [HideInInspector]
+    public int currentActionCount;
+
     private Vector3 lastMousePosition;
     void Awake()
     {
         gridManager = FindAnyObjectByType<GridManager>();
-        
+        currentActionCount = maxActions;
+    }
+
+    void Update()
+    {
+        if(currentActionCount == 0)
+        {
+            AdvanceRound();
+        }
     }
 
     public void AdvanceRound()
     {
         roundCount++;
+        currentActionCount = maxActions;
         OnRoundAdvanced?.Invoke();
+    }
+
+    public void PlayerActionTaken(GameTile.TileStates changeState, int actionCost)
+    {
+        // If the player has enough actions to do something
+        if(actionCost > currentActionCount)
+        {
+            // Do something
+            return;
+        }
+
+        // Find the tile on the grid
+        var tileGrid = gridManager.masterTileGrid;
+
+        Vector3 selectCellPos = GetSelectedGridPosition();
+
+        int cellX = Mathf.FloorToInt(selectCellPos.x);
+        int cellZ = Mathf.FloorToInt(selectCellPos.z);
+
+        GameTile selectTile = tileGrid[cellX, cellZ].GameTile;
+
+        // Update tile
+        selectTile.tileState = changeState;
+        selectTile.TileStateUpdate();
+
+        currentActionCount -= actionCost;
+
+        OnPlayerAction?.Invoke();
     }
 
     public Vector3 GetSelectedGridPosition(bool snapToGrid = false)

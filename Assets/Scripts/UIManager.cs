@@ -20,22 +20,24 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        UpdateOnRoundAdvance();
+        UpdatePlayerUI();
     }
 
-    public void UpdateOnRoundAdvance()
+    public void UpdatePlayerUI()
     {
         roundText.SetText(roundsString + " " + gameManager.roundCount);
-        actionsText.SetText(gameManager.maxActions + "/" + gameManager.maxActions + " " + actionsString);
+        actionsText.SetText(gameManager.currentActionCount + "/" + gameManager.maxActions + " " + actionsString);
     }
 
     private void OnEnable()
     {
-        GameManager.OnRoundAdvanced += UpdateOnRoundAdvance;
+        GameManager.OnRoundAdvanced += UpdatePlayerUI;
+        GameManager.OnPlayerAction += UpdatePlayerUI;
     }
 
     private void OnDisable()
     {
-        GameManager.OnRoundAdvanced -= UpdateOnRoundAdvance;
+        GameManager.OnRoundAdvanced -= UpdatePlayerUI;
+        GameManager.OnPlayerAction -= UpdatePlayerUI;
     }
 }
