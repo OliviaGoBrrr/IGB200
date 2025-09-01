@@ -10,16 +10,20 @@ public class GameManager : MonoBehaviour
         GAME_OVER
     }
 
+    // Events
+    public static event System.Action OnRoundAdvanced;
+    public static event System.Action OnPlayerAction;
+    public static event System.Action OnActionCostTooHigh;
+
+    
     [SerializeField] private GridManager gridManager;
     public Camera sceneCamera;
     public GameState state;
-    public static event System.Action OnRoundAdvanced;
-    public static event System.Action OnPlayerAction;
 
+    // Player Actions
     public int roundCount = 1;
     public int maxActions = 3;
-    [HideInInspector]
-    public int currentActionCount;
+    [HideInInspector] public int currentActionCount;
 
     private Vector3 lastMousePosition;
     void Awake()
@@ -48,7 +52,7 @@ public class GameManager : MonoBehaviour
         // If the player has enough actions to do something
         if(actionCost > currentActionCount)
         {
-            // Do something
+            OnActionCostTooHigh?.Invoke();
             return;
         }
 

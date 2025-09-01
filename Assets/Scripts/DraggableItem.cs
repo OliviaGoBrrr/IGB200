@@ -1,4 +1,5 @@
 using System.Linq;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -15,7 +16,9 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     void Start()
     {
-       gameManager = FindFirstObjectByType<GameManager>(); 
+       gameManager = FindFirstObjectByType<GameManager>();
+       TMP_Text actionCostText = GetComponentInChildren<TMP_Text>();
+       actionCostText.SetText("Cost: " + actionCost);
     }
 
     public void OnBeginDrag(PointerEventData eventData)
