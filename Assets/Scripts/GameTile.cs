@@ -5,7 +5,21 @@ using System.Collections;
 using System.Collections.Generic;
 using static GameTile;
 using System;
+public struct GameTileData
+{
+    public GameTileData(GameTile gameTile, int burnRounds, TileStates tileState, Vector3 tilePosition)
+    {
+        this.TileState = tileState;
+        this.RoundsToBurn = burnRounds;
+        this.TilePosition = tilePosition;
+        this.GameTile = gameTile;
+    }
 
+    public GameTile GameTile;
+    public int RoundsToBurn;
+    public TileStates TileState;
+    public Vector3 TilePosition;
+}
 
 public class GameTile: MonoBehaviour
 {
@@ -111,21 +125,86 @@ public class GameTile: MonoBehaviour
         var neighbourResults = new List<GameTile>();
 
         // Left
-        if (gridIndexX > 0) { L = true; neighbourResults.Add(gridManager.masterTileGrid[gridIndexX - 1, gridIndexZ].GameTile);  } 
+        if (gridIndexX > 0) 
+        {
+            if (gridManager.masterTileGrid[gridIndexX - 1, gridIndexZ].GameTile != null)
+            {
+                L = true;
+                neighbourResults.Add(gridManager.masterTileGrid[gridIndexX - 1, gridIndexZ].GameTile);
+            }
+        } 
         // Right
-        if (gridIndexX < gridManager.xMax - 1) { R = true; neighbourResults.Add(gridManager.masterTileGrid[gridIndexX + 1, gridIndexZ].GameTile);  } 
+        if (gridIndexX < gridManager.xMax - 1) 
+        {
+            if (gridManager.masterTileGrid[gridIndexX + 1, gridIndexZ].GameTile != null)
+            {
+                R = true;
+                neighbourResults.Add(gridManager.masterTileGrid[gridIndexX + 1, gridIndexZ].GameTile);
+            }
+        } 
         // Bottom
-        if (gridIndexZ > 0) { B = true; neighbourResults.Add(gridManager.masterTileGrid[gridIndexX, gridIndexZ - 1].GameTile);  } 
+        if (gridIndexZ > 0) 
+        { 
+            if(gridManager.masterTileGrid[gridIndexX, gridIndexZ - 1].GameTile != null)
+            {
+                B = true;
+                neighbourResults.Add(gridManager.masterTileGrid[gridIndexX, gridIndexZ - 1].GameTile);
+            }
+        } 
         // Top
-        if (gridIndexZ < gridManager.zMax - 1) { T = true; neighbourResults.Add(gridManager.masterTileGrid[gridIndexX, gridIndexZ + 1].GameTile);  } 
+        if (gridIndexZ < gridManager.zMax - 1) 
+        { 
+            if(gridManager.masterTileGrid[gridIndexX, gridIndexZ + 1].GameTile != null)
+            {
+                T = true;
+                neighbourResults.Add(gridManager.masterTileGrid[gridIndexX, gridIndexZ + 1].GameTile);
+            }
+        } 
         // Bottom Left
-        if (gridIndexX > 0 && gridIndexZ > 0) { BL = true; neighbourResults.Add(gridManager.masterTileGrid[gridIndexX - 1, gridIndexZ - 1].GameTile); }
+        if (gridIndexX > 0 && gridIndexZ > 0) 
+        { 
+            if(gridManager.masterTileGrid[gridIndexX - 1, gridIndexZ - 1].GameTile != null)
+            {
+                BL = true;
+                neighbourResults.Add(gridManager.masterTileGrid[gridIndexX - 1, gridIndexZ - 1].GameTile);
+            }
+        }
         // Bottom Right
-        if (gridIndexX < gridManager.xMax - 1 && gridIndexZ > 0) { BR = true; neighbourResults.Add(gridManager.masterTileGrid[gridIndexX + 1, gridIndexZ - 1].GameTile); };
+        if (gridIndexX < gridManager.xMax - 1 && gridIndexZ > 0) 
+        { 
+            if(gridManager.masterTileGrid[gridIndexX + 1, gridIndexZ - 1].GameTile != null)
+            {
+                BR = true;
+                neighbourResults.Add(gridManager.masterTileGrid[gridIndexX + 1, gridIndexZ - 1].GameTile);
+            }
+        }
         // Top Left
-        if(gridIndexX > 0 && gridIndexZ < gridManager.zMax - 1) { TL = true; neighbourResults.Add(gridManager.masterTileGrid[gridIndexX - 1, gridIndexZ + 1].GameTile); }
+        if(gridIndexX > 0 && gridIndexZ < gridManager.zMax - 1) 
+        { 
+            if(gridManager.masterTileGrid[gridIndexX - 1, gridIndexZ + 1].GameTile != null)
+            {
+                TL = true;
+                neighbourResults.Add(gridManager.masterTileGrid[gridIndexX - 1, gridIndexZ + 1].GameTile);
+            }
+        }
         // Top Right
-        if(gridIndexX < gridManager.xMax - 1 && gridIndexZ < gridManager.zMax - 1) { TR = true; neighbourResults.Add(gridManager.masterTileGrid[gridIndexX + 1, gridIndexZ + 1].GameTile); }
+        if(gridIndexX < gridManager.xMax - 1 && gridIndexZ < gridManager.zMax - 1) 
+        { 
+            if(gridManager.masterTileGrid[gridIndexX + 1, gridIndexZ + 1].GameTile != null)
+            {
+                TR = true;
+                neighbourResults.Add(gridManager.masterTileGrid[gridIndexX + 1, gridIndexZ + 1].GameTile);
+            }
+        }
+
+        // Ensure no tiles are null
+        foreach(GameTile tile in neighbourResults)
+        {
+            if (tile == null)
+            {
+                neighbourResults.Remove(tile);
+            }
+        }
 
         return neighbourResults;
     }
@@ -152,19 +231,5 @@ public class GameTile: MonoBehaviour
 
 }
 
-public struct GameTileData
-{
-    public GameTileData(GameTile gameTile, int burnRounds, TileStates tileState, Vector3 tilePosition)
-    {
-        this.TileState = tileState;
-        this.RoundsToBurn = burnRounds;
-        this.TilePosition = tilePosition;
-        this.GameTile = gameTile;
-    }
 
-    public GameTile GameTile;
-    public int RoundsToBurn;
-    public TileStates TileState;
-    public Vector3 TilePosition;
-}
 

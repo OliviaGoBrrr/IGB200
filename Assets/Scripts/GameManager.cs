@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayerActionTaken(GameTile.TileStates changeState, int actionCost)
     {
-        // If the player has enough actions to do something
+        // If the player doesn't have enough actions to do something, throw a warning
         if(actionCost > currentActionCount)
         {
             OnActionCostTooHigh?.Invoke();
@@ -65,6 +65,13 @@ public class GameManager : MonoBehaviour
         int cellZ = Mathf.FloorToInt(selectCellPos.z);
 
         GameTile selectTile = tileGrid[cellX, cellZ].GameTile;
+
+        // If the tile is already the tile state, throw a warning
+        if(selectTile.tileState == changeState)
+        {
+            // Show warning 
+            return;
+        }
 
         // Update tile
         selectTile.tileState = changeState;
