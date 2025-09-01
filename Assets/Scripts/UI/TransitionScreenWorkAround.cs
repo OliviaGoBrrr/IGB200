@@ -10,7 +10,7 @@ public class TransitionScreenWorkAround : MonoBehaviour
     public float animation_progress = 1.0f;
     public float direction = 1.0f;
 
-    void Start()
+    void Awake()
     {
         material = GetComponent<Image>().material;
         animation_progress = 1.0f;

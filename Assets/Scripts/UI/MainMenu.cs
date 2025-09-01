@@ -3,19 +3,17 @@ using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 using static System.TimeZoneInfo;
 using UnityEditor.SearchService;
+using UnityEngine.Rendering;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField]
     private VisualElement ui;
 
-    [SerializeField]
     private Button playButton;
 
-    [SerializeField]
     private Button settingsButton;
+    private VisualElement settingsPage;
 
-    [SerializeField]
     private Button exitButton;
 
     private SceneLoader sceneLoader;
@@ -23,10 +21,11 @@ public class MainMenu : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
+
+
         sceneLoader = GameObject.FindGameObjectWithTag("SceneLoader").GetComponent<SceneLoader>();
 
         ui = GetComponent<UIDocument>().rootVisualElement;
-        OnEnable();
     }
 
     private void OnEnable()
@@ -38,25 +37,29 @@ public class MainMenu : MonoBehaviour
         settingsButton = ui.Q<Button>("SettingsButton");
         settingsButton.clicked += OnSettingsButtonClicked;
 
+        settingsPage = ui.Q<VisualElement>("SettingsPage");
+        settingsPage.style.display = DisplayStyle.None;
+
         exitButton = ui.Q<Button>("ExitButton");
         exitButton.clicked += OnExitButtonClicked;
     }
 
     private void OnPlayButtonClicked()
     {
-        Debug.Log("AAA");
-
         sceneLoader.LoadNextScene("Main Menu");
     }
 
     private void OnSettingsButtonClicked()
     {
+        print("Settings Pressed!");
+        settingsPage.style.display = DisplayStyle.Flex;
 
     }
 
     private void OnExitButtonClicked()
     {
-        Application.Quit();
+        print("Exit Pressed!");
+        //Application.Quit();
     }
 
 }
