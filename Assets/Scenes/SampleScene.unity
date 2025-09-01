@@ -3699,8 +3699,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bb2e975348c5484791891d1924fc8be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionCost: 2
-  changeState: 2
+  actionCost: 1
+  changeState: 4
 --- !u!222 &631479661
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4567,7 +4567,7 @@ MonoBehaviour:
   sceneCamera: {fileID: 330585545}
   state: 0
   roundCount: 1
-  maxActions: 3
+  maxActions: 5
   currentActionCount: 0
 --- !u!4 &985714307
 Transform:
@@ -4613,6 +4613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ada8e7dba7493046a518f9722f191cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameOverScreen: {fileID: 0}
   roundText: {fileID: 1574383317}
   roundsString: Round
   actionsText: {fileID: 2028645446}

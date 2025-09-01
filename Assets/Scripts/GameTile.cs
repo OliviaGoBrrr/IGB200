@@ -31,6 +31,7 @@ public class GameTile: MonoBehaviour
         BURNING,
         BURNT,
         ANIMAL,
+        DITCH
     }
 
     // References
@@ -106,7 +107,7 @@ public class GameTile: MonoBehaviour
         // If no tile is found, don't spread
         if (!tileFound) { return;}
 
-        // Try to find a valid partner
+        // Will eventually find a valid neighbour to spread to
         while (tileFound)
         {
             int choice = UnityEngine.Random.Range(0, tileNeighbours.Count);
@@ -125,10 +126,16 @@ public class GameTile: MonoBehaviour
         }
     }
 
+    // Function to be called when a GameTile's state gets updated
     public void TileStateUpdate() 
     { 
+        // Change the material to the appropriate material
         gameObject.GetComponent<Renderer>().material = tileMaterials[(int)tileState];
-        if (tileState == TileStates.BURNING || tileState == TileStates.BURNT)
+
+        // Change if the tile can be burnt or not
+        if (tileState == TileStates.BURNING || 
+            tileState == TileStates.BURNT || 
+            tileState == TileStates.DITCH)
         {
             canBeBurnt = false;
         }

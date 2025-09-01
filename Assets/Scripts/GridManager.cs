@@ -18,7 +18,7 @@ public class GridManager : MonoBehaviour
     public int xMin, xMax, zMin, zMax;
 
     // Grid tiles
-    private List<GameTile> tiles = new List<GameTile>();
+    public List<GameTile> tileList = new List<GameTile>();
     public GameTileData[,] masterTileGrid;
 
 
@@ -48,7 +48,7 @@ public class GridManager : MonoBehaviour
         // Put tiles in a list and find the bounds of the grid
         foreach (GameTile tile in tilemap.GetComponentsInChildren<GameTile>())
         {
-            tiles.Add(tile);
+            tileList.Add(tile);
 
             // Set horizontal bounds of the grid
             if (tile.transform.position.x > xMax) { xMax = Mathf.CeilToInt(tile.transform.position.x); }

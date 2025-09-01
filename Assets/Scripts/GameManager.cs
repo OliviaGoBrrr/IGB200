@@ -6,7 +6,8 @@ public class GameManager : MonoBehaviour
     {
         PLAYING = 0,
         PAUSED,
-        GAME_OVER
+        GAME_OVER,
+        GAME_WIN
     }
 
     // Events
@@ -86,6 +87,9 @@ public class GameManager : MonoBehaviour
             case GameState.GAME_OVER:
                 GameOver();
                 break;
+            case GameState.GAME_WIN:
+                GameWin();
+                break;
         }
     }
 
@@ -94,6 +98,12 @@ public class GameManager : MonoBehaviour
         roundCount++;
         currentActionCount = maxActions;
         OnRoundAdvanced?.Invoke();
+
+        // If there are no more burning tiles, player wins the game
+        if(gridManager.tileList.Exists(tile => tile.tileState == GameTile.TileStates.BURNING) == false)
+        {
+            SetGameState(GameState.GAME_WIN);
+        }
     }
 
     public void PlayerActionTaken(GameTile.TileStates changeState, int actionCost)
@@ -176,6 +186,12 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game Over");
         Time.timeScale = 0.0f;
         OnGameOver?.Invoke();
+    }
+
+    public void GameWin()
+    {
+        // Game win logic
+        Debug.Log("Game Win");
     }
 
 }

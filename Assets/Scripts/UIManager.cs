@@ -56,6 +56,7 @@ public class UIManager : MonoBehaviour
 
     public void UpdatePlayerUI()
     {
+        // Sets the text in the UI to whatever is set
         roundText.SetText(roundsString + " " + gameManager.roundCount);
         actionsText.SetText(gameManager.currentActionCount + "/" + gameManager.maxActions + " " + actionsString);
     }
