@@ -68,11 +68,9 @@ public class GameTile: MonoBehaviour
     }
 
     
-
     void Start()
     {
         TileStateUpdate();
-        tileNeighbours = GetNeighbours();
     }
 
     private void OnValidate()
@@ -150,11 +148,13 @@ public class GameTile: MonoBehaviour
     private void OnEnable()
     {
         GameManager.OnRoundAdvanced += RoundAdvanced;
+        GridManager.FindNeighbours += GetNeighbours;
     }
 
     private void OnDisable()
     {
         GameManager.OnRoundAdvanced -= RoundAdvanced;
+        GridManager.FindNeighbours -= GetNeighbours;
     }
 
     private void OnMouseEnter()
@@ -167,7 +167,7 @@ public class GameTile: MonoBehaviour
         highlight.SetActive(false);
     }
 
-    public List<GameTile> GetNeighbours()
+    public void GetNeighbours()
     {
         var neighbourResults = new List<GameTile>();
 
@@ -253,7 +253,7 @@ public class GameTile: MonoBehaviour
             }
         }
 
-        return neighbourResults;
+        tileNeighbours = neighbourResults;
     }
 }
 

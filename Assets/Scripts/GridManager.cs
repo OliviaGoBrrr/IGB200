@@ -7,6 +7,8 @@ using UnityEngine.WSA;
 [RequireComponent(typeof(Grid))]
 public class GridManager : MonoBehaviour
 {
+    public static System.Action FindNeighbours;
+
     // References
     [SerializeField] private Tilemap tilemap;
     [SerializeField] private GameObject mouseIndicator;
@@ -80,6 +82,9 @@ public class GridManager : MonoBehaviour
             tile.gridIndexZ = indexZ;
 
         }
+
+        FindNeighbours?.Invoke();
+
     }
 
 
