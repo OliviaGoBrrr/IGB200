@@ -46,7 +46,7 @@ public class GameTile: MonoBehaviour
     [SerializeField] private int wetness; // Not implemented yet
     public TileStates tileState;
     [SerializeField] private Material[] tileMaterials;
-    [HideInInspector] public int gridIndexX, gridIndexZ;
+    public int gridIndexX, gridIndexZ;
     private Vector3 tilePosition;
 
     // Neighbours
@@ -67,10 +67,12 @@ public class GameTile: MonoBehaviour
         tileData = new GameTileData(this, roundsToBurn, tileState, tilePosition, canBeBurnt);
     }
 
+    
+
     void Start()
     {
-        tileNeighbours = GetNeighbours();
         TileStateUpdate();
+        tileNeighbours = GetNeighbours();
     }
 
     private void OnValidate()

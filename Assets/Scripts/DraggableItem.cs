@@ -66,7 +66,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         if (draggingIcon != null) { Destroy(draggingIcon); }
 
-        gameManager.PlayerActionTaken(changeState, actionCost);
+        gameManager.PlayerActionTaken(changeState, this.actionCost);
     }
 
     static public T FindInParents<T>(GameObject go) where T : Component

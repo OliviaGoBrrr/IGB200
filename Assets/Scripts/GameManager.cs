@@ -108,6 +108,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayerActionTaken(GameTile.TileStates changeState, int actionCost)
     {
+        Debug.Log("Before Invoke");
         // If the player doesn't have enough actions to do something, throw a warning
         if(actionCost > currentActionCount)
         {
@@ -118,16 +119,27 @@ public class GameManager : MonoBehaviour
         // Find the tile on the grid
         var tileGrid = gridManager.masterTileGrid;
 
-        Vector3 selectCellPos = GetSelectedGridPosition();
+        Debug.Log(tileGrid.Length);
+
+        Vector3 selectCellPos = GetSelectedGridPosition(true);
+
+        Debug.Log(selectCellPos);
 
         int cellX = Mathf.FloorToInt(selectCellPos.x);
         int cellZ = Mathf.FloorToInt(selectCellPos.z);
 
+        Debug.Log(cellX);
+        Debug.Log(cellZ);
+
         GameTile selectTile = tileGrid[cellX, cellZ].GameTile;
+        Debug.Log(selectTile);
+
+        Debug.Log(selectTile.tileData.TilePosition);
 
         // If the tile is already the tile state, throw a warning
         if(selectTile.tileState == changeState)
         {
+            Debug.Log("Gamer");
             // Show warning 
             return;
         }

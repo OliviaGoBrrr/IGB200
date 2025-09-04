@@ -29,6 +29,11 @@ public class GridManager : MonoBehaviour
         tilemap = GetComponentInChildren<Tilemap>();
         if(tilemap == null) {Debug.LogError("Tilemap is not attached to the GameGrid."); return;}
 
+        
+    }
+
+    void Start()
+    {
         GenerateGrid();
     }
 
@@ -46,7 +51,7 @@ public class GridManager : MonoBehaviour
     private void GenerateGrid()
     {
         // Put tiles in a list and find the bounds of the grid
-        foreach (GameTile tile in tilemap.GetComponentsInChildren<GameTile>())
+        foreach (var tile in tilemap.GetComponentsInChildren<GameTile>())
         {
             tileList.Add(tile);
 
@@ -63,6 +68,7 @@ public class GridManager : MonoBehaviour
 
         // Initialize grid array
         masterTileGrid = new GameTileData[xMax, zMax];
+        Debug.Log(xMax.ToString() + ","+ zMax.ToString());
 
         // Fill array with tiles
         foreach (var tile in tilemap.GetComponentsInChildren<GameTile>())
@@ -72,6 +78,7 @@ public class GridManager : MonoBehaviour
             masterTileGrid[indexX, indexZ] = tile.tileData;
             tile.gridIndexX = indexX;
             tile.gridIndexZ = indexZ;
+
         }
     }
 
