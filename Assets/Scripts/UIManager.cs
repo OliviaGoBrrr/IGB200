@@ -4,7 +4,9 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     private Canvas canvas;
-    [SerializeField] private GameObject GameOverScreen;
+    public GameObject LoadingScreen;
+    public GameObject GameOverScreen;
+    public GameObject PauseScreen;
     [SerializeField] private TMP_Text roundText;
     [SerializeField] private string roundsString;
     [SerializeField] private TMP_Text actionsText;
@@ -26,6 +28,7 @@ public class UIManager : MonoBehaviour
     {
         UpdatePlayerUI();
         GameOverScreen.SetActive(false);
+        PauseScreen.SetActive(false);
     }
 
     void Update()

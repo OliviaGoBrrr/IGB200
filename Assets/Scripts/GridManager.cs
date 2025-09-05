@@ -8,6 +8,7 @@ using UnityEngine.WSA;
 public class GridManager : MonoBehaviour
 {
     public static System.Action FindNeighbours;
+    public static System.Action GridLoadingCompleted;
 
     // References
     [SerializeField] private Tilemap tilemap;
@@ -23,6 +24,10 @@ public class GridManager : MonoBehaviour
     public List<GameTile> tileList = new List<GameTile>();
     public GameTileData[,] masterTileGrid;
 
+    // Values when loading grid in
+    private int expectedMethods;
+    private int completedMethods;
+
 
     void Awake()
     {
@@ -30,8 +35,6 @@ public class GridManager : MonoBehaviour
         grid = GetComponent<Grid>();
         tilemap = GetComponentInChildren<Tilemap>();
         if(tilemap == null) {Debug.LogError("Tilemap is not attached to the GameGrid."); return;}
-
-        
     }
 
     void Start()
@@ -52,25 +55,29 @@ public class GridManager : MonoBehaviour
 
     private void GenerateGrid()
     {
+        // Start with a reference for the mins, otherwise it'll always be 0
+        xMin = (int)FindFirstObjectByType<GameTile>().transform.position.x;
+        zMin = (int)FindFirstObjectByType<GameTile>().transform.position.z;
+
         // Put tiles in a list and find the bounds of the grid
         foreach (var tile in tilemap.GetComponentsInChildren<GameTile>())
         {
             tileList.Add(tile);
+            expectedMethods++;
 
             // Set horizontal bounds of the grid
             if (tile.transform.position.x > xMax) { xMax = Mathf.CeilToInt(tile.transform.position.x); }
-            else if (tile.transform.position.x < xMin) { xMin = Mathf.FloorToInt(tile.transform.position.x); }
-            ;
+            if ((int)tile.transform.position.x < xMin) { xMin = Mathf.FloorToInt(tile.transform.position.x); }
+            
 
             // Set vertical bounds of the grid
             if (tile.transform.position.z > zMax) { zMax = Mathf.CeilToInt(tile.transform.position.z); }
-            else if (tile.transform.position.z < zMin) { zMin = Mathf.FloorToInt(tile.transform.position.z); }
-            ;
+            if ((int)tile.transform.position.z < zMin) { zMin = Mathf.FloorToInt(tile.transform.position.z); }
+            
         }
 
         // Initialize grid array
         masterTileGrid = new GameTileData[xMax, zMax];
-        Debug.Log(xMax.ToString() + ","+ zMax.ToString());
 
         // Fill array with tiles
         foreach (var tile in tilemap.GetComponentsInChildren<GameTile>())
@@ -80,11 +87,19 @@ public class GridManager : MonoBehaviour
             masterTileGrid[indexX, indexZ] = tile.tileData;
             tile.gridIndexX = indexX;
             tile.gridIndexZ = indexZ;
-
         }
 
         FindNeighbours?.Invoke();
+    }
 
+    // Check to see if the grid is completed
+    public void CompleteGridGeneration()
+    {
+        completedMethods++;
+        if(completedMethods == expectedMethods)
+        {
+            GridLoadingCompleted?.Invoke();
+        }
     }
 
 

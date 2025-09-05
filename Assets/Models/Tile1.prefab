@@ -133,6 +133,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 414f8925fd05d8d42aa2aa4a908fcac9, type: 2}
   - {fileID: 2100000, guid: 2b16eb735caae764ebe53646a615dea2, type: 2}
   - {fileID: 2100000, guid: e65b38e0a258db74a8b5d33f60c188cc, type: 2}
+  - {fileID: 2100000, guid: 942e0fde7fb17c849b006dc51001b29e, type: 2}
   gridIndexX: 0
   gridIndexZ: 0
   TL: 0

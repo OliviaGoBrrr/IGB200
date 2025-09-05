@@ -31,7 +31,8 @@ public class GameTile: MonoBehaviour
         BURNING,
         BURNT,
         ANIMAL,
-        DITCH
+        DITCH,
+        DRY_GRASS
     }
 
     // References
@@ -254,6 +255,8 @@ public class GameTile: MonoBehaviour
         }
 
         tileNeighbours = neighbourResults;
+
+                gridManager.CompleteGridGeneration();
     }
 }
 

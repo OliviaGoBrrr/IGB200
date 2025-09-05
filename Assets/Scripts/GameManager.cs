@@ -1,3 +1,4 @@
+using System.Threading;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -5,6 +6,7 @@ public class GameManager : MonoBehaviour
     public enum GameState
     {
         PLAYING = 0,
+        PREP_PHASE,
         PAUSED,
         GAME_OVER,
         GAME_WIN
@@ -18,29 +20,41 @@ public class GameManager : MonoBehaviour
 
     
     [SerializeField] private GridManager gridManager;
+    [SerializeField] private UIManager uiManager;
     public Camera sceneCamera;
     public GameState state;
+    private GameState prevGameState;
 
     // Player Actions
     public int roundCount = 1;
     public int maxActions = 3;
     [HideInInspector] public int currentActionCount;
-
     private Vector3 lastMousePosition;
+
+    // Simulation setting
+    [SerializeField] private float simTime = 1.0f;
+    private float simTimer;
+
     void Awake()
     {
         gridManager = FindAnyObjectByType<GridManager>();
+        uiManager = FindAnyObjectByType<UIManager>();
         currentActionCount = maxActions;
     }
 
     void Start()
     {
+
+    }
+
+    void GameReady()
+    {
         // Reposition camera to the center of the map 
         Vector3 cameraPos = sceneCamera.transform.position;
-        cameraPos.x = (float)gridManager.xMax / 2;
+        cameraPos.x = (gridManager.xMax + gridManager.xMin) / 2;
         sceneCamera.transform.position = cameraPos;
-
-        state = GameState.PLAYING;
+        state = GameState.PREP_PHASE;
+        uiManager.LoadingScreen.SetActive(false);
     }
 
     void Update()
@@ -50,15 +64,28 @@ public class GameManager : MonoBehaviour
             AdvanceRound();
         }
 
+        // Pausing
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(state == GameState.PLAYING)
+            if(state != GameState.PAUSED)
             {
                 SetGameState(GameState.PAUSED);
             }
             else if(state == GameState.PAUSED)
             {
-                SetGameState(GameState.PLAYING);
+                SetGameState(prevGameState);
+            }
+        }
+
+        // Timer logic for simulation
+        if (state == GameState.PLAYING)
+        {
+            simTimer += Time.deltaTime;
+
+            if(simTimer > simTime)
+            {
+                simTimer = 0;
+                AdvanceRound();
             }
         }
 
@@ -72,25 +99,47 @@ public class GameManager : MonoBehaviour
             return;
         }
 
+        prevGameState = state;
+
         state = newState;
 
+        // this is kinda jank
         switch (state)
         {
+            case GameState.PREP_PHASE:
+                if(prevGameState == GameState.PAUSED)
+                {
+                    PauseUnpauseGame();
+                }
+                break;
+
             case GameState.PLAYING:
-                PlayGame();
+                if(prevGameState == GameState.PAUSED)
+                {
+                    PauseUnpauseGame();
+                }
                 break;
 
             case GameState.PAUSED:
-                PauseGame();
+                PauseUnpauseGame();
                 break;
 
             case GameState.GAME_OVER:
                 GameOver();
                 break;
+
             case GameState.GAME_WIN:
                 GameWin();
                 break;
         }
+    }
+
+    public void PlaySimulation()
+    {
+        SetGameState(GameState.PLAYING);
+        
+        // Disable player actions
+        // Disable play button
     }
 
     public void AdvanceRound()
@@ -99,11 +148,16 @@ public class GameManager : MonoBehaviour
         currentActionCount = maxActions;
         OnRoundAdvanced?.Invoke();
 
-        // If there are no more burning tiles, player wins the game
+        /*
+         * 
+                 // If there are no more burning tiles, player wins the game
         if(gridManager.tileList.Exists(tile => tile.tileState == GameTile.TileStates.BURNING) == false)
         {
             SetGameState(GameState.GAME_WIN);
         }
+
+        *
+        */
     }
 
     public void PlayerActionTaken(GameTile.TileStates changeState, int actionCost)
@@ -181,16 +235,20 @@ public class GameManager : MonoBehaviour
         return lastMousePosition;
     }
 
-    public void PlayGame()
+    public void PauseUnpauseGame()
     {
-        // Play game logic
-        Debug.Log("Game is playing");
-    }
-
-    public void PauseGame()
-    {
-        // Pause game logic
-        Debug.Log("Game is paused");
+        if(prevGameState != GameState.PAUSED)
+        {
+            Time.timeScale = 0;
+            uiManager.PauseScreen.SetActive(true);
+            Debug.Log("Game is paused");
+        }
+        else
+        {
+            Time.timeScale = 1;
+            uiManager.PauseScreen.SetActive(false);
+            Debug.Log("Game is unpaused");
+        }
     }
 
     public void GameOver()
@@ -204,6 +262,16 @@ public class GameManager : MonoBehaviour
     {
         // Game win logic
         Debug.Log("Game Win");
+    }
+
+    private void OnEnable()
+    {
+        GridManager.GridLoadingCompleted += GameReady;
+    }
+
+    private void OnDisable()
+    {
+        GridManager.GridLoadingCompleted -= GameReady;
     }
 
 }
