@@ -133,7 +133,7 @@ public class GameTile: MonoBehaviour
                 }
 
                 tileNeighbours[choice].TileStateUpdate();
-                break;
+                //break;
             }
         }
     }
