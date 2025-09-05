@@ -136,10 +136,15 @@ public class GameManager : MonoBehaviour
 
     public void PlaySimulation()
     {
+        // Checks to see if theres at least one burning tile on the grid
+        if (gridManager.tileList.Exists(tile => tile.tileState == GameTile.TileStates.BURNING) == false)
+        {
+            Debug.LogError("There are no Burning tiles to start simulation. Please make one tile a Burning tile");
+            return;
+        }
+
         SetGameState(GameState.PLAYING);
         
-        // Disable player actions
-        // Disable play button
     }
 
     public void AdvanceRound()
@@ -151,10 +156,7 @@ public class GameManager : MonoBehaviour
         /*
          * 
                  // If there are no more burning tiles, player wins the game
-        if(gridManager.tileList.Exists(tile => tile.tileState == GameTile.TileStates.BURNING) == false)
-        {
-            SetGameState(GameState.GAME_WIN);
-        }
+
 
         *
         */
