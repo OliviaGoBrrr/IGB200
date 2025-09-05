@@ -11,6 +11,7 @@ public class Settings : MonoBehaviour
     private VisualElement settingsPage;
 
     private Button backButton;
+    private Button backBGButton;
 
     private Button volumeButton;
 
@@ -28,6 +29,9 @@ public class Settings : MonoBehaviour
 
         backButton = ui.Q<Button>("SettingsBackButton");
         backButton.clicked += OnBackButtonClicked;
+
+        backBGButton = ui.Q<Button>("SettingsBGButton");
+        backBGButton.clicked += OnBackButtonClicked;
 
         volumeButton = ui.Q<Button>("SettingsVolumeButton");
         volumeButton.clicked += OnVolumeButtonClicked;

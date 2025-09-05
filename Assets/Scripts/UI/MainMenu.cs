@@ -15,6 +15,7 @@ public class MainMenu : MonoBehaviour
     private VisualElement settingsPage;
 
     private Button exitButton;
+    
 
     private SceneLoader sceneLoader;
 
