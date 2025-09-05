@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: aa8a2692fa4cecb4b883ddd4d9c470c2, type: 2}
+  - {fileID: 2100000, guid: 942e0fde7fb17c849b006dc51001b29e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -126,7 +126,7 @@ MonoBehaviour:
   canBeBurnt: 1
   roundsToBurn: 1
   wetness: 0
-  tileState: 0
+  tileState: 5
   tileMaterials:
   - {fileID: 2100000, guid: aa8a2692fa4cecb4b883ddd4d9c470c2, type: 2}
   - {fileID: 2100000, guid: dae756e026eafa04fa3e884945875caf, type: 2}
@@ -134,6 +134,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 2b16eb735caae764ebe53646a615dea2, type: 2}
   - {fileID: 2100000, guid: e65b38e0a258db74a8b5d33f60c188cc, type: 2}
   - {fileID: 2100000, guid: 942e0fde7fb17c849b006dc51001b29e, type: 2}
+  - {fileID: 2100000, guid: baeacf9d315a4ba40a5dfe7b71d10d87, type: 2}
   gridIndexX: 0
   gridIndexZ: 0
   TL: 0

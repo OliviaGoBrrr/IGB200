@@ -162,7 +162,6 @@ public class GameManager : MonoBehaviour
 
     public void PlayerActionTaken(GameTile.TileStates changeState, int actionCost)
     {
-        Debug.Log("Before Invoke");
         // If the player doesn't have enough actions to do something, throw a warning
         if(actionCost > currentActionCount)
         {
@@ -173,36 +172,25 @@ public class GameManager : MonoBehaviour
         // Find the tile on the grid
         var tileGrid = gridManager.masterTileGrid;
 
-        Debug.Log(tileGrid.Length);
-
         Vector3 selectCellPos = GetSelectedGridPosition(true);
+
+        // If the player selects outside of the grid, it'll return Vector3(0, -1, 0)
+        // Therefore, if y is less than 0, don't do the action
+        
+        if(selectCellPos.y < 0)
+        {
+            return;
+        }
 
         Debug.Log(selectCellPos);
 
         int cellX = Mathf.FloorToInt(selectCellPos.x);
         int cellZ = Mathf.FloorToInt(selectCellPos.z);
 
-        Debug.Log(cellX);
-        Debug.Log(cellZ);
-
         GameTile selectTile = tileGrid[cellX, cellZ].GameTile;
-        Debug.Log(selectTile);
 
-        Debug.Log(selectTile.tileData.TilePosition);
-
-        // If the tile is already the tile state, throw a warning
-        if(selectTile.tileState == changeState)
-        {
-            Debug.Log("Gamer");
-            // Show warning 
-            return;
-        }
-
-        if(selectTile.tileState == GameTile.TileStates.ANIMAL)
-        {
-            // Show warning
-            return;
-        }
+        // Can the player change the tile's state
+        if (!selectTile.CanBeChanged(changeState)) { return; }
 
         // Update tile
         selectTile.tileState = changeState;
@@ -228,8 +216,12 @@ public class GameManager : MonoBehaviour
                 var snapX = Mathf.FloorToInt(lastMousePosition.x) + (gridManager.grid.cellSize.x / 2);
                 var snapZ = Mathf.FloorToInt(lastMousePosition.z) + (gridManager.grid.cellSize.z / 2);
 
-                lastMousePosition = new Vector3(snapX, lastMousePosition.y, snapZ);
+                lastMousePosition = new Vector3(snapX, 0.5f, snapZ);
             }
+        }
+        else
+        {
+            lastMousePosition = new Vector3(0, -1, 0);
         }
 
         return lastMousePosition;

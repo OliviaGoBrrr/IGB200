@@ -32,7 +32,8 @@ public class GameTile: MonoBehaviour
         BURNT,
         ANIMAL,
         DITCH,
-        DRY_GRASS
+        DRY_GRASS,
+        WET_GRASS
     }
 
     // References
@@ -44,7 +45,7 @@ public class GameTile: MonoBehaviour
     public GameTileData tileData;
     [SerializeField] private bool canBeBurnt;
     [SerializeField] private int roundsToBurn;
-    [SerializeField] private int wetness; // Not implemented yet
+    public int wetness = 0;
     public TileStates tileState;
     [SerializeField] private Material[] tileMaterials;
     public int gridIndexX, gridIndexZ;
@@ -83,13 +84,13 @@ public class GameTile: MonoBehaviour
     {
         if(tileState == TileStates.BURNING)
         {
-            roundsToBurn -= 1;
             AttemptFireSpread();
             if (roundsToBurn < 0)
             {
                 tileState = TileStates.BURNT;
                 TileStateUpdate();
             }
+            roundsToBurn -= 1;
         }
     }
 
@@ -113,7 +114,7 @@ public class GameTile: MonoBehaviour
         {
             int choice = UnityEngine.Random.Range(0, tileNeighbours.Count);
 
-            if (tileNeighbours[choice].canBeBurnt)
+            if (tileNeighbours[choice].CanBeChanged(TileStates.BURNING))
             {
                 tileFound = false;
                 if(tileNeighbours[choice].tileState == TileStates.ANIMAL)
@@ -121,8 +122,18 @@ public class GameTile: MonoBehaviour
                     gameManager.SetGameState(GameManager.GameState.GAME_OVER);
                 }
 
-                tileNeighbours[choice].tileState = TileStates.BURNING;
+                if (tileNeighbours[choice].tileState == TileStates.GRASS || tileNeighbours[choice].tileState == TileStates.WET_GRASS)
+                {
+                    tileNeighbours[choice].wetness--;
+                }
+
+                if(tileNeighbours[choice].tileState == TileStates.DRY_GRASS)
+                {
+                    tileNeighbours[choice].tileState = TileStates.BURNING;
+                }
+
                 tileNeighbours[choice].TileStateUpdate();
+                break;
             }
         }
     }
@@ -130,20 +141,55 @@ public class GameTile: MonoBehaviour
     // Function to be called when a GameTile's state gets updated
     public void TileStateUpdate() 
     { 
+        if(wetness > 0 && wetness < 2)
+        {
+            tileState = TileStates.GRASS;
+        }
+        else if(wetness >= 2)
+        {
+            tileState = TileStates.WET_GRASS;
+        }
+
+        if(tileState == TileStates.GRASS && wetness == 0)
+        {
+            tileState = TileStates.DRY_GRASS;
+        }
+        
+
         // Change the material to the appropriate material
         gameObject.GetComponent<Renderer>().material = tileMaterials[(int)tileState];
 
         // Change if the tile can be burnt or not
-        if (tileState == TileStates.BURNING || 
-            tileState == TileStates.BURNT || 
-            tileState == TileStates.DITCH)
-        {
-            canBeBurnt = false;
-        }
-        else
+
+
+        if (tileState == TileStates.DRY_GRASS)
         {
             canBeBurnt = true;
         }
+        else
+        {
+            canBeBurnt = false;
+        }
+
+    }
+
+    // Logic to check whether a tile can be changed by the player's action
+    public bool CanBeChanged(TileStates changeToState)
+    {
+        // If the tile is already that tile type
+        if (changeToState == tileState) { return false; }
+
+        // Protected tiles
+        if(tileState == TileStates.ANIMAL 
+            || tileState == TileStates.BURNING 
+            || tileState == TileStates.BURNT)
+        {
+            // Show warning to player
+            return false;
+        }
+
+        
+        return true;
     }
 
     private void OnEnable()
