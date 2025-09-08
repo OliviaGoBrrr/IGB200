@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     public static event System.Action OnActionCostTooHigh;
     public static event System.Action OnGameOver;
 
-    
+    public bool devKeysOn;
     [SerializeField] private GridManager gridManager;
     [SerializeField] private UIManager uiManager;
     public Camera sceneCamera;
@@ -82,6 +82,19 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        if (devKeysOn)
+        {
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                GameWin(2);
+            }
+
+            if (Input.GetKeyDown(KeyCode.O))
+            {
+                GameOver();
+            }
+        }
+
         // Timer logic for simulation
         if (state == GameState.PLAYING)
         {
@@ -97,8 +110,8 @@ public class GameManager : MonoBehaviour
                 {
                     if (finalGrassPercent > scoreThresholds[i])
                     {
-                        Debug.Log(stars);
                         GameWin(stars);
+                        break;
                     }
                     else
                     {
@@ -284,6 +297,10 @@ public class GameManager : MonoBehaviour
     public void GameWin(int starCount)
     {
         state = GameState.GAME_WIN;
+
+        uiManager.DisplayGameWinUI(starCount);
+
+        Debug.Log("Game win biiiitch");
         
     }
 

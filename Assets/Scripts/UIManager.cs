@@ -7,6 +7,10 @@ public class UIManager : MonoBehaviour
     public GameObject LoadingScreen;
     public GameObject GameOverScreen;
     public GameObject PauseScreen;
+    
+    public GameObject GameWinScreen;
+    [SerializeField] private TMP_Text starCountText;
+
     [SerializeField] private TMP_Text roundText;
     [SerializeField] private string roundsString;
     [SerializeField] private TMP_Text actionsText;
@@ -62,6 +66,12 @@ public class UIManager : MonoBehaviour
         // Sets the text in the UI to whatever is set
         roundText.SetText(roundsString + " " + gameManager.roundCount);
         actionsText.SetText(gameManager.currentActionCount + "/" + gameManager.maxActions + " " + actionsString);
+    }
+
+    public void DisplayGameWinUI(int starCount)
+    {
+        GameWinScreen.SetActive(true);
+        starCountText.SetText($"Stars: {starCount}");
     }
 
     private void OnEnable()
