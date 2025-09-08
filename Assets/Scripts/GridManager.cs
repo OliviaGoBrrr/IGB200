@@ -102,6 +102,30 @@ public class GridManager : MonoBehaviour
         }
     }
 
+    public float GetPercentOfTileInGrid(GameTile.TileStates tileForPercent)
+    {
+        float percent = 0f;
+        int tileCount = 0;
+
+        if(tileList.Count == 0)
+        {
+            Debug.LogError("Error - Trying to get percent of tiles in a grid, but there are no tiles in the grid manager");
+            return percent;
+        }
+
+        foreach(var tile in tileList)
+        {
+            if(tile.tileState == tileForPercent)
+            {
+                tileCount++;
+            }
+        }
+
+        percent = (float)tileCount / tileList.Count;
+
+        return percent * 100;
+    }
+
 
 
     // Used for debugging the master grid

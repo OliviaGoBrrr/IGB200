@@ -260,6 +260,138 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &224195893
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 224195894}
+  - component: {fileID: 224195897}
+  - component: {fileID: 224195896}
+  - component: {fileID: 224195895}
+  m_Layer: 5
+  m_Name: ReloadLevel (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &224195894
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224195893}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 628096953}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -140, y: 45}
+  m_SizeDelta: {x: 80, y: 80}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &224195895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224195893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 224195896}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1061872530}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: ReloadCurrentScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &224195896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224195893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: e881eb92604dff440aaa135c201b95d9, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &224195897
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224195893}
+  m_CullTransparentMesh: 1
 --- !u!1 &256405644
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,8 +836,8 @@ Camera:
   m_GameObject: {fileID: 330585543}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.59607846, g: 0.7176471, b: 0.8980392, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -730,7 +862,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 0
-  orthographic size: 5
+  orthographic size: 12
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -754,13 +886,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3778408, y: 0, z: 0, w: 0.9258706}
-  m_LocalPosition: {x: 4.75, y: 8, z: -4}
+  m_LocalRotation: {x: 0.42261827, y: 0, z: 0, w: 0.9063079}
+  m_LocalPosition: {x: 10, y: 12, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 44.4, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 50, y: 0, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -978,14 +1110,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.64971703, b: 0.15566039, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f689349a06305bd4ca84138f294da297, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fd033492bff7ab74bab26921a8793537, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1047,14 +1179,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1479416454}
+  m_Children: []
   m_Father: {fileID: 628096953}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -75, y: 45}
-  m_SizeDelta: {x: 117.9, y: 58.1}
+  m_AnchoredPosition: {x: -70, y: 45}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &512753052
 MonoBehaviour:
@@ -1132,8 +1263,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: cf6ed4665dab56942972c70f9d88119b, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1245,6 +1376,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 512753051}
+  - {fileID: 224195894}
   - {fileID: 1574383316}
   - {fileID: 2028645445}
   - {fileID: 256405645}
@@ -1626,8 +1758,14 @@ MonoBehaviour:
   state: 0
   roundCount: 1
   maxActions: 3
+  scoreThresholds:
+  - 75
+  - 50
+  - 25
+  initialGrassPercent: 0
+  finalGrassPercent: 0
   currentActionCount: 0
-  simTime: 0.2
+  simTime: 0.01
 --- !u!4 &985714307
 Transform:
   m_ObjectHideFlags: 0
@@ -1696,6 +1834,52 @@ Transform:
   - {fileID: 628096953}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1061872528
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1061872529}
+  - component: {fileID: 1061872530}
+  m_Layer: 0
+  m_Name: SceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1061872529
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061872528}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.814276, y: -10.622717, z: 13.477528}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1061872530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061872528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0710565fbb34d6a4bbb7f38ba3f22f1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transition: {fileID: 0}
+  transitionTime: 0
 --- !u!1 &1226437787
 GameObject:
   m_ObjectHideFlags: 0
@@ -2120,142 +2304,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1478494202}
   m_CullTransparentMesh: 1
---- !u!1 &1479416453
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1479416454}
-  - component: {fileID: 1479416456}
-  - component: {fileID: 1479416455}
-  m_Layer: 5
-  m_Name: Text (TMP)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1479416454
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1479416453}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 512753051}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1479416455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1479416453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: Play Simulation
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 0
-  m_ActiveFontFeatures: 6e72656b
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_EmojiFallbackSupport: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1479416456
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1479416453}
-  m_CullTransparentMesh: 1
 --- !u!1 &1574383315
 GameObject:
   m_ObjectHideFlags: 0
@@ -2441,7 +2489,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1760667699
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2457,9 +2505,9 @@ RectTransform:
   - {fileID: 321733991}
   m_Father: {fileID: 220156511}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -130}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1760667700
@@ -2482,7 +2530,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 9f2dc0a0140bc044eb1761423bb143d0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2505,7 +2553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionCost: 0
-  changeState: 1
+  changeState: 6
 --- !u!222 &1760667702
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2980,7 +3028,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 14732928664731643, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 57540799108366668, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -2996,7 +3044,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 57540799108366668, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 82813302604072405, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -3012,7 +3060,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 82813302604072405, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 89899179826113675, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -3040,7 +3088,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 137273949055623072, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 155859472326906255, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -3056,7 +3104,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 155859472326906255, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 210369375659635110, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -3080,7 +3128,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 233697841047926637, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 246207915926995038, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -3096,7 +3144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 246207915926995038, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 260520448611017835, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -3140,7 +3188,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 373958917243303820, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 385267810605609311, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -3160,7 +3208,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 388323880749420933, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 419105662141609945, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -3176,7 +3224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 419105662141609945, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 466999678449569195, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -3200,7 +3248,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 483091665903302437, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 492352208641605784, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -3216,7 +3264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 492352208641605784, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 504719692250487378, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -3236,7 +3284,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 504736995544244341, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 508734774564214865, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -3252,7 +3300,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 508734774564214865, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 516756017315412952, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -3268,7 +3316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 516756017315412952, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 516756017315412952, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: tileMaterials.Array.size
@@ -3312,7 +3360,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 538854483340977668, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 552798530745607313, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -3328,7 +3376,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 552798530745607313, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 570260965267536214, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -3344,7 +3392,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 570260965267536214, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 603155305004111838, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -3364,7 +3412,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 621107973573629809, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 640713010871322296, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -3380,7 +3428,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 640713010871322296, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 644578979201169474, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -3400,7 +3448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 671979210170430367, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 691776791642273315, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -3416,7 +3464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 691776791642273315, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 702968935552119228, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -3432,7 +3480,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 702968935552119228, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 819141958059658647, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -3448,7 +3496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 819141958059658647, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 821442462215620945, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -3464,7 +3512,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 821442462215620945, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 825658442955264899, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -3480,7 +3528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 825658442955264899, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 859232831477217399, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -3500,7 +3548,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 862343236428227051, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 874311715679688407, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -3520,7 +3568,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 888129751975726351, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 903348942030300541, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -3544,7 +3592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 931346197000107529, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 955930863554430108, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -3564,7 +3612,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 961402635805989252, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 983842256593317587, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -3580,7 +3628,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 983842256593317587, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 988206491364849943, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -3596,7 +3644,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 988206491364849943, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 998151266539389204, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -3612,7 +3660,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 998151266539389204, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 998763694994186473, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -3628,7 +3676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 998763694994186473, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1001132950995075219, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -3656,7 +3704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1035014339072860141, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1039332380319977552, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -3676,7 +3724,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1066906743925743357, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1105025820502533669, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -3692,7 +3740,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1105025820502533669, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1106890717850241162, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -3708,7 +3756,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1106890717850241162, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1123060612984309207, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -3728,7 +3776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1184920260069508948, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1234813560805744589, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -3744,7 +3792,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1234813560805744589, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1240424870856158431, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -3760,7 +3808,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1240424870856158431, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1243951872840255332, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -3776,7 +3824,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1243951872840255332, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1272670706709592550, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -3792,7 +3840,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1272670706709592550, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1294665251721598434, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -3812,7 +3860,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1304593766221165732, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1312279987671658996, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -3836,7 +3884,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1326626134761835444, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1377015986390741036, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -3852,7 +3900,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1377015986390741036, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1388949845657870117, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -3868,7 +3916,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1388949845657870117, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1401068265581213411, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -3884,7 +3932,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1401068265581213411, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1412146853889036708, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -3900,7 +3948,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1412146853889036708, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1426069110215265502, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -3928,7 +3976,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1466228465188023939, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1476469222472649827, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -3948,7 +3996,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1517380615428529874, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1575821988149324557, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -3968,7 +4016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1617327706829117364, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1627179087131832599, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -3988,7 +4036,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1640168632765835370, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1655811828109768179, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -4012,7 +4060,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1663438490037762017, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1667727356999175867, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -4040,7 +4088,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1676948951552199705, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1683102909128497504, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -4060,7 +4108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717814538231573173, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1733528307142847339, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -4076,7 +4124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1733528307142847339, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1749614332941416570, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -4100,7 +4148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1771668947490057639, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1775659952558227430, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -4116,7 +4164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1775659952558227430, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1776602693705077155, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -4132,7 +4180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1776602693705077155, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1813671303992444425, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -4160,7 +4208,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1824019092685810229, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1825072519980842485, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -4188,7 +4236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1885511027289372673, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1900806674500367240, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -4204,7 +4252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1900806674500367240, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1915486620272886582, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -4224,7 +4272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1939245312017457529, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2055261219563156074, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -4244,7 +4292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2057779952436223499, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2071192321442043036, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -4260,7 +4308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2071192321442043036, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2076184694019991599, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -4284,7 +4332,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2237406561810499467, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2243084897728194065, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -4300,7 +4348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2243084897728194065, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2243856429952814976, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -4320,7 +4368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2268392237491068939, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2279002094874697288, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -4336,7 +4384,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2279002094874697288, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2291286253811498929, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -4372,7 +4420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2412724315777685565, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2414261363254844357, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -4392,7 +4440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2420818365888574107, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2445093931497964961, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -4408,7 +4456,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2445093931497964961, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2471484970803523510, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -4424,7 +4472,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2471484970803523510, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2490106816752062367, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -4444,7 +4492,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2530254711860995354, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2538506670842755707, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -4460,7 +4508,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2538506670842755707, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2540038877459872175, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -4476,7 +4524,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2540038877459872175, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2557936272724878003, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -4492,7 +4540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2557936272724878003, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2565179711949515133, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -4512,7 +4560,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2572349623560293894, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2579910997566430798, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -4532,7 +4580,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2649679829428993198, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2699887947983612361, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -4552,7 +4600,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2704017247642836408, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2708785497064712604, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -4572,7 +4620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2713918242798912350, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2721442095221641109, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -4592,7 +4640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2738088114041909071, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2738316257115302413, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -4608,7 +4656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2738316257115302413, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2738316257115302413, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: tileMaterials.Array.size
@@ -4644,7 +4692,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2800119743025025979, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2813893230684732033, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -4672,7 +4720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2853500774105856840, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2856975735461626946, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -4688,7 +4736,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2856975735461626946, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2857028420813749861, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -4712,7 +4760,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2865624116045376813, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2872591661937965076, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -4732,7 +4780,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2875512070113680539, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2875772438982446892, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -4748,7 +4796,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2875772438982446892, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2877634336722790894, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -4764,7 +4812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2877634336722790894, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2898494898890148193, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -4788,7 +4836,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2906258285409461842, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2952616586437741006, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -4804,7 +4852,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2952616586437741006, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2972011789981034547, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -4832,7 +4880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3119728027184440935, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3121191575043325947, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -4864,7 +4912,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3183566349256702829, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3188974789361669320, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -4880,7 +4928,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3188974789361669320, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3191879812281002009, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -4900,7 +4948,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3208030190804994247, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3239318367065985823, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -4928,7 +4976,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3261633851308760707, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3277294381824655097, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -4952,7 +5000,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3306554341377923724, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3310300977020716948, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -4976,7 +5024,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3364245275470180733, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3368269579220940294, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -4992,7 +5040,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3368269579220940294, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3371904069096263232, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -5008,7 +5056,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3371904069096263232, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3385026485549679101, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -5028,7 +5076,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3401046770993355719, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3455048751336781877, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -5060,7 +5108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3553490217053555698, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3568517547811439069, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -5088,7 +5136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3643759662406316004, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3656292567494486708, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -5112,7 +5160,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3671599634498996000, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3692933815687712692, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -5132,7 +5180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3705743298773390030, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3708432540484761462, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -5148,7 +5196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3708432540484761462, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3727642487909477948, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -5176,7 +5224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3791918702642188614, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3808465590631420531, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -5192,7 +5240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3808465590631420531, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3818503470701146259, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -5212,7 +5260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3853227600579540253, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3866843894810116290, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -5232,7 +5280,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3905743940443844359, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3917493667530189795, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -5248,7 +5296,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3917493667530189795, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3919282898244155002, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -5276,7 +5324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000303232038916267, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4005143030430900583, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -5292,7 +5340,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4005143030430900583, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4005424450425450424, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -5308,7 +5356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4005424450425450424, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4009500109835934017, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -5324,7 +5372,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4009500109835934017, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4013450365978307057, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -5348,7 +5396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4034256063814567792, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4035463950793363379, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -5380,7 +5428,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4098552045865428586, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4104429099573782003, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -5396,7 +5444,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4104429099573782003, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4137701403868364747, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -5412,7 +5460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4137701403868364747, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4146812333600004121, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -5428,7 +5476,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4146812333600004121, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4150091765913126451, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -5444,7 +5492,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4150091765913126451, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4151677135282701103, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -5460,7 +5508,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4151677135282701103, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4176224851124364261, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -5476,7 +5524,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4176224851124364261, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4176855672957482021, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -5496,7 +5544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4193474981633776934, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4201452730809696105, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -5560,7 +5608,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4228286996492902377, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4235105694718422424, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -5584,7 +5632,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4333266142334774394, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4335181244330688539, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -5604,7 +5652,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4356965814848452159, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4456996468545056916, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -5620,7 +5668,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4456996468545056916, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4541809842721210456, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -5640,7 +5688,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4559248830066664892, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4569837630624014753, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -5656,7 +5704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4569837630624014753, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4577025157519217040, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -5672,7 +5720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4577025157519217040, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4577366400045430785, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -5704,7 +5752,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4672467410391539951, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4689504244059650008, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -5728,7 +5776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4727882210270923021, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4749995864077175639, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -5748,7 +5796,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4753038866066672002, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4756156738606880861, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -5764,7 +5812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4756156738606880861, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4774939955960399788, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -5780,7 +5828,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4774939955960399788, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4782741523175392250, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -5816,7 +5864,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4917837435406474036, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4924256313538932392, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -5836,7 +5884,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4927058662975596114, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4933688178422273698, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -5852,7 +5900,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4933688178422273698, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4948042151993764632, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -5868,7 +5916,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4948042151993764632, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4949215753570913509, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -5888,7 +5936,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4979946168711061778, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4980658950769923233, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -5908,7 +5956,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4980928985768581862, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4990507751217828759, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -5936,7 +5984,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5026884878965441748, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5033008903841622983, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -5952,7 +6000,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5033008903841622983, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5046151934210514733, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -5968,7 +6016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5046151934210514733, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5101975634782564361, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -5996,7 +6044,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5164606921384838884, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5180208934908010446, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -6012,7 +6060,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5180208934908010446, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5200060108381463037, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -6032,7 +6080,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5230968418797461118, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5249964928705065038, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -6064,7 +6112,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5280972230306015266, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5295505633712584037, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -6080,7 +6128,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5295505633712584037, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5308472925082076720, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -6116,7 +6164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5443738839732033447, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5451013676313525714, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -6132,7 +6180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5451013676313525714, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5469896244364406670, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -6184,7 +6232,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5675513319161810486, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5697264781595429585, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -6200,7 +6248,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5697264781595429585, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5735302484518641639, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -6216,7 +6264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5735302484518641639, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5737419347969895619, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -6232,7 +6280,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5737419347969895619, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5788751435643707978, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -6248,7 +6296,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5788751435643707978, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5796285207103909978, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -6268,7 +6316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5819875446385491348, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5824657028655719743, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -6284,7 +6332,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5824657028655719743, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5826668708542538517, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -6300,7 +6348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826668708542538517, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5845468840702251414, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -6332,7 +6380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5936971527064951197, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5945649814697337822, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -6348,7 +6396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5945649814697337822, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5957514803058652748, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -6372,7 +6420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6040723050842134387, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6055118029783201554, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -6388,7 +6436,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6055118029783201554, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6062638291890048670, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -6416,7 +6464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6105150815060344721, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6131857390748567089, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -6436,7 +6484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6147979930714553799, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6222788944558017527, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -6452,7 +6500,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6222788944558017527, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6267359194562329746, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -6468,7 +6516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6267359194562329746, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6294550847156780511, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -6492,7 +6540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6329893485074314920, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6336503944647805477, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -6512,7 +6560,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6345043719051006948, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6357058476117972563, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -6528,7 +6576,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6357058476117972563, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6357414546039404835, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -6544,7 +6592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6357414546039404835, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6374123522659906122, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -6568,7 +6616,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6387527788581100886, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6389336651307526153, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -6592,7 +6640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6396822897595974838, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6410744172875452038, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -6608,7 +6656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6410744172875452038, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6469259059126561515, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -6628,7 +6676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6480268894638502681, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6481223714862642406, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -6644,7 +6692,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6481223714862642406, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6497118446049945744, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -6660,39 +6708,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6497118446049945744, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6503991839566451419, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
-      propertyPath: wetness
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6503991839566451419, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
-      propertyPath: tileState
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6503991839566451419, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
-      propertyPath: canBeBurnt
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6503991839566451419, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
-      propertyPath: roundsToBurn
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6542840084233702291, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6542840084233702291, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
+    - target: {fileID: 6503991839566451419, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: tileState
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6503991839566451419, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
+      propertyPath: canBeBurnt
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6503991839566451419, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
+      propertyPath: roundsToBurn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6542840084233702291, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
+      propertyPath: wetness
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6542840084233702291, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
+      propertyPath: tileState
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6542840084233702291, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: canBeBurnt
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6542840084233702291, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6550571324775834335, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -6712,7 +6760,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6551433443534368507, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6553714794420938591, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -6728,12 +6776,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6553714794420938591, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6574044692713519269, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: aa8a2692fa4cecb4b883ddd4d9c470c2, type: 2}
+      objectReference: {fileID: 2100000, guid: 942e0fde7fb17c849b006dc51001b29e, type: 2}
     - target: {fileID: 6606814535158379864, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
       value: 1
@@ -6748,7 +6796,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6606814535158379864, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6626788812566206070, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -6772,7 +6820,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630773957718414304, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6633438363643895828, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -6788,7 +6836,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6633438363643895828, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6647684289311020920, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -6804,7 +6852,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6647684289311020920, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6648596098456695981, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -6820,7 +6868,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6648596098456695981, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6692238136887530523, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -6844,7 +6892,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6741386564606775274, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6788912426738943507, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -6860,7 +6908,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6788912426738943507, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6811812083086890882, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -6880,7 +6928,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6869844015553472190, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6879330521447508815, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -6904,7 +6952,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6983350765999651335, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7004536236971513282, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -6920,7 +6968,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7004536236971513282, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7006427272344475421, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -6940,7 +6988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7011114766374589767, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7012443285841139602, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -6960,7 +7008,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7040090395400301000, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7064110837968640096, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -6976,7 +7024,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7064110837968640096, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7108466864415278669, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -6996,7 +7044,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7120961808797691943, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7126072568908552636, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -7016,7 +7064,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7131641028322565610, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7134762836173374547, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -7032,7 +7080,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7134762836173374547, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7149834567909676703, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -7048,7 +7096,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7149834567909676703, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7171657674426419065, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: gameManager
@@ -7072,7 +7120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7208079548749533941, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7209666753387476232, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -7104,7 +7152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7273703378362020024, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7282634001519851046, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -7120,7 +7168,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7282634001519851046, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7305980439932525252, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -7148,7 +7196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7330102370613267121, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7330533144987369218, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -7168,7 +7216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7342771687890996615, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7347295725631369880, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -7184,7 +7232,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7347295725631369880, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7375764691807277164, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -7200,7 +7248,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7375764691807277164, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7379922489495547417, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -7216,7 +7264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7379922489495547417, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7395073159011057981, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -7244,7 +7292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7478732667996288394, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7511786089847210094, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -7264,7 +7312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7513988527482212074, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7516842045343909446, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -7280,7 +7328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7516842045343909446, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7529038775353912926, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -7296,7 +7344,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7529038775353912926, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7533757705587294189, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -7312,7 +7360,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7533757705587294189, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7569530997745522720, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -7328,7 +7376,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7569530997745522720, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7585239249373158475, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -7344,7 +7392,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7585239249373158475, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7601469758907044106, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -7360,7 +7408,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7601469758907044106, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7606082971991136750, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -7376,7 +7424,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7606082971991136750, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7627534231020858229, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -7400,7 +7448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7690946223508337220, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7696951448009433475, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -7416,7 +7464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7696951448009433475, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7711006606780228546, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -7440,7 +7488,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7732647638737138078, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7789553294416584815, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -7456,7 +7504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7789553294416584815, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7792448173892077379, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -7472,7 +7520,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7792448173892077379, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7851144047637221993, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -7488,7 +7536,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7851144047637221993, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7893102767857835103, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -7504,7 +7552,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7893102767857835103, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7897319259570326346, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -7520,7 +7568,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7897319259570326346, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7954591566809960486, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -7540,7 +7588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7955174740939657516, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7967942939935714330, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -7556,7 +7604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7967942939935714330, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7988278881853807544, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -7572,7 +7620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7988278881853807544, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8012177037378961911, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -7612,7 +7660,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8131127108167691850, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8138810928733273178, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -7632,7 +7680,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8163146854623240954, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8186111069373315979, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -7648,7 +7696,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8186111069373315979, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8187212872146833949, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -7664,7 +7712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8187212872146833949, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8194402158968950662, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -7680,7 +7728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8194402158968950662, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8217454753829152860, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -7696,7 +7744,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8217454753829152860, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8224745724290743758, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -7716,7 +7764,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8234069381855348946, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8269532023173236621, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -7744,7 +7792,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8396340066790428814, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8407941700490602754, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -7764,7 +7812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8417222602643149585, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8424958215180942764, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -7780,7 +7828,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8424958215180942764, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8484676586145699873, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -7796,7 +7844,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8484676586145699873, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8499726834930115543, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -7824,7 +7872,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8595352342553809973, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8605703105160666943, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -7840,7 +7888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8605703105160666943, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8610696944010668216, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -7860,7 +7908,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8646250533541913551, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8647497358423475014, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -7880,7 +7928,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8648674556076716894, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8650395072651884057, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -7896,7 +7944,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8650395072651884057, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8652187134398080476, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -7912,7 +7960,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8652187134398080476, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8669590317009227926, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -7948,7 +7996,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8706148827104488538, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8739676601200225545, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -7972,7 +8020,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8746121864110322939, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8792826498085631322, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: m_Name
@@ -7996,7 +8044,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8813357830590069967, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8814779532684523855, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -8032,15 +8080,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8885618528438143078, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8907180498529216181, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
-      propertyPath: wetness
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8907180498529216181, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
-      propertyPath: tileState
+      propertyPath: wetness
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907180498529216181, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
+      propertyPath: tileState
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8907180498529216181, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: canBeBurnt
@@ -8048,7 +8096,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8907180498529216181, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8955589978399087440, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -8064,7 +8112,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8955589978399087440, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8969059985118267915, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: wetness
@@ -8080,7 +8128,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8969059985118267915, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8980782808541842928, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -8100,7 +8148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8981655815403087602, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8982902944518422020, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -8132,7 +8180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9092610788656302482, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9119811560677005315, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -8152,7 +8200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9214172425695294815, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: roundsToBurn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9219305022176475310, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -8170,6 +8218,7 @@ SceneRoots:
   - {fileID: 330585546}
   - {fileID: 410087041}
   - {fileID: 832575519}
+  - {fileID: 1061872529}
   - {fileID: 2113289641}
   - {fileID: 985714307}
   - {fileID: 664552210}

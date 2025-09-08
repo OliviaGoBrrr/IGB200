@@ -1,4 +1,5 @@
 using System.Threading;
+using UnityEditor;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -28,6 +29,9 @@ public class GameManager : MonoBehaviour
     // Player Actions
     public int roundCount = 1;
     public int maxActions = 3;
+    [SerializeField] private float[] scoreThresholds = new float[3];
+    [SerializeField] private float initialGrassPercent;
+    [SerializeField] private float finalGrassPercent;
     [HideInInspector] public int currentActionCount;
     private Vector3 lastMousePosition;
 
@@ -53,6 +57,7 @@ public class GameManager : MonoBehaviour
         Vector3 cameraPos = sceneCamera.transform.position;
         cameraPos.x = (gridManager.xMax + gridManager.xMin) / 2;
         sceneCamera.transform.position = cameraPos;
+        initialGrassPercent = gridManager.GetPercentOfTileInGrid(GameTile.TileStates.GRASS);
         state = GameState.PREP_PHASE;
         uiManager.LoadingScreen.SetActive(false);
     }
@@ -81,6 +86,31 @@ public class GameManager : MonoBehaviour
         if (state == GameState.PLAYING)
         {
             simTimer += Time.deltaTime;
+
+            if(gridManager.GetPercentOfTileInGrid(GameTile.TileStates.BURNING) == 0)
+            {
+                finalGrassPercent = 100 * (gridManager.GetPercentOfTileInGrid(GameTile.TileStates.GRASS) / initialGrassPercent);
+
+                int stars = 3;
+
+                for (int i = 0; i < scoreThresholds.Length; i++)
+                {
+                    if (finalGrassPercent > scoreThresholds[i])
+                    {
+                        Debug.Log(stars);
+                        GameWin(stars);
+                    }
+                    else
+                    {
+                        stars--;
+                    }
+                }
+
+                if (stars == 0)
+                {
+                    GameOver();
+                }
+            }
 
             if(simTimer > simTime)
             {
@@ -125,11 +155,9 @@ public class GameManager : MonoBehaviour
                 break;
 
             case GameState.GAME_OVER:
-                GameOver();
                 break;
 
             case GameState.GAME_WIN:
-                GameWin();
                 break;
         }
     }
@@ -152,14 +180,6 @@ public class GameManager : MonoBehaviour
         roundCount++;
         currentActionCount = maxActions;
         OnRoundAdvanced?.Invoke();
-
-        /*
-         * 
-                 // If there are no more burning tiles, player wins the game
-
-
-        *
-        */
     }
 
     public void PlayerActionTaken(GameTile.TileStates changeState, int actionCost)
@@ -194,8 +214,16 @@ public class GameManager : MonoBehaviour
         // Can the player change the tile's state
         if (!selectTile.CanBeChanged(changeState)) { return; }
 
+        if(changeState == GameTile.TileStates.WET_GRASS)
+        {
+            selectTile.wetness++;
+        }
+        else
+        {
+            selectTile.tileState = changeState;
+        }
+
         // Update tile
-        selectTile.tileState = changeState;
         selectTile.TileStateUpdate();
 
         currentActionCount -= actionCost;
@@ -234,7 +262,7 @@ public class GameManager : MonoBehaviour
         if(prevGameState != GameState.PAUSED)
         {
             Time.timeScale = 0;
-            uiManager.PauseScreen.SetActive(true);
+            //uiManager.PauseScreen.SetActive(true);
             Debug.Log("Game is paused");
         }
         else
@@ -248,14 +276,15 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         Debug.Log("Game Over");
-        Time.timeScale = 0.0f;
+        state = GameState.GAME_OVER;
+        //Time.timeScale = 0.0f;
         OnGameOver?.Invoke();
     }
 
-    public void GameWin()
+    public void GameWin(int starCount)
     {
-        // Game win logic
-        Debug.Log("Game Win");
+        state = GameState.GAME_WIN;
+        
     }
 
     private void OnEnable()
