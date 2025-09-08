@@ -118,11 +118,6 @@ public class GameManager : MonoBehaviour
                         stars--;
                     }
                 }
-
-                if (stars == 0)
-                {
-                    GameOver();
-                }
             }
 
             if(simTimer > simTime)

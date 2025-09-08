@@ -238,6 +238,7 @@ public class GameTile: MonoBehaviour
                 neighbourResults.Add(gridManager.masterTileGrid[gridIndexX, gridIndexZ + 1].GameTile);
             }
         } 
+        /*
         // Bottom Left
         if (gridIndexX > 0 && gridIndexZ > 0) 
         { 
@@ -274,6 +275,7 @@ public class GameTile: MonoBehaviour
                 neighbourResults.Add(gridManager.masterTileGrid[gridIndexX + 1, gridIndexZ + 1].GameTile);
             }
         }
+        */
 
         // Ensure no tiles are null
         foreach(GameTile tile in neighbourResults)
