@@ -21,5 +21,6 @@ public class TransitionScreenWorkAround : MonoBehaviour
     {
         material.SetFloat("_AnimationProgress", animation_progress);
         material.SetFloat("_Direction", direction);
+
     }
 }

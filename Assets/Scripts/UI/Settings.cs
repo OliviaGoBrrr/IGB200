@@ -8,6 +8,7 @@ using UnityEngine.Rendering;
 public class Settings : MonoBehaviour
 {
     private VisualElement ui;
+    private TemplateContainer settings;
     private VisualElement settingsPage;
 
     private Button backButton;
@@ -21,11 +22,12 @@ public class Settings : MonoBehaviour
     void Awake()
     {
         ui = GetComponent<UIDocument>().rootVisualElement;
+        
     }
 
     private void OnEnable()
     {
-        settingsPage = ui.Q<VisualElement>("SettingsPage");
+        settings = ui.Q<TemplateContainer>("Settings");
 
         backButton = ui.Q<Button>("SettingsBackButton");
         backButton.clicked += OnBackButtonClicked;
@@ -42,7 +44,7 @@ public class Settings : MonoBehaviour
 
     private void OnBackButtonClicked()
     {
-        settingsPage.style.display = DisplayStyle.None;
+        settings.style.display = DisplayStyle.None;
     }
 
     private void OnVolumeButtonClicked()

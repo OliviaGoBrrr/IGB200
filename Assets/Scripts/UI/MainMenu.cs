@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour
     private Button playButton;
 
     private Button settingsButton;
-    private VisualElement settingsPage;
+    private TemplateContainer settings;
 
     private Button exitButton;
     
@@ -38,8 +38,8 @@ public class MainMenu : MonoBehaviour
         settingsButton = ui.Q<Button>("SettingsButton");
         settingsButton.clicked += OnSettingsButtonClicked;
 
-        settingsPage = ui.Q<VisualElement>("SettingsPage");
-        settingsPage.style.display = DisplayStyle.None;
+        settings = ui.Q<TemplateContainer>("Settings");
+        settings.style.display = DisplayStyle.None;
 
         exitButton = ui.Q<Button>("ExitButton");
         exitButton.clicked += OnExitButtonClicked;
@@ -53,7 +53,7 @@ public class MainMenu : MonoBehaviour
     private void OnSettingsButtonClicked()
     {
         print("Settings Pressed!");
-        settingsPage.style.display = DisplayStyle.Flex;
+        settings.style.display = DisplayStyle.Flex;
 
     }
 

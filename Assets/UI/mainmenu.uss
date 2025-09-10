@@ -68,3 +68,53 @@
     background-color: rgb(142, 86, 43);
     scale: 1 1;
 }
+
+.category-panel {
+    top: 22px;
+    position: absolute;
+    width: 55px;
+    height: 100px;
+    background-color: rgb(241, 223, 210);
+    border-top-width: 4px;
+    border-right-width: 4px;
+    border-bottom-width: 4px;
+    border-left-width: 4px;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    border-bottom-left-radius: 24px;
+    border-left-color: rgb(57, 16, 5);
+    border-right-color: rgb(57, 16, 5);
+    border-top-color: rgb(57, 16, 5);
+    border-bottom-color: rgb(57, 16, 5);
+    background-position-y: top 0;
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.colour-option-panel {
+}
+
+.colour-option-button {
+}
+
+.category-panel {
+    top: 22px;
+    position: absolute;
+    width: 55px;
+    height: 100px;
+    background-color: rgb(241, 223, 210);
+    border-top-width: 4px;
+    border-right-width: 4px;
+    border-bottom-width: 4px;
+    border-left-width: 4px;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    border-bottom-left-radius: 24px;
+    border-left-color: rgb(57, 16, 5);
+    border-right-color: rgb(57, 16, 5);
+    border-top-color: rgb(57, 16, 5);
+    border-bottom-color: rgb(57, 16, 5);
+    background-position-y: top 0;
+    -unity-background-scale-mode: scale-to-fit;
+}
