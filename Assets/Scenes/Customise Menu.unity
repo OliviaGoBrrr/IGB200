@@ -307,6 +307,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1124346612}
   - component: {fileID: 1124346611}
+  - component: {fileID: 1124346613}
+  - component: {fileID: 1124346614}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -348,6 +350,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1124346613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124346610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39aa47917ebc1c04491324ebb316299e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1124346614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124346610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 288476970a82349439d24defa8185b70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hairType: 0
+  hairColour: '#ffce99'
+  skinColour: '#703f2a'
+  eyeColour: '#7dafda'
+  clothesColour: '#5a544d'
 --- !u!1 &2122979308
 GameObject:
   m_ObjectHideFlags: 0

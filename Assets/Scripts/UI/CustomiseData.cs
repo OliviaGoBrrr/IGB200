@@ -1,13 +1,14 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "CustomiseData", menuName = "Scriptable Objects/CustomiseData")]
-public class CustomiseData : ScriptableObject
+public class CustomiseData : MonoBehaviour
 {
-    public int hair;
+    public int hairType;
 
-    public int skin;
+    public string hairColour;
 
-    public int eyes;
+    public string skinColour;
 
-    public int body;
+    public string eyeColour;
+
+    public string clothesColour;
 }
