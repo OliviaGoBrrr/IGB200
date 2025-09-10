@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
 using UnityEngine.UIElements;
+using DG.Tweening;
+using System.Collections;
 using UnityEngine.SceneManagement;
 using static System.TimeZoneInfo;
 using UnityEditor.SearchService;
@@ -202,13 +204,16 @@ public class CustomiseMenu : MonoBehaviour
     }
     private void CategoryClicked(Button category, String categoryName, VisualElement optionsPanel)
     {
+        // goes down
         if (BUTTONcurrentCategory != category)
         {
-            BUTTONcurrentCategory.style.top = 20;
+            BUTTONcurrentCategory.style.translate = new Translate(0, 0, 0);
             currentOptionsPanel.style.display = DisplayStyle.None;
         }
-            
-        category.style.top = 5;
+
+        // goes up
+        
+        category.style.translate = new Translate(0, -15, 0);
 
 
         optionsPanel.style.display = DisplayStyle.Flex;
@@ -283,9 +288,28 @@ public class CustomiseMenu : MonoBehaviour
 
     private void ChangeBorderSize(Button button, int direction)
     {
-        button.style.borderTopWidth = 4 * direction;
-        button.style.borderBottomWidth = 4 * direction;
-        button.style.borderLeftWidth = 4 * direction;
-        button.style.borderRightWidth = 4 * direction;
+        float buttonTop = button.style.borderTopWidth.value;
+        float buttonBottom = button.style.borderBottomWidth.value;
+        float buttonLeft = button.style.borderLeftWidth.value;
+        float buttonRight = button.style.borderRightWidth.value;
+        DOTween.To(() => buttonTop, x => buttonTop = x, 6.0f * direction, 0.25f).SetEase(Ease.OutCubic).OnUpdate(() =>
+        {
+            button.style.borderTopWidth = buttonTop;
+        });
+
+        DOTween.To(() => buttonBottom, x => buttonBottom = x, 6.0f * direction, 0.25f).SetEase(Ease.OutCubic).OnUpdate(() =>
+        {
+            button.style.borderBottomWidth = buttonBottom;
+        });
+
+        DOTween.To(() => buttonLeft, x => buttonLeft = x, 6.0f * direction, 0.25f).SetEase(Ease.OutCubic).OnUpdate(() =>
+        {
+            button.style.borderLeftWidth = buttonLeft;
+        });
+
+        DOTween.To(() => buttonRight, x => buttonRight = x, 6.0f * direction, 0.25f).SetEase(Ease.OutCubic).OnUpdate(() =>
+        {
+            button.style.borderRightWidth = buttonRight;
+        });
     }
 }
