@@ -47,7 +47,7 @@ public class MainMenu : MonoBehaviour
 
     private void OnPlayButtonClicked()
     {
-        sceneLoader.LoadNextScene("Main Menu");
+        sceneLoader.LoadNextScene("GameLevel");
     }
 
     private void OnSettingsButtonClicked()

@@ -24,7 +24,7 @@ public class SceneLoader : MonoBehaviour
 
         yield return new WaitForSeconds(transitionTime);
 
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene(sceneName);
     }
 
     public void ReloadCurrentScene()
