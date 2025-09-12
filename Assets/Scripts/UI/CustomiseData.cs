@@ -1,14 +1,22 @@
 using UnityEngine;
 
-public class CustomiseData : MonoBehaviour
+public static class CustomiseData
 {
-    public int hairType;
+    public static int hairType;
 
-    public string hairColour;
+    
+    
+    
 
-    public string skinColour;
+    
 
-    public string eyeColour;
+    public static string skinColour = "#703F2A";
 
-    public string clothesColour;
+    public static string clothesColour = "#5A544D";
+
+    public static string hairColour = "#FFCE99";
+
+    public static string eyeColour = "#7DAFDA";
+
+    
 }

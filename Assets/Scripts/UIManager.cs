@@ -61,7 +61,7 @@ public class UIManager : MonoBehaviour
     public void ShowTutorialScreen()
     {
         TutorialScreen.SetActive(true);
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
     }
     
     /// Hides the tutorial screen and unpauses the game.

@@ -118,3 +118,7 @@
     background-position-y: top 0;
     -unity-background-scale-mode: scale-to-fit;
 }
+
+.shadow {
+
+}

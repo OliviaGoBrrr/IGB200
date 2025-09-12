@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,10 +9,6 @@ public class SceneLoader : MonoBehaviour
 
     [SerializeField] private float transitionTime;
 
-    public void TEST()
-    {
-        print("AAA");
-    }
 
     public void LoadNextScene(string scene)
     {
@@ -25,6 +22,14 @@ public class SceneLoader : MonoBehaviour
         yield return new WaitForSeconds(transitionTime);
 
         SceneManager.LoadScene(sceneName);
+    }
+
+    IEnumerator WaitFrames()
+    {
+
+        yield return new WaitForEndOfFrame();
+        transition.Play("CircleTransitionOut");
+
     }
 
     public void ReloadCurrentScene()

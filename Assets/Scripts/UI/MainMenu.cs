@@ -15,14 +15,16 @@ public class MainMenu : MonoBehaviour
     private TemplateContainer settings;
 
     private Button exitButton;
-    
+
+    private Button customiseButton;
+
+    private Button levelButton;
+
 
     private SceneLoader sceneLoader;
 
     void Awake()
     {
-
-
         sceneLoader = GameObject.FindGameObjectWithTag("SceneLoader").GetComponent<SceneLoader>();
 
         ui = GetComponent<UIDocument>().rootVisualElement;
@@ -42,17 +44,33 @@ public class MainMenu : MonoBehaviour
 
         exitButton = ui.Q<Button>("ExitButton");
         exitButton.clicked += OnExitButtonClicked;
+
+        customiseButton = ui.Q<Button>("CustomiseButton");
+        customiseButton.clicked += OnCustomiseButtonClicked;
+
+        levelButton = ui.Q<Button>("LevelButton");
+        levelButton.clicked += OnLevelButtonClicked;
     }
 
     private void OnPlayButtonClicked()
     {
-        sceneLoader.LoadNextScene("GameLevel");
+        sceneLoader.LoadNextScene("GameLevel1");
+    }
+
+    private void OnCustomiseButtonClicked()
+    {
+        sceneLoader.LoadNextScene("Customise Menu");
+    }
+
+    private void OnLevelButtonClicked()
+    {
+        sceneLoader.LoadNextScene("Level Select");
     }
 
     private void OnSettingsButtonClicked()
     {
         print("Settings Pressed!");
-        settings.style.display = DisplayStyle.Flex;
+        settings.style.display = DisplayStyle.Flex; // visibility = true
 
     }
 

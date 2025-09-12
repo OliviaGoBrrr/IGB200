@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 using static System.TimeZoneInfo;
 using UnityEditor.SearchService;
 using UnityEngine.Rendering;
+using UnityEditor.ShaderGraph.Internal;
 
 public class CustomiseMenu : MonoBehaviour
 {
@@ -14,13 +15,18 @@ public class CustomiseMenu : MonoBehaviour
 
     private SceneLoader sceneLoader;
 
+    private Button backButton;
+
+    private TemplateContainer settings;
+    private Button settingsButton;
+
     private Button currentlySelectedSkin;
     private Button currentlySelectedClothes;
     private Button currentlySelectedHair;
     private Button currentlySelectedEyes;
 
-    private Button BUTTONcurrentCategory;
-    private string currentCategory = "Skin";
+    private Button currentCategory; // last used category
+    private string currentCategorySwitch = "Skin"; // used for switch
     private VisualElement currentOptionsPanel;
 
     // Category Buttons
@@ -76,20 +82,32 @@ public class CustomiseMenu : MonoBehaviour
 
     private Array allButtons;
 
-    private CustomiseData customisationData;
+    //private CustomiseData customisationData;
 
     private Color newColour;
 
     void Awake()
     {
+        sceneLoader = GameObject.FindGameObjectWithTag("SceneLoader").GetComponent<SceneLoader>();
+
         ui = GetComponent<UIDocument>().rootVisualElement;
 
-        customisationData = GetComponent<CustomiseData>();
+        //customisationData = GetComponent<CustomiseData>();
 
     }
 
     private void OnEnable()
     {
+        backButton = ui.Q<Button>("BackButton");
+        backButton.clicked += OnBackButtonClicked;
+
+        settingsButton = ui.Q<Button>("SettingsButton");
+        settingsButton.clicked += OnSettingsButtonClicked;
+
+        settings = ui.Q<TemplateContainer>("Settings");
+        settings.style.display = DisplayStyle.None;
+
+
         skinPanel = ui.Q<VisualElement>("SkinOptionsPanel");
         skinCategory = ui.Q<Button>("SkinCategory");
         skinCategory.clicked += SkinCategoryClicked;
@@ -147,7 +165,7 @@ public class CustomiseMenu : MonoBehaviour
 
 
         // setting a ton of vars so when checked for the first time they contain an object
-        BUTTONcurrentCategory = skinCategory;
+        currentCategory = skinCategory;
         currentlySelectedSkin = skinOption1;
         currentlySelectedClothes = clothesOption1;
         currentlySelectedHair = hairOption1;
@@ -165,26 +183,26 @@ public class CustomiseMenu : MonoBehaviour
         foreach (Button button in allButtons)
         {
             button.clickable.clickedWithEventInfo += Clickable_clickedWithEventInfo;
-            print("a");
         }
 
 
-        // set character colours immediately
+        // set character base colours immediately
 
-        ColorUtility.TryParseHtmlString(customisationData.skinColour, out newColour);
+        ColorUtility.TryParseHtmlString(CustomiseData.skinColour, out newColour);
         characterHead.style.unityBackgroundImageTintColor = newColour;
 
-        ColorUtility.TryParseHtmlString(customisationData.clothesColour, out newColour);
+        ColorUtility.TryParseHtmlString(CustomiseData.clothesColour, out newColour);
         characterBody.style.unityBackgroundImageTintColor = newColour;
         characterHat.style.unityBackgroundImageTintColor = newColour;
 
-        ColorUtility.TryParseHtmlString(customisationData.hairColour, out newColour);
+        ColorUtility.TryParseHtmlString(CustomiseData.hairColour, out newColour);
         characterHair.style.unityBackgroundImageTintColor = newColour;
         characterBangs.style.unityBackgroundImageTintColor = newColour;
 
-        ColorUtility.TryParseHtmlString(customisationData.eyeColour, out newColour);
+        ColorUtility.TryParseHtmlString(CustomiseData.eyeColour, out newColour);
         characterEyes.style.unityBackgroundImageTintColor = newColour;
     }
+
     // i know this is inefficient, i just want to get the feature working for now
     private void SkinCategoryClicked()
     {
@@ -202,30 +220,53 @@ public class CustomiseMenu : MonoBehaviour
     {
         CategoryClicked(eyesCategory, "Eyes", eyesPanel);
     }
-    private void CategoryClicked(Button category, String categoryName, VisualElement optionsPanel)
+    Button a;
+    private void CategoryClicked(Button newCategory, String categoryName, VisualElement optionsPanel)
     {
-        // goes down
-        if (BUTTONcurrentCategory != category)
+        // moves last category button down
+        if (currentCategory != newCategory)
         {
-            BUTTONcurrentCategory.style.translate = new Translate(0, 0, 0);
+            float butPosY = currentCategory.transform.position.y;
+
+            DOTween.Kill("increaseCategory"); // kill other tween so no overlap
+
+            DOTween.To(() => butPosY, x => butPosY = x, 0.0f, 0.25f).SetId("decreaseCategory").SetEase(Ease.OutCubic).OnUpdate(() =>
+            {
+                print(butPosY);
+                currentCategory.transform.position = new Vector2(0, butPosY);
+            }).OnComplete(() =>
+            {
+                currentCategory = newCategory;
+            });
+
+            //currentCategory.transform.position = new Vector2(0, 0);
             currentOptionsPanel.style.display = DisplayStyle.None;
+
         }
 
-        // goes up
         
-        category.style.translate = new Translate(0, -15, 0);
+        // moves selected category button up
 
+        float catPosY = newCategory.transform.position.y;
+
+        //DOTween.Kill("decreaseCategory"); // kill other tween so no overlap
+
+        DOTween.To(() => catPosY, x => catPosY = x, -15.0f, 0.25f).SetId("increaseCategory").SetEase(Ease.OutCubic).OnUpdate(() =>
+        {
+            newCategory.transform.position = new Vector2(0, catPosY);
+        });
+
+        //category.style.translate = new Translate(0, -15, 0);
 
         optionsPanel.style.display = DisplayStyle.Flex;
         currentOptionsPanel = optionsPanel;
-        currentCategory = categoryName;
-        BUTTONcurrentCategory = category;
+        currentCategorySwitch = categoryName;
     }
 
     private void Clickable_clickedWithEventInfo(EventBase obj)
     {
         var button = (Button)obj.target;
-        switch(currentCategory)
+        switch(currentCategorySwitch)
         {
             case "Skin":
                 OptionSelected(button, currentlySelectedSkin);
@@ -233,9 +274,9 @@ public class CustomiseMenu : MonoBehaviour
                 currentlySelectedSkin = button;
 
                 print("skin colour changed to " + button.text);
-                customisationData.skinColour = button.text;
+                CustomiseData.skinColour = button.text;
 
-                ColorUtility.TryParseHtmlString(button.text, out newColour);
+                ColorUtility.TryParseHtmlString(CustomiseData.skinColour, out newColour);
                 characterHead.style.unityBackgroundImageTintColor = newColour;
 
                 break;
@@ -245,7 +286,7 @@ public class CustomiseMenu : MonoBehaviour
                 currentlySelectedClothes = button;
 
                 print("clothes colour changed to " + button.text);
-                customisationData.clothesColour = button.text;
+                CustomiseData.clothesColour = button.text;
 
                 ColorUtility.TryParseHtmlString(button.text, out newColour);
                 characterBody.style.unityBackgroundImageTintColor = newColour;
@@ -258,7 +299,7 @@ public class CustomiseMenu : MonoBehaviour
                 currentlySelectedHair = button;
 
                 print("hair colour changed to " + button.text);
-                customisationData.hairColour = button.text;
+                CustomiseData.hairColour = button.text;
 
                 ColorUtility.TryParseHtmlString(button.text, out newColour);
                 characterHair.style.unityBackgroundImageTintColor = newColour;
@@ -271,7 +312,7 @@ public class CustomiseMenu : MonoBehaviour
                 currentlySelectedEyes = button;
 
                 print("eye colour changed to " + button.text);
-                customisationData.eyeColour = button.text;
+                CustomiseData.eyeColour = button.text;
 
                 ColorUtility.TryParseHtmlString(button.text, out newColour);
                 characterEyes.style.unityBackgroundImageTintColor = newColour;
@@ -292,6 +333,7 @@ public class CustomiseMenu : MonoBehaviour
         float buttonBottom = button.style.borderBottomWidth.value;
         float buttonLeft = button.style.borderLeftWidth.value;
         float buttonRight = button.style.borderRightWidth.value;
+
         DOTween.To(() => buttonTop, x => buttonTop = x, 6.0f * direction, 0.25f).SetEase(Ease.OutCubic).OnUpdate(() =>
         {
             button.style.borderTopWidth = buttonTop;
@@ -311,5 +353,16 @@ public class CustomiseMenu : MonoBehaviour
         {
             button.style.borderRightWidth = buttonRight;
         });
+    }
+
+    private void OnSettingsButtonClicked()
+    {
+        print("Settings Pressed!");
+        settings.style.display = DisplayStyle.Flex; // visibility = true
+
+    }
+    private void OnBackButtonClicked()
+    {
+        sceneLoader.LoadNextScene("Main Menu");
     }
 }
