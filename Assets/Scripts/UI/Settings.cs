@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 using static System.TimeZoneInfo;
 using UnityEditor.SearchService;
 using UnityEngine.Rendering;
+using UnityEngine.Audio;
 
 public class Settings : MonoBehaviour
 {
@@ -15,8 +16,9 @@ public class Settings : MonoBehaviour
     private Button backBGButton;
 
     private Button volumeButton;
-
     private Button musicButton;
+
+    [SerializeField] AudioMixer audioMixer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -49,11 +51,15 @@ public class Settings : MonoBehaviour
 
     private void OnVolumeButtonClicked()
     {
-        print("Volume toggled");
+        audioMixer.GetFloat("VolumeSoundFX", out float SoundFXVol);
+        if (SoundFXVol == 0) { audioMixer.SetFloat("VolumeSoundFX", -80f); }
+        else { audioMixer.SetFloat("VolumeSoundFX", 0f); }
     }
 
     private void OnMusicButtonClicked()
     {
-        print("music toggled");
+        audioMixer.GetFloat("VolumeMusic", out float MusicVol);
+        if (MusicVol == 0) { audioMixer.SetFloat("VolumeMusic", -80f); }
+        else { audioMixer.SetFloat("VolumeMusic", 0f); }
     }
 }
