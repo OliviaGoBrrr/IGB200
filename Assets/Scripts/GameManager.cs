@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private UIManager uiManager;
     public Camera sceneCamera;
     public SceneAudio sceneAudio;
+    public PlayerAnimator playerAnimator;
     public GameState state;
     private GameState prevGameState;
 
@@ -206,6 +207,8 @@ public class GameManager : MonoBehaviour
         var tileGrid = gridManager.masterTileGrid;
 
         Vector3 selectCellPos = GetSelectedGridPosition(true);
+
+        playerAnimator.Animate(selectCellPos);
 
         // If the player selects outside of the grid, it'll return Vector3(0, -1, 0)
         // Therefore, if y is less than 0, don't do the action
