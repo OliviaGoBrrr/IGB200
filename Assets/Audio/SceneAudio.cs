@@ -9,7 +9,7 @@ public class SceneAudio : MonoBehaviour
     public void DrumBeat(float intensity)
     {
         drumMusicAudio.volume = intensity;
-        drumMusicAudio.pitch = Mathf.Pow(1.059463f, Random.Range(0, 5)); // Randomly increases pitch
+        drumMusicAudio.pitch = Mathf.Pow(1.059463f, Random.Range(0, 2)); // Randomly increases pitch
         drumMusicAudio.resource = drumBeats.DrumBeats[Random.Range(0, drumBeats.DrumBeats.Count)];
         drumMusicAudio.Play();
     }

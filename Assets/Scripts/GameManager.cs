@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GridManager gridManager;
     [SerializeField] private UIManager uiManager;
     public Camera sceneCamera;
+    public SceneAudio sceneAudio;
     public GameState state;
     private GameState prevGameState;
 
@@ -188,6 +189,8 @@ public class GameManager : MonoBehaviour
         roundCount++;
         currentActionCount = maxActions;
         OnRoundAdvanced?.Invoke();
+
+        sceneAudio.DrumBeat(1f); // Plays drum beat
     }
 
     public void PlayerActionTaken(GameTile.TileStates changeState, int actionCost)
