@@ -16,24 +16,49 @@ public class PlayerAnimator : MonoBehaviour
     public List<GameObject> eyesList;
     public List<GameObject> highlightList;
 
+    //[SerializeField] private SpriteRenderer 
+
+    private Color newColour;
+
     public void Awake()
     {
-        animTargets[0].GetComponent<SpriteRenderer>().color = hexToColor(CustomiseData.clothesColour);
-        animTargets[1].GetComponent<SpriteRenderer>().color = hexToColor(CustomiseData.clothesColour);
-        animTargets[2].GetComponent<SpriteRenderer>().color = hexToColor(CustomiseData.skinColour);
+        //animTargets[0].GetComponent<SpriteRenderer>().color = hexToColor(CustomiseData.clothesColour);
+        //animTargets[1].GetComponent<SpriteRenderer>().color = hexToColor(CustomiseData.clothesColour);
+        //animTargets[2].GetComponent<SpriteRenderer>().color = hexToColor(CustomiseData.skinColour);
+
+        
 
         Console.WriteLine(hexToColor(CustomiseData.skinColour));
 
-        bangList[CustomiseData.hairType].GetComponent<SpriteRenderer>().color = new Color(hexToColor(CustomiseData.hairColour).r, hexToColor(CustomiseData.hairColour).g, hexToColor(CustomiseData.hairColour).b, 1);
-        hairList[CustomiseData.hairType].GetComponent<SpriteRenderer>().color = new Color(hexToColor(CustomiseData.hairColour).r, hexToColor(CustomiseData.hairColour).g, hexToColor(CustomiseData.hairColour).b, 1);
-        eyesList[CustomiseData.eyeType].GetComponent<SpriteRenderer>().color = new Color(hexToColor(CustomiseData.eyeColour).r, hexToColor(CustomiseData.eyeColour).g, hexToColor(CustomiseData.eyeColour).b, 1);
-        highlightList[CustomiseData.eyeType].GetComponent<SpriteRenderer>().color = new Color(hexToColor(CustomiseData.eyeColour).r, hexToColor(CustomiseData.eyeColour).g, hexToColor(CustomiseData.eyeColour).b, 1);
+        //bangList[CustomiseData.hairType].GetComponent<SpriteRenderer>().color = new Color(hexToColor(CustomiseData.hairColour).r, hexToColor(CustomiseData.hairColour).g, hexToColor(CustomiseData.hairColour).b, 1);
+        //hairList[CustomiseData.hairType].GetComponent<SpriteRenderer>().color = new Color(hexToColor(CustomiseData.hairColour).r, hexToColor(CustomiseData.hairColour).g, hexToColor(CustomiseData.hairColour).b, 1);
+        //eyesList[CustomiseData.eyeType].GetComponent<SpriteRenderer>().color = new Color(hexToColor(CustomiseData.eyeColour).r, hexToColor(CustomiseData.eyeColour).g, hexToColor(CustomiseData.eyeColour).b, 1);
+        //highlightList[CustomiseData.eyeType].GetComponent<SpriteRenderer>().color = new Color(hexToColor(CustomiseData.eyeColour).r, hexToColor(CustomiseData.eyeColour).g, hexToColor(CustomiseData.eyeColour).b, 1);
+
         animTargets.Add(bangList[CustomiseData.hairType].GetComponent<Animator>());
         animTargets.Add(hairList[CustomiseData.hairType].GetComponent<Animator>());
         animTargets.Add(eyesList[CustomiseData.eyeType].GetComponent<Animator>());
         animTargets.Add(highlightList[CustomiseData.eyeType].GetComponent<Animator>());
 
+
+        ColorUtility.TryParseHtmlString(CustomiseData.skinColour, out newColour);
+        animTargets[2].GetComponent<SpriteRenderer>().material.color = newColour; // change Head colour
+
+        ColorUtility.TryParseHtmlString(CustomiseData.clothesColour, out newColour);
+        animTargets[0].GetComponent<SpriteRenderer>().material.color = newColour; // change Body colour
+        animTargets[1].GetComponent<SpriteRenderer>().material.color = newColour; // change Hat colour
+
+        ColorUtility.TryParseHtmlString(CustomiseData.hairColour, out newColour);
+        animTargets[4].GetComponent<SpriteRenderer>().material.color = newColour; // change Bangs colour
+        animTargets[5].GetComponent<SpriteRenderer>().material.color = newColour; // change Hair colour
         
+
+        ColorUtility.TryParseHtmlString(CustomiseData.eyeColour, out newColour);
+        animTargets[6].GetComponent<SpriteRenderer>().material.color = newColour; // change Eye colour
+
+        animTargets[3].GetComponent<SpriteRenderer>().material.color = Color.white; // change Sclera colour
+        animTargets[7].GetComponent<SpriteRenderer>().material.color = Color.white; // change Highlight colour
+
         // read the current character save
         // load the correct bangs, eyes, hair, highlight
         // load the correct colours and such
