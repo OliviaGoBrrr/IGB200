@@ -14,6 +14,10 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public GameTile.TileStates changeState;
     private GameManager gameManager;
 
+    [Header("Action Audio")]
+    public AudioClip dragAudio;
+    public float intensity;
+
     void Start()
     {
        gameManager = FindFirstObjectByType<GameManager>();
@@ -67,6 +71,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         if (draggingIcon != null) { Destroy(draggingIcon); }
 
         gameManager.PlayerActionTaken(changeState, this.actionCost);
+        gameManager.sceneAudio.PlayGameSound(dragAudio, intensity);
     }
 
     static public T FindInParents<T>(GameObject go) where T : Component
