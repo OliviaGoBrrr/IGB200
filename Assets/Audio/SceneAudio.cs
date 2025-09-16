@@ -7,7 +7,8 @@ public class SceneAudio : MonoBehaviour
     [SerializeField] AudioSource drumMusicAudio;
     [SerializeField] AudioSource gameSoundFXAudio;
     [SerializeField] AudioSource UISoundFXAudio;
-    [Tooltip("Causes the drum to beat once. Intensity scales from 0~1")]
+
+    [SerializeField] AudioClip buttonClick;
     public void DrumBeat(float intensity)
     {
         drumMusicAudio.volume = intensity;
@@ -21,5 +22,11 @@ public class SceneAudio : MonoBehaviour
         gameSoundFXAudio.pitch = Mathf.Pow(1.059463f, Random.Range(0, 2)); // Randomly increases pitch
         gameSoundFXAudio.resource = clip;
         gameSoundFXAudio.Play();
+    }
+    public void PlayButtonClick(int pitchMag)
+    {
+        gameSoundFXAudio.pitch = Mathf.Pow(1.059463f, pitchMag); // Randomly increases pitch
+        UISoundFXAudio.resource = buttonClick;
+        UISoundFXAudio.Play();
     }
 }

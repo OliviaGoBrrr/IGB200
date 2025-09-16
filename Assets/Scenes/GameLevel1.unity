@@ -326,7 +326,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 5
   m_Sprite: {fileID: -797711696, guid: 45bf869cee7eff74c8d856c1502bd3eb, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -538,13 +538,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144703106}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 82391645}
-  m_Father: {fileID: 628096953}
+  m_Father: {fileID: 769402328}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2136,7 +2136,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: -734696353, guid: 61d23990f94c18d4a99f44cf0cc9d7d2, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3164,7 +3164,6 @@ RectTransform:
   - {fileID: 256405645}
   - {fileID: 220156511}
   - {fileID: 769402328}
-  - {fileID: 144703107}
   m_Father: {fileID: 1023479409}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3646,6 +3645,7 @@ RectTransform:
   - {fileID: 94059771}
   - {fileID: 1478494203}
   - {fileID: 1413680040}
+  - {fileID: 144703107}
   m_Father: {fileID: 628096953}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3755,6 +3755,7 @@ MonoBehaviour:
   drumMusicAudio: {fileID: 1217992921}
   gameSoundFXAudio: {fileID: 1069796530}
   UISoundFXAudio: {fileID: 18678485}
+  buttonClick: {fileID: 8300000, guid: 7b9396e59e3734d4ba01d305ec69f1d1, type: 3}
 --- !u!1 &847259903
 GameObject:
   m_ObjectHideFlags: 0
@@ -5855,7 +5856,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 6
   m_Sprite: {fileID: -1204570253, guid: 0ae1c7c9e86146642aae47159674937f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -8094,16 +8095,12 @@ MonoBehaviour:
   - {fileID: 366677559}
   - {fileID: 1430216805}
   - {fileID: 944010298}
-  - {fileID: 2135447447}
-  - {fileID: 40912270}
-  - {fileID: 394524658}
-  - {fileID: 1316697083}
   bangList:
   - {fileID: 2135447444}
-  eyesList:
-  - {fileID: 40912267}
   hairList:
   - {fileID: 394524655}
+  eyesList:
+  - {fileID: 40912267}
   highlightList:
   - {fileID: 1316697080}
 --- !u!1 &1985570442
@@ -8602,7 +8599,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 7
   m_Sprite: {fileID: -1287494562, guid: 3058d5eb3a147854baebff70ddee0458, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

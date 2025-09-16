@@ -45,6 +45,9 @@ TagManager:
   - name: 2D Cutout
     uniqueID: 1589005665
     locked: 0
+  - name: Transition
+    uniqueID: 1950506555
+    locked: 0
   m_RenderingLayers:
   - Default
   - Light Layer 1

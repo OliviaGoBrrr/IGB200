@@ -180,7 +180,7 @@ public class GameManager : MonoBehaviour
             Debug.LogError("There are no Burning tiles to start simulation. Please make one tile a Burning tile");
             return;
         }
-
+        sceneAudio.PlayButtonClick(5);
         SetGameState(GameState.PLAYING);
         
     }
