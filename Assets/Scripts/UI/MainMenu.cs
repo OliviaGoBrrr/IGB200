@@ -7,6 +7,8 @@ using UnityEngine.Rendering;
 
 public class MainMenu : MonoBehaviour
 {
+    public MenuAudio menuAudio;
+
     private VisualElement ui;
 
     private Button playButton;
@@ -54,16 +56,19 @@ public class MainMenu : MonoBehaviour
 
     private void OnPlayButtonClicked()
     {
+        menuAudio.PlayButtonClick(1);
         sceneLoader.LoadNextScene("GameLevel1");
     }
 
     private void OnCustomiseButtonClicked()
     {
+        menuAudio.PlayButtonClick(20);
         sceneLoader.LoadNextScene("Customise Menu");
     }
 
     private void OnLevelButtonClicked()
     {
+        menuAudio.PlayButtonClick(3);
         sceneLoader.LoadNextScene("Level Select");
     }
 
@@ -71,7 +76,7 @@ public class MainMenu : MonoBehaviour
     {
         print("Settings Pressed!");
         settings.style.display = DisplayStyle.Flex; // visibility = true
-
+        menuAudio.PlayButtonClick(5);
     }
 
     private void OnExitButtonClicked()

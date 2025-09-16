@@ -25,7 +25,7 @@ public class SceneAudio : MonoBehaviour
     }
     public void PlayButtonClick(int pitchMag)
     {
-        gameSoundFXAudio.pitch = Mathf.Pow(1.059463f, pitchMag); // Randomly increases pitch
+        UISoundFXAudio.pitch = Mathf.Pow(1.059463f, pitchMag); // Randomly increases pitch
         UISoundFXAudio.resource = buttonClick;
         UISoundFXAudio.Play();
     }
