@@ -8,6 +8,11 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] private Animator transition;
     [SerializeField] private float transitionTime;
 
+    private void Start()
+    {
+        StartCoroutine(WaitFrames());
+    }
+
 
     public void LoadNextScene(string scene)
     {
@@ -26,7 +31,7 @@ public class SceneLoader : MonoBehaviour
     IEnumerator WaitFrames()
     {
 
-        yield return new WaitForEndOfFrame();
+        yield return 5;
         transition.Play("CircleTransitionOut");
 
     }

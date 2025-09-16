@@ -14,6 +14,10 @@ public class TransitionScreenWorkAround : MonoBehaviour
     {
         material = GetComponent<Image>().material;
         animation_progress = 1.0f;
+        direction = 1.0f;
+
+        material.SetFloat("_AnimationProgress", animation_progress);
+        material.SetFloat("_Direction", direction);
     }
 
     // Update is called once per frame

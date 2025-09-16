@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: ed6dbfc518964394592d9f20a7ae3a85, type: 2}
-  animation_progress: 0
+  animation_progress: 1
   direction: 1
 --- !u!1 &7587642000689406555
 GameObject:
@@ -209,7 +209,7 @@ Canvas:
   m_GameObject: {fileID: 7587642000689406555}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
