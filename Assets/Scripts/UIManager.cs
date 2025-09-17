@@ -1,19 +1,37 @@
-using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Video;
+using TMPro;
+
+
+[System.Serializable]
+public class TutorialStep
+{
+    
+    public VideoClip videoClip;
+    public GameObject[] elementsToShow; 
+}
 
 public class UIManager : MonoBehaviour
 {
 
-    private Canvas canvas;
     public GameObject LoadingScreen;
     public GameObject GameOverScreen;
     public GameObject PauseScreen;
     public GameObject GameWinScreen;
 
-    // tutorial screen
-    public GameObject TutorialScreen;
+
+    public GameObject TutorialScreen;
+    public VideoPlayer tutorialVideoPlayer;
+    public RawImage tutorialVideoDisplay;
 
 
+    public TutorialStep[] tutorialSteps; 
+
+    private int currentVideoIndex = 0;
+
+
+ 
     [SerializeField] private TMP_Text starCountText;
     [SerializeField] private TMP_Text roundText;
     [SerializeField] private string roundsString;
@@ -24,7 +42,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text warningTextObject;
     private GameManager gameManager;
 
-
     void Awake()
     {
         gameManager = FindFirstObjectByType<GameManager>();
@@ -32,11 +49,7 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-
-        // Show the tutorial screen right at the start of the level
         ShowTutorialScreen();
-
-
         UpdatePlayerUI();
         GameOverScreen.SetActive(false);
         PauseScreen.SetActive(false);
@@ -44,8 +57,8 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        // Warning timer logic 
-        if (warningTextObject.gameObject.activeSelf)
+        // Warning timer logic
+        if (warningTextObject.gameObject.activeSelf)
         {
             warningTimer -= Time.deltaTime;
             if (warningTimer < 0)
@@ -56,23 +69,79 @@ public class UIManager : MonoBehaviour
     }
 
 
-    // Shows the tutorial screen and pauses the game.
-
-    public void ShowTutorialScreen()
+    public void ShowTutorialScreen()
     {
         TutorialScreen.SetActive(true);
-        //Time.timeScale = 0f;
-    }
+        
 
-    // Hides the tutorial screen and unpauses the game.
+        // Start with the first tutorial step
+        if (tutorialSteps.Length > 0)
+        {
+            currentVideoIndex = 0;
+            ShowTutorialStep(currentVideoIndex);
+        }
+    }
+
 
     public void HideTutorialScreen()
     {
         TutorialScreen.SetActive(false);
-        Time.timeScale = 1f;
+        tutorialVideoPlayer.Stop();
+        HideAllTutorialElements(); // Make sure all extra UI is hidden
+       
     }
 
 
+    public void NextTutorialVideo()
+    {
+        if (tutorialSteps.Length == 0) return;
+
+        // Move to the next index, wrapping around
+        currentVideoIndex = (currentVideoIndex + 1) % tutorialSteps.Length;
+        ShowTutorialStep(currentVideoIndex);
+    }
+
+
+    private void ShowTutorialStep(int index)
+    {
+        if (index < 0 || index >= tutorialSteps.Length) return;
+
+        
+        HideAllTutorialElements();
+
+        
+        TutorialStep currentStep = tutorialSteps[index];
+
+     
+        foreach (GameObject element in currentStep.elementsToShow)
+        {
+            if (element != null)
+            {
+                element.SetActive(true);
+            }
+        }
+
+        
+        tutorialVideoPlayer.clip = currentStep.videoClip;
+        tutorialVideoPlayer.Play();
+    }
+
+    
+    private void HideAllTutorialElements()
+    {
+        foreach (TutorialStep step in tutorialSteps)
+        {
+            foreach (GameObject element in step.elementsToShow)
+            {
+                if (element != null)
+                {
+                    element.SetActive(false);
+                }
+            }
+        }
+    }
+
+ 
 
     private void DisplayWarning()
     {
@@ -96,6 +165,8 @@ public class UIManager : MonoBehaviour
         GameWinScreen.SetActive(true);
         starCountText.SetText($"Stars: {starCount}");
     }
+
+
 
     private void OnEnable()
     {
