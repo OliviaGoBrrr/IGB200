@@ -1063,6 +1063,8 @@ MonoBehaviour:
   menuAudio: {fileID: 1959541763}
   characterFaceSmile: {fileID: -104935839, guid: bac3dfe8af8528d4dbf8e97c94f31f8a, type: 3}
   characterFaceNormal: {fileID: -1745963983, guid: bac3dfe8af8528d4dbf8e97c94f31f8a, type: 3}
+  characterBodySmile: {fileID: -1752273152, guid: 5a75631cc04bd9844994e67fdc1df875, type: 3}
+  characterBodyNormal: {fileID: -1820288187, guid: 5a75631cc04bd9844994e67fdc1df875, type: 3}
 --- !u!114 &2082070636
 MonoBehaviour:
   m_ObjectHideFlags: 0

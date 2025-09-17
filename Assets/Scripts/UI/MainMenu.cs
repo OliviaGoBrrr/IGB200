@@ -133,7 +133,6 @@ public class MainMenu : MonoBehaviour
 
     private void OnSettingsButtonClicked()
     {
-        print("Settings Pressed!");
         settings.style.display = DisplayStyle.Flex; // visibility = true
         menuAudio.PlayButtonClick(5);
     }

@@ -25,6 +25,7 @@ public class UIManager : MonoBehaviour
     public VideoPlayer tutorialVideoPlayer;
     public RawImage tutorialVideoDisplay;
 
+    public GameObject UI; // temp fix
 
     public TutorialStep[] tutorialSteps; 
 
@@ -53,6 +54,8 @@ public class UIManager : MonoBehaviour
         UpdatePlayerUI();
         GameOverScreen.SetActive(false);
         PauseScreen.SetActive(false);
+
+        //UI.SetActive(false);
     }
 
     void Update()
@@ -88,7 +91,7 @@ public class UIManager : MonoBehaviour
         TutorialScreen.SetActive(false);
         tutorialVideoPlayer.Stop();
         HideAllTutorialElements(); // Make sure all extra UI is hidden
-       
+        //UI.SetActive(true);
     }
 
 

@@ -357,7 +357,6 @@ public class CustomiseMenu : MonoBehaviour
 
     private void OnSettingsButtonClicked()
     {
-        print("Settings Pressed!");
         settings.style.display = DisplayStyle.Flex; // visibility = true
 
     }

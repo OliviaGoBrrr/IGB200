@@ -47,6 +47,7 @@
     transition-property: scale;
     transition-duration: 0.2s;
     transition-timing-function: ease-out-cubic;
+    -unity-background-image-tint-color: rgb(241, 222, 208);
 }
 
 .unity-button-active:active {

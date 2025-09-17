@@ -6,7 +6,7 @@ using DG.Tweening;
 public class LevelSelectManager : MonoBehaviour
 {
     
-    public SceneLoader sceneLoader;
+    private SceneLoader sceneLoader;
 
     private VisualElement ui;
 
@@ -16,6 +16,8 @@ public class LevelSelectManager : MonoBehaviour
     private Button backButton;
 
     private Button level1;
+    private Button level2;
+    private Button level3;
 
     private Array allLevels;
 
@@ -40,11 +42,12 @@ public class LevelSelectManager : MonoBehaviour
 
 
         level1 = ui.Q<Button>("LevelButton1");
-
+        level2 = ui.Q<Button>("LevelButton2");
+        level3 = ui.Q<Button>("LevelButton3");
 
         allLevels = new Button[]
         {
-            level1 // add level vars to this array and it will auto-write out the other bit of code needed
+            level1, level2, level3 // add level vars to this array and it will auto-write out the other bit of code needed
         };
 
         foreach (Button button in allLevels)
@@ -71,7 +74,7 @@ public class LevelSelectManager : MonoBehaviour
         sceneLoader.LoadNextScene("GameLevel" + button.text);
     }
 
-
+    /*
     public void LoadLevel(string sceneToLoad)
     {
         // Check if the sceneLoader reference is assigned to prevent errors.
@@ -84,4 +87,5 @@ public class LevelSelectManager : MonoBehaviour
             Debug.LogError("SceneLoader is not assigned. Please assign the SceneLoader GameObject to the SceneLoader variable in the Inspector.");
         }
     }
+    */
 }
