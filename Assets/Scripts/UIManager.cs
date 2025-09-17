@@ -1,19 +1,19 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    
+
     private Canvas canvas;
     public GameObject LoadingScreen;
     public GameObject GameOverScreen;
     public GameObject PauseScreen;
     public GameObject GameWinScreen;
 
-    // tutorial screen
-    public GameObject TutorialScreen;
+    // tutorial screen
+    public GameObject TutorialScreen;
 
-    
+
     [SerializeField] private TMP_Text starCountText;
     [SerializeField] private TMP_Text roundText;
     [SerializeField] private string roundsString;
@@ -32,11 +32,11 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        
+
         // Show the tutorial screen right at the start of the level
         ShowTutorialScreen();
 
-        
+
         UpdatePlayerUI();
         GameOverScreen.SetActive(false);
         PauseScreen.SetActive(false);
@@ -44,8 +44,8 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        // Warning timer logic 
-        if (warningTextObject.gameObject.activeSelf)
+        // Warning timer logic 
+        if (warningTextObject.gameObject.activeSelf)
         {
             warningTimer -= Time.deltaTime;
             if (warningTimer < 0)
@@ -56,23 +56,23 @@ public class UIManager : MonoBehaviour
     }
 
 
-    /// Shows the tutorial screen and pauses the game.
+    // Shows the tutorial screen and pauses the game.
 
-    public void ShowTutorialScreen()
+    public void ShowTutorialScreen()
     {
         TutorialScreen.SetActive(true);
-        //Time.timeScale = 0f;
-    }
-    
-    /// Hides the tutorial screen and unpauses the game.
-    
+        //Time.timeScale = 0f;
+    }
+
+    // Hides the tutorial screen and unpauses the game.
+
     public void HideTutorialScreen()
     {
         TutorialScreen.SetActive(false);
-        Time.timeScale = 1f; 
+        Time.timeScale = 1f;
     }
 
-    
+
 
     private void DisplayWarning()
     {
