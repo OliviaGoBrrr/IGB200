@@ -67,6 +67,7 @@
 .unity-button-hover:hover {
     background-color: rgb(142, 86, 43);
     scale: 1 1;
+    background-image: none;
 }
 
 .category-panel {
@@ -120,5 +121,4 @@
 }
 
 .shadow {
-
 }

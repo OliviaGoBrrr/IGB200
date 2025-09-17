@@ -5,7 +5,7 @@ Shader "Unlit/CircleTransition"
         _MainTex("Texture", 2D) = "white" {}
         _AnimationProgress("Animation Progress", Range (0.0, 1.0)) = 0.5
         _Colour("Colour", Color) = (0, 0, 0, 1)
-        _Spacing("Spacing", Float) = 50.0
+        _Spacing("Spacing", Float) = 100.0
         _DotSize("Dot Size", Float) = 1.0
         _Direction("Direction", Float) = 1.0
     }

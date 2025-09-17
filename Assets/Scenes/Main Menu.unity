@@ -1061,6 +1061,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuAudio: {fileID: 1959541763}
+  characterFaceSmile: {fileID: -104935839, guid: bac3dfe8af8528d4dbf8e97c94f31f8a, type: 3}
+  characterFaceNormal: {fileID: -1745963983, guid: bac3dfe8af8528d4dbf8e97c94f31f8a, type: 3}
 --- !u!114 &2082070636
 MonoBehaviour:
   m_ObjectHideFlags: 0
