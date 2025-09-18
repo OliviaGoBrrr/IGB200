@@ -299,7 +299,7 @@ public class GameManager : MonoBehaviour
     {
         state = GameState.GAME_WIN;
 
-        uiManager.DisplayGameWinUI(starCount);
+        //uiManager.DisplayGameWinUI(starCount);
 
         Debug.Log("Game win biiiitch");
         

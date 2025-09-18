@@ -1,5 +1,5 @@
 using Unity.VisualScripting;
-using UnityEditor.EditorTools;
+//using UnityEditor.EditorTools;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -122,8 +122,7 @@ public class GameTile: MonoBehaviour
                 if(viableTile.affected == false)
                 {
                     viableTile.affected = true;
-                    viableTile.wetness--;
-                    if(viableTile.wetness < 0)
+                    if(viableTile.tileState == TileStates.DRY_GRASS)
                     {
                         viableTile.tileState = TileStates.BURNING;
                     }
