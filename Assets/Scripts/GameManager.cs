@@ -203,15 +203,12 @@ public class GameManager : MonoBehaviour
 
         playerAnimator.Animate(selectCellPos);
 
-        // If the player selects outside of the grid, it'll return Vector3(0, -1, 0)
-        // Therefore, if y is less than 0, don't do the action
         
-        if(selectCellPos.y < 0)
+        // Therefore, if y is less than 0, don't do the action
+        if (selectCellPos.y < 0)
         {
             return;
         }
-
-        Debug.Log(selectCellPos);
 
         int cellX = Mathf.FloorToInt(selectCellPos.x);
         int cellZ = Mathf.FloorToInt(selectCellPos.z);
@@ -221,16 +218,33 @@ public class GameManager : MonoBehaviour
         // Can the player change the tile's state
         if (!selectTile.CanBeChanged(changeState)) { return; }
 
-        if(changeState == GameTile.TileStates.WET_GRASS)
+        
+
+        // Use a switch statement to handle different actions
+        switch (changeState)
         {
-            selectTile.wetness++;
-        }
-        else
-        {
-            selectTile.tileState = changeState;
+            case GameTile.TileStates.DRY_GRASS:
+                selectTile.wetness = 0;
+                break;
+
+            case GameTile.TileStates.GRASS:
+                selectTile.wetness = 1;
+                break;
+
+            case GameTile.TileStates.WET_GRASS:
+               
+                selectTile.wetness++;
+                break;
+
+            default:
+                
+                selectTile.tileState = changeState;
+                break;
         }
 
-        // Update tile
+        
+
+        // Update tile visual and state based on the new wetness value
         selectTile.TileStateUpdate();
 
         OnPlayerAction?.Invoke();
