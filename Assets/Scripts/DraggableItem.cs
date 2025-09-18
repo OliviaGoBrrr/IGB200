@@ -10,7 +10,6 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 {
     private GameObject draggingIcon;
     private RectTransform iconTransform;
-    public int actionCost;
     public GameTile.TileStates changeState;
     private GameManager gameManager;
 
@@ -21,8 +20,6 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     void Start()
     {
        gameManager = FindFirstObjectByType<GameManager>();
-       TMP_Text actionCostText = GetComponentInChildren<TMP_Text>();
-       actionCostText.SetText("Cost: " + actionCost);
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -70,7 +67,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         if (draggingIcon != null) { Destroy(draggingIcon); }
 
-        gameManager.PlayerActionTaken(changeState, this.actionCost);
+        gameManager.PlayerActionTaken(changeState);
         gameManager.sceneAudio.PlayGameSound(dragAudio, intensity);
     }
 

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using UnityEngine.WSA;
+//using UnityEngine.WSA;
 
 [RequireComponent(typeof(Grid))]
 public class GridManager : MonoBehaviour

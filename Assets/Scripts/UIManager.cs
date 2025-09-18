@@ -36,11 +36,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text starCountText;
     [SerializeField] private TMP_Text roundText;
     [SerializeField] private string roundsString;
-    [SerializeField] private TMP_Text actionsText;
     [SerializeField] private string actionsString;
-    private float warningTimer;
-    private float warningTime = 2.0f;
-    [SerializeField] private TMP_Text warningTextObject;
     private GameManager gameManager;
 
     void Awake()
@@ -60,15 +56,7 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        // Warning timer logic
-        if (warningTextObject.gameObject.activeSelf)
-        {
-            warningTimer -= Time.deltaTime;
-            if (warningTimer < 0)
-            {
-                warningTextObject.gameObject.SetActive(false);
-            }
-        }
+       
     }
 
 
@@ -144,14 +132,6 @@ public class UIManager : MonoBehaviour
         }
     }
 
- 
-
-    private void DisplayWarning()
-    {
-        warningTextObject.gameObject.SetActive(true);
-        warningTimer = warningTime;
-    }
-
     private void DisplayGameOverUI()
     {
         GameOverScreen.SetActive(true);
@@ -160,7 +140,6 @@ public class UIManager : MonoBehaviour
     public void UpdatePlayerUI()
     {
         roundText.SetText(roundsString + " " + gameManager.roundCount);
-        actionsText.SetText(gameManager.currentActionCount + "/" + gameManager.maxActions + " " + actionsString);
     }
 
     public void DisplayGameWinUI(int starCount)
@@ -175,7 +154,6 @@ public class UIManager : MonoBehaviour
     {
         GameManager.OnRoundAdvanced += UpdatePlayerUI;
         GameManager.OnPlayerAction += UpdatePlayerUI;
-        GameManager.OnActionCostTooHigh += DisplayWarning;
         GameManager.OnGameOver += DisplayGameOverUI;
     }
 
@@ -183,7 +161,6 @@ public class UIManager : MonoBehaviour
     {
         GameManager.OnRoundAdvanced -= UpdatePlayerUI;
         GameManager.OnPlayerAction -= UpdatePlayerUI;
-        GameManager.OnActionCostTooHigh -= DisplayWarning;
         GameManager.OnGameOver -= DisplayGameOverUI;
     }
 }

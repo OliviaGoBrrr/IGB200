@@ -1164,6 +1164,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 355163138467730794, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2336609010069419875, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1228,6 +1232,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5595176929401902369, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6074818034509551070, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1276,6 +1284,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: GameManager, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 7344275795977752191, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+      propertyPath: m_Spacing
+      value: 19.85
+      objectReference: {fileID: 0}
     - target: {fileID: 8392528909406883395, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: m_Name
       value: UIManager
@@ -1297,7 +1309,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8640142824832813898, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+    - {fileID: 5020615656922754282, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+    - {fileID: 5146977716179296451, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+    - {fileID: 2299086431665520844, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}

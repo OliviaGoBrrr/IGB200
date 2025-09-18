@@ -194,15 +194,8 @@ public class GameManager : MonoBehaviour
         sceneAudio.DrumBeat(1f); // Plays drum beat
     }
 
-    public void PlayerActionTaken(GameTile.TileStates changeState, int actionCost)
+    public void PlayerActionTaken(GameTile.TileStates changeState)
     {
-        // If the player doesn't have enough actions to do something, throw a warning
-        if(actionCost > currentActionCount)
-        {
-            OnActionCostTooHigh?.Invoke();
-            return;
-        }
-
         // Find the tile on the grid
         var tileGrid = gridManager.masterTileGrid;
 
@@ -239,8 +232,6 @@ public class GameManager : MonoBehaviour
 
         // Update tile
         selectTile.TileStateUpdate();
-
-        currentActionCount -= actionCost;
 
         OnPlayerAction?.Invoke();
     }
