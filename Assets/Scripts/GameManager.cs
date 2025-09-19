@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour
     // Events
     public static event System.Action OnRoundAdvanced;
     public static event System.Action OnPlayerAction;
-    public static event System.Action OnActionCostTooHigh;
     public static event System.Action OnGameOver;
 
     public bool devKeysOn;
@@ -131,6 +130,9 @@ public class GameManager : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Sets the state of the game. Executes through a state machine.
+    /// </summary>
     public void SetGameState(GameState newState)
     {
         // Check if we're already in the state
@@ -172,6 +174,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Set the state of the game to Playing. 
+    /// Throws an error if there are no burning tiles currently on the map (The Player must select one tiles before Playing).
+    /// </summary>
     public void PlaySimulation()
     {
         // Checks to see if theres at least one burning tile on the grid
@@ -185,16 +191,26 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void AdvanceRound()
+    /// <summary>
+    /// Simulates "ticks". Invokes actions on objects that get updated each tick.
+    /// </summary>
+    public void AdvanceRound(int ticks = 1)
     {
-        roundCount++;
-        currentActionCount = maxActions;
-        OnRoundAdvanced?.Invoke();
+        for (int i = 0; i < ticks; i++)
+        {
+            roundCount++;
+            currentActionCount = maxActions;
+            OnRoundAdvanced?.Invoke();
+        }
 
         sceneAudio.DrumBeat(1f); // Plays drum beat
     }
 
-    public void PlayerActionTaken(GameTile.TileStates changeState)
+    /// <summary>
+    /// Executes logic when a player makes an action in game. 
+    /// Updates tiles accordingly.
+    /// </summary>
+    public void PlayerActionTaken(GameTile.TileStates changeState, DraggableItem item)
     {
         // Find the tile on the grid
         var tileGrid = gridManager.masterTileGrid;
@@ -242,7 +258,8 @@ public class GameManager : MonoBehaviour
                 break;
         }
 
-        
+        item.itemUses--;
+
 
         // Update tile visual and state based on the new wetness value
         selectTile.TileStateUpdate();
@@ -250,6 +267,10 @@ public class GameManager : MonoBehaviour
         OnPlayerAction?.Invoke();
     }
 
+    /// <summary>
+    /// Finds a position on the grid based from where the mouse is on the screen.
+    /// Can be set to snap to the center of a tile, otherwise will follow the mouse fluidly.
+    /// </summary>
     public Vector3 GetSelectedGridPosition(bool snapToGrid = false)
     {
         Vector3 mousePositon = Input.mousePosition;

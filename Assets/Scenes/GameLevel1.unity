@@ -1365,6 +1365,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &972846098 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8973252197097058868, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+  m_PrefabInstance: {fileID: 4276420327873061292}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &985714305
 GameObject:
   m_ObjectHideFlags: 0
@@ -1584,6 +1595,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeState: 5
+  itemUses: 0
+  disableAlpha: 50
+  itemDisabled: 1
   dragAudio: {fileID: 8300000, guid: 6d832dc78126add4c8c88c9da9b8c788, type: 3}
   intensity: 1
 --- !u!1 &1217992919
@@ -2473,6 +2487,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4731447007542266176, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
   m_PrefabInstance: {fileID: 1960410241}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1977732975 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 173388282843389593, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+  m_PrefabInstance: {fileID: 4276420327873061292}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2024750608 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4094109532660402550, guid: 05ae6b94b7653054597960ea782e8629, type: 3}
@@ -8269,14 +8294,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 59514185348364270, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+      propertyPath: itemUses
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 59514185348364270, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+      propertyPath: itemDisabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 59514185348364270, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+      propertyPath: itemUsesText
+      value: 
+      objectReference: {fileID: 972846098}
     - target: {fileID: 150238628334912597, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 173388282843389593, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+      propertyPath: m_text
+      value: 'Uses: 1'
+      objectReference: {fileID: 0}
+    - target: {fileID: 355163138467730794, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1062595348457954188, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: f689349a06305bd4ca84138f294da297, type: 3}
+    - target: {fileID: 1062595348457954188, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1062595348457954188, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -8297,6 +8346,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 91029eee83ff29244b82c73d7cce4926, type: 3}
+    - target: {fileID: 1458040763652480397, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1486619954023591361, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.59461796
@@ -8316,6 +8369,10 @@ PrefabInstance:
     - target: {fileID: 1486619954023591361, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 25.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2169420031188992337, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2336609010069419875, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8449,6 +8506,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5645127195782719326, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+      propertyPath: itemUses
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5645127195782719326, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+      propertyPath: itemDisabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5645127195782719326, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+      propertyPath: itemUsesText
+      value: 
+      objectReference: {fileID: 1977732975}
     - target: {fileID: 5884342794775575377, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: m_text
       value: 'Burn the dry grass tiles, using your fire ability.
@@ -8498,6 +8567,10 @@ PrefabInstance:
     - target: {fileID: 6852566210505905520, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: m_LocalScale.z
       value: 1.1415
+      objectReference: {fileID: 0}
+    - target: {fileID: 6865093485440390655, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+      propertyPath: m_text
+      value: 'Uses:'
       objectReference: {fileID: 0}
     - target: {fileID: 6901197986304006373, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -8598,6 +8671,10 @@ PrefabInstance:
     - target: {fileID: 8757128269811512444, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8973252197097058868, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+      propertyPath: m_text
+      value: 'Uses: 2'
       objectReference: {fileID: 0}
     - target: {fileID: 9142459171655664996, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: UI
