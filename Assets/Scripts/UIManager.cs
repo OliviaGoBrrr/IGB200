@@ -11,9 +11,6 @@ public class UIManager : MonoBehaviour
 
     [Header("Player UI")]
     [SerializeField] private TMP_Text starCountText;
-    [SerializeField] private TMP_Text roundText;
-    [SerializeField] private string roundsString;
-    [SerializeField] private string actionsString;
 
     private GameManager gameManager;
 
@@ -24,7 +21,6 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        UpdatePlayerUI();
         GameOverScreen.SetActive(false);
         PauseScreen.SetActive(false);
     }
@@ -34,10 +30,7 @@ public class UIManager : MonoBehaviour
         GameOverScreen.SetActive(true);
     }
 
-    public void UpdatePlayerUI()
-    {
-        roundText.SetText(roundsString + " " + gameManager.roundCount);
-    }
+
 
     public void DisplayGameWinUI(int starCount)
     {
@@ -47,15 +40,11 @@ public class UIManager : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.OnRoundAdvanced += UpdatePlayerUI;
-        GameManager.OnPlayerAction += UpdatePlayerUI;
         GameManager.OnGameOver += DisplayGameOverUI;
     }
 
     private void OnDisable()
     {
-        GameManager.OnRoundAdvanced -= UpdatePlayerUI;
-        GameManager.OnPlayerAction -= UpdatePlayerUI;
         GameManager.OnGameOver -= DisplayGameOverUI;
     }
 }
