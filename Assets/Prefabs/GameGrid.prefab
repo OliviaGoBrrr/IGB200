@@ -652,6 +652,10 @@ PrefabInstance:
       propertyPath: canBeBurnt
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: previousState
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: m_Name
       value: Tile1
@@ -2712,6 +2716,10 @@ PrefabInstance:
       propertyPath: canBeBurnt
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: previousState
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: m_Name
       value: Tile1
@@ -2909,6 +2917,10 @@ PrefabInstance:
     - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: canBeBurnt
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: previousState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: m_Name
@@ -3666,6 +3678,10 @@ PrefabInstance:
       propertyPath: canBeBurnt
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: previousState
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: m_Name
       value: Tile1
@@ -4049,6 +4065,10 @@ PrefabInstance:
     - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: canBeBurnt
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: previousState
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: m_Name
@@ -5252,6 +5272,10 @@ PrefabInstance:
       propertyPath: canBeBurnt
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: previousState
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: m_Name
       value: Tile1
@@ -5698,6 +5722,10 @@ PrefabInstance:
       propertyPath: canBeBurnt
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: previousState
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: m_Name
       value: Tile1
@@ -5833,6 +5861,10 @@ PrefabInstance:
     - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: canBeBurnt
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: previousState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: m_Name
@@ -6031,6 +6063,10 @@ PrefabInstance:
     - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: canBeBurnt
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: previousState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: m_Name
@@ -6303,6 +6339,10 @@ PrefabInstance:
     - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: canBeBurnt
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: previousState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: m_Name
@@ -6840,6 +6880,10 @@ PrefabInstance:
       propertyPath: canBeBurnt
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: previousState
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: m_Name
       value: Tile1
@@ -7224,6 +7268,10 @@ PrefabInstance:
       propertyPath: canBeBurnt
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: previousState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: m_Name
       value: Tile1
@@ -7552,6 +7600,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: canBeBurnt
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: previousState
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
@@ -7999,6 +8051,10 @@ PrefabInstance:
     - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: canBeBurnt
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: previousState
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: m_Name
@@ -8946,6 +9002,10 @@ PrefabInstance:
       propertyPath: canBeBurnt
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: previousState
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: m_Name
       value: Tile1
@@ -9403,6 +9463,10 @@ PrefabInstance:
     - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: canBeBurnt
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: previousState
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: m_Name
@@ -9986,6 +10050,10 @@ PrefabInstance:
       propertyPath: canBeBurnt
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: previousState
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: m_Name
       value: Tile1
@@ -10058,6 +10126,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: canBeBurnt
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: previousState
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
@@ -10444,6 +10516,10 @@ PrefabInstance:
       propertyPath: canBeBurnt
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: previousState
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: m_Name
       value: Tile1
@@ -10580,6 +10656,10 @@ PrefabInstance:
       propertyPath: canBeBurnt
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: previousState
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: m_Name
       value: Tile1
@@ -10715,6 +10795,10 @@ PrefabInstance:
     - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: canBeBurnt
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: previousState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: m_Name
@@ -11161,6 +11245,10 @@ PrefabInstance:
     - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: canBeBurnt
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: previousState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: m_Name
@@ -12814,6 +12902,10 @@ PrefabInstance:
       propertyPath: canBeBurnt
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: previousState
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: m_Name
       value: Tile1
@@ -13027,6 +13119,10 @@ PrefabInstance:
     - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: canBeBurnt
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: previousState
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: m_Name
@@ -13361,6 +13457,10 @@ PrefabInstance:
     - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: canBeBurnt
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: previousState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: m_Name
@@ -15300,6 +15400,10 @@ PrefabInstance:
       propertyPath: canBeBurnt
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: previousState
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: m_Name
       value: Tile1
@@ -16146,6 +16250,10 @@ PrefabInstance:
       propertyPath: canBeBurnt
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: previousState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: m_Name
       value: Tile1
@@ -16850,6 +16958,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
       propertyPath: canBeBurnt
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780565512708662375, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
+      propertyPath: previousState
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}

@@ -37,11 +37,12 @@ public class GameTile: MonoBehaviour
     }
 
     // References
+    [Header("References")]
     private GridManager gridManager;
     private GameManager gameManager;
     [SerializeField] public GameObject highlight;
 
-    // Tile Properties
+    [Header("Tile Properties")]
     public GameTileData tileData;
     [SerializeField] private bool canBeBurnt;
     [SerializeField] private int roundsToBurn;
@@ -51,6 +52,9 @@ public class GameTile: MonoBehaviour
     [SerializeField] private Material[] tileMaterials;
     public int gridIndexX, gridIndexZ;
     private Vector3 tilePosition;
+
+    [HideInInspector]
+    public TileStates previousState;
 
     // Neighbours
     private List<GameTile> tileNeighbours = new List<GameTile>();
@@ -80,6 +84,22 @@ public class GameTile: MonoBehaviour
     private void OnValidate()
     {
         TileStateUpdate();
+
+        if (tileState != TileStates.BURNING)
+        {
+            if (wetness >= 2)
+            {
+                tileState = TileStates.WET_GRASS;
+            }
+            else if (wetness == 1)
+            {
+                tileState = TileStates.GRASS;
+            }
+            else if (wetness == 0)
+            {
+                tileState = TileStates.DRY_GRASS;
+            }
+        }
     }
 
     public void RoundAdvanced()
@@ -135,22 +155,6 @@ public class GameTile: MonoBehaviour
     // Function to be called when a GameTile's state gets updated
     public void TileStateUpdate() 
     {
-        if (CanBeChanged(TileStates.BURNING))
-        {
-            if (wetness >= 2)
-            {
-                tileState = TileStates.WET_GRASS;
-            }
-            else if (wetness == 1)
-            {
-                tileState = TileStates.GRASS;
-            }
-            else if(wetness == 0)
-            {
-                tileState = TileStates.DRY_GRASS;
-            }
-        }
-
         // Change the material to the appropriate material
         gameObject.GetComponent<Renderer>().material = tileMaterials[(int)tileState];
     }
@@ -159,17 +163,19 @@ public class GameTile: MonoBehaviour
     public bool CanBeChanged(TileStates changeToState)
     {
         // If the tile is already that tile type
+
         if (changeToState == tileState) { return false; }
 
         // Protected tiles
-        if(     tileState == TileStates.ANIMAL 
-            ||  tileState == TileStates.BURNING 
+        if (     tileState == TileStates.ANIMAL
+            || tileState == TileStates.BURNING
             ||  tileState == TileStates.BURNT
             ||  tileState == TileStates.DITCH)
         {
             // Show warning to player
             return false;
         }
+
 
         
         return true;

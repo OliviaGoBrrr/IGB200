@@ -1,4 +1,7 @@
+using System.Collections.Generic;
 using System.Threading;
+using NUnit.Framework;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -26,10 +29,13 @@ public class GameManager : MonoBehaviour
     public PlayerAnimator playerAnimator;
     public GameState state;
     private GameState prevGameState;
-
-    // Player Actions
     public int roundCount = 1;
-    public int maxActions = 3;
+
+    [Header("Player Actions")]
+    public List<GameTile> tilesChanged = new List<GameTile>();
+    public List<DraggableItem> itemsUsed = new List<DraggableItem>();
+
+    [Header("Game Scoring")]
     [SerializeField] private float[] scoreThresholds = new float[3];
     [SerializeField] private float initialGrassPercent;
     [SerializeField] private float finalGrassPercent;
@@ -44,7 +50,6 @@ public class GameManager : MonoBehaviour
     {
         gridManager = FindAnyObjectByType<GridManager>();
         uiManager = FindAnyObjectByType<UIManager>();
-        currentActionCount = maxActions;
     }
 
     void Start()
@@ -65,11 +70,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if(currentActionCount == 0)
-        {
-            AdvanceRound();
-        }
-
         // Pausing
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -199,7 +199,6 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < ticks; i++)
         {
             roundCount++;
-            currentActionCount = maxActions;
             OnRoundAdvanced?.Invoke();
         }
 
@@ -231,10 +230,16 @@ public class GameManager : MonoBehaviour
 
         GameTile selectTile = tileGrid[cellX, cellZ].GameTile;
 
+        selectTile.previousState = selectTile.tileState;
+
         // Can the player change the tile's state
         if (!selectTile.CanBeChanged(changeState)) { return; }
 
-        
+        selectTile.tileState = changeState;
+
+        tilesChanged.Add(selectTile);
+        itemsUsed.Add(item);
+   
 
         // Use a switch statement to handle different actions
         switch (changeState)
@@ -243,17 +248,11 @@ public class GameManager : MonoBehaviour
                 selectTile.wetness = 0;
                 break;
 
-            case GameTile.TileStates.GRASS:
-                selectTile.wetness = 1;
-                break;
-
             case GameTile.TileStates.WET_GRASS:
-               
                 selectTile.wetness++;
                 break;
 
             default:
-                
                 selectTile.tileState = changeState;
                 break;
         }
@@ -265,6 +264,33 @@ public class GameManager : MonoBehaviour
         selectTile.TileStateUpdate();
 
         OnPlayerAction?.Invoke();
+    }
+
+    public void UndoPlayerAction()
+    {
+        if (tilesChanged.Count <= 0 || itemsUsed.Count <= 0)
+        {
+            Debug.Log("Nothing to Undo");
+            return;
+        }
+
+        // Finds the last tile changed by the player, and reverts it back to its previous state.
+
+
+        var undoingTiles = tilesChanged.ToArray();
+        var undoingItems = itemsUsed.ToArray();
+
+        var lastTile = undoingTiles[undoingTiles.Length - 1];
+        var lastItem = undoingItems[undoingItems.Length - 1];
+
+        lastTile.tileState = lastTile.previousState;
+       
+        lastTile.TileStateUpdate();
+        tilesChanged.RemoveAt(tilesChanged.Count - 1);
+
+
+        lastItem.EnableDraggable(1);
+        itemsUsed.RemoveAt(itemsUsed.Count - 1);
     }
 
     /// <summary>

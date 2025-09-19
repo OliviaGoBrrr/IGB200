@@ -137,6 +137,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         itemDisabled = false;
         draggableStaticIcon.color = new Color(draggableStaticIcon.color.r, draggableStaticIcon.color.g, draggableStaticIcon.color.b, 1.0f);
         itemUses += addItemUses;
+        UpdateItemUIText();
     }
 
     public void UpdateItemUIText()

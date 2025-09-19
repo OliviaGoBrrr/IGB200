@@ -137,6 +137,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: baeacf9d315a4ba40a5dfe7b71d10d87, type: 2}
   gridIndexX: 0
   gridIndexZ: 0
+  previousState: 6
   TL: 0
   T: 0
   TR: 0
