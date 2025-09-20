@@ -471,7 +471,7 @@ MonoBehaviour:
   disableAlpha: 160
   itemDisabled: 0
   dragAudio: {fileID: 8300000, guid: 9fa78bd27d4913043a64e01d87193069, type: 3}
-  intensity: 1
+  intensity: 0.7
 --- !u!114 &1062595348457954188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1964,7 +1964,7 @@ MonoBehaviour:
   disableAlpha: 50
   itemDisabled: 1
   dragAudio: {fileID: 8300000, guid: 6d832dc78126add4c8c88c9da9b8c788, type: 3}
-  intensity: 1
+  intensity: 0.7
 --- !u!1 &3675850127665521711
 GameObject:
   m_ObjectHideFlags: 0
