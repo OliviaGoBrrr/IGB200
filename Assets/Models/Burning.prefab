@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3218159346000485046}
   - component: {fileID: 4838117779163459068}
   m_Layer: 0
-  m_Name: Tile2
+  m_Name: Burning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
