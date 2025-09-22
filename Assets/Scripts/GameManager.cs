@@ -75,7 +75,6 @@ public class GameManager : MonoBehaviour
             if (tile.GameTile != null && rewardableStates.Contains(tile.TileState))
             {
                 rewardTiles.Add(tile);
-                Debug.Log(tile.GameTile);
             }
         }
 
@@ -133,6 +132,8 @@ public class GameManager : MonoBehaviour
                         stars--;
                     }
                 }
+
+                GameOver();
             }
 
             if(simTimer > simTime)
@@ -200,7 +201,7 @@ public class GameManager : MonoBehaviour
             Debug.LogError("There are no Burning tiles to start simulation. Please make one tile a Burning tile");
             return;
         }
-        sceneAudio.PlayButtonClick(5);
+        //sceneAudio.PlayButtonClick(5);
         SetGameState(GameState.PLAYING);
         
     }
@@ -216,7 +217,7 @@ public class GameManager : MonoBehaviour
             OnRoundAdvanced?.Invoke();
         }
 
-        sceneAudio.DrumBeat(1f); // Plays drum beat
+        //sceneAudio.DrumBeat(1f); // Plays drum beat
     }
 
     /// <summary>
@@ -225,9 +226,6 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void PlayerActionTaken(GameTile.TileStates changeState, DraggableItem item)
     {
-
-
-
         // Find the tile on the grid
         var tileGrid = gridManager.masterTileGrid;
 
@@ -359,6 +357,8 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+
+        uiManager.scoreText.SetText($"Score: {playerScore}");
     }
 
     public void PauseUnpauseGame()

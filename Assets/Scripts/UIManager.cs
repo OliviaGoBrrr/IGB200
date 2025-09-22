@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
 
     [Header("Player UI")]
     [SerializeField] private TMP_Text starCountText;
+    [SerializeField] public TMP_Text scoreText;
 
     private GameManager gameManager;
 

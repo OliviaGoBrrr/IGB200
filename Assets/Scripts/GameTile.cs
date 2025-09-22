@@ -110,6 +110,25 @@ public class GameTile: MonoBehaviour
         affected = false;
     }
 
+    public void SetTileScore()
+    {
+        switch (tileState)
+        {
+            case TileStates.ANIMAL:
+                tileScore = 300;
+                break;
+            case TileStates.DRY_GRASS:
+                tileScore = 100;
+                break;
+            case TileStates.GRASS:
+                tileScore = 50;
+                break;
+            default:
+                tileScore = 25;
+                break;
+        }
+    }
+
     private void OnValidate()
     {
         TileStateUpdate();
@@ -252,24 +271,7 @@ public class GameTile: MonoBehaviour
         highlight.SetActive(false);
     }
 
-    public void SetTileScore()
-    {
-        switch (tileState)
-        {
-            case TileStates.ANIMAL:
-                tileScore = 300;
-                break;
-            case TileStates.DRY_GRASS:
-                tileScore = 100;
-                break;
-            case TileStates.GRASS:
-                tileScore = 50;
-                break;
-            default:
-                tileScore = 25;
-                break;
-        }
-    }
+
 
     public void GetNeighbours()
     {
