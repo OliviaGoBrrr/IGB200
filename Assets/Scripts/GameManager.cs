@@ -235,9 +235,6 @@ public class GameManager : MonoBehaviour
 
         Vector3 selectCellPos = GetSelectedGridPosition(true);
 
-        playerAnimator.Animate(selectCellPos);
-
-
         // Therefore, if y is less than 0, don't do the action
         if (selectCellPos.y < 0)
         {
@@ -277,7 +274,7 @@ public class GameManager : MonoBehaviour
         }
 
         item.itemUses--;
-
+        playerAnimator.Animate(selectTile);
 
         // Update tile visual and state based on the new wetness value
         selectTile.TileStateUpdate();

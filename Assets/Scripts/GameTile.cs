@@ -66,7 +66,7 @@ public class GameTile: MonoBehaviour
     
     // Neighbour bools (currently unused)
     [SerializeField] 
-    private bool
+    public bool
         TL, T, TR,
         L,      R,
         BL, B, BR;
