@@ -8,7 +8,7 @@ using UnityEngine.UI;
 using static UnityEditor.Progress;
 
 [RequireComponent(typeof(Image))]
-public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
+public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     private GameManager gameManager;
     private GameObject draggingIcon;
@@ -106,6 +106,16 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         }
 
         UpdateItemUIText();
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+
     }
 
     public void OnPointerClick(PointerEventData eventData)
