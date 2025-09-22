@@ -243,7 +243,7 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        playerAnimator.Animate(selectCellPos);
+        
 
         int cellX = Mathf.FloorToInt(selectCellPos.x);
         int cellZ = Mathf.FloorToInt(selectCellPos.z);
