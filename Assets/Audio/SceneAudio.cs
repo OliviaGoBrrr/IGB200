@@ -14,6 +14,19 @@ public class SceneAudio : MonoBehaviour
     [SerializeField] AudioSource UISoundFXAudio;
 
     [SerializeField] AudioClip buttonClick;
+    public static SceneAudio instance;
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     public void DrumBeat(float intensity)
     {
         drumMusicAudio.volume = intensity;
@@ -49,5 +62,15 @@ public class SceneAudio : MonoBehaviour
         UISoundFXAudio.pitch = Mathf.Pow(1.059463f, pitchMag); // Randomly increases pitch
         UISoundFXAudio.resource = buttonClick;
         UISoundFXAudio.Play();
+    }
+    public IEnumerator DestroySelf(float time)
+    {
+        environmentalMusicAudio.DOFade(0, time);
+        beatMusicAudio.DOFade(0, time);
+        drumMusicAudio.DOFade(0, time);
+        crackleMusicAudio.DOFade(0, time);
+        yield return new WaitForSeconds(time);
+        Destroy(gameObject);
+        yield return null;
     }
 }

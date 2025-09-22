@@ -317,8 +317,7 @@ Transform:
   m_LocalPosition: {x: 9.19, y: 4.029, z: 1.049}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 699620037}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!114 &330585547
@@ -765,7 +764,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 330585546}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2941462544241727636, guid: ca075cbe897e6434d93a58f1aa222035, type: 3}
       propertyPath: m_Name
@@ -773,31 +772,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2992013988151717777, guid: ca075cbe897e6434d93a58f1aa222035, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 9.19
       objectReference: {fileID: 0}
     - target: {fileID: 2992013988151717777, guid: ca075cbe897e6434d93a58f1aa222035, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 4.029
       objectReference: {fileID: 0}
     - target: {fileID: 2992013988151717777, guid: ca075cbe897e6434d93a58f1aa222035, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.049
       objectReference: {fileID: 0}
     - target: {fileID: 2992013988151717777, guid: ca075cbe897e6434d93a58f1aa222035, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.92387956
       objectReference: {fileID: 0}
     - target: {fileID: 2992013988151717777, guid: ca075cbe897e6434d93a58f1aa222035, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.38268343
       objectReference: {fileID: 0}
     - target: {fileID: 2992013988151717777, guid: ca075cbe897e6434d93a58f1aa222035, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2992013988151717777, guid: ca075cbe897e6434d93a58f1aa222035, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2992013988151717777, guid: ca075cbe897e6434d93a58f1aa222035, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -816,22 +815,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca075cbe897e6434d93a58f1aa222035, type: 3}
---- !u!4 &699620037 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2992013988151717777, guid: ca075cbe897e6434d93a58f1aa222035, type: 3}
-  m_PrefabInstance: {fileID: 699620036}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &699620038 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1677353597714293745, guid: ca075cbe897e6434d93a58f1aa222035, type: 3}
-  m_PrefabInstance: {fileID: 699620036}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2175e2c127de5114c98b99d55cc03238, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &806482505 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4731447007542266176, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
@@ -998,7 +981,6 @@ MonoBehaviour:
   gridManager: {fileID: 0}
   uiManager: {fileID: 9142459172345986392}
   sceneCamera: {fileID: 330585545}
-  sceneAudio: {fileID: 699620038}
   playerAnimator: {fileID: 482293830}
   state: 0
   roundCount: 1
@@ -8941,7 +8923,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -12121,7 +12103,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Uses: 0'
+  m_text: 'Uses: 1'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -13561,6 +13543,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1710542034}
   - {fileID: 330585546}
+  - {fileID: 699620036}
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 1061872529}
