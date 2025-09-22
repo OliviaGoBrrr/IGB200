@@ -235,7 +235,7 @@ public class GameManager : MonoBehaviour
 
         playerAnimator.Animate(selectCellPos);
 
-        
+
         // Therefore, if y is less than 0, don't do the action
         if (selectCellPos.y < 0)
         {
