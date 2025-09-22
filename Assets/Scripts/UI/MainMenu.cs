@@ -7,8 +7,6 @@ using UnityEngine.Rendering;
 
 public class MainMenu : MonoBehaviour
 {
-    public MenuAudio menuAudio;
-
     private VisualElement ui;
 
     private Button playButton;
@@ -23,7 +21,7 @@ public class MainMenu : MonoBehaviour
 
 
     private SceneLoader sceneLoader;
-
+    bool sceneLoad = false; // Prevents scenes from loading multiple times
 
     // customisation stuffs
     private VisualElement characterBangs;
@@ -49,7 +47,6 @@ public class MainMenu : MonoBehaviour
 
         ui = GetComponent<UIDocument>().rootVisualElement;
     }
-
     private void OnEnable()
     {
         // Fetch UI elements by name
@@ -121,20 +118,28 @@ public class MainMenu : MonoBehaviour
 
     private void OnPlayButtonClicked()
     {
-        menuAudio.PlayButtonClick(1);
-        sceneLoader.LoadNextScene("Level Select");
+        if (sceneLoad == false)
+        {
+            sceneLoad = true;
+            FindAnyObjectByType<MenuAudio>().PlayButtonClick(0);
+            sceneLoader.LoadNextScene("Level Select");
+        }
     }
 
     private void OnCustomiseButtonClicked()
     {
-        menuAudio.PlayButtonClick(20);
-        sceneLoader.LoadNextScene("Customise Menu");
+        if (sceneLoad == false)
+        {
+            sceneLoad = true;
+            FindAnyObjectByType<MenuAudio>().PlayButtonClick(4);
+            sceneLoader.LoadNextScene("Customise Menu");
+        }
     }
 
     private void OnSettingsButtonClicked()
     {
+        FindAnyObjectByType<MenuAudio>().PlayButtonClick(8);
         settings.style.display = DisplayStyle.Flex; // visibility = true
-        menuAudio.PlayButtonClick(5);
     }
 
     private void OnExitButtonClicked()

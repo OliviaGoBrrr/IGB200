@@ -14,6 +14,19 @@ public class SceneAudio : MonoBehaviour
     [SerializeField] AudioSource UISoundFXAudio;
 
     [SerializeField] AudioClip buttonClick;
+    public static SceneAudio instance;
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     public void DrumBeat(float intensity)
     {
         drumMusicAudio.volume = intensity;

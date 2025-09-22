@@ -8,8 +8,6 @@ using UnityEngine.Audio;
 
 public class Settings : MonoBehaviour
 {
-    public MenuAudio menuAudio;
-
     private VisualElement ui;
     private TemplateContainer settings;
     private VisualElement settingsPage;
@@ -28,7 +26,6 @@ public class Settings : MonoBehaviour
         ui = GetComponent<UIDocument>().rootVisualElement;
         
     }
-
     private void OnEnable()
     {
         settings = ui.Q<TemplateContainer>("Settings");
@@ -49,7 +46,7 @@ public class Settings : MonoBehaviour
     private void OnBackButtonClicked()
     {
         settings.style.display = DisplayStyle.None;
-        menuAudio.PlayButtonClick(5);
+        FindAnyObjectByType<MenuAudio>().PlayButtonClick(10);
     }
 
     private void OnVolumeButtonClicked()
@@ -57,7 +54,7 @@ public class Settings : MonoBehaviour
         audioMixer.GetFloat("VolumeSoundFX", out float SoundFXVol);
         if (SoundFXVol == 0) { audioMixer.SetFloat("VolumeSoundFX", -80f); }
         else { audioMixer.SetFloat("VolumeSoundFX", 0f); }
-        menuAudio.PlayButtonClick(3);
+        FindAnyObjectByType<MenuAudio>().PlayButtonClick(2);
     }
 
     private void OnMusicButtonClicked()
@@ -65,6 +62,6 @@ public class Settings : MonoBehaviour
         audioMixer.GetFloat("VolumeMusic", out float MusicVol);
         if (MusicVol == 0) { audioMixer.SetFloat("VolumeMusic", -80f); }
         else { audioMixer.SetFloat("VolumeMusic", 0f); }
-        menuAudio.PlayButtonClick(11);
+        FindAnyObjectByType<MenuAudio>().PlayButtonClick(6);
     }
 }

@@ -5,7 +5,6 @@ using DG.Tweening;
 
 public class LevelSelectManager : MonoBehaviour
 {
-    
     private SceneLoader sceneLoader;
 
     private VisualElement ui;
@@ -20,13 +19,14 @@ public class LevelSelectManager : MonoBehaviour
     private Button level3;
 
     private Array allLevels;
-
+    bool sceneLoad = false; // Prevents scenes from loading multiple times
 
     void Awake()
     {
         sceneLoader = GameObject.FindGameObjectWithTag("SceneLoader").GetComponent<SceneLoader>();
 
         ui = GetComponent<UIDocument>().rootVisualElement;
+        
     }
 
     private void OnEnable()
@@ -64,14 +64,25 @@ public class LevelSelectManager : MonoBehaviour
 
     private void OnBackButtonClicked()
     {
-        sceneLoader.LoadNextScene("Main Menu");
+        if (sceneLoad == false)
+        {
+            sceneLoad = true;
+            FindAnyObjectByType<MenuAudio>().PlayButtonClick(6);
+            sceneLoader.LoadNextScene("Main Menu");
+        }
     }
 
     private void Clickable_clickedWithEventInfo(EventBase obj)
     {
-        var button = (Button)obj.target;
-        string selectedLevel = button.text;
-        sceneLoader.LoadNextScene("GameLevel" + button.text);
+        if (sceneLoad == false)
+        {
+            sceneLoad = true;
+            FindAnyObjectByType<MenuAudio>().PlayButtonClick(0);
+            var button = (Button)obj.target;
+            string selectedLevel = button.text;
+            sceneLoader.LoadNextScene("GameLevel" + button.text);
+            StartCoroutine(FindAnyObjectByType<MenuAudio>().DestroySelf(0.5f));
+        }
     }
 
     /*
