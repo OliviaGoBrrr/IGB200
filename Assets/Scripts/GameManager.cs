@@ -25,7 +25,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GridManager gridManager;
     [SerializeField] private UIManager uiManager;
     public Camera sceneCamera;
-    public SceneAudio sceneAudio;
     public PlayerAnimator playerAnimator;
     public GameState state;
     private GameState prevGameState;
@@ -201,7 +200,11 @@ public class GameManager : MonoBehaviour
             Debug.LogError("There are no Burning tiles to start simulation. Please make one tile a Burning tile");
             return;
         }
+<<<<<<< HEAD
         //sceneAudio.PlayButtonClick(5);
+=======
+        FindAnyObjectByType<SceneAudio>().PlayButtonClick(5);
+>>>>>>> e221575b4bab3b5e961e00432725c498e061656a
         SetGameState(GameState.PLAYING);
         
     }
@@ -217,7 +220,11 @@ public class GameManager : MonoBehaviour
             OnRoundAdvanced?.Invoke();
         }
 
+<<<<<<< HEAD
         //sceneAudio.DrumBeat(1f); // Plays drum beat
+=======
+        FindAnyObjectByType<SceneAudio>().DrumBeat(1f); // Plays drum beat
+>>>>>>> e221575b4bab3b5e961e00432725c498e061656a
     }
 
     /// <summary>
@@ -233,7 +240,7 @@ public class GameManager : MonoBehaviour
 
         playerAnimator.Animate(selectCellPos);
 
-        
+
         // Therefore, if y is less than 0, don't do the action
         if (selectCellPos.y < 0)
         {
@@ -384,7 +391,7 @@ public class GameManager : MonoBehaviour
         state = GameState.GAME_OVER;
         //Time.timeScale = 0.0f;
         OnGameOver?.Invoke();
-        StartCoroutine(sceneAudio.EndCrackle());
+        StartCoroutine(FindAnyObjectByType<SceneAudio>().EndCrackle());
     }
 
     public void GameWin(int starCount)
@@ -395,7 +402,7 @@ public class GameManager : MonoBehaviour
         //uiManager.DisplayGameWinUI(starCount);
 
         Debug.Log("Game win biiiitch");
-        StartCoroutine(sceneAudio.EndCrackle());
+        StartCoroutine(FindAnyObjectByType<SceneAudio>().EndCrackle());
     }
 
     private void OnEnable()
