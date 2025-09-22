@@ -128,6 +128,7 @@ MonoBehaviour:
   tileScore: 0
   wetness: 1
   tileState: 0
+  previousState: 0
   tileMaterials:
   - {fileID: 2100000, guid: aa8a2692fa4cecb4b883ddd4d9c470c2, type: 2}
   - {fileID: 2100000, guid: dae756e026eafa04fa3e884945875caf, type: 2}

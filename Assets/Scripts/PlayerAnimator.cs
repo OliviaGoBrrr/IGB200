@@ -1,8 +1,10 @@
 using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 using System.Xml;
 using System;
+using DG.Tweening;
 
 public class PlayerAnimator : MonoBehaviour
 {
@@ -20,14 +22,20 @@ public class PlayerAnimator : MonoBehaviour
 
     private Color newColour;
 
+    private GridManager grid;
+    private Coroutine walkRoutine;
+
+    private enum PlayerState
+    {
+        Idle,
+        Walking,
+        Action
+    }
     public void Awake()
     {
         //animTargets[0].GetComponent<SpriteRenderer>().color = hexToColor(CustomiseData.clothesColour);
         //animTargets[1].GetComponent<SpriteRenderer>().color = hexToColor(CustomiseData.clothesColour);
         //animTargets[2].GetComponent<SpriteRenderer>().color = hexToColor(CustomiseData.skinColour);
-
-        
-
         Console.WriteLine(hexToColor(CustomiseData.skinColour));
 
         //bangList[CustomiseData.hairType].GetComponent<SpriteRenderer>().color = new Color(hexToColor(CustomiseData.hairColour).r, hexToColor(CustomiseData.hairColour).g, hexToColor(CustomiseData.hairColour).b, 1);
@@ -63,14 +71,37 @@ public class PlayerAnimator : MonoBehaviour
         // load the correct bangs, eyes, hair, highlight
         // load the correct colours and such
         // set it on the appropriate objects
+
+        grid = FindAnyObjectByType<GridManager>();
     }
+    private void Start()
+    {
+        walkRoutine = StartCoroutine(WalkWait(0f));
+    }
+
     public void Animate(Vector3 pos)
     {
+        StopCoroutine(walkRoutine);
+        DOTween.Kill(transform);
         gameObject.transform.position = pos + new Vector3(-1, 1, 0);
+
         foreach (var animTarget in animTargets) 
         {
             animTarget.SetTrigger("Action");
         }
+        walkRoutine = StartCoroutine(WalkWait(1f));
+    }
+    IEnumerator WalkWait(float additionalTime)
+    {
+        yield return new WaitForSeconds(UnityEngine.Random.Range(1.5f, 5f) + additionalTime);
+        PlayerWalk();
+        yield return null;
+    }
+    private void PlayerWalk()
+    {
+        Vector3 target = grid.tileList[UnityEngine.Random.Range(0, grid.tileList.Count)].transform.position + new Vector3(UnityEngine.Random.Range(-0.4f, 0.4f), 1.5f, UnityEngine.Random.Range(-0.4f, 0.4f));
+        transform.DOMove(target, Vector3.Distance(target, transform.position));
+        walkRoutine = StartCoroutine(WalkWait(Vector3.Distance(target, transform.position)));
     }
     public static Color hexToColor(string hex)
     {
