@@ -53,6 +53,10 @@ public class GameTile: MonoBehaviour
     public int gridIndexX, gridIndexZ;
     private Vector3 tilePosition;
 
+    [Header("Tile Decorations")]
+    public List<BurnableDecoration> burnableDecorations;
+    public List<GameObject> growableDecorations;
+
     [HideInInspector]
     public TileStates previousState;
 
@@ -72,6 +76,12 @@ public class GameTile: MonoBehaviour
         gridManager = GetComponentInParent<GridManager>();
         tilePosition = transform.position;
         tileData = new GameTileData(this, roundsToBurn, tileState, tilePosition, canBeBurnt);
+        foreach (Transform childTransform in transform)
+        {
+            GameObject child = childTransform.gameObject;
+            BurnableDecoration decoration = child.GetComponent<BurnableDecoration>();
+            if (decoration != null) { burnableDecorations.Add(decoration); }
+        }
     }
 
     
@@ -157,6 +167,13 @@ public class GameTile: MonoBehaviour
     {
         // Change the material to the appropriate material
         gameObject.GetComponent<Renderer>().material = tileMaterials[(int)tileState];
+        if (tileState == TileStates.BURNING)
+        {
+            foreach (BurnableDecoration deco in burnableDecorations)
+            {
+                deco.TriggerBurn();
+            }
+        }
     }
 
     // Logic to check whether a tile can be changed by the player's action
