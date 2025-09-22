@@ -200,11 +200,8 @@ public class GameManager : MonoBehaviour
             Debug.LogError("There are no Burning tiles to start simulation. Please make one tile a Burning tile");
             return;
         }
-<<<<<<< HEAD
-        //sceneAudio.PlayButtonClick(5);
-=======
+
         FindAnyObjectByType<SceneAudio>().PlayButtonClick(5);
->>>>>>> e221575b4bab3b5e961e00432725c498e061656a
         SetGameState(GameState.PLAYING);
         
     }
@@ -220,11 +217,8 @@ public class GameManager : MonoBehaviour
             OnRoundAdvanced?.Invoke();
         }
 
-<<<<<<< HEAD
         //sceneAudio.DrumBeat(1f); // Plays drum beat
-=======
         FindAnyObjectByType<SceneAudio>().DrumBeat(1f); // Plays drum beat
->>>>>>> e221575b4bab3b5e961e00432725c498e061656a
     }
 
     /// <summary>
