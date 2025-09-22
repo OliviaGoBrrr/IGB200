@@ -90,9 +90,6 @@ public class GameTile: MonoBehaviour
     
     void Start()
     {
-
- 
-
         if (gameManager != null)
         {
             if (gameManager.burnableTileStates.Contains(tileState))
@@ -124,7 +121,7 @@ public class GameTile: MonoBehaviour
                 tileScore = 50;
                 break;
             default:
-                tileScore = 25;
+                tileScore = 0;
                 break;
         }
     }
