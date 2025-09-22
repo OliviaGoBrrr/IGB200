@@ -54,6 +54,8 @@ public class GameManager : MonoBehaviour
     {
         gridManager = FindAnyObjectByType<GridManager>();
         uiManager = FindAnyObjectByType<UIManager>();
+        sceneCamera = FindFirstObjectByType<Camera>();
+        playerAnimator = FindFirstObjectByType<PlayerAnimator>();
     }
 
     void Start()
@@ -235,14 +237,13 @@ public class GameManager : MonoBehaviour
 
         Vector3 selectCellPos = GetSelectedGridPosition(true);
 
-        playerAnimator.Animate(selectCellPos);
-
-
         // Therefore, if y is less than 0, don't do the action
         if (selectCellPos.y < 0)
         {
             return;
         }
+
+        playerAnimator.Animate(selectCellPos);
 
         int cellX = Mathf.FloorToInt(selectCellPos.x);
         int cellZ = Mathf.FloorToInt(selectCellPos.z);
@@ -383,7 +384,6 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        SetPlayerScore();
         Debug.Log("Game Over");
         state = GameState.GAME_OVER;
         //Time.timeScale = 0.0f;
@@ -396,7 +396,7 @@ public class GameManager : MonoBehaviour
         SetPlayerScore();
         state = GameState.GAME_WIN;
 
-        //uiManager.DisplayGameWinUI(starCount);
+        uiManager.DisplayGameWinUI(starCount);
 
         Debug.Log("Game win biiiitch");
         StartCoroutine(FindAnyObjectByType<SceneAudio>().EndCrackle());
