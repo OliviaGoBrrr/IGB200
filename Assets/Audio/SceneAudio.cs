@@ -1,3 +1,5 @@
+using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 
 public class SceneAudio : MonoBehaviour
@@ -28,9 +30,12 @@ public class SceneAudio : MonoBehaviour
         crackleStart = true;
         crackleMusicAudio.Play();
     }
-    public void EndCrackle()
+    public IEnumerator EndCrackle()
     {
+        crackleMusicAudio.DOFade(0, 0.5f);
+        yield return new WaitForSeconds(0.5f);
         crackleMusicAudio.Stop();
+        yield return null;
     }
     public void PlayGameSound(AudioClip clip, float intensity)
     {

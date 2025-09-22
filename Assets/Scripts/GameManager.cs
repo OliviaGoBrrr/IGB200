@@ -345,7 +345,7 @@ public class GameManager : MonoBehaviour
         state = GameState.GAME_OVER;
         //Time.timeScale = 0.0f;
         OnGameOver?.Invoke();
-        sceneAudio.EndCrackle();
+        StartCoroutine(sceneAudio.EndCrackle());
     }
 
     public void GameWin(int starCount)
@@ -355,7 +355,7 @@ public class GameManager : MonoBehaviour
         //uiManager.DisplayGameWinUI(starCount);
 
         Debug.Log("Game win biiiitch");
-        sceneAudio.EndCrackle();
+        StartCoroutine(sceneAudio.EndCrackle());
     }
 
     private void OnEnable()
