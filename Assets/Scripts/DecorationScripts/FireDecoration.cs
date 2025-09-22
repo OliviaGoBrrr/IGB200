@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class FireDecoration : MonoBehaviour
 {
-    private List<FireBit> fireBits;
+    public List<FireBit> fireBits;
     private bool triggered = false;
     private void Awake()
     {

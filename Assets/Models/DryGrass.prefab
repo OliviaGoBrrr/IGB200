@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 85724403923117979}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.6, z: 0}
+  m_LocalPosition: {x: 0, y: 0.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -54,6 +54,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72708f53d176b014dbea2544103f13a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireBits: []
 --- !u!1 &272030170739799071
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,6 +1003,7 @@ MonoBehaviour:
   gridIndexZ: 0
   burnableDecorations: []
   sproutableDecorations: []
+  fireDecorations: []
   TL: 0
   T: 0
   TR: 0

@@ -140,6 +140,7 @@ MonoBehaviour:
   gridIndexZ: 0
   burnableDecorations: []
   sproutableDecorations: []
+  fireDecorations: []
   TL: 0
   T: 0
   TR: 0

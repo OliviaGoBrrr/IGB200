@@ -57,7 +57,7 @@ public class GameTile: MonoBehaviour
     [Header("Tile Decorations")]
     public List<BurnableDecoration> burnableDecorations;
     public List<SproutableDecoration> sproutableDecorations;
-    
+    public List<FireDecoration> fireDecorations;
 
    
 
@@ -86,6 +86,8 @@ public class GameTile: MonoBehaviour
             if (decoration1 != null) { burnableDecorations.Add(decoration1); }
             SproutableDecoration decoration2 = child.GetComponent<SproutableDecoration>();
             if (decoration2 != null) { sproutableDecorations.Add(decoration2); }
+            FireDecoration decoration3 = child.GetComponent<FireDecoration>();
+            if (decoration3 != null) { fireDecorations.Add(decoration3); }
         }
 
     }
@@ -228,6 +230,17 @@ public class GameTile: MonoBehaviour
             foreach (BurnableDecoration deco in burnableDecorations)
             {
                 deco.TriggerBurn();
+            }
+            foreach (FireDecoration deco in fireDecorations)
+            {
+                deco.TriggerBurn();
+            }
+        }
+        if (tileState == TileStates.BURNT)
+        {
+            foreach (FireDecoration deco in fireDecorations)
+            {
+                deco.Extinguish();
             }
         }
     }
