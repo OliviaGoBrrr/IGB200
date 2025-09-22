@@ -124,7 +124,7 @@ public class GameManager : MonoBehaviour
                     if (finalGrassPercent > scoreThresholds[i])
                     {
                         GameWin(stars);
-                        break;
+                        continue;
                     }
                     else
                     {
@@ -132,7 +132,10 @@ public class GameManager : MonoBehaviour
                     }
                 }
 
-                GameOver();
+                if(stars == 0)
+                {
+                    GameOver();
+                }
             }
 
             if(simTimer > simTime)
