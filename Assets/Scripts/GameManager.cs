@@ -246,7 +246,7 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        playerAnimator.Animate(selectCellPos);
+        
 
         int cellX = Mathf.FloorToInt(selectCellPos.x);
         int cellZ = Mathf.FloorToInt(selectCellPos.z);
@@ -281,7 +281,7 @@ public class GameManager : MonoBehaviour
         }
 
         item.itemUses--;
-
+        playerAnimator.Animate(selectTile);
 
         // Update tile visual and state based on the new wetness value
         selectTile.TileStateUpdate();

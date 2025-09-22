@@ -5,6 +5,8 @@ using System.Collections;
 using System.Xml;
 using System;
 using DG.Tweening;
+using UnityEditor.ShaderKeywordFilter;
+using UnityEngine.Tilemaps;
 
 public class PlayerAnimator : MonoBehaviour
 {
@@ -79,16 +81,32 @@ public class PlayerAnimator : MonoBehaviour
         walkRoutine = StartCoroutine(WalkWait(0f));
     }
 
-    public void Animate(Vector3 pos)
+    public void Animate(GameTile selectTile)
     {
         StopCoroutine(walkRoutine);
         DOTween.Kill(transform);
-        gameObject.transform.position = pos + new Vector3(-1, 1, 0);
-
-        foreach (var animTarget in animTargets) 
+        if (selectTile.L == true)
         {
-            animTarget.SetTrigger("Action");
+            foreach (var animTarget in animTargets)
+            {
+                animTarget.GetComponent<SpriteRenderer>().flipX = false;
+            }
+            gameObject.transform.position = selectTile.transform.position + new Vector3(-1, 1.5f, 0);
         }
+        else
+        {
+            foreach (var animTarget in animTargets)
+            {
+                animTarget.GetComponent<SpriteRenderer>().flipX = true;
+            }
+            gameObject.transform.position = selectTile.transform.position + new Vector3(1, 1.5f, 0);
+        }
+
+
+            foreach (var animTarget in animTargets)
+            {
+                animTarget.SetTrigger("Action");
+            }
         walkRoutine = StartCoroutine(WalkWait(1f));
     }
     IEnumerator WalkWait(float additionalTime)
@@ -101,7 +119,22 @@ public class PlayerAnimator : MonoBehaviour
     {
         Vector3 target = grid.tileList[UnityEngine.Random.Range(0, grid.tileList.Count)].transform.position + new Vector3(UnityEngine.Random.Range(-0.4f, 0.4f), 1.5f, UnityEngine.Random.Range(-0.4f, 0.4f));
         transform.DOMove(target, Vector3.Distance(target, transform.position));
-        walkRoutine = StartCoroutine(WalkWait(Vector3.Distance(target, transform.position)));
+        if (target.x < transform.position.x)
+        { 
+            foreach (var animTarget in animTargets)
+            {
+                animTarget.GetComponent<SpriteRenderer>().flipX = true;
+            }
+        }
+        else
+        {
+            foreach (var animTarget in animTargets)
+            {
+                animTarget.GetComponent<SpriteRenderer>().flipX = false;
+            }
+        }
+
+            walkRoutine = StartCoroutine(WalkWait(Vector3.Distance(target, transform.position)));
     }
     public static Color hexToColor(string hex)
     {
