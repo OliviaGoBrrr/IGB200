@@ -89,7 +89,7 @@ public class PlayerAnimator : MonoBehaviour
         {
             foreach (var animTarget in animTargets)
             {
-                animTarget.GetComponent<SpriteRenderer>().flipX = false;
+                animTarget.GetComponent<SpriteRenderer>().transform.rotation = Quaternion.Euler(0, 0, 0);
             }
             gameObject.transform.position = selectTile.transform.position + new Vector3(-1, 1.5f, 0);
         }
@@ -97,7 +97,7 @@ public class PlayerAnimator : MonoBehaviour
         {
             foreach (var animTarget in animTargets)
             {
-                animTarget.GetComponent<SpriteRenderer>().flipX = true;
+                animTarget.GetComponent<SpriteRenderer>().transform.rotation = Quaternion.Euler(0, -180, 0);
             }
             gameObject.transform.position = selectTile.transform.position + new Vector3(1, 1.5f, 0);
         }
@@ -123,14 +123,14 @@ public class PlayerAnimator : MonoBehaviour
         { 
             foreach (var animTarget in animTargets)
             {
-                animTarget.GetComponent<SpriteRenderer>().flipX = true;
+                animTarget.GetComponent<SpriteRenderer>().transform.rotation = Quaternion.Euler(0, -180, 0);
             }
         }
         else
         {
             foreach (var animTarget in animTargets)
             {
-                animTarget.GetComponent<SpriteRenderer>().flipX = false;
+                animTarget.GetComponent<SpriteRenderer>().transform.rotation = Quaternion.Euler(0, -0, 0);
             }
         }
 

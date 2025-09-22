@@ -139,7 +139,7 @@ MonoBehaviour:
   gridIndexX: 0
   gridIndexZ: 0
   burnableDecorations: []
-  growableDecorations: []
+  sproutableDecorations: []
   TL: 0
   T: 0
   TR: 0
