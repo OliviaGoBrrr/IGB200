@@ -687,17 +687,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!114 &1959541763 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5588219372783897209, guid: 43a6bf5d7f0c230419b16e53e59fc16a, type: 3}
-  m_PrefabInstance: {fileID: 3568175521271937315}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bcef521bc27d7f4490ae6b1c36763ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2082070632
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,7 +752,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe238d133793c584d9dbabe8676ca234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuAudio: {fileID: 1959541763}
   characterFaceSmile: {fileID: -104935839, guid: bac3dfe8af8528d4dbf8e97c94f31f8a, type: 3}
   characterFaceNormal: {fileID: -1745963983, guid: bac3dfe8af8528d4dbf8e97c94f31f8a, type: 3}
   characterBodySmile: {fileID: -1752273152, guid: 5a75631cc04bd9844994e67fdc1df875, type: 3}
@@ -780,7 +768,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a02d564e17cd5d4dba37166c0fe86d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuAudio: {fileID: 1959541763}
   audioMixer: {fileID: 24100000, guid: 66136c22b238cf74ea04b9ec3c87b2e8, type: 2}
 --- !u!1001 &3568175521271937315
 PrefabInstance:

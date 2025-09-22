@@ -91,7 +91,6 @@ public class MainMenu : MonoBehaviour
         characterHead.style.unityBackgroundImageTintColor = newColour;
 
         ColorUtility.TryParseHtmlString(CustomiseData.clothesColour, out newColour);
-        print(newColour);
         characterBody.style.unityBackgroundImageTintColor = newColour;
         characterHat.style.unityBackgroundImageTintColor = newColour;
 
