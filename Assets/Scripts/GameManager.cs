@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour
     public static event System.Action OnPlayerAction;
     public static event System.Action OnGameOver;
 
+    public bool draggableSelected;
+    public DraggableItem selectedDraggable;
+
     public bool devKeysOn;
     [SerializeField] private GridManager gridManager;
     [SerializeField] private UIManager uiManager;

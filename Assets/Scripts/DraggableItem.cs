@@ -8,7 +8,7 @@ using UnityEngine.UI;
 using static UnityEditor.Progress;
 
 [RequireComponent(typeof(Image))]
-public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
     private GameManager gameManager;
     private GameObject draggingIcon;
@@ -59,6 +59,80 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         }
     }
 
+    private void Update()
+    {
+        if (gameManager.draggableSelected)
+        {
+            if(draggingIcon != null)
+            {
+                Vector3 mouseScreenPositon = Input.mousePosition;
+
+                RectTransform canvasRectTransform = GetComponentInParent<Canvas>().GetComponent<RectTransform>();
+                Vector3 localPoint;
+
+                var rt = draggingIcon.GetComponent<RectTransform>();
+                draggingIcon.GetComponent<Image>().color = draggableStaticIcon.color;
+
+                if (RectTransformUtility.ScreenPointToWorldPointInRectangle(canvasRectTransform, mouseScreenPositon, null, out localPoint))
+                {
+                    rt.position = localPoint;
+                    rt.rotation = iconTransform.rotation;
+                }
+            }
+        }
+
+        if(gameManager.draggableSelected && Input.GetMouseButtonDown(0))
+        {
+            gameManager.draggableSelected = false;
+            if (gameManager.selectedDraggable.draggingIcon != null) { Destroy(gameManager.selectedDraggable.draggingIcon); }
+
+            gameManager.PlayerActionTaken(gameManager.selectedDraggable.changeState, gameManager.selectedDraggable);
+            UpdateItemUIText();
+            FindAnyObjectByType<SceneAudio>().PlayGameSound(dragAudio, intensity);
+
+            if (itemUses <= 0)
+            {
+                DisableDraggable();
+            }
+        }
+
+        if (itemUses <= 0)
+        {
+            DisableDraggable();
+        }
+        else
+        {
+            EnableDraggable();
+        }
+
+        UpdateItemUIText();
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        // Check if we clicked something that can be dragged
+        var canvas = FindInParents<Canvas>(gameObject);
+        if (canvas == null) { return; }
+
+        if (!itemDisabled)
+        {
+            if (!gameManager.draggableSelected)
+            {
+                gameManager.draggableSelected = true;
+                gameManager.selectedDraggable = this;
+                draggingIcon = new GameObject("icon");
+                draggingIcon.transform.SetParent(canvas.transform, false);
+                draggingIcon.transform.SetAsLastSibling();
+
+                var image = draggingIcon.AddComponent<Image>();
+
+                image.sprite = draggableStaticIcon.sprite;
+
+                iconTransform = canvas.transform as RectTransform;
+            }
+        }
+    }
+
     private void OnValidate()
     {
         // All of this is called IN EDITOR ONLY
@@ -89,7 +163,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         var rt = draggingIcon.GetComponent<RectTransform>();
         Vector3 globalMousePos;
-
+        draggingIcon.GetComponent<Image>().color = draggableStaticIcon.color;
         if (RectTransformUtility.ScreenPointToWorldPointInRectangle(iconTransform, data.position,
             data.pressEventCamera, out globalMousePos))
         { 
