@@ -11,6 +11,7 @@ public class GameScreen : MonoBehaviour
     private TemplateContainer settings;
 
     private Button backButton;
+    bool sceneLoad = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -35,10 +36,17 @@ public class GameScreen : MonoBehaviour
     private void OnSettingsButtonClicked()
     {
         settings.style.display = DisplayStyle.Flex; // visibility = true
+        FindAnyObjectByType<MenuAudio>().PlayButtonClick(10);
     }
 
     private void OnBackButtonClicked()
     {
-        sceneLoader.LoadNextScene("Level Select");
+        if (sceneLoad == false)
+        {
+            sceneLoad = true;
+            FindAnyObjectByType<SceneAudio>().PlayButtonClick(6);
+            sceneLoader.LoadNextScene("Level Select");
+            StartCoroutine(FindAnyObjectByType<SceneAudio>().DestroySelf(0.5f));
+        }
     }
 }
