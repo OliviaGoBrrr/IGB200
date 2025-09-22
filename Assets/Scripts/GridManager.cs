@@ -84,7 +84,7 @@ public class GridManager : MonoBehaviour
         {
             (int indexX, int indexZ) = GetGridIndex(tile.gameObject);
 
-            masterTileGrid[indexX, indexZ] = tile.tileData;
+            masterTileGrid[indexX, indexZ] = tile.GetTileData();
             tile.gridIndexX = indexX;
             tile.gridIndexZ = indexZ;
         }

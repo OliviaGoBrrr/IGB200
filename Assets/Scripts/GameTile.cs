@@ -46,11 +46,10 @@ public class GameTile: MonoBehaviour
     public GameTileData tileData;
     [SerializeField] private bool canBeBurnt;
     [SerializeField] private int roundsToBurn;
+    public int tileScore;
     private bool affected;
     public int wetness = 0;
     public TileStates tileState;
-    //[HideInInspector]
-    public TileStates previousState;
     [SerializeField] private Material[] tileMaterials;
     public int gridIndexX, gridIndexZ;
     private Vector3 tilePosition;
@@ -74,22 +73,40 @@ public class GameTile: MonoBehaviour
 
     void Awake()
     {
+        tileData = new GameTileData(this, roundsToBurn, tileState, tilePosition, canBeBurnt);
         gameManager = FindFirstObjectByType<GameManager>();
         gridManager = GetComponentInParent<GridManager>();
         tilePosition = transform.position;
-        tileData = new GameTileData(this, roundsToBurn, tileState, tilePosition, canBeBurnt);
+
         foreach (Transform childTransform in transform)
         {
             GameObject child = childTransform.gameObject;
             BurnableDecoration decoration = child.GetComponent<BurnableDecoration>();
             if (decoration != null) { burnableDecorations.Add(decoration); }
         }
+
     }
 
     
     void Start()
     {
+
+ 
+
+        if (gameManager != null)
+        {
+            if (gameManager.burnableTileStates.Contains(tileState))
+            {
+                canBeBurnt = true;
+            }
+            else
+            {
+                canBeBurnt = false;
+            }
+        }
+
         TileStateUpdate();
+        SetTileScore();
         affected = false;
     }
 
@@ -97,6 +114,7 @@ public class GameTile: MonoBehaviour
     {
         TileStateUpdate();
 
+        /*
         if (tileState != TileStates.BURNING)
         {
             if (wetness >= 2)
@@ -112,6 +130,7 @@ public class GameTile: MonoBehaviour
                 tileState = TileStates.DRY_GRASS;
             }
         }
+        */
     }
 
     public void RoundAdvanced()
@@ -133,43 +152,58 @@ public class GameTile: MonoBehaviour
 
     public void AttemptFireSpread()
     {
-        // THIS IS BAD LOGIC I KNOW IM SORRY
-
         var viableTiles = new List<GameTile>();
 
         // Checks all the neighbours. If a neighbour can be spread to, set true
         foreach (var tile in tileNeighbours)
         {
-            if (tile.CanBeChanged(TileStates.BURNING) && !tile.affected) 
+            if (tile.canBeBurnt && !affected) 
             { 
                 viableTiles.Add(tile);
             }
         }
 
-        // Will eventually find a valid neighbour to spread to
+        // Spreads to all viable neighbours
         if (viableTiles.Count > 0)
         {
             foreach(var viableTile in viableTiles)
             {
-                if(viableTile.affected == false)
-                {
-                    viableTile.affected = true;
-                    if(viableTile.tileState == TileStates.DRY_GRASS)
-                    {
-                        viableTile.tileState = TileStates.BURNING;
-                    }
-                    viableTile.TileStateUpdate();
-                }
+                viableTile.affected = true;
+                viableTile.tileState = TileStates.BURNING;
+ 
+                viableTile.TileStateUpdate();
             }
         }
     }
 
-    // Function to be called when a GameTile's state gets updated
+    public GameTileData GetTileData()
+    {
+        return new GameTileData(this, roundsToBurn, tileState, tilePosition, canBeBurnt);
+    }
+
+    /// <summary>
+    /// Function to be called when a GameTile's state gets updated
+    /// </summary>
     public void TileStateUpdate() 
     {
         // Change the material to the appropriate material
         gameObject.GetComponent<Renderer>().material = tileMaterials[(int)tileState];
+
+        if (gameManager != null)
+        {
+            if (gameManager.burnableTileStates.Contains(tileState))
+            {
+                canBeBurnt = true;
+            }
+            else
+            {
+                canBeBurnt = false;
+            }
+        }
+
         tileData.TileState = tileState;
+        tileData.CanBeBurnt = canBeBurnt;
+
         if (tileState == TileStates.BURNING)
         {
             foreach (BurnableDecoration deco in burnableDecorations)
@@ -183,21 +217,16 @@ public class GameTile: MonoBehaviour
     public bool CanBeChanged(TileStates changeToState)
     {
         // If the tile is already that tile type
-
         if (changeToState == tileState) { return false; }
 
-        // Protected tiles
-        if (     tileState == TileStates.ANIMAL
-            || tileState == TileStates.BURNING
-            ||  tileState == TileStates.BURNT
-            ||  tileState == TileStates.DITCH)
+        if(tileState == TileStates.DRY_GRASS && changeToState != TileStates.BURNING)
         {
-            // Show warning to player
             return false;
         }
 
+        // Protected tiles
+        if(!canBeBurnt) { return false; }
 
-        
         return true;
     }
 
@@ -221,6 +250,25 @@ public class GameTile: MonoBehaviour
     private void OnMouseExit()
     {
         highlight.SetActive(false);
+    }
+
+    public void SetTileScore()
+    {
+        switch (tileState)
+        {
+            case TileStates.ANIMAL:
+                tileScore = 300;
+                break;
+            case TileStates.DRY_GRASS:
+                tileScore = 100;
+                break;
+            case TileStates.GRASS:
+                tileScore = 50;
+                break;
+            default:
+                tileScore = 25;
+                break;
+        }
     }
 
     public void GetNeighbours()

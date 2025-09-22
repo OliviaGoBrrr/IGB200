@@ -31,18 +31,23 @@ public class GameManager : MonoBehaviour
     private GameState prevGameState;
     public int roundCount = 1;
 
+    public List<GameTile.TileStates> burnableTileStates = new List<GameTile.TileStates>();
+    public List<GameTile.TileStates> rewardableStates = new List<GameTile.TileStates>();
+    public List<GameTileData> rewardTiles = new List<GameTileData>();
+
     [Header("Player Actions")]
     public List<GameTileData> tilesChanged = new List<GameTileData>();
     public List<DraggableItem> itemsUsed = new List<DraggableItem>();
 
     [Header("Game Scoring")]
+    [SerializeField] private int playerScore;
     [SerializeField] private float[] scoreThresholds = new float[3];
     [SerializeField] private float initialGrassPercent;
     [SerializeField] private float finalGrassPercent;
     [HideInInspector] public int currentActionCount;
     private Vector3 lastMousePosition;
 
-    // Simulation setting
+    [Header("Simulation Settings")]
     [SerializeField] private float simTime = 1.0f;
     private float simTimer;
 
@@ -53,7 +58,7 @@ public class GameManager : MonoBehaviour
     }
 
     void Start()
-    {
+    { 
 
     }
 
@@ -64,6 +69,16 @@ public class GameManager : MonoBehaviour
         cameraPos.x = (gridManager.xMax + gridManager.xMin) / 2;
         sceneCamera.transform.position = cameraPos;
         initialGrassPercent = gridManager.GetPercentOfTileInGrid(GameTile.TileStates.GRASS);
+
+        foreach (var tile in gridManager.masterTileGrid)
+        {
+            if (tile.GameTile != null && rewardableStates.Contains(tile.TileState))
+            {
+                rewardTiles.Add(tile);
+                Debug.Log(tile.GameTile);
+            }
+        }
+
         state = GameState.PREP_PHASE;
         uiManager.LoadingScreen.SetActive(false);
     }
@@ -106,7 +121,6 @@ public class GameManager : MonoBehaviour
                 finalGrassPercent = 100 * (gridManager.GetPercentOfTileInGrid(GameTile.TileStates.GRASS) / initialGrassPercent);
 
                 int stars = 3;
-
                 for (int i = 0; i < scoreThresholds.Length; i++)
                 {
                     if (finalGrassPercent > scoreThresholds[i])
@@ -211,6 +225,9 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void PlayerActionTaken(GameTile.TileStates changeState, DraggableItem item)
     {
+
+
+
         // Find the tile on the grid
         var tileGrid = gridManager.masterTileGrid;
 
@@ -230,9 +247,8 @@ public class GameManager : MonoBehaviour
 
         GameTile selectTile = tileGrid[cellX, cellZ].GameTile;
 
-        selectTile.previousState = selectTile.tileState;
-
         // Can the player change the tile's state
+
         if (!selectTile.CanBeChanged(changeState)) { return; }
 
         selectTile.tileState = changeState;
@@ -324,6 +340,27 @@ public class GameManager : MonoBehaviour
         return lastMousePosition;
     }
 
+
+    public void SetPlayerScore()
+    {
+        // Check if the initial dry grass tiles were burnt.
+        foreach (var tile in rewardTiles)
+        {
+            if (tile.TileState == GameTile.TileStates.DRY_GRASS && tile.GameTile.tileState == GameTile.TileStates.BURNT)
+            {
+                playerScore += tile.GameTile.tileScore;
+            }
+
+            else if (tile.TileState == GameTile.TileStates.ANIMAL || tile.TileState == GameTile.TileStates.GRASS)
+            {
+                if(tile.GameTile.tileState != GameTile.TileStates.BURNT)
+                {
+                    playerScore += tile.GameTile.tileScore;
+                }
+            }
+        }
+    }
+
     public void PauseUnpauseGame()
     {
         if(prevGameState != GameState.PAUSED)
@@ -342,6 +379,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        SetPlayerScore();
         Debug.Log("Game Over");
         state = GameState.GAME_OVER;
         //Time.timeScale = 0.0f;
@@ -351,6 +389,7 @@ public class GameManager : MonoBehaviour
 
     public void GameWin(int starCount)
     {
+        SetPlayerScore();
         state = GameState.GAME_WIN;
 
         //uiManager.DisplayGameWinUI(starCount);

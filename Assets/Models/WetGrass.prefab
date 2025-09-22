@@ -123,8 +123,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 8027959816254752123}
-  canBeBurnt: 1
+  canBeBurnt: 0
   roundsToBurn: 1
+  tileScore: 0
   wetness: 2
   tileState: 6
   tileMaterials:
@@ -139,7 +140,6 @@ MonoBehaviour:
   gridIndexZ: 0
   burnableDecorations: []
   growableDecorations: []
-  previousState: 6
   TL: 0
   T: 0
   TR: 0
