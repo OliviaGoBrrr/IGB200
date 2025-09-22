@@ -107,11 +107,11 @@ public class PlayerAnimator : MonoBehaviour
             {
                 animTarget.SetTrigger("Action");
             }
-        walkRoutine = StartCoroutine(WalkWait(1f));
+        walkRoutine = StartCoroutine(WalkWait(2f));
     }
     IEnumerator WalkWait(float additionalTime)
     {
-        yield return new WaitForSeconds(UnityEngine.Random.Range(1.5f, 5f) + additionalTime);
+        yield return new WaitForSeconds(UnityEngine.Random.Range(2f, 5f) + additionalTime);
         PlayerWalk();
         yield return null;
     }

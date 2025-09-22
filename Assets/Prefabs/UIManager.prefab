@@ -1945,7 +1945,7 @@ MonoBehaviour:
   itemUses: 1
   disableAlpha: 160
   itemDisabled: 0
-  dragAudio: {fileID: 8300000, guid: 6d832dc78126add4c8c88c9da9b8c788, type: 3}
+  dragAudio: {fileID: 8300000, guid: 16400a18d2335cc49af95d6f7b065435, type: 3}
   intensity: 1
 --- !u!1 &3675850127665521711
 GameObject:
