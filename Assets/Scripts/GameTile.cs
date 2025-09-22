@@ -56,7 +56,8 @@ public class GameTile: MonoBehaviour
 
     [Header("Tile Decorations")]
     public List<BurnableDecoration> burnableDecorations;
-    public List<GameObject> growableDecorations;
+    public List<SproutableDecoration> sproutableDecorations;
+    
 
    
 
@@ -81,8 +82,10 @@ public class GameTile: MonoBehaviour
         foreach (Transform childTransform in transform)
         {
             GameObject child = childTransform.gameObject;
-            BurnableDecoration decoration = child.GetComponent<BurnableDecoration>();
-            if (decoration != null) { burnableDecorations.Add(decoration); }
+            BurnableDecoration decoration1 = child.GetComponent<BurnableDecoration>();
+            if (decoration1 != null) { burnableDecorations.Add(decoration1); }
+            SproutableDecoration decoration2 = child.GetComponent<SproutableDecoration>();
+            if (decoration2 != null) { sproutableDecorations.Add(decoration2); }
         }
 
     }
