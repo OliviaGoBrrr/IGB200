@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     public int roundCount = 1;
 
     [Header("Player Actions")]
-    public List<GameTile> tilesChanged = new List<GameTile>();
+    public List<GameTileData> tilesChanged = new List<GameTileData>();
     public List<DraggableItem> itemsUsed = new List<DraggableItem>();
 
     [Header("Game Scoring")]
@@ -237,9 +237,10 @@ public class GameManager : MonoBehaviour
 
         selectTile.tileState = changeState;
 
-        tilesChanged.Add(selectTile);
+        tilesChanged.Add(selectTile.tileData);
         itemsUsed.Add(item);
-   
+
+        Debug.Log(selectTile.tileData.TileState);
 
         // Use a switch statement to handle different actions
         switch (changeState)
@@ -283,9 +284,9 @@ public class GameManager : MonoBehaviour
         var lastTile = undoingTiles[undoingTiles.Length - 1];
         var lastItem = undoingItems[undoingItems.Length - 1];
 
-        lastTile.tileState = lastTile.previousState;
+        lastTile.GameTile.tileState = lastTile.TileState;
        
-        lastTile.TileStateUpdate();
+        lastTile.GameTile.TileStateUpdate();
         tilesChanged.RemoveAt(tilesChanged.Count - 1);
 
 

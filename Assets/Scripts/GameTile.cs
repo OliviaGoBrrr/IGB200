@@ -49,6 +49,8 @@ public class GameTile: MonoBehaviour
     private bool affected;
     public int wetness = 0;
     public TileStates tileState;
+    //[HideInInspector]
+    public TileStates previousState;
     [SerializeField] private Material[] tileMaterials;
     public int gridIndexX, gridIndexZ;
     private Vector3 tilePosition;
@@ -57,8 +59,8 @@ public class GameTile: MonoBehaviour
     public List<BurnableDecoration> burnableDecorations;
     public List<GameObject> growableDecorations;
 
-    [HideInInspector]
-    public TileStates previousState;
+   
+
 
     // Neighbours
     private List<GameTile> tileNeighbours = new List<GameTile>();
@@ -167,6 +169,7 @@ public class GameTile: MonoBehaviour
     {
         // Change the material to the appropriate material
         gameObject.GetComponent<Renderer>().material = tileMaterials[(int)tileState];
+        tileData.TileState = tileState;
         if (tileState == TileStates.BURNING)
         {
             foreach (BurnableDecoration deco in burnableDecorations)
