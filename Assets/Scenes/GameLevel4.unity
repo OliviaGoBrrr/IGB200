@@ -3675,6 +3675,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e6b6c5214b8c8447ba5db3c54a97060, type: 3}
+--- !u!114 &1702321443 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7824181801414860680, guid: 310c7d9ff9c1a4f49b73d5d00d2a24f6, type: 3}
+  m_PrefabInstance: {fileID: 702778790}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f078a1cbecfc6354a9f0c2452ab6b885, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1704014792 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4731447007542266176, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
@@ -8485,7 +8496,7 @@ PrefabInstance:
     - target: {fileID: 7171657674426419065, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: gameManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1702321443}
     - target: {fileID: 7171657674426419065, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: mouseIndicator
       value: 
@@ -10548,7 +10559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -13206,7 +13217,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Uses: 2'
+  m_text: 'Uses: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

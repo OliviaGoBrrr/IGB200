@@ -2379,6 +2379,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 310c7d9ff9c1a4f49b73d5d00d2a24f6, type: 3}
+--- !u!114 &1996306166 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7824181801414860680, guid: 310c7d9ff9c1a4f49b73d5d00d2a24f6, type: 3}
+  m_PrefabInstance: {fileID: 1996306165}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f078a1cbecfc6354a9f0c2452ab6b885, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2018775671 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4731447007542266176, guid: 1e6b6c5214b8c8447ba5db3c54a97060, type: 3}
@@ -6845,7 +6856,7 @@ PrefabInstance:
     - target: {fileID: 7171657674426419065, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: gameManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1996306166}
     - target: {fileID: 7171657674426419065, guid: 1f1b19518456e5a46b4731bbd8cc4135, type: 3}
       propertyPath: mouseIndicator
       value: 
