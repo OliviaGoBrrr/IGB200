@@ -21,7 +21,7 @@ public class BurnableDecoration : MonoBehaviour
         if (triggered == false)
         {
             triggered = true;
-            sprite2D.DOFade(0, 2);
+            sprite2D.enabled = false;
             triggerPar.Play();
         }
     }
