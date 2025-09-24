@@ -561,6 +561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   changeState: 1
   itemUses: 2
+  dragIconScale: 0.7
   disableAlpha: 120
   itemDisabled: 0
   dragAudio: {fileID: 8300000, guid: 9fa78bd27d4913043a64e01d87193069, type: 3}
@@ -914,7 +915,7 @@ RectTransform:
   m_GameObject: {fileID: 1598732525409891448}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 36.555176}
-  m_LocalScale: {x: 1.9912503, y: 1.9912503, z: 1.9912503}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6998497063515371894}
@@ -1653,7 +1654,7 @@ RectTransform:
   m_GameObject: {fileID: 2532294360888914486}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 36.555176}
-  m_LocalScale: {x: 1.9912503, y: 1.9912503, z: 1.9912503}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6998497063515371894}
@@ -1919,7 +1920,7 @@ RectTransform:
   m_GameObject: {fileID: 2879472156350886897}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5021971, y: 0.5021971, z: 0.5021971}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2644103724620370466}
@@ -1927,10 +1928,10 @@ RectTransform:
   - {fileID: 4434661398696954490}
   m_Father: {fileID: 3243998631120185392}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -210, y: 50}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 50}
+  m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6956509444466522144
 MonoBehaviour:
@@ -1950,7 +1951,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 80
+  m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -2502,6 +2503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   changeState: 5
   itemUses: 1
+  dragIconScale: 0.7
   disableAlpha: 120
   itemDisabled: 0
   dragAudio: {fileID: 8300000, guid: 16400a18d2335cc49af95d6f7b065435, type: 3}
@@ -2818,7 +2820,7 @@ RectTransform:
   m_GameObject: {fileID: 4008648206697142009}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 36.555176}
-  m_LocalScale: {x: 1.9912503, y: 1.9912503, z: 1.9912503}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6998497063515371894}
@@ -5763,6 +5765,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   changeState: 6
   itemUses: 3
+  dragIconScale: 0.7
   disableAlpha: 120
   itemDisabled: 0
   dragAudio: {fileID: 8300000, guid: 7d90d87fe784f474f9aaa8599a544454, type: 3}
