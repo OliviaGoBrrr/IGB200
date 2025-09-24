@@ -770,6 +770,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1742677450225557780, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2072528122175598323, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -914,6 +918,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadNextScene
       objectReference: {fileID: 0}
+    - target: {fileID: 3053977438996254837, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3310777947241900133, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1010,6 +1018,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5645127195782719326, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+      propertyPath: itemUses
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5645127195782719326, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+      propertyPath: itemDisabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6006082761647705987, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1033,6 +1049,14 @@ PrefabInstance:
     - target: {fileID: 6006082761647705987, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6052169905481598208, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+      propertyPath: itemUses
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6052169905481598208, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+      propertyPath: itemDisabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6074818034509551070, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1100,35 +1124,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7119421445517326409, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7119421445517326409, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7119421445517326409, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7119421445517326409, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 7219632502595329344, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7219632502595329344, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7219632502595329344, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7219632502595329344, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -105
       objectReference: {fileID: 0}
     - target: {fileID: 7344275795977752191, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: m_Spacing
