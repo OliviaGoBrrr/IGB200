@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 using DG.Tweening;
+using TMPro;
 
 public class LevelSelectManager : MonoBehaviour
 {
@@ -14,9 +15,14 @@ public class LevelSelectManager : MonoBehaviour
 
     private Button backButton;
 
-    private Button level1;
-    private Button level2;
-    private Button level3;
+    private VisualElement level1Container;
+    private VisualElement level2Container;
+    private VisualElement level3Container;
+    private VisualElement level4Container;
+    private VisualElement level5Container;
+    private VisualElement level6Container;
+    private VisualElement level7Container;
+    private VisualElement level8Container;
 
     private Array allLevels;
     bool sceneLoad = false; // Prevents scenes from loading multiple times
@@ -26,7 +32,15 @@ public class LevelSelectManager : MonoBehaviour
         sceneLoader = GameObject.FindGameObjectWithTag("SceneLoader").GetComponent<SceneLoader>();
 
         ui = GetComponent<UIDocument>().rootVisualElement;
-        
+
+        level1Container = ui.Q<TemplateContainer>("LevelContainer1");
+        level2Container = ui.Q<TemplateContainer>("LevelContainer2");
+        level3Container = ui.Q<TemplateContainer>("LevelContainer3");
+        level4Container = ui.Q<TemplateContainer>("LevelContainer4");
+        level5Container = ui.Q<TemplateContainer>("LevelContainer5");
+        level6Container = ui.Q<TemplateContainer>("LevelContainer6");
+        level7Container = ui.Q<TemplateContainer>("LevelContainer7");
+        level8Container = ui.Q<TemplateContainer>("LevelContainer8");
     }
 
     private void OnEnable()
@@ -41,18 +55,15 @@ public class LevelSelectManager : MonoBehaviour
         backButton.clicked += OnBackButtonClicked;
 
 
-        level1 = ui.Q<Button>("LevelButton1");
-        level2 = ui.Q<Button>("LevelButton2");
-        level3 = ui.Q<Button>("LevelButton3");
-
-        allLevels = new Button[]
+        allLevels = new VisualElement[]
         {
-            level1, level2, level3 // add level vars to this array and it will auto-write out the other bit of code needed
+            level1Container, level2Container, level3Container, level4Container, level5Container, level6Container, level7Container, level8Container // add level vars to this array and it will auto-write out the other bit of code needed
         };
 
-        foreach (Button button in allLevels)
+        foreach (VisualElement element in allLevels)
         {
-            button.clickable.clickedWithEventInfo += Clickable_clickedWithEventInfo;
+            
+            element.Q<Button>("LevelButton").clickable.clickedWithEventInfo += Clickable_clickedWithEventInfo;
         }
     }
 

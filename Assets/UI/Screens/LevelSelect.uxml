@@ -3,41 +3,38 @@
     <ui:Template name="SettingsPage" src="project://database/Assets/UI/Screens/SettingsPage.uxml?fileID=9197481963319205126&amp;guid=9bf061a968bdab745a2707c5d5846e2c&amp;type=3#SettingsPage" />
     <Style src="project://database/Assets/UI/mainmenu.uss?fileID=7433441132597879392&amp;guid=f8b94c192cc08994bb5f13e079d8acb3&amp;type=3#mainmenu" />
     <ui:VisualElement name="BG" style="flex-grow: 1; background-color: rgb(164, 186, 72); justify-content: center; align-items: center;">
-        <ui:Button name="BackButton" class="unity-button-hover" style="align-items: center; align-self: flex-start; position: absolute; top: 10px; left: 10px; background-image: url(&quot;project://database/Assets/PlaceholderArt/UI/BackArrow.png?fileID=2800000&amp;guid=416821db75e97c24b96f395113992ed4&amp;type=3#BackArrow&quot;); background-size: 70% 70%; width: 64px; height: 64px; overflow: visible;" />
-        <ui:Button name="SettingsButton" double-click-selects-word="true" emoji-fallback-support="false" class="unity-button-hover" style="align-self: flex-end; bottom: auto; left: auto; top: 10px; right: 10px; position: absolute; font-size: 12px; background-image: url(&quot;project://database/Assets/PlaceholderArt/UI/Settings1.png?fileID=2800000&amp;guid=612c1383e5faf2545bd44fb663661226&amp;type=3#Settings1&quot;); -unity-background-scale-mode: scale-to-fit; background-position-x: center 0; background-position-y: center 0; -unity-background-image-tint-color: rgb(241, 222, 208); overflow: visible; background-size: 90% 90%;" />
-        <ui:VisualElement name="AllLevels" style="flex-grow: 1; justify-content: center; align-items: center; position: absolute; align-self: center; align-content: flex-start; width: 400px; flex-direction: row; flex-wrap: wrap; top: 40%;">
-            <ui:VisualElement name="LevelContainer1" template="LevelButton">
-                <Style src="project://database/Assets/UI/mainmenu.uss?fileID=7433441132597879392&amp;guid=f8b94c192cc08994bb5f13e079d8acb3&amp;type=3#mainmenu" />
-                <ui:Button name="LevelButton1" text="1" class="unity-button-hover" style="position: relative; top: auto; left: auto; overflow: visible; align-items: center; justify-content: center; color: rgb(241, 222, 208); -unity-font-style: bold; font-size: 20px; border-top-left-radius: 48px; border-top-right-radius: 48px; border-bottom-right-radius: 48px; border-bottom-left-radius: 48px; width: 72px; height: 72px; align-self: auto; align-content: auto; margin-top: 16px; margin-right: 16px; margin-bottom: 16px; margin-left: 16px;">
-                    <ui:VisualElement name="Level1Star1" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/PlaceholderArt/UI/Star1.png?fileID=2800000&amp;guid=88b14ca20ed55db409dfd3cff50fcefe&amp;type=3#Star1&quot;); position: absolute; width: 40px; height: 40px; top: -24px; left: -18px; -unity-background-image-tint-color: rgb(241, 222, 208);" />
-                    <ui:VisualElement name="Level1Star2" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/PlaceholderArt/UI/Star1.png?fileID=2800000&amp;guid=88b14ca20ed55db409dfd3cff50fcefe&amp;type=3#Star1&quot;); position: absolute; width: 40px; height: 40px; top: -24px; left: auto; right: -18px; -unity-background-image-tint-color: rgb(241, 222, 208);" />
-                    <ui:VisualElement name="Level1Star3" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/PlaceholderArt/UI/Star1.png?fileID=2800000&amp;guid=88b14ca20ed55db409dfd3cff50fcefe&amp;type=3#Star1&quot;); position: absolute; width: 40px; height: 40px; top: -32px; left: auto; -unity-background-image-tint-color: rgb(241, 222, 208);" />
-                </ui:Button>
-            </ui:VisualElement>
-            <ui:VisualElement name="LevelContainer2" template="LevelButton">
-                <Style src="project://database/Assets/UI/mainmenu.uss?fileID=7433441132597879392&amp;guid=f8b94c192cc08994bb5f13e079d8acb3&amp;type=3#mainmenu" />
-                <ui:Button name="LevelButton2" text="2" class="unity-button-hover" style="position: relative; top: auto; left: auto; overflow: visible; align-items: center; justify-content: center; color: rgb(241, 222, 208); -unity-font-style: bold; font-size: 20px; border-top-left-radius: 48px; border-top-right-radius: 48px; border-bottom-right-radius: 48px; border-bottom-left-radius: 48px; width: 72px; height: 72px; align-self: auto; align-content: auto; margin-top: 16px; margin-right: 16px; margin-bottom: 16px; margin-left: 16px;">
-                    <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/PlaceholderArt/UI/Star1.png?fileID=2800000&amp;guid=88b14ca20ed55db409dfd3cff50fcefe&amp;type=3#Star1&quot;); position: absolute; width: 40px; height: 40px; top: -24px; left: -18px; -unity-background-image-tint-color: rgb(241, 222, 208);" />
-                    <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/PlaceholderArt/UI/Star1.png?fileID=2800000&amp;guid=88b14ca20ed55db409dfd3cff50fcefe&amp;type=3#Star1&quot;); position: absolute; width: 40px; height: 40px; top: -24px; left: auto; right: -18px; -unity-background-image-tint-color: rgb(241, 222, 208);" />
-                    <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/PlaceholderArt/UI/Star1.png?fileID=2800000&amp;guid=88b14ca20ed55db409dfd3cff50fcefe&amp;type=3#Star1&quot;); position: absolute; width: 40px; height: 40px; top: -32px; left: auto; -unity-background-image-tint-color: rgb(241, 222, 208);" />
-                </ui:Button>
-            </ui:VisualElement>
-            <ui:VisualElement name="LevelContainer3" template="LevelButton">
-                <Style src="project://database/Assets/UI/mainmenu.uss?fileID=7433441132597879392&amp;guid=f8b94c192cc08994bb5f13e079d8acb3&amp;type=3#mainmenu" />
-                <ui:Button name="LevelButton3" text="3" class="unity-button-hover" style="position: relative; top: auto; left: auto; overflow: visible; align-items: center; justify-content: center; color: rgb(241, 222, 208); -unity-font-style: bold; font-size: 20px; border-top-left-radius: 48px; border-top-right-radius: 48px; border-bottom-right-radius: 48px; border-bottom-left-radius: 48px; width: 72px; height: 72px; align-self: auto; align-content: auto; margin-top: 16px; margin-right: 16px; margin-bottom: 16px; margin-left: 16px;">
-                    <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/PlaceholderArt/UI/Star1.png?fileID=2800000&amp;guid=88b14ca20ed55db409dfd3cff50fcefe&amp;type=3#Star1&quot;); position: absolute; width: 40px; height: 40px; top: -24px; left: -18px; -unity-background-image-tint-color: rgb(241, 222, 208);" />
-                    <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/PlaceholderArt/UI/Star1.png?fileID=2800000&amp;guid=88b14ca20ed55db409dfd3cff50fcefe&amp;type=3#Star1&quot;); position: absolute; width: 40px; height: 40px; top: -24px; left: auto; right: -18px; -unity-background-image-tint-color: rgb(241, 222, 208);" />
-                    <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/PlaceholderArt/UI/Star1.png?fileID=2800000&amp;guid=88b14ca20ed55db409dfd3cff50fcefe&amp;type=3#Star1&quot;); position: absolute; width: 40px; height: 40px; top: -32px; left: auto; -unity-background-image-tint-color: rgb(241, 222, 208);" />
-                </ui:Button>
-            </ui:VisualElement>
-            <ui:Instance template="LevelButton" name="LevelContainer4" style="display: none;">
+        <ui:VisualElement name="BackContainer" style="flex-grow: 1; position: absolute; top: 10px; left: 10px; margin-top: 2px; margin-right: 4px; margin-bottom: 2px; margin-left: 4px; overflow: visible; width: 100px; height: 100px;">
+            <ui:VisualElement name="Shadow" style="flex-grow: 1; position: absolute; height: 64px; width: 64px; background-color: rgba(0, 0, 0, 0.4); border-top-left-radius: 24px; border-top-right-radius: 24px; border-bottom-right-radius: 24px; border-bottom-left-radius: 24px; border-top-width: 8px; border-right-width: 8px; border-bottom-width: 8px; border-left-width: 8px; top: 5px; left: 5px; right: auto; border-left-color: rgba(0, 0, 0, 0); border-right-color: rgba(0, 0, 0, 0); border-top-color: rgba(0, 0, 0, 0); border-bottom-color: rgba(0, 0, 0, 0); margin-top: 0; margin-bottom: 0; margin-right: 0; margin-left: 0; max-width: 64px; max-height: 64px;" />
+            <ui:Button name="BackButton" class="unity-button-hover" style="align-items: center; align-self: flex-start; position: absolute; top: auto; left: auto; background-image: url(&quot;project://database/Assets/PlaceholderArt/UI/BackArrow.png?fileID=2800000&amp;guid=416821db75e97c24b96f395113992ed4&amp;type=3#BackArrow&quot;); background-size: 70% 70%; width: 64px; height: 64px; overflow: visible; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="SettingsContainer" style="flex-grow: 1; top: 10px; right: 10px; position: absolute; margin-top: 2px; margin-right: 4px; margin-bottom: 2px; margin-left: 4px; width: 100px; height: 100px;">
+            <ui:VisualElement name="Shadow" style="flex-grow: 1; position: absolute; height: 64px; width: 64px; background-color: rgba(0, 0, 0, 0.4); border-top-left-radius: 24px; border-top-right-radius: 24px; border-bottom-right-radius: 24px; border-bottom-left-radius: 24px; border-top-width: 8px; border-right-width: 8px; border-bottom-width: 8px; border-left-width: 8px; top: 5px; left: auto; right: -5px; border-left-color: rgba(0, 0, 0, 0); border-right-color: rgba(0, 0, 0, 0); border-top-color: rgba(0, 0, 0, 0); border-bottom-color: rgba(0, 0, 0, 0); margin-top: 0; margin-bottom: 0; margin-right: 0; margin-left: 0; max-width: 64px; max-height: 64px; bottom: auto;" />
+            <ui:Button name="SettingsButton" double-click-selects-word="true" emoji-fallback-support="false" class="unity-button-hover" style="background-image: url(&quot;project://database/Assets/PlaceholderArt/UI/Settings1.png?fileID=2800000&amp;guid=612c1383e5faf2545bd44fb663661226&amp;type=3#Settings1&quot;); position: absolute; right: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="AllLevels" style="flex-grow: 1; justify-content: center; align-items: center; position: absolute; align-self: center; align-content: flex-start; width: 500px; flex-direction: row; flex-wrap: wrap; top: 35%;">
+            <ui:Instance template="LevelButton" name="LevelContainer1">
+                <AttributeOverrides element-name="LevelButton" text="1" />
+            </ui:Instance>
+            <ui:Instance template="LevelButton" name="LevelContainer2">
+                <AttributeOverrides element-name="LevelButton" text="2" />
+            </ui:Instance>
+            <ui:Instance template="LevelButton" name="LevelContainer3">
+                <AttributeOverrides element-name="LevelButton" text="3" />
+            </ui:Instance>
+            <ui:Instance template="LevelButton" name="LevelContainer4" style="display: flex; opacity: 1;">
                 <AttributeOverrides element-name="LevelButton" text="4" />
             </ui:Instance>
-            <ui:Instance template="LevelButton" name="LevelContainer5" style="display: none;">
+            <ui:Instance template="LevelButton" name="LevelContainer5" style="display: flex;">
                 <AttributeOverrides element-name="LevelButton" text="5" />
             </ui:Instance>
-            <ui:Instance template="LevelButton" name="LevelContainer6" style="display: none;">
+            <ui:Instance template="LevelButton" name="LevelContainer6" style="display: flex;">
                 <AttributeOverrides element-name="LevelButton" text="6" />
+            </ui:Instance>
+            <ui:Instance template="LevelButton" name="LevelContainer7" style="display: flex;">
+                <AttributeOverrides element-name="LevelButton" text="7" />
+            </ui:Instance>
+            <ui:Instance template="LevelButton" name="LevelContainer8" style="display: flex;">
+                <AttributeOverrides element-name="LevelButton" text="8" />
             </ui:Instance>
         </ui:VisualElement>
         <ui:Instance template="SettingsPage" name="Settings" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: none;" />
