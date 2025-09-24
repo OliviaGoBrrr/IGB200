@@ -10,6 +10,12 @@ public class GameScreen : MonoBehaviour
     private Button settingsButton;
     private TemplateContainer settings;
 
+    private Button playSimButton;
+    private Button undoButton;
+    private Button restartButton;
+
+    public GameManager gameManager;
+
     private Button backButton;
     bool sceneLoad = false;
 
@@ -23,6 +29,15 @@ public class GameScreen : MonoBehaviour
 
     private void OnEnable()
     {
+        playSimButton = ui.Q<Button>("PlaySimButton");
+        playSimButton.clicked += OnPlaySimButtonClicked;
+
+        undoButton = ui.Q<Button>("UndoButton");
+        undoButton.clicked += OnUndoButtonClicked;
+
+        restartButton = ui.Q<Button>("RestartButton");
+        restartButton.clicked += OnRestartButtonClicked;
+
         settingsButton = ui.Q<Button>("SettingsButton");
         settingsButton.clicked += OnSettingsButtonClicked;
 
@@ -31,6 +46,21 @@ public class GameScreen : MonoBehaviour
 
         backButton = ui.Q<Button>("BackButton");
         backButton.clicked += OnBackButtonClicked;
+    }
+
+    private void OnPlaySimButtonClicked()
+    {
+        gameManager.PlaySimulation();
+    }
+
+    private void OnUndoButtonClicked()
+    {
+        gameManager.UndoPlayerAction();
+    }
+
+    private void OnRestartButtonClicked()
+    {
+        sceneLoader.ReloadCurrentScene();
     }
 
     private void OnSettingsButtonClicked()

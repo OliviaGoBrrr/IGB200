@@ -40,6 +40,9 @@ public class SceneLoader : MonoBehaviour
     {
         string currSceneName = SceneManager.GetActiveScene().name;
 
-        SceneManager.LoadScene(currSceneName);
+
+        //SceneManager.LoadScene(currSceneName);
+
+        StartCoroutine(NextScene(currSceneName));
     }
 }

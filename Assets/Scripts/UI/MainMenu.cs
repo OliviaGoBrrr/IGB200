@@ -5,7 +5,7 @@ using static System.TimeZoneInfo;
 using UnityEditor.SearchService;
 using UnityEngine.Rendering;
 
-public class MainMenu : MonoBehaviour
+public class MainMenu : UIAnimations
 {
     private VisualElement ui;
 
@@ -67,11 +67,17 @@ public class MainMenu : MonoBehaviour
         customisePanelButton = ui.Q<Button>("CustomisePanelButton");
         customisePanelButton.clicked += OnCustomiseButtonClicked;
 
-        customiseButton.RegisterCallback<PointerEnterEvent>(OnPointerEnterEvent, TrickleDown.TrickleDown);
-        customisePanelButton.RegisterCallback<PointerEnterEvent>(OnPointerEnterEvent, TrickleDown.TrickleDown);
 
-        customiseButton.RegisterCallback<PointerLeaveEvent>(OnPointerLeaveEvent, TrickleDown.TrickleDown);
-        customisePanelButton.RegisterCallback<PointerLeaveEvent>(OnPointerLeaveEvent, TrickleDown.TrickleDown);
+        // Hover Button
+
+        customiseButton.RegisterCallback<PointerEnterEvent>(OnCustomisePointerEnterEvent, TrickleDown.TrickleDown);
+        customisePanelButton.RegisterCallback<PointerEnterEvent>(OnCustomisePointerEnterEvent, TrickleDown.TrickleDown);
+
+        customiseButton.RegisterCallback<PointerLeaveEvent>(OnCustomisePointerLeaveEvent, TrickleDown.TrickleDown);
+        customisePanelButton.RegisterCallback<PointerLeaveEvent>(OnCustomisePointerLeaveEvent, TrickleDown.TrickleDown);
+
+        playButton.RegisterCallback<PointerEnterEvent>(OnPlayPointerEnterEvent, TrickleDown.TrickleDown);
+        playButton.RegisterCallback<PointerLeaveEvent>(OnPlayPointerLeaveEvent, TrickleDown.TrickleDown);
 
         // Customisation Stuff
 
@@ -103,17 +109,32 @@ public class MainMenu : MonoBehaviour
 
     }
 
-    private void OnPointerEnterEvent(PointerEnterEvent evt)
+
+    // Hover Methods
+
+    private void OnCustomisePointerEnterEvent(PointerEnterEvent evt)
     {
         characterHead.style.backgroundImage = new StyleBackground(characterFaceSmile);
         characterBody.style.backgroundImage = new StyleBackground(characterBodySmile);
     }
 
-    private void OnPointerLeaveEvent(PointerLeaveEvent evt)
+    private void OnCustomisePointerLeaveEvent(PointerLeaveEvent evt)
     {
         characterHead.style.backgroundImage = new StyleBackground(characterFaceNormal);
         characterBody.style.backgroundImage = new StyleBackground(characterBodyNormal);
     }
+
+    private void OnPlayPointerEnterEvent(PointerEnterEvent evt)
+    {
+        playButton.style.scale = new Scale(new Vector3(1.1f, 1.1f, 1));
+    }
+
+    private void OnPlayPointerLeaveEvent(PointerLeaveEvent evt)
+    {
+        playButton.style.scale = new Scale(new Vector3(1f, 1f, 1));
+    }
+
+    // Click Methods
 
     private void OnPlayButtonClicked()
     {
@@ -123,6 +144,8 @@ public class MainMenu : MonoBehaviour
             FindAnyObjectByType<MenuAudio>().PlayButtonClick(0);
             sceneLoader.LoadNextScene("Level Select");
         }
+
+        playButton.style.scale = new Scale(new Vector3(0.8f, 0.8f, 1));
     }
 
     private void OnCustomiseButtonClicked()

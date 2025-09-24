@@ -5,10 +5,15 @@ using DG.Tweening;
 
 public class UIAnimations : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    
+    public void test()
     {
-        
+        print("GA");
+    }
+
+    public void ButtonSizeTween(Button button)
+    {
+
     }
     
 
