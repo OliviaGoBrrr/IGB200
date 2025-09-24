@@ -15,6 +15,15 @@ public class FireDecoration : MonoBehaviour
             FireBit bit = child.GetComponent<FireBit>();
             if (bit != null) { fireBits.Add(bit); }
         }
+        for(int i = fireBits.Count - 1; i >= 0; i--)
+        {
+            if (Random.Range(0, 11) != 0)
+            {
+                Destroy(fireBits[i].gameObject);
+                fireBits.RemoveAt(i);
+                
+            }
+        }
     }
     public void TriggerBurn()
     {
