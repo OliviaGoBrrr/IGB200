@@ -438,7 +438,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilemap: {fileID: 0}
-  mouseIndicator: {fileID: 0}
   gameManager: {fileID: 0}
   grid: {fileID: 0}
   xMin: 0
