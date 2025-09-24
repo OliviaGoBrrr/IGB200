@@ -20,7 +20,8 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public int itemUses;
     private TMP_Text itemUsesText;
 
-    [Header("Item Disable Values")]
+    [Header("Item Values")]
+    [SerializeField] private float dragIconScale = 0.7f;
     [SerializeField] private float disableAlpha = 50f;
     [SerializeField] private bool itemDisabled = false;
 
@@ -77,6 +78,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                 {
                     rt.position = localPoint;
                     rt.rotation = iconTransform.rotation;
+                    rt.localScale = new Vector3(dragIconScale, dragIconScale, 1f);
                 }
             }
         }
@@ -139,6 +141,8 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                 image.sprite = draggableStaticIcon.sprite;
 
                 iconTransform = canvas.transform as RectTransform;
+
+                iconTransform.localScale = new Vector3(dragIconScale, dragIconScale, 1f);
             }
         }
     }
@@ -179,6 +183,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         { 
             rt.position = globalMousePos;
             rt.rotation = iconTransform.rotation;
+            rt.localScale = new Vector3(dragIconScale, dragIconScale, 1f);
         }
     }
 
