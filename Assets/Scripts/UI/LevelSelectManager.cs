@@ -3,6 +3,9 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using DG.Tweening;
 using TMPro;
+using static UnityEditor.Rendering.FilterWindow;
+using static UnityEngine.Rendering.DebugUI.MessageBox;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class LevelSelectManager : MonoBehaviour
 {
@@ -24,8 +27,13 @@ public class LevelSelectManager : MonoBehaviour
     private VisualElement level7Container;
     private VisualElement level8Container;
 
+    private VisualElement[] levelContainers = new VisualElement[8];
+
     private Array allLevels;
     bool sceneLoad = false; // Prevents scenes from loading multiple times
+
+
+    private Color starColour = new Color(1, 0.925f, 0.513f);
 
     void Awake()
     {
@@ -33,14 +41,14 @@ public class LevelSelectManager : MonoBehaviour
 
         ui = GetComponent<UIDocument>().rootVisualElement;
 
-        level1Container = ui.Q<TemplateContainer>("LevelContainer1");
-        level2Container = ui.Q<TemplateContainer>("LevelContainer2");
-        level3Container = ui.Q<TemplateContainer>("LevelContainer3");
-        level4Container = ui.Q<TemplateContainer>("LevelContainer4");
-        level5Container = ui.Q<TemplateContainer>("LevelContainer5");
-        level6Container = ui.Q<TemplateContainer>("LevelContainer6");
-        level7Container = ui.Q<TemplateContainer>("LevelContainer7");
-        level8Container = ui.Q<TemplateContainer>("LevelContainer8");
+        // connects the var to the correct element in the hierarchy
+
+        for (int i = 0; i < levelContainers.Length; i++)
+        {
+            levelContainers[i] = ui.Q<TemplateContainer>("LevelContainer" + (i + 1));
+            print(levelContainers[i]);
+            SetStarColour(i, levelContainers[i]);
+        }
     }
 
     private void OnEnable()
@@ -54,15 +62,8 @@ public class LevelSelectManager : MonoBehaviour
         backButton = ui.Q<Button>("BackButton");
         backButton.clicked += OnBackButtonClicked;
 
-
-        allLevels = new VisualElement[]
+        foreach (VisualElement element in levelContainers)
         {
-            level1Container, level2Container, level3Container, level4Container, level5Container, level6Container, level7Container, level8Container // add level vars to this array and it will auto-write out the other bit of code needed
-        };
-
-        foreach (VisualElement element in allLevels)
-        {
-            
             element.Q<Button>("LevelButton").clickable.clickedWithEventInfo += Clickable_clickedWithEventInfo;
         }
     }
@@ -91,8 +92,22 @@ public class LevelSelectManager : MonoBehaviour
             FindAnyObjectByType<MenuAudio>().PlayButtonClick(0);
             var button = (Button)obj.target;
             string selectedLevel = button.text;
+            ScoreData.currentLevel = int.Parse(selectedLevel); // set current level
             sceneLoader.LoadNextScene("GameLevel" + button.text);
             StartCoroutine(FindAnyObjectByType<MenuAudio>().DestroySelf(0.5f));
+        }
+    }
+
+
+    private void SetStarColour(int level, VisualElement levelContainer)
+    {
+        if (ScoreData.levelScores[level] == 3) return; // dont check if its already at 3 stars
+
+        int i = 0;
+        while (i < ScoreData.levelScores[level])
+        {
+            levelContainer.Q<VisualElement>("Star" + (i + 1)).style.unityBackgroundImageTintColor = starColour;
+            i++;
         }
     }
 

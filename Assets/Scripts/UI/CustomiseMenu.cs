@@ -125,6 +125,7 @@ public class CustomiseMenu : MonoBehaviour
         eyesCategory.clicked += eyesCategoryClicked;
 
 
+        // deadass i mustve written this severely sleep deprived cus why didnt i just use a foreach, im cryin
         skinOption1 = ui.Q<Button>("SkinOption1");
         skinOption2 = ui.Q<Button>("SkinOption2");
         skinOption3 = ui.Q<Button>("SkinOption3");

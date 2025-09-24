@@ -401,6 +401,8 @@ public class GameManager : MonoBehaviour
 
         uiManager.DisplayGameWinUI(starCount);
 
+        ScoreData.CalculateLevel(starCount); // send off to score data where itll save for level select
+
         Debug.Log("Game win biiiitch");
         StartCoroutine(FindAnyObjectByType<SceneAudio>().EndCrackle());
     }
