@@ -1073,6 +1073,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 59514185348364270, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+      propertyPath: itemUses
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 59514185348364270, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: disableAlpha
       value: 120
       objectReference: {fileID: 0}
@@ -1530,7 +1534,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5645127195782719326, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: itemUses
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5645127195782719326, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: disableAlpha
@@ -1573,12 +1577,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6052169905481598208, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+      propertyPath: itemUses
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6052169905481598208, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: disableAlpha
       value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 6052169905481598208, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: itemDisabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6074818034509551070, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
