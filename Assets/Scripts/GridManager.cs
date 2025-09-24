@@ -12,7 +12,6 @@ public class GridManager : MonoBehaviour
 
     // References
     [SerializeField] private Tilemap tilemap;
-    [SerializeField] private GameObject mouseIndicator;
     [SerializeField] private GameManager gameManager;
     public Grid grid;
 
@@ -45,7 +44,6 @@ public class GridManager : MonoBehaviour
     void Update()
     {
         Vector3 mousePosition = gameManager.GetSelectedGridPosition(true);
-        mouseIndicator.transform.position = mousePosition;
     }
 
     public (int indexX, int indexY) GetGridIndex(GameObject tile)

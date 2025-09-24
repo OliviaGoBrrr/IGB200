@@ -233,7 +233,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         if(itemUsesText != null)
         {
-            itemUsesText.SetText($"{itemUses}");
+            itemUsesText.SetText($"x{itemUses}");
         }
         else
         {

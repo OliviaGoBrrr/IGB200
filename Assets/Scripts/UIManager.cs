@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class UIManager : MonoBehaviour
 
     [Header("Player UI")]
     [SerializeField] private TMP_Text starCountText;
+    [SerializeField] private Image[] starImages;
+    [SerializeField] private Sprite filledStar;
     [SerializeField] public TMP_Text scoreText;
 
     private GameManager gameManager;
@@ -37,6 +40,10 @@ public class UIManager : MonoBehaviour
     {
         GameWinScreen.SetActive(true);
         starCountText.SetText($"Stars: {starCount}");
+        for (int i = 0; i < starCount; i++)
+        {
+            starImages[i].sprite = filledStar;
+        }
     }
 
     private void OnEnable()
