@@ -445,6 +445,8 @@ MonoBehaviour:
   gameSoundFXAudio: {fileID: 8759694658939226794}
   UISoundFXAudio: {fileID: 7331462362724891762}
   buttonClick: {fileID: 8300000, guid: 7b9396e59e3734d4ba01d305ec69f1d1, type: 3}
+  scoreGained: {fileID: 8300000, guid: 66abe19fef1efe242b4a28ec5f5647d0, type: 3}
+  scoreUnGained: {fileID: 8300000, guid: ec4eacce56cbc864694b6436918fd639, type: 3}
 --- !u!1 &5155290320877517450
 GameObject:
   m_ObjectHideFlags: 0

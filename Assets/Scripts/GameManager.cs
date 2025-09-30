@@ -152,15 +152,18 @@ public class GameManager : MonoBehaviour
     {
         foreach(GameTile tile in gridManager.tileList)
         {
-            yield return new WaitForSeconds(0.15f);
+            yield return new WaitForSeconds(0.2f);
             if (tile.tileState == GameTile.TileStates.BURNT && tile.scoreWhenBurnt == true)
             {
                 ScoreTotal += tile.tileScore;
+                FindAnyObjectByType<SceneAudio>().ScoreGained();
             }
             else if (tile.tileState != GameTile.TileStates.BURNT && tile.scoreWhenBurnt != true)
             {
                 ScoreTotal += tile.tileScore;
+                FindAnyObjectByType<SceneAudio>().ScoreGained();
             }
+            else { FindAnyObjectByType<SceneAudio>().ScoreUngained(); }
             tile.ScoreCounted();
             Debug.Log(ScoreTotal.ToString());
         }
@@ -184,6 +187,7 @@ public class GameManager : MonoBehaviour
         {
             GameOver();
         }
+        uiManager.scoreText.SetText($"Score: {ScoreTotal}");
         yield return null;
     }
 
@@ -434,7 +438,7 @@ public class GameManager : MonoBehaviour
 
     public void GameWin(int starCount)
     {
-        SetPlayerScore();
+        
         state = GameState.GAME_WIN;
 
         uiManager.DisplayGameWinUI(starCount);

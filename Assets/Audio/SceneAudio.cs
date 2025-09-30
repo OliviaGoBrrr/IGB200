@@ -14,6 +14,8 @@ public class SceneAudio : MonoBehaviour
     [SerializeField] AudioSource UISoundFXAudio;
 
     [SerializeField] AudioClip buttonClick;
+    [SerializeField] AudioClip scoreGained;
+    [SerializeField] AudioClip scoreUnGained;
     public static SceneAudio instance;
     void Awake()
     {
@@ -72,5 +74,15 @@ public class SceneAudio : MonoBehaviour
         yield return new WaitForSeconds(time);
         Destroy(gameObject);
         yield return null;
+    }
+    public void ScoreGained()
+    {
+        gameSoundFXAudio.resource = scoreGained;
+        gameSoundFXAudio.Play();
+    }
+    public void ScoreUngained()
+    {
+        gameSoundFXAudio.resource = scoreUnGained;
+        gameSoundFXAudio.Play();
     }
 }
