@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using static GameTile;
 using System;
+using DG.Tweening;
 public struct GameTileData
 {
     public GameTileData(GameTile gameTile, int burnRounds, TileStates tileState, Vector3 tilePosition, bool canBeBurnt)
@@ -46,7 +47,10 @@ public class GameTile: MonoBehaviour
     public GameTileData tileData;
     [SerializeField] private bool canBeBurnt;
     [SerializeField] private int roundsToBurn;
+
     public int tileScore;
+    public bool scoreWhenBurnt;
+
     private bool affected;
     public int wetness = 0;
     public TileStates tileState;
@@ -118,12 +122,15 @@ public class GameTile: MonoBehaviour
         {
             case TileStates.ANIMAL:
                 tileScore = 300;
+                scoreWhenBurnt = false;
                 break;
             case TileStates.DRY_GRASS:
                 tileScore = 100;
+                scoreWhenBurnt = true;
                 break;
             case TileStates.GRASS:
                 tileScore = 50;
+                scoreWhenBurnt = false;
                 break;
             default:
                 tileScore = 0;
@@ -243,6 +250,25 @@ public class GameTile: MonoBehaviour
                 deco.Extinguish();
             }
         }
+    }
+
+    public void ScoreCounted()
+    {
+        foreach (SproutableDecoration deco in sproutableDecorations)
+        {
+            deco.TriggerSprout();
+        }
+        StartCoroutine(Tweek());
+    }
+    IEnumerator Tweek()
+    {
+        transform.DORotate(new Vector3(0, 0, 5), 0.2f).SetEase(Ease.InOutSine);
+        yield return new WaitForSeconds(0.2f);
+        transform.DORotate(new Vector3(0, 0, -5), 0.4f).SetEase(Ease.InOutSine);
+        yield return new WaitForSeconds(0.4f);
+        transform.DORotate(new Vector3(0, 0, 0), 0.2f).SetEase(Ease.InOutSine);
+        yield return new WaitForSeconds(0.2f);
+        yield return null;
     }
 
     // Logic to check whether a tile can be changed by the player's action

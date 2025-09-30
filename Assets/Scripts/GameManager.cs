@@ -4,6 +4,7 @@ using NUnit.Framework;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class GameManager : MonoBehaviour
         GAME_OVER,
         GAME_WIN
     }
+
+    public int ScoreTotal;
+    bool ScoreCounting = false;
 
     // Events
     public static event System.Action OnRoundAdvanced;
@@ -121,26 +125,18 @@ public class GameManager : MonoBehaviour
 
             if(gridManager.GetPercentOfTileInGrid(GameTile.TileStates.BURNING) == 0)
             {
+                // Scoring
+                if(ScoreCounting == false)
+                {
+                    StartCoroutine(FindAnyObjectByType<SceneAudio>().EndCrackle());
+                    ScoreCounting = true;
+                    StartCoroutine(ScoreCount());
+                }
+                
+                
                 finalGrassPercent = 100 * (gridManager.GetPercentOfTileInGrid(GameTile.TileStates.GRASS) / initialGrassPercent);
 
-                int stars = 3;
-                for (int i = 0; i < scoreThresholds.Length; i++)
-                {
-                    if (finalGrassPercent > scoreThresholds[i])
-                    {
-                        GameWin(stars);
-                        continue;
-                    }
-                    else
-                    {
-                        stars--;
-                    }
-                }
-
-                if(stars == 0)
-                {
-                    GameOver();
-                }
+                
             }
 
             if(simTimer > simTime)
@@ -150,6 +146,45 @@ public class GameManager : MonoBehaviour
             }
         }
 
+    }
+
+    IEnumerator ScoreCount()
+    {
+        foreach(GameTile tile in gridManager.tileList)
+        {
+            yield return new WaitForSeconds(0.15f);
+            if (tile.tileState == GameTile.TileStates.BURNT && tile.scoreWhenBurnt == true)
+            {
+                ScoreTotal += tile.tileScore;
+            }
+            else if (tile.tileState != GameTile.TileStates.BURNT && tile.scoreWhenBurnt != true)
+            {
+                ScoreTotal += tile.tileScore;
+            }
+            tile.ScoreCounted();
+            Debug.Log(ScoreTotal.ToString());
+        }
+        yield return new WaitForSeconds(1f);
+
+        int stars = 3;
+        for (int i = 0; i < scoreThresholds.Length; i++)
+        {
+            if (ScoreTotal > scoreThresholds[i])
+            {
+                GameWin(stars);
+                continue;
+            }
+            else
+            {
+                stars--;
+            }
+        }
+
+        if (stars == 0)
+        {
+            GameOver();
+        }
+        yield return null;
     }
 
     /// <summary>
@@ -226,7 +261,10 @@ public class GameManager : MonoBehaviour
         }
 
         //sceneAudio.DrumBeat(1f); // Plays drum beat
-        FindAnyObjectByType<SceneAudio>().DrumBeat(1f); // Plays drum beat
+        if (ScoreCounting == false)
+        {
+            FindAnyObjectByType<SceneAudio>().DrumBeat(1f); // Plays drum beat
+        }
     }
 
     /// <summary>
@@ -391,7 +429,7 @@ public class GameManager : MonoBehaviour
         state = GameState.GAME_OVER;
         //Time.timeScale = 0.0f;
         OnGameOver?.Invoke();
-        StartCoroutine(FindAnyObjectByType<SceneAudio>().EndCrackle());
+        
     }
 
     public void GameWin(int starCount)
@@ -404,7 +442,6 @@ public class GameManager : MonoBehaviour
         ScoreData.CalculateLevel(starCount); // send off to score data where itll save for level select
 
         Debug.Log("Game win biiiitch");
-        StartCoroutine(FindAnyObjectByType<SceneAudio>().EndCrackle());
     }
 
     private void OnEnable()
