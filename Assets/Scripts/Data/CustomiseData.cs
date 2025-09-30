@@ -2,7 +2,7 @@ using UnityEngine;
 
 public static class CustomiseData
 {
-    public static int hairType = 0;
+    public static int hairType = 7;
     public static int eyeType = 0;
 
     

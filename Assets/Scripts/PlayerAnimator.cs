@@ -46,7 +46,21 @@ public class PlayerAnimator : MonoBehaviour
         //highlightList[CustomiseData.eyeType].GetComponent<SpriteRenderer>().color = new Color(hexToColor(CustomiseData.eyeColour).r, hexToColor(CustomiseData.eyeColour).g, hexToColor(CustomiseData.eyeColour).b, 1);
 
         animTargets.Add(bangList[CustomiseData.hairType].GetComponent<Animator>());
+        for(int i = 0; i < bangList.Count; i++)
+        {
+            if (i != CustomiseData.hairType)
+            {
+                bangList[i].SetActive(false);
+            }
+        }
         animTargets.Add(hairList[CustomiseData.hairType].GetComponent<Animator>());
+        for (int i = 0; i < hairList.Count; i++)
+        {
+            if (i != CustomiseData.hairType)
+            {
+                hairList[i].SetActive(false);
+            }
+        }
         animTargets.Add(eyesList[CustomiseData.eyeType].GetComponent<Animator>());
         animTargets.Add(highlightList[CustomiseData.eyeType].GetComponent<Animator>());
 

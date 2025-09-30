@@ -172,7 +172,7 @@ public class GameManager : MonoBehaviour
         int stars = 3;
         for (int i = 0; i < scoreThresholds.Length; i++)
         {
-            if (ScoreTotal > scoreThresholds[i])
+            if (ScoreTotal >= scoreThresholds[i])
             {
                 GameWin(stars);
                 continue;
