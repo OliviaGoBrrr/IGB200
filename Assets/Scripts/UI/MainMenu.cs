@@ -33,6 +33,10 @@ public class MainMenu : UIAnimations
     private VisualElement characterHair;
     private VisualElement characterHat;
 
+    private Sprite bangsStyle;
+    private Sprite hairStyle;
+    
+
     [SerializeField] private Sprite characterFaceSmile;
     [SerializeField] private Sprite characterFaceNormal;
 
@@ -46,7 +50,10 @@ public class MainMenu : UIAnimations
         sceneLoader = GameObject.FindGameObjectWithTag("SceneLoader").GetComponent<SceneLoader>();
 
         ui = GetComponent<UIDocument>().rootVisualElement;
+        bangsStyle = Resources.Load<Sprite>("Sprites/PlayerCharacter/Bangs/PlayerCharacter_Bangs_0" + CustomiseData.bangsType);
+        hairStyle = Resources.Load<Sprite>("Sprites/PlayerCharacter/Hair/PlayerCharacter_Hair_0" + CustomiseData.hairType);
     }
+
     private void OnEnable()
     {
         // Fetch UI elements by name
@@ -91,7 +98,7 @@ public class MainMenu : UIAnimations
         
         characterHat = ui.Q<VisualElement>("CharacterHat");
 
-        // set character base colours immediately
+        // set character base colours
 
         ColorUtility.TryParseHtmlString(CustomiseData.skinColour, out newColour);
         characterHead.style.unityBackgroundImageTintColor = newColour;
@@ -107,6 +114,10 @@ public class MainMenu : UIAnimations
         ColorUtility.TryParseHtmlString(CustomiseData.eyeColour, out newColour);
         characterEyes.style.unityBackgroundImageTintColor = newColour;
 
+        // set character hair & bangs style
+
+        characterBangs.style.backgroundImage = new StyleBackground(bangsStyle);
+        characterHair.style.backgroundImage = new StyleBackground(hairStyle);
     }
 
 
@@ -126,12 +137,12 @@ public class MainMenu : UIAnimations
 
     private void OnPlayPointerEnterEvent(PointerEnterEvent evt)
     {
-        playButton.style.scale = new Scale(new Vector3(1.1f, 1.1f, 1));
+        //playButton.style.scale = new Scale(new Vector3(1.1f, 1.1f, 1));
     }
 
     private void OnPlayPointerLeaveEvent(PointerLeaveEvent evt)
     {
-        playButton.style.scale = new Scale(new Vector3(1f, 1f, 1));
+        //playButton.style.scale = new Scale(new Vector3(1f, 1f, 1));
     }
 
     // Click Methods
@@ -145,7 +156,7 @@ public class MainMenu : UIAnimations
             sceneLoader.LoadNextScene("Level Select");
         }
 
-        playButton.style.scale = new Scale(new Vector3(0.8f, 0.8f, 1));
+        //playButton.style.scale = new Scale(new Vector3(0.8f, 0.8f, 1));
     }
 
     private void OnCustomiseButtonClicked()

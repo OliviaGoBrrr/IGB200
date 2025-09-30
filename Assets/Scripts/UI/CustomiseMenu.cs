@@ -22,7 +22,9 @@ public class CustomiseMenu : MonoBehaviour
 
     private Button currentlySelectedSkin;
     private Button currentlySelectedClothes;
-    private Button currentlySelectedHair;
+    private Button currentlySelectedHairColour;
+    private Button currentlySelectedBangsStyle;
+    private Button currentlySelectedHairStyle;
     private Button currentlySelectedEyes;
 
     private Button currentCategory; // last used category
@@ -42,33 +44,14 @@ public class CustomiseMenu : MonoBehaviour
     private VisualElement eyesPanel;
 
     // Option Buttons
-    private Button skinOption1;
-    private Button skinOption2;
-    private Button skinOption3;
-    private Button skinOption4;
-    private Button skinOption5;
-    private Button skinOption6;
+    private Button[] skinColours = new Button[6];
+    private Button[] clothesColours = new Button[6];
+    private Button[] hairColours = new Button[6];
+    private Button[] eyeColours = new Button[6];
 
-    private Button clothesOption1;
-    private Button clothesOption2;
-    private Button clothesOption3;
-    private Button clothesOption4;
-    private Button clothesOption5;
-    private Button clothesOption6;
+    private Button[] bangsOptions = new Button[8];
 
-    private Button hairOption1;
-    private Button hairOption2;
-    private Button hairOption3;
-    private Button hairOption4;
-    private Button hairOption5;
-    private Button hairOption6;
-
-    private Button eyesOption1;
-    private Button eyesOption2;
-    private Button eyesOption3;
-    private Button eyesOption4;
-    private Button eyesOption5;
-    private Button eyesOption6;
+    private Button[] hairOptions = new Button[8];
 
     // character display elements
     private VisualElement characterBangs;
@@ -86,14 +69,52 @@ public class CustomiseMenu : MonoBehaviour
 
     private Color newColour;
 
+    
+
+    private Sprite[] bangsSprites = new Sprite[8];
+
+    private Sprite[] hairSprites = new Sprite[8];
+
     void Awake()
     {
         sceneLoader = GameObject.FindGameObjectWithTag("SceneLoader").GetComponent<SceneLoader>();
 
         ui = GetComponent<UIDocument>().rootVisualElement;
 
-        //customisationData = GetComponent<CustomiseData>();
+        for (int i = 0; i < skinColours.Length; i++)
+        {
+            skinColours[i] = ui.Q<Button>("SkinOption" + (i + 1));
+        }
 
+        for (int i = 0; i < clothesColours.Length; i++)
+        {
+            clothesColours[i] = ui.Q<Button>("ClothesOption" + (i + 1));
+        }
+
+        for (int i = 0; i < hairColours.Length; i++)
+        {
+            hairColours[i] = ui.Q<Button>("HairOption" + (i + 1));
+        }
+
+        for (int i = 0; i < eyeColours.Length; i++)
+        {
+            eyeColours[i] = ui.Q<Button>("EyesOption" + (i + 1));
+        }
+
+
+        for (int i = 0; i < bangsOptions.Length; i++)
+        {
+            bangsOptions[i] = ui.Q<Button>("BangsStyle" + (i + 1));
+            bangsSprites[i] = Resources.Load<Sprite>("Sprites/PlayerCharacter/Bangs/PlayerCharacter_Bangs_0" + i);
+        }
+
+        for (int i = 0; i < hairOptions.Length; i++)
+        {
+            hairOptions[i] = ui.Q<Button>("HairStyle" + (i + 1));
+            hairSprites[i] = Resources.Load<Sprite>("Sprites/PlayerCharacter/Hair/PlayerCharacter_Hair_0" + i);
+        }
+
+        
     }
 
     private void OnEnable()
@@ -124,37 +145,6 @@ public class CustomiseMenu : MonoBehaviour
         eyesCategory = ui.Q<Button>("EyesCategory");
         eyesCategory.clicked += eyesCategoryClicked;
 
-
-        // deadass i mustve written this severely sleep deprived cus why didnt i just use a foreach, im cryin
-        skinOption1 = ui.Q<Button>("SkinOption1");
-        skinOption2 = ui.Q<Button>("SkinOption2");
-        skinOption3 = ui.Q<Button>("SkinOption3");
-        skinOption4 = ui.Q<Button>("SkinOption4");
-        skinOption5 = ui.Q<Button>("SkinOption5");
-        skinOption6 = ui.Q<Button>("SkinOption6");
-
-        clothesOption1 = ui.Q<Button>("ClothesOption1");
-        clothesOption2 = ui.Q<Button>("ClothesOption2");
-        clothesOption3 = ui.Q<Button>("ClothesOption3");
-        clothesOption4 = ui.Q<Button>("ClothesOption4");
-        clothesOption5 = ui.Q<Button>("ClothesOption5");
-        clothesOption6 = ui.Q<Button>("ClothesOption6");
-
-        hairOption1 = ui.Q<Button>("HairOption1");
-        hairOption2 = ui.Q<Button>("HairOption2");
-        hairOption3 = ui.Q<Button>("HairOption3");
-        hairOption4 = ui.Q<Button>("HairOption4");
-        hairOption5 = ui.Q<Button>("HairOption5");
-        hairOption6 = ui.Q<Button>("HairOption6");
-
-        eyesOption1 = ui.Q<Button>("EyesOption1");
-        eyesOption2 = ui.Q<Button>("EyesOption2");
-        eyesOption3 = ui.Q<Button>("EyesOption3");
-        eyesOption4 = ui.Q<Button>("EyesOption4");
-        eyesOption5 = ui.Q<Button>("EyesOption5");
-        eyesOption6 = ui.Q<Button>("EyesOption6");
-
-
         characterBangs = ui.Q<VisualElement>("CharacterBangs");
         characterHighlights = ui.Q<VisualElement>("CharacterHighlights");
         characterEyes = ui.Q<VisualElement>("CharacterEyes");
@@ -167,25 +157,43 @@ public class CustomiseMenu : MonoBehaviour
 
         // setting a ton of vars so when checked for the first time they contain an object
         currentCategory = skinCategory;
-        currentlySelectedSkin = skinOption1;
-        currentlySelectedClothes = clothesOption1;
-        currentlySelectedHair = hairOption1;
-        currentlySelectedEyes = eyesOption1;
+        currentlySelectedSkin = skinColours[0];
+        currentlySelectedClothes = clothesColours[0];
+        currentlySelectedHairColour = hairColours[0];
+        currentlySelectedBangsStyle = bangsOptions[0];
+        currentlySelectedHairStyle = hairOptions[0];
+        currentlySelectedEyes = eyeColours[0];
         currentOptionsPanel = skinPanel;
 
-        // the everything array
-        allButtons = new Button[] {
-            skinOption1, skinOption2, skinOption3, skinOption4, skinOption5, skinOption6,
-            clothesOption1, clothesOption2, clothesOption3, clothesOption4, clothesOption5, clothesOption6,
-            hairOption1, hairOption2, hairOption3, hairOption4, hairOption5, hairOption6,
-            eyesOption1, eyesOption2, eyesOption3, eyesOption4, eyesOption5, eyesOption6
-        };
-
-        foreach (Button button in allButtons)
+        foreach (Button button in skinColours)
         {
             button.clickable.clickedWithEventInfo += Clickable_clickedWithEventInfo;
         }
 
+        foreach (Button button in clothesColours)
+        {
+            button.clickable.clickedWithEventInfo += Clickable_clickedWithEventInfo;
+        }
+
+        foreach (Button button in eyeColours)
+        {
+            button.clickable.clickedWithEventInfo += Clickable_clickedWithEventInfo;
+        }
+
+        foreach (Button button in hairColours)
+        {
+            button.clickable.clickedWithEventInfo += Clickable_clickedWithEventInfo;
+        }
+
+        foreach (Button button in bangsOptions)
+        {
+            button.clickable.clickedWithEventInfo += Clickable_clickedWithEventInfo;
+        }
+
+        foreach (Button button in hairOptions)
+        {
+            button.clickable.clickedWithEventInfo += Clickable_clickedWithEventInfo;
+        }
 
         // set character base colours immediately
 
@@ -202,6 +210,17 @@ public class CustomiseMenu : MonoBehaviour
 
         ColorUtility.TryParseHtmlString(CustomiseData.eyeColour, out newColour);
         characterEyes.style.unityBackgroundImageTintColor = newColour;
+
+        characterBangs.style.backgroundImage = new StyleBackground(bangsSprites[CustomiseData.bangsType]);
+        characterHair.style.backgroundImage = new StyleBackground(hairSprites[CustomiseData.hairType]);
+
+        OptionSelected(skinColours[CustomiseData.skinColourNumber], skinColours[0]);
+        OptionSelected(clothesColours[CustomiseData.clothesColourNumber], clothesColours[0]);
+        OptionSelected(hairColours[CustomiseData.hairColourNumber], hairColours[0]);
+        OptionSelected(eyeColours[CustomiseData.eyeColourNumber], eyeColours[0]);
+
+        OptionSelected(bangsOptions[CustomiseData.bangsType], bangsOptions[0]);
+        OptionSelected(hairOptions[CustomiseData.hairType], hairOptions[0]);
     }
 
     // i know this is inefficient, i just want to get the feature working for now
@@ -221,7 +240,6 @@ public class CustomiseMenu : MonoBehaviour
     {
         CategoryClicked(eyesCategory, "Eyes", eyesPanel);
     }
-    Button a;
     private void CategoryClicked(Button newCategory, String categoryName, VisualElement optionsPanel)
     {
         // moves last category button down
@@ -276,6 +294,8 @@ public class CustomiseMenu : MonoBehaviour
 
                 print("skin colour changed to " + button.text);
                 CustomiseData.skinColour = button.text;
+                CustomiseData.skinColourNumber = int.Parse(button.name[button.name.Length - 1].ToString()) - 1;
+                print(CustomiseData.skinColourNumber);
 
                 ColorUtility.TryParseHtmlString(CustomiseData.skinColour, out newColour);
                 characterHead.style.unityBackgroundImageTintColor = newColour;
@@ -288,6 +308,7 @@ public class CustomiseMenu : MonoBehaviour
 
                 print("clothes colour changed to " + button.text);
                 CustomiseData.clothesColour = button.text;
+                CustomiseData.clothesColourNumber = int.Parse(button.name[button.name.Length - 1].ToString()) - 1;
 
                 ColorUtility.TryParseHtmlString(button.text, out newColour);
                 characterBody.style.unityBackgroundImageTintColor = newColour;
@@ -295,17 +316,53 @@ public class CustomiseMenu : MonoBehaviour
 
                 break;
             case "Hair":
-                OptionSelected(button, currentlySelectedHair);
+                string styleType = button.text[0].ToString();
+                switch (styleType)
+                {
+                    case "b":
+                        OptionSelected(button, currentlySelectedBangsStyle);
 
-                currentlySelectedHair = button;
+                        currentlySelectedBangsStyle = button;
 
-                print("hair colour changed to " + button.text);
-                CustomiseData.hairColour = button.text;
+                        
+                        int bangsStyle = int.Parse(button.text[1].ToString());
 
-                ColorUtility.TryParseHtmlString(button.text, out newColour);
-                characterHair.style.unityBackgroundImageTintColor = newColour;
-                characterBangs.style.unityBackgroundImageTintColor = newColour;
+                        print("bangs style changed to " + bangsStyle);
 
+
+                        CustomiseData.bangsType = bangsStyle - 1;
+                        characterBangs.style.backgroundImage = new StyleBackground(bangsSprites[CustomiseData.bangsType]);
+
+                        break;
+                    case "h":
+                        OptionSelected(button, currentlySelectedHairStyle);
+
+                        currentlySelectedHairStyle = button;
+
+                        int hairStyle = int.Parse(button.text[1].ToString());
+
+                        print("hair style changed to " + hairStyle);
+
+
+                        CustomiseData.hairType = hairStyle - 1;
+                        characterHair.style.backgroundImage = new StyleBackground(hairSprites[CustomiseData.hairType]);
+
+                        break;
+                    default:
+                        OptionSelected(button, currentlySelectedHairColour);
+
+                        currentlySelectedHairColour = button;
+
+                        print("hair colour changed to " + button.text);
+                        CustomiseData.hairColour = button.text;
+                        CustomiseData.hairColourNumber = int.Parse(button.name[button.name.Length - 1].ToString()) - 1;
+
+                        ColorUtility.TryParseHtmlString(button.text, out newColour);
+                        characterHair.style.unityBackgroundImageTintColor = newColour;
+                        characterBangs.style.unityBackgroundImageTintColor = newColour;
+
+                        break;
+                }
                 break;
             case "Eyes":
                 OptionSelected(button, currentlySelectedEyes);
@@ -314,6 +371,7 @@ public class CustomiseMenu : MonoBehaviour
 
                 print("eye colour changed to " + button.text);
                 CustomiseData.eyeColour = button.text;
+                CustomiseData.eyeColourNumber = int.Parse(button.name[button.name.Length - 1].ToString()) - 1;
 
                 ColorUtility.TryParseHtmlString(button.text, out newColour);
                 characterEyes.style.unityBackgroundImageTintColor = newColour;
@@ -359,7 +417,6 @@ public class CustomiseMenu : MonoBehaviour
     private void OnSettingsButtonClicked()
     {
         settings.style.display = DisplayStyle.Flex; // visibility = true
-
     }
     private void OnBackButtonClicked()
     {

@@ -45,7 +45,7 @@ public class PlayerAnimator : MonoBehaviour
         //eyesList[CustomiseData.eyeType].GetComponent<SpriteRenderer>().color = new Color(hexToColor(CustomiseData.eyeColour).r, hexToColor(CustomiseData.eyeColour).g, hexToColor(CustomiseData.eyeColour).b, 1);
         //highlightList[CustomiseData.eyeType].GetComponent<SpriteRenderer>().color = new Color(hexToColor(CustomiseData.eyeColour).r, hexToColor(CustomiseData.eyeColour).g, hexToColor(CustomiseData.eyeColour).b, 1);
 
-        animTargets.Add(bangList[CustomiseData.hairType].GetComponent<Animator>());
+        animTargets.Add(bangList[CustomiseData.bangsType].GetComponent<Animator>());
         for(int i = 0; i < bangList.Count; i++)
         {
             if (i != CustomiseData.hairType)

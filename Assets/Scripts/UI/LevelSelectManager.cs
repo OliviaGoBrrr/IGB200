@@ -46,7 +46,6 @@ public class LevelSelectManager : MonoBehaviour
         for (int i = 0; i < levelContainers.Length; i++)
         {
             levelContainers[i] = ui.Q<TemplateContainer>("LevelContainer" + (i + 1));
-            print(levelContainers[i]);
             SetStarColour(i, levelContainers[i]);
         }
     }

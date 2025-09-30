@@ -97,6 +97,8 @@
 }
 
 .colour-option-button {
+    width: 64px;
+    height: 64px;
 }
 
 .category-panel {
