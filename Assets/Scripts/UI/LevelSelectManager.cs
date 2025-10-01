@@ -3,8 +3,8 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using DG.Tweening;
 using TMPro;
-using static UnityEditor.Rendering.FilterWindow;
-using static UnityEngine.Rendering.DebugUI.MessageBox;
+//using static UnityEditor.Rendering.FilterWindow;
+//using static UnityEngine.Rendering.DebugUI.MessageBox;
 using UnityEngine.SocialPlatforms.Impl;
 
 public class LevelSelectManager : MonoBehaviour
