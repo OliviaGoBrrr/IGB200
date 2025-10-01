@@ -1525,7 +1525,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6944015997610155675, guid: b200127109a5a5f4fa102a291e4f6c44, type: 3}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: ReloadCurrentScene
         m_Mode: 1
@@ -2248,7 +2248,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6944015997610155675, guid: b200127109a5a5f4fa102a291e4f6c44, type: 3}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: LoadNextScene
         m_Mode: 5
@@ -3601,7 +3601,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6944015997610155675, guid: b200127109a5a5f4fa102a291e4f6c44, type: 3}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: LoadNextScene
         m_Mode: 5

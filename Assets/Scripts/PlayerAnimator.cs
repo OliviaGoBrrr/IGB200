@@ -5,7 +5,7 @@ using System.Collections;
 using System.Xml;
 using System;
 using DG.Tweening;
-using UnityEditor.ShaderKeywordFilter;
+//using UnityEditor.ShaderKeywordFilter;
 using UnityEngine.Tilemaps;
 
 public class PlayerAnimator : MonoBehaviour
@@ -48,7 +48,7 @@ public class PlayerAnimator : MonoBehaviour
         animTargets.Add(bangList[CustomiseData.bangsType].GetComponent<Animator>());
         for(int i = 0; i < bangList.Count; i++)
         {
-            if (i != CustomiseData.hairType)
+            if (i != CustomiseData.bangsType)
             {
                 bangList[i].SetActive(false);
             }
