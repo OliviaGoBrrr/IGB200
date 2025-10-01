@@ -803,6 +803,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3958404094958071210, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1710542035}
+    - target: {fileID: 3958404094958071210, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadNextScene
+      objectReference: {fileID: 0}
     - target: {fileID: 4434661398696954490, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -922,6 +930,14 @@ PrefabInstance:
     - target: {fileID: 6173088857070876775, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6242567229000232674, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1710542035}
+    - target: {fileID: 6242567229000232674, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReloadCurrentScene
       objectReference: {fileID: 0}
     - target: {fileID: 6391070605905810772, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1090,6 +1106,14 @@ PrefabInstance:
     - target: {fileID: 8792689437797790822, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9097589482577721864, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1710542035}
+    - target: {fileID: 9097589482577721864, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadNextScene
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
