@@ -280,6 +280,50 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Body_6
+      rect:
+        serializedVersion: 2
+        x: 2200
+        y: 0
+        width: 1100
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e446977323b514a4a8643875eede6074
+      internalID: -758447480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Body_7
+      rect:
+        serializedVersion: 2
+        x: 3300
+        y: 0
+        width: 1100
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9061e4868d7fdab4784ae7803887598c
+      internalID: 2012721525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -300,6 +344,8 @@ TextureImporter:
       PlayerCharacter_Body_3: 1775844451
       PlayerCharacter_Body_4: -1752273152
       PlayerCharacter_Body_5: -21537430
+      PlayerCharacter_Body_6: -758447480
+      PlayerCharacter_Body_7: 2012721525
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
