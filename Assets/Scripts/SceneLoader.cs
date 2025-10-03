@@ -13,6 +13,13 @@ public class SceneLoader : MonoBehaviour
         StartCoroutine(WaitFrames());
     }
 
+    IEnumerator WaitFrames()
+    {
+
+        yield return 5;
+        transition.Play("CircleTransitionOut");
+
+    }
 
     public void LoadNextScene(string scene)
     {
@@ -28,13 +35,7 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    IEnumerator WaitFrames()
-    {
-
-        yield return 5;
-        transition.Play("CircleTransitionOut");
-
-    }
+    
 
     public void ReloadCurrentScene()
     {

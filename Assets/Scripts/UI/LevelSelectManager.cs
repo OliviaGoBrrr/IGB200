@@ -18,15 +18,6 @@ public class LevelSelectManager : MonoBehaviour
 
     private Button backButton;
 
-    private VisualElement level1Container;
-    private VisualElement level2Container;
-    private VisualElement level3Container;
-    private VisualElement level4Container;
-    private VisualElement level5Container;
-    private VisualElement level6Container;
-    private VisualElement level7Container;
-    private VisualElement level8Container;
-
     private VisualElement[] levelContainers = new VisualElement[8];
 
     private Array allLevels;
