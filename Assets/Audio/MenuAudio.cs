@@ -21,6 +21,7 @@ public class MenuAudio : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        MusicAudio.DOFade(0.35f, 2);
     }
     public void PlayButtonClick(int pitchMag)
     {

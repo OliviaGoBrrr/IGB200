@@ -6,7 +6,9 @@ using System.Collections.Generic;
 
 public class SceneAudio : MonoBehaviour
 {
-    [SerializeField] List<int> scorePitchMagnitude;
+    [SerializeField] List<int> untilNextMagnitude;
+    int currentMag = 1;
+    int nextMagProgress = 0;
 
     bool crackleStart = false;
     [SerializeField] DrumBeatsScriptable drumBeats;
@@ -32,6 +34,8 @@ public class SceneAudio : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        environmentalMusicAudio.DOFade(0.9f, 2);
+        beatMusicAudio.DOFade(0.8f, 2);
     }
     public void DrumBeat(float intensity)
     {
@@ -81,8 +85,16 @@ public class SceneAudio : MonoBehaviour
     }
     public void ScoreGained()
     {
+        gameSoundFXAudio.pitch = Mathf.Pow(1.059463f, currentMag);
         gameSoundFXAudio.resource = scoreGained;
         gameSoundFXAudio.Play();
+
+        nextMagProgress += 1;
+        if (nextMagProgress >= untilNextMagnitude[currentMag])
+        {
+            nextMagProgress = 0;
+            currentMag += 1;
+        }
     }
     public void ScoreUngained()
     {

@@ -170,7 +170,7 @@ public class GameManager : MonoBehaviour
             tile.ScoreCounted();
             Debug.Log(ScoreTotal.ToString());
         }
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
 
         int stars = 3;
         for (int i = 0; i < scoreThresholds.Length; i++)
