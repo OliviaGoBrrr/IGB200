@@ -7,6 +7,7 @@ using System;
 using DG.Tweening;
 //using UnityEditor.ShaderKeywordFilter;
 using UnityEngine.Tilemaps;
+using System.Runtime.CompilerServices;
 
 public class PlayerAnimator : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class PlayerAnimator : MonoBehaviour
 
     private GridManager grid;
     private Coroutine walkRoutine;
+    bool firstCall = true;
 
     private enum PlayerState
     {
@@ -93,6 +95,7 @@ public class PlayerAnimator : MonoBehaviour
     private void Start()
     {
         walkRoutine = StartCoroutine(WalkWait(0f));
+        StartCoroutine(BlinkLoop());
     }
 
     public void Animate(GameTile selectTile)
@@ -125,10 +128,14 @@ public class PlayerAnimator : MonoBehaviour
     }
     IEnumerator WalkWait(float additionalTime)
     {
-        yield return new WaitForSeconds(UnityEngine.Random.Range(2f, 5f) + additionalTime);
+        yield return new WaitForSeconds(additionalTime);
+        if(firstCall == true) { firstCall = false; }
+        else { animTargets[0].SetBool("WalkEnd", true); }   
+        yield return new WaitForSeconds(UnityEngine.Random.Range(2f, 5f));
         PlayerWalk();
         yield return null;
     }
+    
     private void PlayerWalk()
     {
         Vector3 target = grid.tileList[UnityEngine.Random.Range(0, grid.tileList.Count)].transform.position + new Vector3(UnityEngine.Random.Range(-0.4f, 0.4f), 1.5f, UnityEngine.Random.Range(-0.4f, 0.4f));
@@ -147,8 +154,9 @@ public class PlayerAnimator : MonoBehaviour
                 animTarget.GetComponent<SpriteRenderer>().transform.rotation = Quaternion.Euler(0, -0, 0);
             }
         }
-
-            walkRoutine = StartCoroutine(WalkWait(Vector3.Distance(target, transform.position)));
+        animTargets[0].SetBool("WalkEnd", false);
+        animTargets[0].SetTrigger("WalkStart");
+        walkRoutine = StartCoroutine(WalkWait(Vector3.Distance(target, transform.position)));
     }
     public static Color hexToColor(string hex)
     {
@@ -164,5 +172,15 @@ public class PlayerAnimator : MonoBehaviour
             a = byte.Parse(hex.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
         }
         return new Color32(r, g, b, a);
+    }
+    IEnumerator BlinkLoop()
+    {
+        yield return new WaitForSeconds(UnityEngine.Random.Range(1f, 8f));
+        foreach (var animTarget in animTargets)
+        {
+            animTarget.SetTrigger("Blink");
+        }
+        StartCoroutine(BlinkLoop());
+        yield return null;
     }
 }

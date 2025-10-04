@@ -57,6 +57,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float simTime = 1.0f;
     private float simTimer;
 
+    [Header("Decoration")]
+    public List<GameObject> DryDecorations;
+
     void Awake()
     {
         gridManager = FindAnyObjectByType<GridManager>();
@@ -321,6 +324,18 @@ public class GameManager : MonoBehaviour
                 selectTile.tileState = changeState;
                 break;
         }
+        // Adds dry decorations to the dry deco action
+        if (changeState == GameTile.TileStates.DRY_GRASS) 
+        { 
+            foreach(GameObject deco in DryDecorations)
+            {
+                Instantiate(deco, selectTile.transform);
+            }
+            selectTile.GetComponent<GameTile>().DecorationUpdate();
+            // Also updates the score
+            selectTile.GetComponent<GameTile>().SetTileScore();
+        }
+
 
         item.itemUses--;
         playerAnimator.Animate(selectTile);

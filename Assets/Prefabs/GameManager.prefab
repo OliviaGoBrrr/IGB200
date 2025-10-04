@@ -44,6 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f078a1cbecfc6354a9f0c2452ab6b885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ScoreTotal: 0
+  draggableSelected: 0
+  selectedDraggable: {fileID: 0}
   devKeysOn: 1
   gridManager: {fileID: 0}
   uiManager: {fileID: 0}
@@ -63,3 +66,8 @@ MonoBehaviour:
   finalGrassPercent: 0
   currentActionCount: 0
   simTime: 0.8
+  DryDecorations:
+  - {fileID: 1891853611560937354, guid: 8b8e4ab6cfb534a49a6dd734d3506e40, type: 3}
+  - {fileID: 8589623248595306890, guid: 41624357a75010046a573172a81a0777, type: 3}
+  - {fileID: 7970376361944927110, guid: 981c7ad8a53538e48bdb35371ccf280f, type: 3}
+  - {fileID: 6135007770303393221, guid: 409b798d6816c3e4e81bde400609852b, type: 3}

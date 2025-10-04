@@ -1,9 +1,13 @@
 using System.Collections;
 using DG.Tweening;
+using NUnit.Framework;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class SceneAudio : MonoBehaviour
 {
+    [SerializeField] List<int> scorePitchMagnitude;
+
     bool crackleStart = false;
     [SerializeField] DrumBeatsScriptable drumBeats;
     [SerializeField] AudioSource environmentalMusicAudio;

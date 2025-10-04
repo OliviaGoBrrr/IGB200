@@ -83,6 +83,11 @@ public class GameTile: MonoBehaviour
         gridManager = GetComponentInParent<GridManager>();
         tilePosition = transform.position;
 
+        DecorationUpdate();
+
+    }
+    public void DecorationUpdate()
+    {
         foreach (Transform childTransform in transform)
         {
             GameObject child = childTransform.gameObject;
@@ -93,7 +98,6 @@ public class GameTile: MonoBehaviour
             FireDecoration decoration3 = child.GetComponent<FireDecoration>();
             if (decoration3 != null) { fireDecorations.Add(decoration3); }
         }
-
     }
 
     
