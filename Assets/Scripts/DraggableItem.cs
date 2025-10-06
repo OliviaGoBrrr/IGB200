@@ -15,6 +15,8 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     private RectTransform iconTransform;
     private Image draggableStaticIcon;
 
+    private GameScreen UIToolkitGameScript;
+
     [Header("Action Stats")]
     public GameTile.TileStates changeState;
     public int itemUses;
@@ -34,6 +36,9 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         gameManager = FindFirstObjectByType<GameManager>();
         draggableStaticIcon = GetComponent<Image>();
         itemUsesText = GetComponentInChildren<TMP_Text>();
+
+        UIToolkitGameScript = FindFirstObjectByType<GameScreen>();
+
         UpdateItemUIText();
     }
 
@@ -73,6 +78,8 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
                 var rt = draggingIcon.GetComponent<RectTransform>();
                 draggingIcon.GetComponent<Image>().color = draggableStaticIcon.color;
+                    //new Color(draggableStaticIcon.color.r, draggableStaticIcon.color.g, draggableStaticIcon.color.b, 1.0f);
+
 
                 if (RectTransformUtility.ScreenPointToWorldPointInRectangle(canvasRectTransform, mouseScreenPositon, null, out localPoint))
                 {
@@ -178,6 +185,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         var rt = draggingIcon.GetComponent<RectTransform>();
         Vector3 globalMousePos;
         draggingIcon.GetComponent<Image>().color = draggableStaticIcon.color;
+            //new Color(draggableStaticIcon.color.r, draggableStaticIcon.color.g, draggableStaticIcon.color.b, 1.0f);
         if (RectTransformUtility.ScreenPointToWorldPointInRectangle(iconTransform, data.position,
             data.pressEventCamera, out globalMousePos))
         { 
@@ -234,6 +242,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         if(itemUsesText != null)
         {
             itemUsesText.SetText($"x{itemUses}");
+            UIToolkitGameScript.UpdateAllText();
         }
         else
         {

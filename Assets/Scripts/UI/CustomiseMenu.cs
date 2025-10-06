@@ -157,11 +157,11 @@ public class CustomiseMenu : MonoBehaviour
 
         // setting a ton of vars so when checked for the first time they contain an object
         currentCategory = skinCategory;
-        currentlySelectedSkin = skinColours[0];
-        currentlySelectedClothes = clothesColours[0];
-        currentlySelectedHairColour = hairColours[0];
-        currentlySelectedBangsStyle = bangsOptions[0];
-        currentlySelectedHairStyle = hairOptions[0];
+        currentlySelectedSkin = skinColours[CustomiseData.skinColourNumber];
+        currentlySelectedClothes = clothesColours[CustomiseData.clothesColourNumber];
+        currentlySelectedHairColour = hairColours[CustomiseData.hairColourNumber];
+        currentlySelectedBangsStyle = bangsOptions[CustomiseData.bangsType];
+        currentlySelectedHairStyle = hairOptions[CustomiseData.hairType];
         currentlySelectedEyes = eyeColours[0];
         currentOptionsPanel = skinPanel;
 

@@ -14,10 +14,22 @@ public class GameScreen : MonoBehaviour
     private Button undoButton;
     private Button restartButton;
 
+    private Button dryGrassButton;
+    private Button waterButton;
+    private Button fireButton;
+
+    private Label dryGrassText;
+    private Label waterText;
+    private Label fireText;
+
     public GameManager gameManager;
 
     private Button backButton;
     bool sceneLoad = false;
+
+    [SerializeField] private DraggableItem dryObject;
+    [SerializeField] private DraggableItem waterObject;
+    [SerializeField] private DraggableItem fireObject;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -46,6 +58,44 @@ public class GameScreen : MonoBehaviour
 
         backButton = ui.Q<Button>("BackButton");
         backButton.clicked += OnBackButtonClicked;
+
+        dryGrassButton = ui.Q<Button>("GrassButton");
+        waterButton = ui.Q<Button>("WaterButton");
+        fireButton = ui.Q<Button>("FireButton");
+
+        dryGrassText = ui.Q<Label>("GrassText");
+        waterText = ui.Q<Label>("WaterText");
+        fireText = ui.Q<Label>("FireText");
+
+        if (dryObject.itemUses == 0)
+        {
+            dryGrassButton.style.display = DisplayStyle.None;
+        }
+        else
+        {
+            dryGrassButton.style.display = DisplayStyle.Flex;
+            dryGrassText.text = dryObject.itemUses.ToString();
+        }
+
+        if (waterObject.itemUses == 0)
+        {
+            waterButton.style.display = DisplayStyle.None;
+        }
+        else
+        {
+            waterButton.style.display = DisplayStyle.Flex;
+            waterText.text = waterObject.itemUses.ToString();
+        }
+
+        if (fireObject.itemUses == 0)
+        {
+            fireButton.style.display = DisplayStyle.None;
+        }
+        else
+        {
+            fireButton.style.display = DisplayStyle.Flex;
+            fireText.text = fireObject.itemUses.ToString();
+        }
     }
 
     private void OnPlaySimButtonClicked()
@@ -56,6 +106,16 @@ public class GameScreen : MonoBehaviour
     private void OnUndoButtonClicked()
     {
         gameManager.UndoPlayerAction();
+        dryGrassText.text = "x" + dryObject.itemUses.ToString();
+        waterText.text = "x" + waterObject.itemUses.ToString();
+        fireText.text = "x" + fireObject.itemUses.ToString();
+    }
+
+    public void UpdateAllText()
+    {
+        dryGrassText.text = "x" + dryObject.itemUses.ToString();
+        waterText.text = "x" + waterObject.itemUses.ToString();
+        fireText.text = "x" + fireObject.itemUses.ToString();
     }
 
     private void OnRestartButtonClicked()
