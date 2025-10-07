@@ -30,6 +30,8 @@ public class PlayerAnimator : MonoBehaviour
     private Coroutine walkRoutine;
     bool firstCall = true;
 
+    [SerializeField] GameObject actionDustcloud;
+
     private enum PlayerState
     {
         Idle,
@@ -122,10 +124,10 @@ public class PlayerAnimator : MonoBehaviour
         }
 
 
-        StartCoroutine(QuickWalk(0.5f, 2));
+        StartCoroutine(QuickWalk(0.5f, 2, selectTile));
         
     }
-    IEnumerator QuickWalk(float time, float speed)
+    IEnumerator QuickWalk(float time, float speed, GameTile selectTile)
     {
         animTargets[0].SetBool("WalkEnd", false);
         foreach (var animTarget in animTargets)
@@ -141,6 +143,8 @@ public class PlayerAnimator : MonoBehaviour
             animTarget.ResetTrigger("WalkStart");
             animTarget.SetTrigger("Action");
         }
+        yield return new WaitForSeconds(0.15f);
+        Instantiate(actionDustcloud, selectTile.transform.position + new Vector3(0, 1.2f, -0.5f), Quaternion.Euler(0, 0, 0));
         walkRoutine = StartCoroutine(WalkWait(2f));
         yield return null;
     }
