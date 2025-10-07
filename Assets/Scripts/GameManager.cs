@@ -278,7 +278,7 @@ public class GameManager : MonoBehaviour
     /// Executes logic when a player makes an action in game. 
     /// Updates tiles accordingly.
     /// </summary>
-    public void PlayerActionTaken(GameTile.TileStates changeState, DraggableItem item)
+    public void PlayerActionTaken(GameTile.TileStates changeState, DraggableItem item, AudioClip actionSound, float intensity)
     {
         // Find the tile on the grid
         var tileGrid = gridManager.masterTileGrid;
@@ -325,9 +325,25 @@ public class GameManager : MonoBehaviour
                 break;
         }
         // Adds dry decorations to the dry deco action
-        if (changeState == GameTile.TileStates.DRY_GRASS) 
-        { 
-            foreach(GameObject deco in DryDecorations)
+        
+
+
+        item.itemUses--;
+        playerAnimator.Animate(selectTile);
+
+        // Update tile visual and state based on the new wetness value
+        StartCoroutine(JustADelay(selectTile, changeState, actionSound, intensity));
+
+        OnPlayerAction?.Invoke();
+    }
+    IEnumerator JustADelay(GameTile selectTile, GameTile.TileStates changeState, AudioClip actionSound, float intensity)
+    {
+        yield return new WaitForSeconds(0.7f);
+        FindAnyObjectByType<SceneAudio>().PlayGameSound(actionSound, intensity);
+        selectTile.TileStateUpdate();
+        if (changeState == GameTile.TileStates.DRY_GRASS)
+        {
+            foreach (GameObject deco in DryDecorations)
             {
                 Instantiate(deco, selectTile.transform);
             }
@@ -335,15 +351,7 @@ public class GameManager : MonoBehaviour
             // Also updates the score
             selectTile.GetComponent<GameTile>().SetTileScore();
         }
-
-
-        item.itemUses--;
-        playerAnimator.Animate(selectTile);
-
-        // Update tile visual and state based on the new wetness value
-        selectTile.TileStateUpdate();
-
-        OnPlayerAction?.Invoke();
+        yield return null;
     }
 
     public void UndoPlayerAction()

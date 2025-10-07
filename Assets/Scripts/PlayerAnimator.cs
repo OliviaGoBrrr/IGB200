@@ -1,13 +1,14 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using System.Xml;
+using DG.Tweening;
 using NUnit.Framework;
 using UnityEngine;
-using System.Collections.Generic;
-using System.Collections;
-using System.Xml;
-using System;
-using DG.Tweening;
 //using UnityEditor.ShaderKeywordFilter;
 using UnityEngine.Tilemaps;
-using System.Runtime.CompilerServices;
+using static UnityEngine.GraphicsBuffer;
 
 public class PlayerAnimator : MonoBehaviour
 {
@@ -108,7 +109,8 @@ public class PlayerAnimator : MonoBehaviour
             {
                 animTarget.GetComponent<SpriteRenderer>().transform.rotation = Quaternion.Euler(0, 0, 0);
             }
-            gameObject.transform.position = selectTile.transform.position + new Vector3(-1, 1.5f, 0);
+            
+            transform.DOMove(selectTile.transform.position + new Vector3(-1, 1.5f, 0), 0.5f);
         }
         else
         {
@@ -116,15 +118,31 @@ public class PlayerAnimator : MonoBehaviour
             {
                 animTarget.GetComponent<SpriteRenderer>().transform.rotation = Quaternion.Euler(0, -180, 0);
             }
-            gameObject.transform.position = selectTile.transform.position + new Vector3(1, 1.5f, 0);
+            transform.DOMove(selectTile.transform.position + new Vector3(1, 1.5f, 0), 0.5f);
         }
 
 
-            foreach (var animTarget in animTargets)
-            {
-                animTarget.SetTrigger("Action");
-            }
+        StartCoroutine(QuickWalk(0.5f, 2));
+        
+    }
+    IEnumerator QuickWalk(float time, float speed)
+    {
+        animTargets[0].SetBool("WalkEnd", false);
+        foreach (var animTarget in animTargets)
+        {
+            animTarget.SetTrigger("WalkStart");
+        }
+        animTargets[0].speed = speed;
+        yield return new WaitForSeconds(time);
+        animTargets[0].speed = 1;
+        animTargets[0].SetBool("WalkEnd", true);
+        foreach (var animTarget in animTargets)
+        {
+            animTarget.ResetTrigger("WalkStart");
+            animTarget.SetTrigger("Action");
+        }
         walkRoutine = StartCoroutine(WalkWait(2f));
+        yield return null;
     }
     IEnumerator WalkWait(float additionalTime)
     {
