@@ -17,10 +17,13 @@ public class UIManager : MonoBehaviour
     [SerializeField] public TMP_Text scoreText;
 
     private GameManager gameManager;
+    private GameScreen UIToolkitGameScript;
 
     void Awake()
     {
         gameManager = FindFirstObjectByType<GameManager>();
+
+        UIToolkitGameScript = FindFirstObjectByType<GameScreen>();
     }
 
     private void Start()
@@ -31,19 +34,23 @@ public class UIManager : MonoBehaviour
 
     private void DisplayGameOverUI()
     {
-        GameOverScreen.SetActive(true);
+        UIToolkitGameScript.DisplayGameLose();
+        //GameOverScreen.SetActive(true);
     }
 
 
 
     public void DisplayGameWinUI(int starCount)
     {
+        UIToolkitGameScript.DisplayGameWin(starCount);
+        /*
         GameWinScreen.SetActive(true);
         starCountText.SetText($"Stars: {starCount}");
         for (int i = 0; i < starCount; i++)
         {
             starImages[i].sprite = filledStar;
         }
+        */
     }
 
     private void OnEnable()

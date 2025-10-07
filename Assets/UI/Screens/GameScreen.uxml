@@ -1,5 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <ui:Template name="SettingsPage" src="project://database/Assets/UI/Screens/SettingsPage.uxml?fileID=9197481963319205126&amp;guid=9bf061a968bdab745a2707c5d5846e2c&amp;type=3#SettingsPage" />
+    <ui:Template name="GameOver" src="project://database/Assets/UI/Screens/GameOver.uxml?fileID=9197481963319205126&amp;guid=b0c52238f626f6b4789c9626566f6dec&amp;type=3#GameOver" />
     <Style src="project://database/Assets/UI/mainmenu.uss?fileID=7433441132597879392&amp;guid=f8b94c192cc08994bb5f13e079d8acb3&amp;type=3#mainmenu" />
     <ui:VisualElement name="BackContainer" style="flex-grow: 1; position: absolute; top: 10px; left: 10px; margin-top: 2px; margin-right: 4px; margin-bottom: 2px; margin-left: 4px; overflow: visible; width: 100px; height: 100px;">
         <ui:VisualElement name="Shadow" style="flex-grow: 1; position: absolute; height: 64px; width: 64px; background-color: rgba(0, 0, 0, 0.4); border-top-left-radius: 24px; border-top-right-radius: 24px; border-bottom-right-radius: 24px; border-bottom-left-radius: 24px; border-top-width: 8px; border-right-width: 8px; border-bottom-width: 8px; border-left-width: 8px; top: 5px; left: 5px; right: auto; border-left-color: rgba(0, 0, 0, 0); border-right-color: rgba(0, 0, 0, 0); border-top-color: rgba(0, 0, 0, 0); border-bottom-color: rgba(0, 0, 0, 0); margin-top: 0; margin-bottom: 0; margin-right: 0; margin-left: 0; max-width: 64px; max-height: 64px;" />
@@ -43,4 +44,5 @@
             <ui:VisualElement name="Count" style="flex-grow: 1; position: relative;" />
         </ui:VisualElement>
     </ui:VisualElement>
+    <ui:Instance template="GameOver" name="GameOver" style="align-items: center; justify-content: center; position: absolute; width: 100%; height: 100%;" />
 </ui:UXML>

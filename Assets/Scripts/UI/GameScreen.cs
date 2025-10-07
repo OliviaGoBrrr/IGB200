@@ -10,6 +10,13 @@ public class GameScreen : MonoBehaviour
     private Button settingsButton;
     private TemplateContainer settings;
 
+    private TemplateContainer gameOver;
+
+    private Button nextLevel;
+    private VisualElement winPage;
+    private VisualElement losePage;
+    private VisualElement[] stars = new VisualElement[3];
+
     private Button playSimButton;
     private Button undoButton;
     private Button restartButton;
@@ -31,12 +38,19 @@ public class GameScreen : MonoBehaviour
     [SerializeField] private DraggableItem waterObject;
     [SerializeField] private DraggableItem fireObject;
 
+    private Color starColour = new Color(1, 0.866f, 0.2f);
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
         sceneLoader = GameObject.FindGameObjectWithTag("SceneLoader").GetComponent<SceneLoader>();
 
         ui = GetComponent<UIDocument>().rootVisualElement;
+
+        for (int i = 0; i < stars.Length; i++)
+        {
+            stars[i] = ui.Q<VisualElement>("Star" + (i + 1));
+        }
     }
 
     private void OnEnable()
@@ -56,8 +70,15 @@ public class GameScreen : MonoBehaviour
         settings = ui.Q<TemplateContainer>("Settings");
         settings.style.display = DisplayStyle.None;
 
+        gameOver = ui.Q<TemplateContainer>("GameOver");
+        gameOver.style.display = DisplayStyle.None;
+
         backButton = ui.Q<Button>("BackButton");
         backButton.clicked += OnBackButtonClicked;
+
+        nextLevel = gameOver.Q<Button>("NextLevelButton");
+        winPage = gameOver.Q<VisualElement>("Win");
+        losePage = gameOver.Q<VisualElement>("Lose");
 
         dryGrassButton = ui.Q<Button>("GrassButton");
         waterButton = ui.Q<Button>("WaterButton");
@@ -96,6 +117,29 @@ public class GameScreen : MonoBehaviour
             fireButton.style.display = DisplayStyle.Flex;
             fireText.text = fireObject.itemUses.ToString();
         }
+    }
+
+    public void DisplayGameWin(int starCount)
+    {
+        winPage.style.display = DisplayStyle.Flex;
+        losePage.style.display = DisplayStyle.None;
+
+        for (int i = 0; i < starCount; i++)
+        {
+            stars[i].style.unityBackgroundImageTintColor = starColour;
+        }
+
+        nextLevel.style.display = DisplayStyle.Flex; // button
+        gameOver.style.display = DisplayStyle.Flex;
+    }
+
+    public void DisplayGameLose()
+    {
+        losePage.style.display = DisplayStyle.Flex;
+        winPage.style.display = DisplayStyle.None;
+
+        nextLevel.style.display = DisplayStyle.None;
+        gameOver.style.display = DisplayStyle.Flex;
     }
 
     private void OnPlaySimButtonClicked()

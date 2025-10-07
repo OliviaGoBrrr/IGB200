@@ -6,6 +6,7 @@ using TMPro;
 //using static UnityEditor.Rendering.FilterWindow;
 //using static UnityEngine.Rendering.DebugUI.MessageBox;
 using UnityEngine.SocialPlatforms.Impl;
+using static UnityEngine.Rendering.DebugUI.MessageBox;
 
 public class LevelSelectManager : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class LevelSelectManager : MonoBehaviour
     bool sceneLoad = false; // Prevents scenes from loading multiple times
 
 
-    private Color starColour = new Color(1, 0.925f, 0.513f);
+    private Color starColour = new Color(1, 0.866f, 0.2f);
 
     void Awake()
     {
@@ -38,6 +39,7 @@ public class LevelSelectManager : MonoBehaviour
         {
             levelContainers[i] = ui.Q<TemplateContainer>("LevelContainer" + (i + 1));
             SetStarColour(i, levelContainers[i]);
+            print("Level " + i + " score is " + ScoreData.levelScores[i]);
         }
     }
 
@@ -91,14 +93,21 @@ public class LevelSelectManager : MonoBehaviour
 
     private void SetStarColour(int level, VisualElement levelContainer)
     {
-        if (ScoreData.levelScores[level] == 3) return; // dont check if its already at 3 stars
+        if (ScoreData.levelScores[level] == 0) return; // dont check if level at 0 stars
 
-        int i = 0;
-        while (i < ScoreData.levelScores[level])
+        //int i = 0;
+        for (int i = 0; i < ScoreData.levelScores[level]; i++)
+        {
+            levelContainer.Q<VisualElement>("Star" + (i + 1)).style.unityBackgroundImageTintColor = starColour;
+            print("star " + (i + 1) + " is filled in");
+        }
+        /*
+        while (1 < ScoreData.levelScores[level])
         {
             levelContainer.Q<VisualElement>("Star" + (i + 1)).style.unityBackgroundImageTintColor = starColour;
             i++;
         }
+        */
     }
 
     /*
