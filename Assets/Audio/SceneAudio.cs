@@ -102,4 +102,8 @@ public class SceneAudio : MonoBehaviour
         gameSoundFXAudio.resource = scoreUnGained;
         gameSoundFXAudio.Play();
     }
+    public void MagProgressWipe()
+    {
+        nextMagProgress = 0;
+    }
 }

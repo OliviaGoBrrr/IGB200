@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour
         uiManager = FindAnyObjectByType<UIManager>();
         sceneCamera = FindFirstObjectByType<Camera>();
         playerAnimator = FindFirstObjectByType<PlayerAnimator>();
+        FindFirstObjectByType<SceneAudio>().MagProgressWipe();
     }
 
     void Start()
