@@ -43,6 +43,9 @@ public class MainMenu : UIAnimations
     [SerializeField] private Sprite characterBodySmile;
     [SerializeField] private Sprite characterBodyNormal;
 
+    [SerializeField] private Sprite characterEyeSmile;
+    [SerializeField] private Sprite characterEyeNormal;
+
     private Color newColour;
 
     void Awake()
@@ -127,12 +130,20 @@ public class MainMenu : UIAnimations
     {
         characterHead.style.backgroundImage = new StyleBackground(characterFaceSmile);
         characterBody.style.backgroundImage = new StyleBackground(characterBodySmile);
+        characterEyes.style.backgroundImage = new StyleBackground(characterEyeSmile);
+
+        characterSclera.style.display = DisplayStyle.None;
+        characterHighlights.style.display = DisplayStyle.None;
     }
 
     private void OnCustomisePointerLeaveEvent(PointerLeaveEvent evt)
     {
         characterHead.style.backgroundImage = new StyleBackground(characterFaceNormal);
         characterBody.style.backgroundImage = new StyleBackground(characterBodyNormal);
+        characterEyes.style.backgroundImage = new StyleBackground(characterEyeNormal);
+
+        characterSclera.style.display = DisplayStyle.Flex;
+        characterHighlights.style.display = DisplayStyle.Flex;
     }
 
     private void OnPlayPointerEnterEvent(PointerEnterEvent evt)
