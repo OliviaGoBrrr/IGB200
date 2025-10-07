@@ -160,6 +160,8 @@ public class MainMenu : UIAnimations
 
     private void OnPlayButtonClicked()
     {
+        ButtonPressed(playButton);
+
         if (sceneLoad == false)
         {
             sceneLoad = true;
@@ -182,12 +184,16 @@ public class MainMenu : UIAnimations
 
     private void OnSettingsButtonClicked()
     {
+        ButtonPressed(settingsButton);
+
         FindAnyObjectByType<MenuAudio>().PlayButtonClick(8);
         settings.style.display = DisplayStyle.Flex; // visibility = true
     }
 
     private void OnExitButtonClicked()
     {
+        ButtonPressed(exitButton);
+
         print("Exit Pressed!");
         //Application.Quit();
     }

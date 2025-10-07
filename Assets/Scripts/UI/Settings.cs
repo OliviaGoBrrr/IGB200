@@ -7,7 +7,7 @@ using UnityEngine.Rendering;
 using UnityEngine.Audio;
 using static UnityEngine.Rendering.DebugUI.MessageBox;
 
-public class Settings : MonoBehaviour
+public class Settings : UIAnimations
 {
     private VisualElement ui;
     private TemplateContainer settings;
@@ -68,12 +68,14 @@ public class Settings : MonoBehaviour
 
     private void OnBackButtonClicked()
     {
+        ButtonPressed(backButton);
         settings.style.display = DisplayStyle.None;
         FindAnyObjectByType<MenuAudio>().PlayButtonClick(10);
     }
 
     private void OnVolumeButtonClicked()
     {
+        ButtonPressed(volumeButton);
         audioMixer.GetFloat("VolumeSoundFX", out float SoundFXVol);
         if (SoundFXVol == 0)
         {
@@ -97,6 +99,7 @@ public class Settings : MonoBehaviour
 
     private void OnMusicButtonClicked()
     {
+        ButtonPressed(musicButton);
         audioMixer.GetFloat("VolumeMusic", out float MusicVol);
         if (MusicVol == 0) 
         {

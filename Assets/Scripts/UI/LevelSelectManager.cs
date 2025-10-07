@@ -8,7 +8,7 @@ using TMPro;
 using UnityEngine.SocialPlatforms.Impl;
 using static UnityEngine.Rendering.DebugUI.MessageBox;
 
-public class LevelSelectManager : MonoBehaviour
+public class LevelSelectManager : UIAnimations
 {
     private SceneLoader sceneLoader;
 
@@ -62,12 +62,13 @@ public class LevelSelectManager : MonoBehaviour
 
     private void OnSettingsButtonClicked()
     {
-        print("Settings Pressed!");
+        ButtonPressed(settingsButton);
         settings.style.display = DisplayStyle.Flex; // visibility = true
     }
 
     private void OnBackButtonClicked()
     {
+        ButtonPressed(backButton);
         if (sceneLoad == false)
         {
             sceneLoad = true;
@@ -78,6 +79,7 @@ public class LevelSelectManager : MonoBehaviour
 
     private void Clickable_clickedWithEventInfo(EventBase obj)
     {
+        ButtonPressed((Button)obj.target);
         if (sceneLoad == false)
         {
             sceneLoad = true;
@@ -101,13 +103,6 @@ public class LevelSelectManager : MonoBehaviour
             levelContainer.Q<VisualElement>("Star" + (i + 1)).style.unityBackgroundImageTintColor = starColour;
             print("star " + (i + 1) + " is filled in");
         }
-        /*
-        while (1 < ScoreData.levelScores[level])
-        {
-            levelContainer.Q<VisualElement>("Star" + (i + 1)).style.unityBackgroundImageTintColor = starColour;
-            i++;
-        }
-        */
     }
 
     /*

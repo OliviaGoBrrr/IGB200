@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class GameScreen : MonoBehaviour
+public class GameScreen : UIAnimations
 {
     private SceneLoader sceneLoader;
 
@@ -144,11 +144,13 @@ public class GameScreen : MonoBehaviour
 
     private void OnPlaySimButtonClicked()
     {
+        ButtonPressed(playSimButton);
         gameManager.PlaySimulation();
     }
 
     private void OnUndoButtonClicked()
     {
+        ButtonPressed(undoButton);
         gameManager.UndoPlayerAction();
         dryGrassText.text = "x" + dryObject.itemUses.ToString();
         waterText.text = "x" + waterObject.itemUses.ToString();
@@ -164,17 +166,20 @@ public class GameScreen : MonoBehaviour
 
     private void OnRestartButtonClicked()
     {
+        ButtonPressed(restartButton);
         sceneLoader.ReloadCurrentScene();
     }
 
     private void OnSettingsButtonClicked()
     {
+        ButtonPressed(settingsButton);
         settings.style.display = DisplayStyle.Flex; // visibility = true
         FindAnyObjectByType<MenuAudio>().PlayButtonClick(10);
     }
 
     private void OnBackButtonClicked()
     {
+        ButtonPressed(backButton);
         if (sceneLoad == false)
         {
             sceneLoad = true;

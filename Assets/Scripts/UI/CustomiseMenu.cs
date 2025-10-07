@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 //using UnityEngine.Rendering;
 //using UnityEditor.ShaderGraph.Internal;
 
-public class CustomiseMenu : MonoBehaviour
+public class CustomiseMenu : UIAnimations
 {
     private VisualElement ui;
 
@@ -416,10 +416,12 @@ public class CustomiseMenu : MonoBehaviour
 
     private void OnSettingsButtonClicked()
     {
+        ButtonPressed(settingsButton);
         settings.style.display = DisplayStyle.Flex; // visibility = true
     }
     private void OnBackButtonClicked()
     {
+        ButtonPressed(backButton);
         sceneLoader.LoadNextScene("Main Menu");
     }
 }

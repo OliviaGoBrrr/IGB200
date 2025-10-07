@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
-public class GameOver : MonoBehaviour
+public class GameOver : UIAnimations
 {
     private VisualElement ui;
 
@@ -38,6 +38,7 @@ public class GameOver : MonoBehaviour
 
     private void OnHomeButtonClicked()
     {
+        ButtonPressed(homeButton);
         if (sceneLoad == false)
         {
             sceneLoad = true;
@@ -49,6 +50,7 @@ public class GameOver : MonoBehaviour
 
     private void OnGameOverRestartButtonClicked()
     {
+        ButtonPressed(restartButton);
         if (sceneLoad == false)
         {
             sceneLoad = true;
@@ -60,6 +62,7 @@ public class GameOver : MonoBehaviour
 
     private void OnNextLevelButtonClicked()
     {
+        ButtonPressed(nextLevelButton);
         if (sceneLoad == false)
         {
             sceneLoad = true;
