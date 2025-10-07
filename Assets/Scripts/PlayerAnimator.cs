@@ -109,7 +109,7 @@ public class PlayerAnimator : MonoBehaviour
         {
             foreach (var animTarget in animTargets)
             {
-                animTarget.GetComponent<SpriteRenderer>().transform.rotation = Quaternion.Euler(transform.rotation.x, 0, 0);
+                animTarget.GetComponent<SpriteRenderer>().transform.rotation = Quaternion.Euler(30, 0, 0);
             }
             
             transform.DOMove(selectTile.transform.position + new Vector3(-1, 1.1f, 0), 0.5f);
@@ -118,7 +118,7 @@ public class PlayerAnimator : MonoBehaviour
         {
             foreach (var animTarget in animTargets)
             {
-                animTarget.GetComponent<SpriteRenderer>().transform.rotation = Quaternion.Euler(transform.rotation.x, -180, 0);
+                animTarget.GetComponent<SpriteRenderer>().transform.rotation = Quaternion.Euler(-30, -180, 0);
             }
             transform.DOMove(selectTile.transform.position + new Vector3(1, 1.1f, 0), 0.5f);
         }
@@ -145,8 +145,6 @@ public class PlayerAnimator : MonoBehaviour
         }
         yield return new WaitForSeconds(0.15f);
         Instantiate(actionDustcloud, selectTile.transform.position + new Vector3(0, 1.1f, -0.5f), Quaternion.Euler(30, 0, 0));
-
-        Debug.Log(selectTile.transform.position.ToString());
         walkRoutine = StartCoroutine(WalkWait(2f));
         yield return null;
     }
