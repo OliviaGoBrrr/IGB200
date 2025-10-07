@@ -155,7 +155,7 @@ public class GameManager : MonoBehaviour
     {
         foreach(GameTile tile in gridManager.tileList)
         {
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.1f + simTime/8f);
             if (tile.tileState == GameTile.TileStates.BURNT && tile.scoreWhenBurnt == true)
             {
                 ScoreTotal += tile.tileScore;
@@ -376,6 +376,7 @@ public class GameManager : MonoBehaviour
         lastTile.GameTile.TileStateUpdate();
         tilesChanged.RemoveAt(tilesChanged.Count - 1);
 
+        lastTile.GameTile.UndoTrigger();
 
         lastItem.EnableDraggable(1);
         itemsUsed.RemoveAt(itemsUsed.Count - 1);

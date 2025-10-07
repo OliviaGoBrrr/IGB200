@@ -98,6 +98,7 @@ public class SceneAudio : MonoBehaviour
     }
     public void ScoreUngained()
     {
+        gameSoundFXAudio.pitch = 1;
         gameSoundFXAudio.resource = scoreUnGained;
         gameSoundFXAudio.Play();
     }

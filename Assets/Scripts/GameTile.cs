@@ -408,6 +408,13 @@ public class GameTile: MonoBehaviour
 
                 gridManager.CompleteGridGeneration();
     }
+    public void UndoTrigger()
+    {
+        foreach (BurnableDecoration deco in burnableDecorations)
+        {
+            deco.TriggerBurn();
+        }
+    }
 }
 
 
