@@ -1,0 +1,5 @@
+C:/Users/Lucky/Documents/GitHub/IGB200/.utmp/RelWithDebInfo/c6g173fx/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/Lucky/Documents/GitHub/IGB200/.utmp/RelWithDebInfo/c6g173fx/arm64-v8a/CMakeFiles/rebuild_cache.dir
+C:/Users/Lucky/Documents/GitHub/IGB200/.utmp/RelWithDebInfo/c6g173fx/arm64-v8a/GameActivity/CMakeFiles/game.dir
+C:/Users/Lucky/Documents/GitHub/IGB200/.utmp/RelWithDebInfo/c6g173fx/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+C:/Users/Lucky/Documents/GitHub/IGB200/.utmp/RelWithDebInfo/c6g173fx/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
