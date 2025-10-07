@@ -109,18 +109,18 @@ public class PlayerAnimator : MonoBehaviour
         {
             foreach (var animTarget in animTargets)
             {
-                animTarget.GetComponent<SpriteRenderer>().transform.rotation = Quaternion.Euler(0, 0, 0);
+                animTarget.GetComponent<SpriteRenderer>().transform.rotation = Quaternion.Euler(30, 0, 0);
             }
             
-            transform.DOMove(selectTile.transform.position + new Vector3(-1, 1.5f, 0), 0.5f);
+            transform.DOMove(selectTile.transform.position + new Vector3(-1, 1.1f, 0), 0.5f);
         }
         else
         {
             foreach (var animTarget in animTargets)
             {
-                animTarget.GetComponent<SpriteRenderer>().transform.rotation = Quaternion.Euler(0, -180, 0);
+                animTarget.GetComponent<SpriteRenderer>().transform.rotation = Quaternion.Euler(-30, -180, 0);
             }
-            transform.DOMove(selectTile.transform.position + new Vector3(1, 1.5f, 0), 0.5f);
+            transform.DOMove(selectTile.transform.position + new Vector3(1, 1.1f, 0), 0.5f);
         }
 
 
@@ -144,7 +144,9 @@ public class PlayerAnimator : MonoBehaviour
             animTarget.SetTrigger("Action");
         }
         yield return new WaitForSeconds(0.15f);
-        Instantiate(actionDustcloud, selectTile.transform.position + new Vector3(0, 1.2f, -0.5f), Quaternion.Euler(0, 0, 0));
+        Instantiate(actionDustcloud, selectTile.transform.position + new Vector3(0, 1.1f, -0.5f), Quaternion.Euler(30, 0, 0));
+
+        Debug.Log(selectTile.transform.position.ToString());
         walkRoutine = StartCoroutine(WalkWait(2f));
         yield return null;
     }
@@ -160,20 +162,20 @@ public class PlayerAnimator : MonoBehaviour
     
     private void PlayerWalk()
     {
-        Vector3 target = grid.tileList[UnityEngine.Random.Range(0, grid.tileList.Count)].transform.position + new Vector3(UnityEngine.Random.Range(-0.4f, 0.4f), 1.5f, UnityEngine.Random.Range(-0.4f, 0.4f));
+        Vector3 target = grid.tileList[UnityEngine.Random.Range(0, grid.tileList.Count)].transform.position + new Vector3(UnityEngine.Random.Range(-0.4f, 0.4f), 1.1f, UnityEngine.Random.Range(-0.4f, 0.4f));
         transform.DOMove(target, Vector3.Distance(target, transform.position));
         if (target.x < transform.position.x)
         { 
             foreach (var animTarget in animTargets)
             {
-                animTarget.GetComponent<SpriteRenderer>().transform.rotation = Quaternion.Euler(0, -180, 0);
+                animTarget.GetComponent<SpriteRenderer>().transform.rotation = Quaternion.Euler(-30, -180, 0);
             }
         }
         else
         {
             foreach (var animTarget in animTargets)
             {
-                animTarget.GetComponent<SpriteRenderer>().transform.rotation = Quaternion.Euler(0, -0, 0);
+                animTarget.GetComponent<SpriteRenderer>().transform.rotation = Quaternion.Euler(30, -0, 0);
             }
         }
         animTargets[0].SetBool("WalkEnd", false);
