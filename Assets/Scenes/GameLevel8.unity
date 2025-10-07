@@ -358,7 +358,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7344275795977752191, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: m_Spacing
-      value: 25
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7990802163666853796, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
