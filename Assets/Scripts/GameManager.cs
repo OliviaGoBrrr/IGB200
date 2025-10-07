@@ -161,14 +161,20 @@ public class GameManager : MonoBehaviour
             {
                 ScoreTotal += tile.tileScore;
                 FindAnyObjectByType<SceneAudio>().ScoreGained();
+                tile.ScoreCounted(true);
             }
             else if (tile.tileState != GameTile.TileStates.BURNT && tile.scoreWhenBurnt != true)
             {
                 ScoreTotal += tile.tileScore;
                 FindAnyObjectByType<SceneAudio>().ScoreGained();
+                tile.ScoreCounted(true);
             }
-            else { FindAnyObjectByType<SceneAudio>().ScoreUngained(); }
-            tile.ScoreCounted();
+            else 
+            { 
+                FindAnyObjectByType<SceneAudio>().ScoreUngained();
+                tile.ScoreCounted(false);
+            }
+            
             Debug.Log(ScoreTotal.ToString());
         }
         yield return new WaitForSeconds(2f);

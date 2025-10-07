@@ -256,11 +256,14 @@ public class GameTile: MonoBehaviour
         }
     }
 
-    public void ScoreCounted()
+    public void ScoreCounted(bool scoreGained)
     {
-        foreach (SproutableDecoration deco in sproutableDecorations)
+        if (scoreGained == true)
         {
-            deco.TriggerSprout();
+            foreach (SproutableDecoration deco in sproutableDecorations)
+            {
+                deco.TriggerSprout();
+            }
         }
         StartCoroutine(Tweek());
     }

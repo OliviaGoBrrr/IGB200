@@ -628,8 +628,8 @@ SpriteRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 71853016}
   m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
@@ -643,7 +643,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: 7298dfd064f39334db152f8ff5575394, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2448,15 +2448,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7824181801414860680, guid: 310c7d9ff9c1a4f49b73d5d00d2a24f6, type: 3}
       propertyPath: 'scoreThresholds.Array.data[0]'
-      value: 3900
+      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 7824181801414860680, guid: 310c7d9ff9c1a4f49b73d5d00d2a24f6, type: 3}
       propertyPath: 'scoreThresholds.Array.data[1]'
-      value: 3500
+      value: 3900
       objectReference: {fileID: 0}
     - target: {fileID: 7824181801414860680, guid: 310c7d9ff9c1a4f49b73d5d00d2a24f6, type: 3}
       propertyPath: 'scoreThresholds.Array.data[2]'
-      value: 2500
+      value: 3500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3877,8 +3877,8 @@ Transform:
   m_GameObject: {fileID: 1182078536}
   serializedVersion: 2
   m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
-  m_LocalPosition: {x: 0, y: 1.1, z: 0}
-  m_LocalScale: {x: 0.1338, y: 0.1338, z: 0.1338}
+  m_LocalPosition: {x: 0, y: 1.14, z: 0}
+  m_LocalScale: {x: 0.14, y: 0.14, z: 0.14}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 753024115}
@@ -3892,8 +3892,8 @@ SpriteRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1182078536}
   m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
@@ -3907,7 +3907,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: 97e00858efba5f44988afc9ca5e3bcb8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4785,14 +4785,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1557140565}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.30702436, y: 0, z: 0, w: 0.95170164}
-  m_LocalPosition: {x: 0, y: 1.12, z: 0}
-  m_LocalScale: {x: 0.138, y: 0.138, z: 0.138}
+  m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
+  m_LocalPosition: {x: 0, y: 1.14, z: 0}
+  m_LocalScale: {x: 0.14, y: 0.14, z: 0.14}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1820451337}
   m_Father: {fileID: 1309218255}
-  m_LocalEulerAnglesHint: {x: 35.76, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
 --- !u!114 &1557140567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4814,8 +4814,8 @@ SpriteRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1557140565}
   m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
@@ -4829,7 +4829,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: 97e00858efba5f44988afc9ca5e3bcb8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4870,44 +4870,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 988218190784630231, guid: 19d07459d6e683942977af992b90adf2, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 988218190784630231, guid: 19d07459d6e683942977af992b90adf2, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 988218190784630231, guid: 19d07459d6e683942977af992b90adf2, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 988218190784630231, guid: 19d07459d6e683942977af992b90adf2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.79
       objectReference: {fileID: 0}
     - target: {fileID: 988218190784630231, guid: 19d07459d6e683942977af992b90adf2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 988218190784630231, guid: 19d07459d6e683942977af992b90adf2, type: 3}
       propertyPath: m_LocalPosition.z
       value: 5.63
-      objectReference: {fileID: 0}
-    - target: {fileID: 988218190784630231, guid: 19d07459d6e683942977af992b90adf2, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9659258
-      objectReference: {fileID: 0}
-    - target: {fileID: 988218190784630231, guid: 19d07459d6e683942977af992b90adf2, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.2588191
-      objectReference: {fileID: 0}
-    - target: {fileID: 988218190784630231, guid: 19d07459d6e683942977af992b90adf2, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 988218190784630231, guid: 19d07459d6e683942977af992b90adf2, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 988218190784630231, guid: 19d07459d6e683942977af992b90adf2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4920,10 +4892,6 @@ PrefabInstance:
     - target: {fileID: 988218190784630231, guid: 19d07459d6e683942977af992b90adf2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 988218190784630231, guid: 19d07459d6e683942977af992b90adf2, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2194210408347051629, guid: 19d07459d6e683942977af992b90adf2, type: 3}
       propertyPath: m_Name

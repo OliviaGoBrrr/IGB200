@@ -66,7 +66,6 @@ public class GameOver : MonoBehaviour
             //FindAnyObjectByType<MenuAudio>().PlayButtonClick(0);
             ScoreData.currentLevel += 1;
             sceneLoader.LoadNextScene("GameLevel" + ScoreData.currentLevel);
-            StartCoroutine(FindAnyObjectByType<SceneAudio>().DestroySelf(0.5f));
         }
     }
 
