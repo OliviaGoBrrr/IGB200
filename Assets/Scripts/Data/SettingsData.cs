@@ -1,16 +1,7 @@
 using UnityEngine;
 
-public class SettingsData : MonoBehaviour
+public static class SettingsData
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public static bool musicOn = true;
+    public static bool sfxOn = true;
 }

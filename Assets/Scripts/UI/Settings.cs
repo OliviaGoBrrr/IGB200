@@ -54,6 +54,16 @@ public class Settings : MonoBehaviour
 
         musicButton = ui.Q<Button>("SettingsMusicButton");
         musicButton.clicked += OnMusicButtonClicked;
+
+        if (SettingsData.musicOn == false)
+        {
+            musicButton.style.backgroundImage = new StyleBackground(musicOff);
+        }
+
+        if (SettingsData.sfxOn == false)
+        {
+            volumeButton.style.backgroundImage = new StyleBackground(volumeOff);
+        }
     }
 
     private void OnBackButtonClicked()
@@ -66,14 +76,17 @@ public class Settings : MonoBehaviour
     {
         audioMixer.GetFloat("VolumeSoundFX", out float SoundFXVol);
         if (SoundFXVol == 0)
-        { 
+        {
+            SettingsData.sfxOn = false;
             audioMixer.SetFloat("VolumeSoundFX", -80f);
-
+            
 
             volumeButton.style.backgroundImage = new StyleBackground(volumeOff);
         }
         else
-        { 
+        {
+            SettingsData.sfxOn = true;
+
             audioMixer.SetFloat("VolumeSoundFX", 0f);
 
             
@@ -86,12 +99,14 @@ public class Settings : MonoBehaviour
     {
         audioMixer.GetFloat("VolumeMusic", out float MusicVol);
         if (MusicVol == 0) 
-        { 
+        {
+            SettingsData.musicOn = false;
             audioMixer.SetFloat("VolumeMusic", -80f);
             musicButton.style.backgroundImage = new StyleBackground(musicOff);
         }
         else 
-        { 
+        {
+            SettingsData.musicOn = true;
             audioMixer.SetFloat("VolumeMusic", 0f);
             musicButton.style.backgroundImage = new StyleBackground(musicOn);
         }
