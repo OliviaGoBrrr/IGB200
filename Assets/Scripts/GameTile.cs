@@ -414,6 +414,10 @@ public class GameTile: MonoBehaviour
         {
             deco.TriggerBurn();
         }
+        foreach (FireDecoration deco in fireDecorations)
+        {
+            deco.Extinguish();
+        }
     }
 }
 
