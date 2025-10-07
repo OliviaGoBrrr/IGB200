@@ -4,6 +4,7 @@ using UnityEngine.UIElements;
 using DG.Tweening;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using System.Text.RegularExpressions;
 //using static System.TimeZoneInfo;
 //using UnityEditor.SearchService;
 //using UnityEngine.Rendering;
@@ -44,10 +45,10 @@ public class CustomiseMenu : UIAnimations
     private VisualElement eyesPanel;
 
     // Option Buttons
-    private Button[] skinColours = new Button[6];
-    private Button[] clothesColours = new Button[6];
-    private Button[] hairColours = new Button[6];
-    private Button[] eyeColours = new Button[6];
+    private Button[] skinColours = new Button[9];
+    private Button[] clothesColours = new Button[9];
+    private Button[] hairColours = new Button[13];
+    private Button[] eyeColours = new Button[8];
 
     private Button[] bangsOptions = new Button[8];
 
@@ -285,7 +286,8 @@ public class CustomiseMenu : UIAnimations
     private void Clickable_clickedWithEventInfo(EventBase obj)
     {
         var button = (Button)obj.target;
-        switch(currentCategorySwitch)
+        string onlyNumbersName;
+        switch (currentCategorySwitch)
         {
             case "Skin":
                 OptionSelected(button, currentlySelectedSkin);
@@ -294,7 +296,10 @@ public class CustomiseMenu : UIAnimations
 
                 print("skin colour changed to " + button.text);
                 CustomiseData.skinColour = button.text;
-                CustomiseData.skinColourNumber = int.Parse(button.name[button.name.Length - 1].ToString()) - 1;
+
+                onlyNumbersName = Regex.Match(button.name, @"\d+").Value;
+
+                CustomiseData.skinColourNumber = int.Parse(onlyNumbersName) - 1;
                 print(CustomiseData.skinColourNumber);
 
                 ColorUtility.TryParseHtmlString(CustomiseData.skinColour, out newColour);
@@ -308,7 +313,10 @@ public class CustomiseMenu : UIAnimations
 
                 print("clothes colour changed to " + button.text);
                 CustomiseData.clothesColour = button.text;
-                CustomiseData.clothesColourNumber = int.Parse(button.name[button.name.Length - 1].ToString()) - 1;
+
+                onlyNumbersName = Regex.Match(button.name, @"\d+").Value;
+
+                CustomiseData.clothesColourNumber = int.Parse(onlyNumbersName) - 1;
 
                 ColorUtility.TryParseHtmlString(button.text, out newColour);
                 characterBody.style.unityBackgroundImageTintColor = newColour;
@@ -355,7 +363,10 @@ public class CustomiseMenu : UIAnimations
 
                         print("hair colour changed to " + button.text);
                         CustomiseData.hairColour = button.text;
-                        CustomiseData.hairColourNumber = int.Parse(button.name[button.name.Length - 1].ToString()) - 1;
+
+                        onlyNumbersName = Regex.Match(button.name, @"\d+").Value;
+
+                        CustomiseData.hairColourNumber = int.Parse(onlyNumbersName) - 1;
 
                         ColorUtility.TryParseHtmlString(button.text, out newColour);
                         characterHair.style.unityBackgroundImageTintColor = newColour;
@@ -371,7 +382,10 @@ public class CustomiseMenu : UIAnimations
 
                 print("eye colour changed to " + button.text);
                 CustomiseData.eyeColour = button.text;
-                CustomiseData.eyeColourNumber = int.Parse(button.name[button.name.Length - 1].ToString()) - 1;
+
+                onlyNumbersName = Regex.Match(button.name, @"\d+").Value;
+
+                CustomiseData.eyeColourNumber = int.Parse(onlyNumbersName) - 1;
 
                 ColorUtility.TryParseHtmlString(button.text, out newColour);
                 characterEyes.style.unityBackgroundImageTintColor = newColour;
