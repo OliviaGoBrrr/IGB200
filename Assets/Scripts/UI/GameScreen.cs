@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UIElements;
-
+using DG.Tweening;
 public class GameScreen : UIAnimations
 {
     private SceneLoader sceneLoader;
@@ -29,6 +29,9 @@ public class GameScreen : UIAnimations
     private Label waterText;
     private Label fireText;
 
+    private VisualElement playContainer;
+    private VisualElement actionContainer;
+
     public GameManager gameManager;
 
     private Button backButton;
@@ -55,6 +58,9 @@ public class GameScreen : UIAnimations
 
     private void OnEnable()
     {
+        playContainer = ui.Q<VisualElement>("PlayStuffRight");
+        actionContainer = ui.Q<VisualElement>("ActionStuffLeft");
+
         playSimButton = ui.Q<Button>("PlaySimButton");
         playSimButton.clicked += OnPlaySimButtonClicked;
 
@@ -144,6 +150,17 @@ public class GameScreen : UIAnimations
 
     private void OnPlaySimButtonClicked()
     {
+        dryObject.Hide();
+        waterObject.Hide();
+        fireObject.Hide();
+
+        dryGrassButton.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 0.47f);
+        waterButton.style.unityBackgroundImageTintColor = new Color(0.5f, 0.8f, 1f, 0.47f);
+        fireButton.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 0.47f);
+
+        MoveSideButtons(actionContainer, 1);
+        MoveSideButtons(playContainer, -1);
+
         ButtonPressed(playSimButton);
         gameManager.PlaySimulation();
     }
@@ -187,5 +204,21 @@ public class GameScreen : UIAnimations
             sceneLoader.LoadNextScene("Level Select");
             StartCoroutine(FindAnyObjectByType<SceneAudio>().DestroySelf(0.5f));
         }
+    }
+
+
+    private void MoveSideButtons(VisualElement element, float direction)
+    {
+        float buttonPosX = 0f;
+        DOTween.To(() => buttonPosX, x => buttonPosX = x, 20f * direction, 0.25f).SetEase(Ease.OutCubic).OnUpdate(() =>
+        {
+            element.style.translate = new Translate(buttonPosX, 0);
+        }).OnComplete(() =>
+        {
+            DOTween.To(() => buttonPosX, x => buttonPosX = x, -110f * direction, 0.25f).SetEase(Ease.OutCubic).OnUpdate(() =>
+            {
+                element.style.translate = new Translate(buttonPosX, 0);
+            });
+        });
     }
 }

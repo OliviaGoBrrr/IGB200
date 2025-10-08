@@ -250,6 +250,11 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         }
     }
 
+    public void Hide()
+    {
+        draggableStaticIcon.enabled = false;
+    }
+
     static public T FindInParents<T>(GameObject go) where T : Component
     {
         if (go == null) { return null; }

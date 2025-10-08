@@ -67,8 +67,16 @@ public class GameOver : UIAnimations
         {
             sceneLoad = true;
             //FindAnyObjectByType<MenuAudio>().PlayButtonClick(0);
-            ScoreData.currentLevel += 1;
-            sceneLoader.LoadNextScene("GameLevel" + ScoreData.currentLevel);
+            if (ScoreData.currentLevel == 8)
+            {
+                sceneLoader.LoadNextScene("Main Menu");
+            }
+            else
+            {
+                ScoreData.currentLevel += 1;
+                sceneLoader.LoadNextScene("GameLevel" + ScoreData.currentLevel);
+            }
+            StartCoroutine(FindAnyObjectByType<SceneAudio>().DestroySelf(0.5f));
         }
     }
 
