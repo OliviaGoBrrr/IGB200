@@ -99,6 +99,10 @@
 .colour-option-button {
     width: 64px;
     height: 64px;
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
 }
 
 .category-panel {
@@ -135,6 +139,18 @@
     margin-left: 6px;
     margin-bottom: 2px;
     margin-top: 2px;
+    border-top-width: 3px;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    border-left-width: 3px;
+    border-left-color: rgb(57, 16, 5);
+    border-right-color: rgb(57, 16, 5);
+    border-top-color: rgb(57, 16, 5);
+    border-bottom-color: rgb(57, 16, 5);
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    border-bottom-left-radius: 24px;
 }
 
 .unity-scroll-view--horizontal {

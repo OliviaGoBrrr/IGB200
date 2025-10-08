@@ -432,10 +432,7 @@ public class CustomiseMenu : UIAnimations
 
     private void ChangeBorderSize(Button button, int direction)
     {
-        float buttonTop = button.style.borderTopWidth.value;
-        float buttonBottom = button.style.borderBottomWidth.value;
-        float buttonLeft = button.style.borderLeftWidth.value;
-        float buttonRight = button.style.borderRightWidth.value;
+        
 
         float goal;
 
@@ -445,14 +442,19 @@ public class CustomiseMenu : UIAnimations
         }
         else
         {
-            goal = 1.0f;
+            goal = -2.0f;
         }
 
-            DOTween.To(() => buttonTop, x => buttonTop = x, goal, 0.25f).SetEase(Ease.OutCubic).OnUpdate(() =>
-            {
-                button.style.borderTopWidth = buttonTop;
-            });
+        float buttonTop = button.style.borderTopWidth.value;
+        float buttonBottom = button.style.borderBottomWidth.value;
+        float buttonLeft = button.style.borderLeftWidth.value;
+        float buttonRight = button.style.borderRightWidth.value;
 
+        DOTween.To(() => buttonTop, x => buttonTop = x, goal, 0.25f).SetEase(Ease.OutCubic).OnUpdate(() =>
+        {
+            button.style.borderTopWidth = buttonTop;
+        });
+        
         DOTween.To(() => buttonBottom, x => buttonBottom = x, goal, 0.25f).SetEase(Ease.OutCubic).OnUpdate(() =>
         {
             button.style.borderBottomWidth = buttonBottom;
@@ -467,6 +469,7 @@ public class CustomiseMenu : UIAnimations
         {
             button.style.borderRightWidth = buttonRight;
         });
+        
     }
 
     private void OnSettingsButtonClicked()
