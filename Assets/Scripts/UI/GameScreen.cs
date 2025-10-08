@@ -94,6 +94,7 @@ public class GameScreen : UIAnimations
         waterText = ui.Q<Label>("WaterText");
         fireText = ui.Q<Label>("FireText");
 
+        /*
         if (dryObject.itemUses == 0)
         {
             dryGrassButton.style.display = DisplayStyle.None;
@@ -123,6 +124,7 @@ public class GameScreen : UIAnimations
             fireButton.style.display = DisplayStyle.Flex;
             fireText.text = fireObject.itemUses.ToString();
         }
+        */
     }
 
     public void DisplayGameWin(int starCount)
