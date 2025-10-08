@@ -475,11 +475,13 @@ public class CustomiseMenu : UIAnimations
     private void OnSettingsButtonClicked()
     {
         ButtonPressed(settingsButton);
+        FindAnyObjectByType<MenuAudio>().PlayButtonClick(8);
         settings.style.display = DisplayStyle.Flex; // visibility = true
     }
     private void OnBackButtonClicked()
     {
         ButtonPressed(backButton);
+        FindAnyObjectByType<MenuAudio>().PlayButtonClick(10);
         sceneLoader.LoadNextScene("Main Menu");
     }
 }

@@ -175,7 +175,7 @@ public class GameManager : MonoBehaviour
                 FindAnyObjectByType<SceneAudio>().ScoreUngained();
                 tile.ScoreCounted(false);
             }
-            if (timeBetweenTiles > 0.15f) { timeBetweenTiles -= 0.005f; }
+            if (timeBetweenTiles > 0.125f) { timeBetweenTiles -= 0.008f; }
             Debug.Log(ScoreTotal.ToString());
         }
         yield return new WaitForSeconds(2f);

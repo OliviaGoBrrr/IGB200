@@ -63,6 +63,7 @@ public class LevelSelectManager : UIAnimations
     private void OnSettingsButtonClicked()
     {
         ButtonPressed(settingsButton);
+        FindAnyObjectByType<MenuAudio>().PlayButtonClick(8);
         settings.style.display = DisplayStyle.Flex; // visibility = true
     }
 
