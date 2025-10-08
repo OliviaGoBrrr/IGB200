@@ -210,12 +210,12 @@ public class GameScreen : UIAnimations
     private void MoveSideButtons(VisualElement element, float direction)
     {
         float buttonPosX = 0f;
-        DOTween.To(() => buttonPosX, x => buttonPosX = x, 20f * direction, 0.25f).SetEase(Ease.OutCubic).OnUpdate(() =>
+        DOTween.To(() => buttonPosX, x => buttonPosX = x, 20f * direction, 0.15f).SetEase(Ease.OutCubic).OnUpdate(() =>
         {
             element.style.translate = new Translate(buttonPosX, 0);
         }).OnComplete(() =>
         {
-            DOTween.To(() => buttonPosX, x => buttonPosX = x, -110f * direction, 0.25f).SetEase(Ease.OutCubic).OnUpdate(() =>
+            DOTween.To(() => buttonPosX, x => buttonPosX = x, -110f * direction, 0.25f).SetEase(Ease.InCubic).OnUpdate(() =>
             {
                 element.style.translate = new Translate(buttonPosX, 0);
             });

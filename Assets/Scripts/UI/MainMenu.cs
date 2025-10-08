@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UIElements;
+using DG.Tweening;
 using UnityEngine.SceneManagement;
 using static System.TimeZoneInfo;
 //using UnityEditor.SearchService;
@@ -19,6 +20,8 @@ public class MainMenu : UIAnimations
     private Button customiseButton;
     private Button customisePanelButton;
 
+    private VisualElement koalaContainer;
+    private Button koalaButton;
 
     private SceneLoader sceneLoader;
     bool sceneLoad = false; // Prevents scenes from loading multiple times
@@ -47,6 +50,8 @@ public class MainMenu : UIAnimations
     [SerializeField] private Sprite characterEyeNormal;
 
     private Color newColour;
+
+    private float koalaScale = 1f;
 
     void Awake()
     {
@@ -77,6 +82,10 @@ public class MainMenu : UIAnimations
         customisePanelButton = ui.Q<Button>("CustomisePanelButton");
         customisePanelButton.clicked += OnCustomiseButtonClicked;
 
+
+        koalaContainer = ui.Q<VisualElement>("KoalaContainer");
+        koalaButton = ui.Q<Button>("KoalaButton");
+        koalaButton.clicked += OnKoalaClicked;
 
         // Hover Button
 
@@ -157,6 +166,22 @@ public class MainMenu : UIAnimations
     }
 
     // Click Methods
+
+    private void OnKoalaClicked()
+    {
+        DOTween.KillAll();
+
+        DOTween.To(() => koalaScale, x => koalaScale = x, 0.8f, 0.08f).SetEase(Ease.OutSine).OnUpdate(() =>
+        {
+            koalaContainer.style.scale = new Vector2(koalaScale, koalaScale);
+        }).OnComplete(() =>
+        {
+            DOTween.To(() => koalaScale, x => koalaScale = x, 1f, 0.8f).SetEase(Ease.OutElastic).OnUpdate(() =>
+            {
+                koalaContainer.style.scale = new Vector2(koalaScale, koalaScale);
+            });
+        });
+    }
 
     private void OnPlayButtonClicked()
     {
