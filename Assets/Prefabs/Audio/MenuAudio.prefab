@@ -178,6 +178,7 @@ MonoBehaviour:
   MusicAudio: {fileID: 854614461348552469}
   UISoundFXAudio: {fileID: 1061254962960078356}
   buttonClick: {fileID: 8300000, guid: 7b9396e59e3734d4ba01d305ec69f1d1, type: 3}
+  squeak: {fileID: 8300000, guid: b118f29ea5c9bb5428ad71ca58905c5d, type: 3}
 --- !u!1 &8335101109049131356
 GameObject:
   m_ObjectHideFlags: 0

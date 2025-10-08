@@ -181,6 +181,7 @@ public class MainMenu : UIAnimations
                 koalaContainer.style.scale = new Vector2(koalaScale, koalaScale);
             });
         });
+        FindAnyObjectByType<MenuAudio>().PlaySqueak(0);
     }
 
     private void OnPlayButtonClicked()
