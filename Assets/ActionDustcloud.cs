@@ -10,7 +10,7 @@ public class ActionDustcloud : MonoBehaviour
     {
         StartCoroutine(Timer());
         transform.localScale = new Vector3(0, 0, 0);
-        transform.DOScale(0.25f, 0.15f);
+        transform.DOScale(0.2f, 0.15f);
     }
     IEnumerator Timer()
     {
