@@ -87,6 +87,7 @@ public class SceneAudio : MonoBehaviour
     {
         gameSoundFXAudio.pitch = Mathf.Pow(1.059463f, currentMag);
         gameSoundFXAudio.resource = scoreGained;
+        gameSoundFXAudio.volume = 1;
         gameSoundFXAudio.Play();
 
         nextMagProgress += 1;
@@ -100,6 +101,7 @@ public class SceneAudio : MonoBehaviour
     {
         gameSoundFXAudio.pitch = 1;
         gameSoundFXAudio.resource = scoreUnGained;
+        gameSoundFXAudio.volume = 0.7f;
         gameSoundFXAudio.Play();
     }
     public void MagProgressWipe()

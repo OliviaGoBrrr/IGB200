@@ -346,7 +346,7 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator JustADelay(GameTile selectTile, GameTile.TileStates changeState, AudioClip actionSound, float intensity)
     {
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(0.8f);
         FindAnyObjectByType<SceneAudio>().PlayGameSound(actionSound, intensity);
         selectTile.TileStateUpdate();
         if (changeState == GameTile.TileStates.DRY_GRASS)

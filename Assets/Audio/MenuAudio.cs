@@ -9,6 +9,7 @@ public class MenuAudio : MonoBehaviour
     [SerializeField] AudioSource UISoundFXAudio;
 
     [SerializeField] AudioClip buttonClick;
+    [SerializeField] AudioClip squeak;
     public static MenuAudio Instance;
     void Awake()
     {
@@ -27,6 +28,12 @@ public class MenuAudio : MonoBehaviour
     {
         UISoundFXAudio.pitch = Mathf.Pow(1.059463f, pitchMag);
         UISoundFXAudio.resource = buttonClick;
+        UISoundFXAudio.Play();
+    }
+    public void PlaySqueak(int pitchMag)
+    {
+        UISoundFXAudio.pitch = Mathf.Pow(1.059463f, pitchMag);
+        UISoundFXAudio.resource = squeak;
         UISoundFXAudio.Play();
     }
     public IEnumerator DestroySelf(float time)
