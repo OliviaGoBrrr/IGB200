@@ -41,6 +41,11 @@ public class GameScreen : UIAnimations
     [SerializeField] private DraggableItem waterObject;
     [SerializeField] private DraggableItem fireObject;
 
+    [SerializeField] private GameObject dry;
+    [SerializeField] private GameObject water;
+    [SerializeField] private GameObject fire;
+
+
     private Color starColour = new Color(1, 0.866f, 0.2f);
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -94,7 +99,7 @@ public class GameScreen : UIAnimations
         waterText = ui.Q<Label>("WaterText");
         fireText = ui.Q<Label>("FireText");
 
-        /*
+        
         if (dryObject.itemUses == 0)
         {
             dryGrassButton.style.display = DisplayStyle.None;
@@ -124,7 +129,6 @@ public class GameScreen : UIAnimations
             fireButton.style.display = DisplayStyle.Flex;
             fireText.text = fireObject.itemUses.ToString();
         }
-        */
     }
 
     public void DisplayGameWin(int starCount)
@@ -152,9 +156,9 @@ public class GameScreen : UIAnimations
 
     private void OnPlaySimButtonClicked()
     {
-        dryObject.Hide();
-        waterObject.Hide();
-        fireObject.Hide();
+        dry.SetActive(false);
+        water.SetActive(false);
+        fire.SetActive(false);
 
         dryGrassButton.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 0.47f);
         waterButton.style.unityBackgroundImageTintColor = new Color(0.5f, 0.8f, 1f, 0.47f);
