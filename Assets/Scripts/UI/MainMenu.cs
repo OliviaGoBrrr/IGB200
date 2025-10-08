@@ -123,8 +123,19 @@ public class MainMenu : UIAnimations
         characterHair.style.unityBackgroundImageTintColor = newColour;
         characterBangs.style.unityBackgroundImageTintColor = newColour;
 
-        ColorUtility.TryParseHtmlString(CustomiseData.eyeColour, out newColour);
-        characterEyes.style.unityBackgroundImageTintColor = newColour;
+        if (CustomiseData.alienMode == true)
+        {
+            characterEyes.style.unityBackgroundImageTintColor = Color.black;
+            characterSclera.style.unityBackgroundImageTintColor = Color.black;
+        }
+        else
+        {
+            ColorUtility.TryParseHtmlString(CustomiseData.eyeColour, out newColour);
+            characterEyes.style.unityBackgroundImageTintColor = newColour;
+
+            characterSclera.style.unityBackgroundImageTintColor = Color.white;
+        }
+            
 
         // set character hair & bangs style
 

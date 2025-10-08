@@ -3,6 +3,8 @@ using UnityEngine.UIElements;
 
 public static class CustomiseData
 {
+    public static bool alienMode = false;
+
     public static int bangsType = 0;
     public static int hairType = 0;
 

@@ -209,11 +209,24 @@ public class CustomiseMenu : UIAnimations
         characterHair.style.unityBackgroundImageTintColor = newColour;
         characterBangs.style.unityBackgroundImageTintColor = newColour;
 
-        ColorUtility.TryParseHtmlString(CustomiseData.eyeColour, out newColour);
-        characterEyes.style.unityBackgroundImageTintColor = newColour;
+
+        if (CustomiseData.alienMode == true)
+        {
+            characterEyes.style.unityBackgroundImageTintColor = Color.black;
+            characterSclera.style.unityBackgroundImageTintColor = Color.black;
+        }
+        else
+        {
+            ColorUtility.TryParseHtmlString(CustomiseData.eyeColour, out newColour);
+            characterEyes.style.unityBackgroundImageTintColor = newColour;
+
+            characterSclera.style.unityBackgroundImageTintColor = Color.white;
+        }
 
         characterBangs.style.backgroundImage = new StyleBackground(bangsSprites[CustomiseData.bangsType]);
         characterHair.style.backgroundImage = new StyleBackground(hairSprites[CustomiseData.hairType]);
+
+
 
         OptionSelected(skinColours[CustomiseData.skinColourNumber], skinColours[0]);
         OptionSelected(clothesColours[CustomiseData.clothesColourNumber], clothesColours[0]);
@@ -294,7 +307,22 @@ public class CustomiseMenu : UIAnimations
 
                 currentlySelectedSkin = button;
 
-                print("skin colour changed to " + button.text);
+                if (button.name == "SkinOption9")
+                {
+                    CustomiseData.alienMode = true;
+                    characterSclera.style.unityBackgroundImageTintColor = new Color(0, 0, 0, 1);
+                    characterEyes.style.unityBackgroundImageTintColor = new Color(0, 0, 0, 1);
+                }
+                else
+                {
+                    CustomiseData.alienMode = false;
+                    characterSclera.style.unityBackgroundImageTintColor = new Color(1, 1, 1, 1);
+
+                    ColorUtility.TryParseHtmlString(CustomiseData.eyeColour, out newColour);
+                    characterEyes.style.unityBackgroundImageTintColor = newColour;
+                }
+
+                    print("skin colour changed to " + button.text);
                 CustomiseData.skinColour = button.text;
 
                 onlyNumbersName = Regex.Match(button.name, @"\d+").Value;
@@ -387,9 +415,11 @@ public class CustomiseMenu : UIAnimations
 
                 CustomiseData.eyeColourNumber = int.Parse(onlyNumbersName) - 1;
 
-                ColorUtility.TryParseHtmlString(button.text, out newColour);
-                characterEyes.style.unityBackgroundImageTintColor = newColour;
-
+                if (CustomiseData.alienMode == false)
+                {
+                    ColorUtility.TryParseHtmlString(button.text, out newColour);
+                    characterEyes.style.unityBackgroundImageTintColor = newColour;
+                }
                 break;
         }
     }
@@ -407,22 +437,33 @@ public class CustomiseMenu : UIAnimations
         float buttonLeft = button.style.borderLeftWidth.value;
         float buttonRight = button.style.borderRightWidth.value;
 
-        DOTween.To(() => buttonTop, x => buttonTop = x, 6.0f * direction, 0.25f).SetEase(Ease.OutCubic).OnUpdate(() =>
-        {
-            button.style.borderTopWidth = buttonTop;
-        });
+        float goal;
 
-        DOTween.To(() => buttonBottom, x => buttonBottom = x, 6.0f * direction, 0.25f).SetEase(Ease.OutCubic).OnUpdate(() =>
+        if (direction == 1)
+        {
+            goal = 6.0f;
+        }
+        else
+        {
+            goal = 1.0f;
+        }
+
+            DOTween.To(() => buttonTop, x => buttonTop = x, goal, 0.25f).SetEase(Ease.OutCubic).OnUpdate(() =>
+            {
+                button.style.borderTopWidth = buttonTop;
+            });
+
+        DOTween.To(() => buttonBottom, x => buttonBottom = x, goal, 0.25f).SetEase(Ease.OutCubic).OnUpdate(() =>
         {
             button.style.borderBottomWidth = buttonBottom;
         });
 
-        DOTween.To(() => buttonLeft, x => buttonLeft = x, 6.0f * direction, 0.25f).SetEase(Ease.OutCubic).OnUpdate(() =>
+        DOTween.To(() => buttonLeft, x => buttonLeft = x, goal, 0.25f).SetEase(Ease.OutCubic).OnUpdate(() =>
         {
             button.style.borderLeftWidth = buttonLeft;
         });
 
-        DOTween.To(() => buttonRight, x => buttonRight = x, 6.0f * direction, 0.25f).SetEase(Ease.OutCubic).OnUpdate(() =>
+        DOTween.To(() => buttonRight, x => buttonRight = x, goal, 0.25f).SetEase(Ease.OutCubic).OnUpdate(() =>
         {
             button.style.borderRightWidth = buttonRight;
         });

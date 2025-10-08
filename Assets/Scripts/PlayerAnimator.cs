@@ -81,12 +81,19 @@ public class PlayerAnimator : MonoBehaviour
         animTargets[4].GetComponent<SpriteRenderer>().material.color = newColour; // change Bangs colour
         animTargets[5].GetComponent<SpriteRenderer>().material.color = newColour; // change Hair colour
         
+        if (CustomiseData.alienMode == true)
+        {
+            animTargets[6].GetComponent<SpriteRenderer>().material.color = new Color(0, 0, 0, 1);
+            animTargets[3].GetComponent<SpriteRenderer>().material.color = Color.black;
+        }
+        else
+        {
+            ColorUtility.TryParseHtmlString(CustomiseData.eyeColour, out newColour);
+            animTargets[6].GetComponent<SpriteRenderer>().material.color = newColour; // change Eye colour
 
-        ColorUtility.TryParseHtmlString(CustomiseData.eyeColour, out newColour);
-        animTargets[6].GetComponent<SpriteRenderer>().material.color = newColour; // change Eye colour
-
-        animTargets[3].GetComponent<SpriteRenderer>().material.color = Color.white; // change Sclera colour
-        animTargets[7].GetComponent<SpriteRenderer>().material.color = Color.white; // change Highlight colour
+            animTargets[3].GetComponent<SpriteRenderer>().material.color = Color.white; // change Sclera colour
+        }
+            animTargets[7].GetComponent<SpriteRenderer>().material.color = Color.white; // change Highlight colour
 
         // read the current character save
         // load the correct bangs, eyes, hair, highlight
