@@ -1862,6 +1862,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7824181801414860680, guid: 310c7d9ff9c1a4f49b73d5d00d2a24f6, type: 3}
+      propertyPath: simTime
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824181801414860680, guid: 310c7d9ff9c1a4f49b73d5d00d2a24f6, type: 3}
       propertyPath: uiManager
       value: 
       objectReference: {fileID: 88788898}

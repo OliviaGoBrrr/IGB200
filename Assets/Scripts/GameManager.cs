@@ -154,9 +154,10 @@ public class GameManager : MonoBehaviour
 
     IEnumerator ScoreCount()
     {
-        foreach(GameTile tile in gridManager.tileList)
+        float timeBetweenTiles = 0.25f;
+        foreach (GameTile tile in gridManager.tileList)
         {
-            yield return new WaitForSeconds(0.1f + simTime/8f);
+            yield return new WaitForSeconds(timeBetweenTiles);
             if (tile.tileState == GameTile.TileStates.BURNT && tile.scoreWhenBurnt == true)
             {
                 ScoreTotal += tile.tileScore;
@@ -174,7 +175,7 @@ public class GameManager : MonoBehaviour
                 FindAnyObjectByType<SceneAudio>().ScoreUngained();
                 tile.ScoreCounted(false);
             }
-            
+            if (timeBetweenTiles > 0.15f) { timeBetweenTiles -= 0.005f; }
             Debug.Log(ScoreTotal.ToString());
         }
         yield return new WaitForSeconds(2f);
