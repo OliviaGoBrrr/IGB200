@@ -71,6 +71,27 @@
     background-image: none;
 }
 
+.panel {
+    background-color: rgb(114, 53, 24);
+    align-items: auto;
+    align-content: auto;
+    flex-direction: column-reverse;
+    align-self: auto;
+    justify-content: flex-start;
+    border-left-color: rgb(57, 16, 5);
+    border-right-color: rgb(57, 16, 5);
+    border-top-color: rgb(57, 16, 5);
+    border-bottom-color: rgb(57, 16, 5);
+    border-top-width: 8px;
+    border-right-width: 8px;
+    border-bottom-width: 8px;
+    border-left-width: 8px;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    border-bottom-left-radius: 24px;
+}
+
 .category-panel {
     top: 22px;
     position: absolute;
@@ -183,4 +204,8 @@
     border-bottom-right-radius: 24px;
     border-bottom-left-radius: 24px;
     -unity-font-definition: url("project://database/Assets/UI/Text%20Fonts/KGPerfectPenmanship.otf?fileID=12800000&guid=81edcb1e7f8f8fa418b4e75e261eefaa&type=3#KGPerfectPenmanship");
+}
+
+.video-player {
+    background-image: url("Assets/Scripts/Tutorial Screen/Tutorial Render Texture.renderTexture");
 }
