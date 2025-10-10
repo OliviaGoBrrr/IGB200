@@ -126,6 +126,7 @@ MonoBehaviour:
   canBeBurnt: 1
   roundsToBurn: 1
   tileScore: 0
+  scoreWhenBurnt: 0
   wetness: 0
   tileState: 5
   tileMaterials:
