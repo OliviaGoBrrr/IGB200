@@ -167,7 +167,7 @@ public class PlayerAnimator : MonoBehaviour
     
     private void PlayerWalk()
     {
-        Vector3 target = grid.tileList[UnityEngine.Random.Range(0, grid.tileList.Count)].transform.position + new Vector3(UnityEngine.Random.Range(-0.4f, 0.4f), 1.1f, UnityEngine.Random.Range(-0.4f, 0.4f));
+        Vector3 target = grid.tileList[UnityEngine.Random.Range(0, grid.tileList.Count)].transform.position + new Vector3(UnityEngine.Random.Range(-0.4f, 0.4f), 1.1f, UnityEngine.Random.Range(-0.2f, 0.6f));
         transform.DOMove(target, Vector3.Distance(target, transform.position));
         if (target.x < transform.position.x)
         { 
