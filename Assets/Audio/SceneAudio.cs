@@ -51,6 +51,7 @@ public class SceneAudio : MonoBehaviour
     private void StartCrackle()
     {
         crackleStart = true;
+        crackleMusicAudio.DOFade(1, 0.5f);
         crackleMusicAudio.Play();
     }
     public IEnumerator EndCrackle()
@@ -58,6 +59,7 @@ public class SceneAudio : MonoBehaviour
         crackleMusicAudio.DOFade(0, 0.5f);
         yield return new WaitForSeconds(0.5f);
         crackleMusicAudio.Stop();
+        crackleStart = false;
         yield return null;
     }
     public void PlayGameSound(AudioClip clip, float intensity)
