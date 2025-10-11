@@ -17,7 +17,7 @@ public class FireDecoration : MonoBehaviour
         }
         for(int i = fireBits.Count - 1; i >= 0; i--)
         {
-            if (Random.Range(0, 11) != 0)
+            if (Random.Range(0, 5) != 0)
             {
                 Destroy(fireBits[i].gameObject);
                 fireBits.RemoveAt(i);

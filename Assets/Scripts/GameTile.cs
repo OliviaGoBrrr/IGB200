@@ -288,6 +288,10 @@ public class GameTile: MonoBehaviour
         {
             return false;
         }
+        if(tileState == TileStates.ANIMAL)
+        {
+            return false;
+        }
 
         // Protected tiles
         if(!canBeBurnt) { return false; }
