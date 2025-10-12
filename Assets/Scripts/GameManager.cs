@@ -250,17 +250,18 @@ public class GameManager : MonoBehaviour
     /// Set the state of the game to Playing. 
     /// Throws an error if there are no burning tiles currently on the map (The Player must select one tiles before Playing).
     /// </summary>
-    public void PlaySimulation()
+    public bool PlaySimulation()
     {
         // Checks to see if theres at least one burning tile on the grid
         if (gridManager.tileList.Exists(tile => tile.tileState == GameTile.TileStates.BURNING) == false)
         {
             Debug.LogError("There are no Burning tiles to start simulation. Please make one tile a Burning tile");
-            return;
+            return false;
         }
 
         FindAnyObjectByType<SceneAudio>().PlayButtonClick(5);
         SetGameState(GameState.PLAYING);
+        return true;
         
     }
 

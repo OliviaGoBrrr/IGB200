@@ -156,6 +156,11 @@ public class GameScreen : UIAnimations
 
     private void OnPlaySimButtonClicked()
     {
+        if (gameManager.PlaySimulation() == false)
+        {
+            return;
+        }
+
         dry.SetActive(false);
         water.SetActive(false);
         fire.SetActive(false);
