@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Xml;
 using DG.Tweening;
 using NUnit.Framework;
+using UnityEditor.Animations;
 using UnityEngine;
 //using UnityEditor.ShaderKeywordFilter;
 using UnityEngine.Tilemaps;
@@ -12,15 +13,11 @@ using static UnityEngine.GraphicsBuffer;
 
 public class PlayerAnimator : MonoBehaviour
 {
-    [Header("Currently used character parts. 0 is body, 1 is hat, 2 is head, 3 is sclera")]
+    [Header("Currently used character parts. 0 ~ 8 is Bangs, Hair, Eyes, Highlight, Sclera, Head, Body, Hat and Accessory respectively")]
     public List<Animator> animTargets;
     
 
     [Header("Character parts with variants")]
-    public List<GameObject> bangList;
-    public List<GameObject> hairList;
-    public List<GameObject> eyesList;
-    public List<GameObject> highlightList;
 
     //[SerializeField] private SpriteRenderer 
 
@@ -50,50 +47,32 @@ public class PlayerAnimator : MonoBehaviour
         //eyesList[CustomiseData.eyeType].GetComponent<SpriteRenderer>().color = new Color(hexToColor(CustomiseData.eyeColour).r, hexToColor(CustomiseData.eyeColour).g, hexToColor(CustomiseData.eyeColour).b, 1);
         //highlightList[CustomiseData.eyeType].GetComponent<SpriteRenderer>().color = new Color(hexToColor(CustomiseData.eyeColour).r, hexToColor(CustomiseData.eyeColour).g, hexToColor(CustomiseData.eyeColour).b, 1);
 
-        animTargets.Add(bangList[CustomiseData.bangsType].GetComponent<Animator>());
-        for(int i = 0; i < bangList.Count; i++)
-        {
-            if (i != CustomiseData.bangsType)
-            {
-                bangList[i].SetActive(false);
-            }
-        }
-        animTargets.Add(hairList[CustomiseData.hairType].GetComponent<Animator>());
-        for (int i = 0; i < hairList.Count; i++)
-        {
-            if (i != CustomiseData.hairType)
-            {
-                hairList[i].SetActive(false);
-            }
-        }
-        animTargets.Add(eyesList[CustomiseData.eyeType].GetComponent<Animator>());
-        animTargets.Add(highlightList[CustomiseData.eyeType].GetComponent<Animator>());
-
-
         ColorUtility.TryParseHtmlString(CustomiseData.skinColour, out newColour);
-        animTargets[2].GetComponent<SpriteRenderer>().material.color = newColour; // change Head colour
+        animTargets[5].GetComponent<SpriteRenderer>().material.color = newColour; // change Head colour
 
         ColorUtility.TryParseHtmlString(CustomiseData.clothesColour, out newColour);
-        animTargets[0].GetComponent<SpriteRenderer>().material.color = newColour; // change Body colour
-        animTargets[1].GetComponent<SpriteRenderer>().material.color = newColour; // change Hat colour
+        animTargets[6].GetComponent<SpriteRenderer>().material.color = newColour; // change Body colour
+        animTargets[7].GetComponent<SpriteRenderer>().material.color = newColour; // change Hat colour
 
         ColorUtility.TryParseHtmlString(CustomiseData.hairColour, out newColour);
-        animTargets[4].GetComponent<SpriteRenderer>().material.color = newColour; // change Bangs colour
-        animTargets[5].GetComponent<SpriteRenderer>().material.color = newColour; // change Hair colour
+        animTargets[0].GetComponent<SpriteRenderer>().material.color = newColour; // change Bangs colour
+        animTargets[1].GetComponent<SpriteRenderer>().material.color = newColour; // change Hair colour
         
+
+
         if (CustomiseData.alienMode == true)
         {
-            animTargets[6].GetComponent<SpriteRenderer>().material.color = new Color(0, 0, 0, 1);
-            animTargets[3].GetComponent<SpriteRenderer>().material.color = Color.black;
+            animTargets[2].GetComponent<SpriteRenderer>().material.color = new Color(0, 0, 0, 1);
+            animTargets[4].GetComponent<SpriteRenderer>().material.color = Color.black;
         }
         else
         {
             ColorUtility.TryParseHtmlString(CustomiseData.eyeColour, out newColour);
-            animTargets[6].GetComponent<SpriteRenderer>().material.color = newColour; // change Eye colour
+            animTargets[2].GetComponent<SpriteRenderer>().material.color = newColour; // change Eye colour
 
-            animTargets[3].GetComponent<SpriteRenderer>().material.color = Color.white; // change Sclera colour
+            animTargets[4].GetComponent<SpriteRenderer>().material.color = Color.white; // change Sclera colour
         }
-            animTargets[7].GetComponent<SpriteRenderer>().material.color = Color.white; // change Highlight colour
+            animTargets[3].GetComponent<SpriteRenderer>().material.color = Color.white; // change Highlight colour
 
         // read the current character save
         // load the correct bangs, eyes, hair, highlight
@@ -159,7 +138,12 @@ public class PlayerAnimator : MonoBehaviour
     {
         yield return new WaitForSeconds(additionalTime);
         if(firstCall == true) { firstCall = false; }
-        else { animTargets[0].SetBool("WalkEnd", true); }   
+        else {
+            foreach (var animTarget in animTargets)
+            {
+                animTarget.SetBool("WalkEnd", true);
+            }
+        }   
         yield return new WaitForSeconds(UnityEngine.Random.Range(2f, 5f));
         PlayerWalk();
         yield return null;
@@ -183,8 +167,14 @@ public class PlayerAnimator : MonoBehaviour
                 animTarget.GetComponent<SpriteRenderer>().transform.rotation = Quaternion.Euler(30, -0, 0);
             }
         }
-        animTargets[0].SetBool("WalkEnd", false);
-        animTargets[0].SetTrigger("WalkStart");
+        foreach (var animTarget in animTargets)
+        {
+            animTarget.SetBool("WalkEnd", false);
+        }
+        foreach (var animTarget in animTargets)
+        {
+            animTarget.SetTrigger("WalkStart");
+        }
         walkRoutine = StartCoroutine(WalkWait(Vector3.Distance(target, transform.position)));
     }
     public static Color hexToColor(string hex)

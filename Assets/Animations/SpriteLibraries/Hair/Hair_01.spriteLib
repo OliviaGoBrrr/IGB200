@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library:
+  - m_Name: Idle
+    m_Hash: 1008081451
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: PlayerCharacter_Hair_00_0
+      m_Hash: 301992259
+      m_Sprite: {fileID: -734696353, guid: 0dd1eb833e59c934783cd54378682dbb, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -734696353, guid: 0dd1eb833e59c934783cd54378682dbb, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  - m_Name: Action
+    m_Hash: 6326692
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: PlayerCharacter_Hair_00_1
+      m_Hash: 621230549
+      m_Sprite: {fileID: 2050706025, guid: 0dd1eb833e59c934783cd54378682dbb, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 2050706025, guid: 0dd1eb833e59c934783cd54378682dbb, type: 3}
+    - m_Name: PlayerCharacter_Hair_00_2
+      m_Hash: 1007577199
+      m_Sprite: {fileID: -1735087384, guid: 0dd1eb833e59c934783cd54378682dbb, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1735087384, guid: 0dd1eb833e59c934783cd54378682dbb, type: 3}
+    - m_Name: PlayerCharacter_Hair_00_3
+      m_Hash: 185161977
+      m_Sprite: {fileID: 33304507, guid: 0dd1eb833e59c934783cd54378682dbb, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 33304507, guid: 0dd1eb833e59c934783cd54378682dbb, type: 3}
+    - m_Name: PlayerCharacter_Hair_00_4
+      m_Hash: 359517530
+      m_Sprite: {fileID: 93916942, guid: 0dd1eb833e59c934783cd54378682dbb, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 93916942, guid: 0dd1eb833e59c934783cd54378682dbb, type: 3}
+    - m_Name: PlayerCharacter_Hair_00_5
+      m_Hash: 577437132
+      m_Sprite: {fileID: 1118645377, guid: 0dd1eb833e59c934783cd54378682dbb, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1118645377, guid: 0dd1eb833e59c934783cd54378682dbb, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 5
+  m_PrimaryLibraryGUID: 
+  m_ModificationHash: 638959847298679293
+  m_Version: 1
