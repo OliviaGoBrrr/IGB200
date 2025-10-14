@@ -2709,6 +2709,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 78152594408577598}
     m_Modifications:
+    - target: {fileID: 1636378475505705951, guid: ff03e388a9053b9458ab1ad129e5397c, type: 3}
+      propertyPath: dryDeco
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1979851348250322621, guid: ff03e388a9053b9458ab1ad129e5397c, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -2763,6 +2767,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4891862040284192283, guid: ff03e388a9053b9458ab1ad129e5397c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6656670247125032911, guid: ff03e388a9053b9458ab1ad129e5397c, type: 3}
+      propertyPath: dryDeco
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7358202749968594970, guid: ff03e388a9053b9458ab1ad129e5397c, type: 3}
@@ -2953,6 +2961,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 78152594408577598}
     m_Modifications:
+    - target: {fileID: 1636378475505705951, guid: ff03e388a9053b9458ab1ad129e5397c, type: 3}
+      propertyPath: dryDeco
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2096932936135029528, guid: ff03e388a9053b9458ab1ad129e5397c, type: 3}
       propertyPath: m_Name
       value: Grass_Bushes
@@ -2995,6 +3007,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4891862040284192283, guid: ff03e388a9053b9458ab1ad129e5397c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6656670247125032911, guid: ff03e388a9053b9458ab1ad129e5397c, type: 3}
+      propertyPath: dryDeco
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3359,6 +3375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerPar: {fileID: 0}
+  dryDeco: 1
 --- !u!212 &2035454736
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3422,6 +3439,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 78152594408577598}
     m_Modifications:
+    - target: {fileID: 1636378475505705951, guid: ff03e388a9053b9458ab1ad129e5397c, type: 3}
+      propertyPath: dryDeco
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2096932936135029528, guid: ff03e388a9053b9458ab1ad129e5397c, type: 3}
       propertyPath: m_Name
       value: Grass_Bushes
@@ -3492,6 +3513,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4891862040284192283, guid: ff03e388a9053b9458ab1ad129e5397c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6656670247125032911, guid: ff03e388a9053b9458ab1ad129e5397c, type: 3}
+      propertyPath: dryDeco
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8975722731169706464, guid: ff03e388a9053b9458ab1ad129e5397c, type: 3}

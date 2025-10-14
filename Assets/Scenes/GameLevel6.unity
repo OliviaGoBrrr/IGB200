@@ -3982,6 +3982,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerObject
       objectReference: {fileID: 0}
+    - target: {fileID: 6900157325052529473, guid: 19d07459d6e683942977af992b90adf2, type: 3}
+      propertyPath: m_labelHash
+      value: 1.0902657e-26
+      objectReference: {fileID: 0}
+    - target: {fileID: 6900157325052529473, guid: 19d07459d6e683942977af992b90adf2, type: 3}
+      propertyPath: m_CategoryHash
+      value: 0.009161512
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

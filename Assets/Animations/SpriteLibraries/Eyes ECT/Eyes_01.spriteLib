@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library:
+  - m_Name: Idle
+    m_Hash: 1008081451
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: PlayerCharacter_Eyes_00_0
+      m_Hash: 15564123
+      m_Sprite: {fileID: -797711696, guid: 2ae76627ddbcad647923d5de8be737bc, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -797711696, guid: 2ae76627ddbcad647923d5de8be737bc, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  - m_Name: Action
+    m_Hash: 6326692
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: PlayerCharacter_Eyes_00_1
+      m_Hash: 938102221
+      m_Sprite: {fileID: 1132380634, guid: 2ae76627ddbcad647923d5de8be737bc, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1132380634, guid: 2ae76627ddbcad647923d5de8be737bc, type: 3}
+    - m_Name: PlayerCharacter_Eyes_00_2
+      m_Hash: 786635895
+      m_Sprite: {fileID: -1167036950, guid: 2ae76627ddbcad647923d5de8be737bc, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1167036950, guid: 2ae76627ddbcad647923d5de8be737bc, type: 3}
+    - m_Name: PlayerCharacter_Eyes_00_3
+      m_Hash: 434384097
+      m_Sprite: {fileID: -287136689, guid: 2ae76627ddbcad647923d5de8be737bc, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -287136689, guid: 2ae76627ddbcad647923d5de8be737bc, type: 3}
+    - m_Name: PlayerCharacter_Eyes_00_4
+      m_Hash: 125876546
+      m_Sprite: {fileID: -1084133478, guid: 2ae76627ddbcad647923d5de8be737bc, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1084133478, guid: 2ae76627ddbcad647923d5de8be737bc, type: 3}
+    - m_Name: PlayerCharacter_Eyes_00_5
+      m_Hash: 814189012
+      m_Sprite: {fileID: 997798649, guid: 2ae76627ddbcad647923d5de8be737bc, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 997798649, guid: 2ae76627ddbcad647923d5de8be737bc, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 5
+  - m_Name: Blink
+    m_Hash: 872004313
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: PlayerCharacter_Eyes_00_6
+      m_Hash: 697227374
+      m_Sprite: {fileID: -2064387948, guid: 2ae76627ddbcad647923d5de8be737bc, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -2064387948, guid: 2ae76627ddbcad647923d5de8be737bc, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  m_PrimaryLibraryGUID: 
+  m_ModificationHash: 638960625840757227
+  m_Version: 1
