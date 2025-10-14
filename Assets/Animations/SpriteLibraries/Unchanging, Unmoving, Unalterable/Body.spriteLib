@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library:
+  - m_Name: Idle
+    m_Hash: 1008081451
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: PlayerCharacter_Body_0
+      m_Hash: 76408430
+      m_Sprite: {fileID: -1820288187, guid: 5a75631cc04bd9844994e67fdc1df875, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1820288187, guid: 5a75631cc04bd9844994e67fdc1df875, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  - m_Name: Action
+    m_Hash: 6326692
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: PlayerCharacter_Body_1
+      m_Hash: 864737016
+      m_Sprite: {fileID: 378551399, guid: 5a75631cc04bd9844994e67fdc1df875, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 378551399, guid: 5a75631cc04bd9844994e67fdc1df875, type: 3}
+    - m_Name: PlayerCharacter_Body_2
+      m_Hash: 713262914
+      m_Sprite: {fileID: -2078261551, guid: 5a75631cc04bd9844994e67fdc1df875, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -2078261551, guid: 5a75631cc04bd9844994e67fdc1df875, type: 3}
+    - m_Name: PlayerCharacter_Body_3
+      m_Hash: 495237076
+      m_Sprite: {fileID: 1775844451, guid: 5a75631cc04bd9844994e67fdc1df875, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1775844451, guid: 5a75631cc04bd9844994e67fdc1df875, type: 3}
+    - m_Name: PlayerCharacter_Body_4
+      m_Hash: 65020535
+      m_Sprite: {fileID: -1752273152, guid: 5a75631cc04bd9844994e67fdc1df875, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1752273152, guid: 5a75631cc04bd9844994e67fdc1df875, type: 3}
+    - m_Name: PlayerCharacter_Body_5
+      m_Hash: 887558881
+      m_Sprite: {fileID: -21537430, guid: 5a75631cc04bd9844994e67fdc1df875, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -21537430, guid: 5a75631cc04bd9844994e67fdc1df875, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 5
+  - m_Name: Walk
+    m_Hash: 765711723
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: PlayerCharacter_Body_6
+      m_Hash: 770589531
+      m_Sprite: {fileID: -758447480, guid: 5a75631cc04bd9844994e67fdc1df875, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -758447480, guid: 5a75631cc04bd9844994e67fdc1df875, type: 3}
+    - m_Name: PlayerCharacter_Body_7
+      m_Hash: 451507149
+      m_Sprite: {fileID: 2012721525, guid: 5a75631cc04bd9844994e67fdc1df875, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 2012721525, guid: 5a75631cc04bd9844994e67fdc1df875, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 2
+  m_PrimaryLibraryGUID: 
+  m_ModificationHash: 638960562016699861
+  m_Version: 1
