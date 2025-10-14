@@ -12,7 +12,6 @@ public class GameScreen : UIAnimations
 
     private TemplateContainer gameOver;
 
-    private Button nextLevel;
     private VisualElement winPage;
     private VisualElement losePage;
     private VisualElement[] stars = new VisualElement[3];
@@ -87,7 +86,6 @@ public class GameScreen : UIAnimations
         backButton = ui.Q<Button>("BackButton");
         backButton.clicked += OnBackButtonClicked;
 
-        nextLevel = gameOver.Q<Button>("NextLevelButton");
         winPage = gameOver.Q<VisualElement>("Win");
         losePage = gameOver.Q<VisualElement>("Lose");
 
@@ -141,7 +139,6 @@ public class GameScreen : UIAnimations
             stars[i].style.unityBackgroundImageTintColor = starColour;
         }
 
-        nextLevel.style.display = DisplayStyle.Flex; // button
         gameOver.style.display = DisplayStyle.Flex;
     }
 
@@ -150,7 +147,6 @@ public class GameScreen : UIAnimations
         losePage.style.display = DisplayStyle.Flex;
         winPage.style.display = DisplayStyle.None;
 
-        nextLevel.style.display = DisplayStyle.None;
         gameOver.style.display = DisplayStyle.Flex;
     }
 

@@ -5,9 +5,22 @@ public static class ScoreData
 {
     public static int currentLevel = 0;
 
-    public static int[] levelScores = new int[8];
+    public static int[] levelScores = new int[8] { 0, 0, 0, 0, 0, 0, 0, 0 };
 
+    public static int[] levelStarRequirements = new int[8] { 0, 3, 6, 9, 12, 14, 16, 20 };
 
+    public static int TotalStars()
+    {
+        int sumScore = 0;
+        foreach (int i in levelScores)
+        {
+            Debug.Log("level " + i + " is score " + levelScores[i]);
+            sumScore += levelScores[i];
+        }
+
+        return sumScore;
+    }
+    
     public static void CalculateLevel(int score)
     {
         switch (currentLevel)
@@ -44,6 +57,7 @@ public static class ScoreData
         if (levelScores[level-1] < score)
         {
             levelScores[level - 1] = score;
+            Debug.Log(score);
         }
     }
 }
