@@ -38,7 +38,8 @@ public class MainMenu : UIAnimations
 
     private Sprite bangsStyle;
     private Sprite hairStyle;
-    
+    private Sprite eyeStyle;
+    private Sprite highlightStyle;
 
     [SerializeField] private Sprite characterFaceSmile;
     [SerializeField] private Sprite characterFaceNormal;
@@ -48,6 +49,9 @@ public class MainMenu : UIAnimations
 
     [SerializeField] private Sprite characterEyeSmile;
     [SerializeField] private Sprite characterEyeNormal;
+
+    [SerializeField] private Sprite alienEyeSmile;
+    [SerializeField] private Sprite alienEyeNormal;
 
     private Color newColour;
 
@@ -60,6 +64,9 @@ public class MainMenu : UIAnimations
         ui = GetComponent<UIDocument>().rootVisualElement;
         bangsStyle = Resources.Load<Sprite>("Sprites/PlayerCharacter/Bangs/PlayerCharacter_Bangs_0" + CustomiseData.bangsType);
         hairStyle = Resources.Load<Sprite>("Sprites/PlayerCharacter/Hair/PlayerCharacter_Hair_0" + CustomiseData.hairType);
+        eyeStyle = Resources.Load<Sprite>("Sprites/PlayerCharacter/PlayerCharacter_Eyes_0" + CustomiseData.eyeType);
+        highlightStyle = Resources.Load<Sprite>("Sprites/PlayerCharacter/PlayerCharacter_Highlight_0" + CustomiseData.highlightType);
+
     }
 
     private void OnEnable()
@@ -123,24 +130,28 @@ public class MainMenu : UIAnimations
         characterHair.style.unityBackgroundImageTintColor = newColour;
         characterBangs.style.unityBackgroundImageTintColor = newColour;
 
+        ColorUtility.TryParseHtmlString(CustomiseData.eyeColour, out newColour);
+        characterEyes.style.unityBackgroundImageTintColor = newColour;
+
         if (CustomiseData.alienMode == true)
         {
-            characterEyes.style.unityBackgroundImageTintColor = Color.black;
-            characterSclera.style.unityBackgroundImageTintColor = Color.black;
+            characterSclera.style.display = DisplayStyle.None;
         }
         else
         {
-            ColorUtility.TryParseHtmlString(CustomiseData.eyeColour, out newColour);
-            characterEyes.style.unityBackgroundImageTintColor = newColour;
-
-            characterSclera.style.unityBackgroundImageTintColor = Color.white;
+            characterSclera.style.display = DisplayStyle.Flex;
         }
-            
+
+        characterEyes.style.backgroundImage = new StyleBackground(eyeStyle);
+        characterHighlights.style.backgroundImage = new StyleBackground(highlightStyle);
+
 
         // set character hair & bangs style
 
         characterBangs.style.backgroundImage = new StyleBackground(bangsStyle);
         characterHair.style.backgroundImage = new StyleBackground(hairStyle);
+
+        
     }
 
 
@@ -150,7 +161,17 @@ public class MainMenu : UIAnimations
     {
         characterHead.style.backgroundImage = new StyleBackground(characterFaceSmile);
         characterBody.style.backgroundImage = new StyleBackground(characterBodySmile);
-        characterEyes.style.backgroundImage = new StyleBackground(characterEyeSmile);
+
+        if (CustomiseData.alienMode == true)
+        {
+            characterEyes.style.backgroundImage = new StyleBackground(alienEyeSmile);
+        }
+        else
+        {
+            characterEyes.style.backgroundImage = new StyleBackground(characterEyeSmile);
+        }
+
+        
 
         characterSclera.style.display = DisplayStyle.None;
         characterHighlights.style.display = DisplayStyle.None;
@@ -160,9 +181,19 @@ public class MainMenu : UIAnimations
     {
         characterHead.style.backgroundImage = new StyleBackground(characterFaceNormal);
         characterBody.style.backgroundImage = new StyleBackground(characterBodyNormal);
-        characterEyes.style.backgroundImage = new StyleBackground(characterEyeNormal);
 
-        characterSclera.style.display = DisplayStyle.Flex;
+        if (CustomiseData.alienMode == true)
+        {
+            characterEyes.style.backgroundImage = new StyleBackground(alienEyeNormal);
+        }
+        else
+        {
+            characterEyes.style.backgroundImage = new StyleBackground(characterEyeNormal);
+            characterSclera.style.display = DisplayStyle.Flex;
+        }
+            
+
+        
         characterHighlights.style.display = DisplayStyle.Flex;
     }
 

@@ -758,6 +758,8 @@ MonoBehaviour:
   characterBodyNormal: {fileID: -1820288187, guid: 5a75631cc04bd9844994e67fdc1df875, type: 3}
   characterEyeSmile: {fileID: -2064387948, guid: 45bf869cee7eff74c8d856c1502bd3eb, type: 3}
   characterEyeNormal: {fileID: -797711696, guid: 45bf869cee7eff74c8d856c1502bd3eb, type: 3}
+  alienEyeSmile: {fileID: -2064387948, guid: 2ae76627ddbcad647923d5de8be737bc, type: 3}
+  alienEyeNormal: {fileID: -797711696, guid: 2ae76627ddbcad647923d5de8be737bc, type: 3}
 --- !u!114 &2082070636
 MonoBehaviour:
   m_ObjectHideFlags: 0

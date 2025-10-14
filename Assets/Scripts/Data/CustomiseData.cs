@@ -9,6 +9,7 @@ public static class CustomiseData
     public static int hairType = 0;
 
     public static int eyeType = 0;
+    public static int highlightType = 0;
 
     public static int hatType = 0;
     public static int accessoryType = 0;

@@ -60,6 +60,7 @@ public class GameOver : UIAnimations
             StartCoroutine(FindAnyObjectByType<SceneAudio>().DestroySelf(0.5f));
         }
     }
+
     /*
     private void OnNextLevelButtonClicked()
     {

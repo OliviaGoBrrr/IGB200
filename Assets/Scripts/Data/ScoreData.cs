@@ -7,7 +7,7 @@ public static class ScoreData
 
     public static int[] levelScores = new int[8] { 0, 0, 0, 0, 0, 0, 0, 0 };
 
-    public static int[] levelStarRequirements = new int[8] { 0, 3, 6, 9, 12, 14, 16, 20 };
+    public static int[] levelStarRequirements = new int[8] { 0, 3, 5, 8, 10, 13, 15, 18 };
 
     public static int TotalStars()
     {

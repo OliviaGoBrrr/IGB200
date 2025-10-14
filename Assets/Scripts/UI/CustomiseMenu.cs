@@ -5,6 +5,8 @@ using DG.Tweening;
 using System.Collections;
 using UnityEngine.SceneManagement;
 using System.Text.RegularExpressions;
+using static UnityEngine.Rendering.DebugUI.MessageBox;
+using TMPro;
 //using static System.TimeZoneInfo;
 //using UnityEditor.SearchService;
 //using UnityEngine.Rendering;
@@ -48,11 +50,11 @@ public class CustomiseMenu : UIAnimations
     private Button[] skinColours = new Button[9];
     private Button[] clothesColours = new Button[9];
     private Button[] hairColours = new Button[13];
-    private Button[] eyeColours = new Button[8];
+    private Button[] eyeColours = new Button[9];
 
-    private Button[] bangsOptions = new Button[8];
+    private Button[] bangsOptions = new Button[9];
 
-    private Button[] hairOptions = new Button[8];
+    private Button[] hairOptions = new Button[9];
 
     // character display elements
     private VisualElement characterBangs;
@@ -72,9 +74,12 @@ public class CustomiseMenu : UIAnimations
 
     
 
-    private Sprite[] bangsSprites = new Sprite[8];
+    private Sprite[] bangsSprites = new Sprite[9];
 
-    private Sprite[] hairSprites = new Sprite[8];
+    private Sprite[] hairSprites = new Sprite[9];
+
+    private Sprite eyeStyle;
+    private Sprite highlightStyle;
 
     void Awake()
     {
@@ -115,7 +120,9 @@ public class CustomiseMenu : UIAnimations
             hairSprites[i] = Resources.Load<Sprite>("Sprites/PlayerCharacter/Hair/PlayerCharacter_Hair_0" + i);
         }
 
-        
+        eyeStyle = Resources.Load<Sprite>("Sprites/PlayerCharacter/PlayerCharacter_Eyes_0" + CustomiseData.eyeType);
+        highlightStyle = Resources.Load<Sprite>("Sprites/PlayerCharacter/PlayerCharacter_Highlight_0" + CustomiseData.highlightType);
+
     }
 
     private void OnEnable()
@@ -209,23 +216,23 @@ public class CustomiseMenu : UIAnimations
         characterHair.style.unityBackgroundImageTintColor = newColour;
         characterBangs.style.unityBackgroundImageTintColor = newColour;
 
+        ColorUtility.TryParseHtmlString(CustomiseData.eyeColour, out newColour);
+        characterEyes.style.unityBackgroundImageTintColor = newColour;
 
         if (CustomiseData.alienMode == true)
         {
-            characterEyes.style.unityBackgroundImageTintColor = Color.black;
-            characterSclera.style.unityBackgroundImageTintColor = Color.black;
+            characterSclera.style.display = DisplayStyle.None;
         }
         else
         {
-            ColorUtility.TryParseHtmlString(CustomiseData.eyeColour, out newColour);
-            characterEyes.style.unityBackgroundImageTintColor = newColour;
-
-            characterSclera.style.unityBackgroundImageTintColor = Color.white;
+            characterSclera.style.display = DisplayStyle.Flex;
         }
 
         characterBangs.style.backgroundImage = new StyleBackground(bangsSprites[CustomiseData.bangsType]);
         characterHair.style.backgroundImage = new StyleBackground(hairSprites[CustomiseData.hairType]);
 
+        characterEyes.style.backgroundImage = new StyleBackground(eyeStyle);
+        characterHighlights.style.backgroundImage = new StyleBackground(highlightStyle);
 
 
         OptionSelected(skinColours[CustomiseData.skinColourNumber], skinColours[0]);
@@ -310,19 +317,24 @@ public class CustomiseMenu : UIAnimations
                 if (button.name == "SkinOption9")
                 {
                     CustomiseData.alienMode = true;
-                    characterSclera.style.unityBackgroundImageTintColor = new Color(0, 0, 0, 1);
-                    characterEyes.style.unityBackgroundImageTintColor = new Color(0, 0, 0, 1);
+                    CustomiseData.eyeType = 1;
+                    CustomiseData.highlightType = 1;
+                    characterEyes.style.backgroundImage = new StyleBackground(Resources.Load<Sprite>("Sprites/PlayerCharacter/PlayerCharacter_Eyes_01"));
+                    characterHighlights.style.backgroundImage = new StyleBackground(Resources.Load<Sprite>("Sprites/PlayerCharacter/PlayerCharacter_Highlight_01"));
+                    characterSclera.style.display = DisplayStyle.None;
+
                 }
                 else
                 {
                     CustomiseData.alienMode = false;
-                    characterSclera.style.unityBackgroundImageTintColor = new Color(1, 1, 1, 1);
-
-                    ColorUtility.TryParseHtmlString(CustomiseData.eyeColour, out newColour);
-                    characterEyes.style.unityBackgroundImageTintColor = newColour;
+                    CustomiseData.eyeType = 0;
+                    CustomiseData.highlightType = 0;
+                    characterEyes.style.backgroundImage = new StyleBackground(Resources.Load<Sprite>("Sprites/PlayerCharacter/PlayerCharacter_Eyes_00"));
+                    characterHighlights.style.backgroundImage = new StyleBackground(Resources.Load<Sprite>("Sprites/PlayerCharacter/PlayerCharacter_Highlight_00"));
+                    characterSclera.style.display = DisplayStyle.Flex;
                 }
 
-                    print("skin colour changed to " + button.text);
+                print("skin colour changed to " + button.text);
                 CustomiseData.skinColour = button.text;
 
                 onlyNumbersName = Regex.Match(button.name, @"\d+").Value;
@@ -415,11 +427,9 @@ public class CustomiseMenu : UIAnimations
 
                 CustomiseData.eyeColourNumber = int.Parse(onlyNumbersName) - 1;
 
-                if (CustomiseData.alienMode == false)
-                {
-                    ColorUtility.TryParseHtmlString(button.text, out newColour);
-                    characterEyes.style.unityBackgroundImageTintColor = newColour;
-                }
+                ColorUtility.TryParseHtmlString(button.text, out newColour);
+                characterEyes.style.unityBackgroundImageTintColor = newColour;
+
                 break;
         }
     }
