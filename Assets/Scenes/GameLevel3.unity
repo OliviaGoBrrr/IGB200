@@ -290,6 +290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerPar: {fileID: 0}
+  dryDeco: 1
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,7 +578,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 988218190784630231, guid: 19d07459d6e683942977af992b90adf2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.2
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 988218190784630231, guid: 19d07459d6e683942977af992b90adf2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2595,6 +2596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerPar: {fileID: 0}
+  dryDeco: 1
 --- !u!1 &1611640552
 GameObject:
   m_ObjectHideFlags: 0
@@ -2728,6 +2730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerPar: {fileID: 0}
+  dryDeco: 1
 --- !u!1 &1656893490
 GameObject:
   m_ObjectHideFlags: 0
@@ -2830,6 +2833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerPar: {fileID: 0}
+  dryDeco: 1
 --- !u!1001 &1710542034
 PrefabInstance:
   m_ObjectHideFlags: 0
