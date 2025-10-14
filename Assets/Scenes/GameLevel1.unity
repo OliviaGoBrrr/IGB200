@@ -3291,6 +3291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerPar: {fileID: 0}
+  dryDeco: 1
 --- !u!1 &1611640552
 GameObject:
   m_ObjectHideFlags: 0
