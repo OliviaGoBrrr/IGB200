@@ -1,14 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Xml;
 using DG.Tweening;
-using NUnit.Framework;
-using UnityEditor.Animations;
 using UnityEngine;
 //using UnityEditor.ShaderKeywordFilter;
 using UnityEngine.Tilemaps;
+using UnityEngine.UIElements;
 using static UnityEngine.GraphicsBuffer;
 
 public class PlayerAnimator : MonoBehaviour
@@ -57,22 +54,24 @@ public class PlayerAnimator : MonoBehaviour
         ColorUtility.TryParseHtmlString(CustomiseData.hairColour, out newColour);
         animTargets[0].GetComponent<SpriteRenderer>().material.color = newColour; // change Bangs colour
         animTargets[1].GetComponent<SpriteRenderer>().material.color = newColour; // change Hair colour
-        
+
+        ColorUtility.TryParseHtmlString(CustomiseData.eyeColour, out newColour);
+        animTargets[2].GetComponent<SpriteRenderer>().material.color = newColour; // change Eye colour
 
 
         if (CustomiseData.alienMode == true)
         {
-            animTargets[2].GetComponent<SpriteRenderer>().material.color = new Color(0, 0, 0, 1);
-            animTargets[4].GetComponent<SpriteRenderer>().material.color = Color.black;
+            animTargets[4].GetComponent<SpriteRenderer>().material.color = new Color(0, 0, 0, 0);
+            animTargets[4].GetComponent<SpriteRenderer>().enabled = false;
         }
         else
         {
-            ColorUtility.TryParseHtmlString(CustomiseData.eyeColour, out newColour);
-            animTargets[2].GetComponent<SpriteRenderer>().material.color = newColour; // change Eye colour
-
-            animTargets[4].GetComponent<SpriteRenderer>().material.color = Color.white; // change Sclera colour
+            animTargets[4].GetComponent<SpriteRenderer>().material.color = new Color(1, 1, 1, 1);
+            animTargets[4].GetComponent<SpriteRenderer>().enabled = true;
         }
-            animTargets[3].GetComponent<SpriteRenderer>().material.color = Color.white; // change Highlight colour
+
+        //characterEyes.style.backgroundImage = new StyleBackground(eyeStyle);
+        //characterHighlights.style.backgroundImage = new StyleBackground(highlightStyle);
 
         // read the current character save
         // load the correct bangs, eyes, hair, highlight

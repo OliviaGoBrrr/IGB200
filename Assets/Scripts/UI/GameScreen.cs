@@ -31,6 +31,11 @@ public class GameScreen : UIAnimations
     private VisualElement playContainer;
     private VisualElement actionContainer;
 
+
+    private VisualElement star1;
+    private VisualElement star2;
+    private VisualElement star3;
+
     public GameManager gameManager;
 
     private Button backButton;
@@ -89,6 +94,10 @@ public class GameScreen : UIAnimations
         winPage = gameOver.Q<VisualElement>("Win");
         losePage = gameOver.Q<VisualElement>("Lose");
 
+        star1 = ui.Q<VisualElement>("Star1");
+        star2 = ui.Q<VisualElement>("Star2");
+        star3 = ui.Q<VisualElement>("Star3");
+
         dryGrassButton = ui.Q<Button>("GrassButton");
         waterButton = ui.Q<Button>("WaterButton");
         fireButton = ui.Q<Button>("FireButton");
@@ -140,6 +149,8 @@ public class GameScreen : UIAnimations
         }
 
         gameOver.style.display = DisplayStyle.Flex;
+
+        AnimateStars();
     }
 
     public void DisplayGameLose()
@@ -225,6 +236,36 @@ public class GameScreen : UIAnimations
             DOTween.To(() => buttonPosX, x => buttonPosX = x, -110f * direction, 0.25f).SetEase(Ease.InCubic).OnUpdate(() =>
             {
                 element.style.translate = new Translate(buttonPosX, 0);
+            });
+        });
+    }
+
+    private void AnimateStars()
+    {
+        float scale = 0f;
+
+        star1.style.scale = new Vector2(0f, 0f);
+        star2.style.scale = new Vector2(0f, 0f);
+        star3.style.scale = new Vector2(0f, 0f);
+
+        DOTween.To(() => scale, x => scale = x, 1f, 0.4f).SetEase(Ease.OutElastic).OnUpdate(() =>
+        {
+            star1.style.scale = new Vector2(scale, scale);
+        }).OnComplete(() =>
+        {
+            scale = 0f;
+
+            DOTween.To(() => scale, x => scale = x, 1f, 0.4f).SetEase(Ease.OutElastic).OnUpdate(() =>
+            {
+                star3.style.scale = new Vector2(scale, scale);
+            }).OnComplete(() =>
+            {
+                scale = 0f;
+
+                DOTween.To(() => scale, x => scale = x, 1f, 0.4f).SetEase(Ease.OutElastic).OnUpdate(() =>
+                {
+                    star2.style.scale = new Vector2(scale, scale);
+                });
             });
         });
     }
