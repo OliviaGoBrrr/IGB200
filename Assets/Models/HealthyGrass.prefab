@@ -124,6 +124,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 8027959816254752123}
+  defaultHighlightColor: {r: 0, g: 0, b: 0, a: 0}
+  wrongHighlightColor: {r: 0, g: 0, b: 0, a: 0}
   canBeBurnt: 1
   roundsToBurn: 1
   tileScore: 0

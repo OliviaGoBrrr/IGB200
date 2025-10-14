@@ -42,6 +42,8 @@ public class GameTile: MonoBehaviour
     private GridManager gridManager;
     private GameManager gameManager;
     [SerializeField] public GameObject highlight;
+    private Color defaultHighlightColor = new Color(1.0f,1.0f,1.0f, 0.373f);
+    private Color wrongHighlightColor = new Color(1.0f,0.0f,0.0f,0.373f);
 
     [Header("Tile Properties")]
     public GameTileData tileData;
@@ -316,12 +318,24 @@ public class GameTile: MonoBehaviour
 
     private void OnMouseEnter()
     {
+        if(gameManager.selectedDraggable != null)
+        {
+            if (!CanBeChanged(gameManager.selectedDraggable.changeState))
+            {
+                highlight.GetComponent<Renderer>().material.color = wrongHighlightColor;
+            }
+            else
+            {
+                highlight.GetComponent<Renderer>().material.color = defaultHighlightColor;
+            }
+        }
         highlight.SetActive(true);
     }
 
     private void OnMouseExit()
     {
         highlight.SetActive(false);
+        highlight.GetComponent<Renderer>().material.color = defaultHighlightColor;
     }
 
 

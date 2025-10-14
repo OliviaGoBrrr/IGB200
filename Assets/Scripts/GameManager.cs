@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using System.Collections;
+using DG.Tweening.Core.Easing;
 
 public class GameManager : MonoBehaviour
 {
@@ -67,11 +68,6 @@ public class GameManager : MonoBehaviour
         sceneCamera = FindFirstObjectByType<Camera>();
         playerAnimator = FindFirstObjectByType<PlayerAnimator>();
         FindFirstObjectByType<SceneAudio>().MagProgressWipe();
-    }
-
-    void Start()
-    { 
-
     }
 
     void GameReady()
@@ -297,6 +293,9 @@ public class GameManager : MonoBehaviour
         // Therefore, if y is less than 0, don't do the action
         if (selectCellPos.y < 0)
         {
+            Destroy(selectedDraggable.draggingIcon);
+            draggableSelected = false;
+            selectedDraggable = null;
             return;
         }
 

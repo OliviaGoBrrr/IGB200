@@ -11,7 +11,7 @@ using UnityEngine.UI;
 public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     private GameManager gameManager;
-    private GameObject draggingIcon;
+    public GameObject draggingIcon;
     private RectTransform iconTransform;
     private Image draggableStaticIcon;
 
@@ -78,7 +78,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
                 var rt = draggingIcon.GetComponent<RectTransform>();
                 draggingIcon.GetComponent<Image>().color = draggableStaticIcon.color;
-                    //new Color(draggableStaticIcon.color.r, draggableStaticIcon.color.g, draggableStaticIcon.color.b, 1.0f);
+                //new Color(draggableStaticIcon.color.r, draggableStaticIcon.color.g, draggableStaticIcon.color.b, 1.0f);
 
 
                 if (RectTransformUtility.ScreenPointToWorldPointInRectangle(canvasRectTransform, mouseScreenPositon, null, out localPoint))
@@ -90,31 +90,42 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             }
         }
 
-        if(gameManager.draggableSelected && Input.GetMouseButtonDown(0))
+        if(gameManager.draggableSelected)
         {
-            gameManager.draggableSelected = false;
-            if (gameManager.selectedDraggable.draggingIcon != null) { Destroy(gameManager.selectedDraggable.draggingIcon); }
+            if (Input.GetMouseButtonDown(0))
+            {
+                gameManager.PlayerActionTaken(gameManager.selectedDraggable.changeState, gameManager.selectedDraggable, dragAudio, intensity);
+                UpdateItemUIText();
+                FindAnyObjectByType<SceneAudio>().PlayGameSound(dragAudio, intensity);
 
-            gameManager.PlayerActionTaken(gameManager.selectedDraggable.changeState, gameManager.selectedDraggable, dragAudio, intensity);
-            UpdateItemUIText();
-            FindAnyObjectByType<SceneAudio>().PlayGameSound(dragAudio, intensity);
+                if (itemUses <= 0)
+                {
+                    DisableDraggable();
+                    if (gameManager.selectedDraggable.draggingIcon != null) { Destroy(gameManager.selectedDraggable.draggingIcon); }
+                    gameManager.draggableSelected = false;
+                    gameManager.selectedDraggable = null;
+                }
+            }
 
             if (itemUses <= 0)
             {
+                if (draggingIcon != null) { Destroy(draggingIcon); }
                 DisableDraggable();
             }
-        }
+            else
+            {
+                EnableDraggable();
+            }
 
-        if (itemUses <= 0)
-        {
-            DisableDraggable();
-        }
-        else
-        {
-            EnableDraggable();
-        }
+            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1))
+            {
+                if (gameManager.selectedDraggable.draggingIcon != null) { Destroy(gameManager.selectedDraggable.draggingIcon); }
+                gameManager.draggableSelected = false;
+                gameManager.selectedDraggable = null;
+            }
 
-        UpdateItemUIText();
+            UpdateItemUIText();
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -160,6 +171,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         itemUsesText = GetComponentInChildren<TMP_Text>();
         draggableStaticIcon = GetComponent<Image>();
 
+        /*
         if (itemUses <= 0)
         {
             DisableDraggable();
@@ -168,7 +180,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         {
             EnableDraggable();
         }
-
+        */
         UpdateItemUIText();
     }
 
@@ -242,7 +254,10 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         if(itemUsesText != null)
         {
             itemUsesText.SetText($"x{itemUses}");
-            UIToolkitGameScript.UpdateAllText();
+            if(UIToolkitGameScript != null)
+            {
+                UIToolkitGameScript.UpdateAllText();
+            }
         }
         else
         {
