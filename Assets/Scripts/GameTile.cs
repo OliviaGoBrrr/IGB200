@@ -88,6 +88,9 @@ public class GameTile: MonoBehaviour
     }
     public void DecorationUpdate()
     {
+        burnableDecorations.Clear();
+        sproutableDecorations.Clear();
+        fireDecorations.Clear();
         foreach (Transform childTransform in transform)
         {
             GameObject child = childTransform.gameObject;
@@ -415,11 +418,12 @@ public class GameTile: MonoBehaviour
 
                 gridManager.CompleteGridGeneration();
     }
-    public void UndoTrigger()
+    public void UndoTrigger(TileStates transformInto)
     {
+        DecorationUpdate();
         foreach (BurnableDecoration deco in burnableDecorations)
         {
-            deco.TriggerBurn();
+            deco.UndoHelp(transformInto);
         }
         foreach (FireDecoration deco in fireDecorations)
         {

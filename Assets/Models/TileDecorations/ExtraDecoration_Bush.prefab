@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerPar: {fileID: 0}
+  dryDeco: 0
 --- !u!1001 &4070300443081742203
 PrefabInstance:
   m_ObjectHideFlags: 0

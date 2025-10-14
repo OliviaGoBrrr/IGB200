@@ -359,6 +359,8 @@ public class GameManager : MonoBehaviour
             selectTile.GetComponent<GameTile>().DecorationUpdate();
             // Also updates the score
             selectTile.GetComponent<GameTile>().SetTileScore();
+            selectTile.GetComponent<GameTile>().UndoTrigger(changeState);
+            
         }
         yield return null;
     }
@@ -385,7 +387,7 @@ public class GameManager : MonoBehaviour
         lastTile.GameTile.TileStateUpdate();
         tilesChanged.RemoveAt(tilesChanged.Count - 1);
 
-        lastTile.GameTile.UndoTrigger();
+        lastTile.GameTile.UndoTrigger(lastTile.TileState);
 
         lastItem.EnableDraggable(1);
         itemsUsed.RemoveAt(itemsUsed.Count - 1);

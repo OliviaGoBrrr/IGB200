@@ -122,7 +122,7 @@ public class PlayerAnimator : MonoBehaviour
         }
         animTargets[6].speed = speed;
         yield return new WaitForSeconds(time);
-        animTargets[6].speed = 0.2f;
+        animTargets[6].speed = 1f;
         animTargets[6].SetTrigger("WalkEnd");
         foreach (var animTarget in animTargets)
         {
@@ -143,7 +143,6 @@ public class PlayerAnimator : MonoBehaviour
             {
                 animTarget.SetTrigger("WalkEnd");
             }
-            Debug.Log("un-walkies");
         }   
         yield return new WaitForSeconds(UnityEngine.Random.Range(2f, 5f));
         PlayerWalk();
@@ -152,7 +151,6 @@ public class PlayerAnimator : MonoBehaviour
     
     private void PlayerWalk()
     {
-        Debug.Log("walkies");
         Vector3 target = grid.tileList[UnityEngine.Random.Range(0, grid.tileList.Count)].transform.position + new Vector3(UnityEngine.Random.Range(-0.4f, 0.4f), 1.1f, UnityEngine.Random.Range(-0.2f, 0.6f));
         transform.DOMove(target, Vector3.Distance(target, transform.position));
         if (target.x < transform.position.x)
