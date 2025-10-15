@@ -3982,6 +3982,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerObject
       objectReference: {fileID: 0}
+    - target: {fileID: 5083702055162086455, guid: 19d07459d6e683942977af992b90adf2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5083702055162086455, guid: 19d07459d6e683942977af992b90adf2, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5818665677697473573, guid: 19d07459d6e683942977af992b90adf2, type: 3}
+      propertyPath: m_labelHash
+      value: 2.1809982e-38
+      objectReference: {fileID: 0}
+    - target: {fileID: 5818665677697473573, guid: 19d07459d6e683942977af992b90adf2, type: 3}
+      propertyPath: m_CategoryHash
+      value: 0.009161512
+      objectReference: {fileID: 0}
     - target: {fileID: 6900157325052529473, guid: 19d07459d6e683942977af992b90adf2, type: 3}
       propertyPath: m_labelHash
       value: 1.0902657e-26
