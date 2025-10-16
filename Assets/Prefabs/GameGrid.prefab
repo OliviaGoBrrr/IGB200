@@ -440,11 +440,11 @@ MonoBehaviour:
   tilemap: {fileID: 0}
   gameManager: {fileID: 0}
   grid: {fileID: 0}
+  tileList: []
   xMin: 0
   xMax: 0
   zMin: 0
   zMax: 0
-  tileList: []
 --- !u!1001 &48738101315892756
 PrefabInstance:
   m_ObjectHideFlags: 0

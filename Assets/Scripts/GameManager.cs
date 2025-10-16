@@ -18,26 +18,32 @@ public class GameManager : MonoBehaviour
         GAME_WIN
     }
 
-    public int ScoreTotal;
-    bool ScoreCounting = false;
-
     // Events
     public static event System.Action OnRoundAdvanced;
     public static event System.Action OnPlayerAction;
     public static event System.Action OnGameOver;
 
-    public bool draggableSelected;
-    public DraggableItem selectedDraggable;
-
-    public bool devKeysOn;
+    [Header("References")]
     [SerializeField] private GridManager gridManager;
     [SerializeField] private UIManager uiManager;
     public Camera sceneCamera;
     public PlayerAnimator playerAnimator;
+    private Vector3 lastMousePosition;
+
+    [Header("Current Game State")]
     public GameState state;
     private GameState prevGameState;
     public int roundCount = 1;
 
+    [Header("Simulation Settings")]
+    [SerializeField] private float simTime = 1.0f;
+    private float simTimer;
+
+    [Header("Draggable Items")]
+    public bool draggableSelected;
+    public DraggableItem selectedDraggable;
+
+    [Header("Lists For Tile Logic")]
     public List<GameTile.TileStates> burnableTileStates = new List<GameTile.TileStates>();
     public List<GameTile.TileStates> rewardableStates = new List<GameTile.TileStates>();
     public List<GameTileData> rewardTiles = new List<GameTileData>();
@@ -49,14 +55,13 @@ public class GameManager : MonoBehaviour
     [Header("Game Scoring")]
     [SerializeField] private int playerScore;
     [SerializeField] private float[] scoreThresholds = new float[3];
-    [SerializeField] private float initialGrassPercent;
-    [SerializeField] private float finalGrassPercent;
-    [HideInInspector] public int currentActionCount;
-    private Vector3 lastMousePosition;
+    private float initialGrassPercent;
+    private float finalGrassPercent;
+    public int ScoreTotal;
+    bool ScoreCounting = false;
 
-    [Header("Simulation Settings")]
-    [SerializeField] private float simTime = 1.0f;
-    private float simTimer;
+
+
 
     [Header("Decoration")]
     public List<GameObject> DryDecorations;
@@ -95,26 +100,13 @@ public class GameManager : MonoBehaviour
         // Pausing
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(state != GameState.PAUSED)
+            if (state != GameState.PAUSED)
             {
                 SetGameState(GameState.PAUSED);
             }
-            else if(state == GameState.PAUSED)
+            else if (state == GameState.PAUSED)
             {
                 SetGameState(prevGameState);
-            }
-        }
-
-        if (devKeysOn)
-        {
-            if (Input.GetKeyDown(KeyCode.P))
-            {
-                GameWin(2);
-            }
-
-            if (Input.GetKeyDown(KeyCode.O))
-            {
-                GameOver();
             }
         }
 
@@ -133,10 +125,7 @@ public class GameManager : MonoBehaviour
                     StartCoroutine(ScoreCount());
                 }
                 
-                
                 finalGrassPercent = 100 * (gridManager.GetPercentOfTileInGrid(GameTile.TileStates.GRASS) / initialGrassPercent);
-
-                
             }
 
             if(simTimer > simTime)
@@ -299,8 +288,6 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        
-
         int cellX = Mathf.FloorToInt(selectCellPos.x);
         int cellZ = Mathf.FloorToInt(selectCellPos.z);
 
@@ -333,6 +320,7 @@ public class GameManager : MonoBehaviour
                 break;
         }
         
+        // Update item uses
         item.itemUses--;
         playerAnimator.Animate(selectTile);
 
@@ -370,8 +358,6 @@ public class GameManager : MonoBehaviour
         }
 
         // Finds the last tile changed by the player, and reverts it back to its previous state.
-
-
         var undoingTiles = tilesChanged.ToArray();
         var undoingItems = itemsUsed.ToArray();
 
@@ -447,7 +433,6 @@ public class GameManager : MonoBehaviour
         if(prevGameState != GameState.PAUSED)
         {
             Time.timeScale = 0;
-            //uiManager.PauseScreen.SetActive(true);
             Debug.Log("Game is paused");
         }
         else
@@ -462,7 +447,6 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Game Over");
         state = GameState.GAME_OVER;
-        //Time.timeScale = 0.0f;
         OnGameOver?.Invoke();
         
     }

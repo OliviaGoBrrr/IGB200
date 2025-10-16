@@ -161,16 +161,6 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         itemUsesText = GetComponentInChildren<TMP_Text>();
         draggableStaticIcon = GetComponent<Image>();
 
-        /*
-        if (itemUses <= 0)
-        {
-            DisableDraggable();
-        }
-        else
-        {
-            EnableDraggable();
-        }
-        */
         UpdateItemUIText();
     }
 

@@ -108,18 +108,6 @@ public class GameTile: MonoBehaviour
     
     void Start()
     {
-        if (gameManager != null)
-        {
-            if (gameManager.burnableTileStates.Contains(tileState))
-            {
-                canBeBurnt = true;
-            }
-            else
-            {
-                canBeBurnt = false;
-            }
-        }
-
         TileStateUpdate();
         SetTileScore();
         affected = false;
@@ -150,24 +138,6 @@ public class GameTile: MonoBehaviour
     private void OnValidate()
     {
         TileStateUpdate();
-
-        /*
-        if (tileState != TileStates.BURNING)
-        {
-            if (wetness >= 2)
-            {
-                tileState = TileStates.WET_GRASS;
-            }
-            else if (wetness == 1)
-            {
-                tileState = TileStates.GRASS;
-            }
-            else if (wetness == 0)
-            {
-                tileState = TileStates.DRY_GRASS;
-            }
-        }
-        */
     }
 
     public void RoundAdvanced()
@@ -238,6 +208,7 @@ public class GameTile: MonoBehaviour
             }
         }
 
+        // Update struct
         tileData.TileState = tileState;
         tileData.CanBeBurnt = canBeBurnt;
 
@@ -316,6 +287,7 @@ public class GameTile: MonoBehaviour
         GridManager.FindNeighbours -= GetNeighbours;
     }
 
+    // Game tile highlighting on mouse over
     private void OnMouseEnter()
     {
         if(gameManager.selectedDraggable != null)
@@ -379,7 +351,8 @@ public class GameTile: MonoBehaviour
                 T = true;
                 neighbourResults.Add(gridManager.masterTileGrid[gridIndexX, gridIndexZ + 1].GameTile);
             }
-        } 
+        }
+        
         /*
         // Bottom Left
         if (gridIndexX > 0 && gridIndexZ > 0) 
@@ -430,7 +403,7 @@ public class GameTile: MonoBehaviour
 
         tileNeighbours = neighbourResults;
 
-                gridManager.CompleteGridGeneration();
+        gridManager.CompleteGridGeneration();
     }
     public void UndoTrigger(TileStates transformInto)
     {

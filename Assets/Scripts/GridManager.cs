@@ -10,18 +10,19 @@ public class GridManager : MonoBehaviour
     public static System.Action FindNeighbours;
     public static System.Action GridLoadingCompleted;
 
-    // References
+    [Header("References")]
     [SerializeField] private Tilemap tilemap;
     [SerializeField] private GameManager gameManager;
+
+
+    [Header("Grid")]
     public Grid grid;
-
-    // Grid Bounds
-    //[HideInInspector]
-    public int xMin, xMax, zMin, zMax;
-
-    // Grid tiles
     public List<GameTile> tileList = new List<GameTile>();
     public GameTileData[,] masterTileGrid;
+
+    // Grid Bounds
+    [HideInInspector]
+    public int xMin, xMax, zMin, zMax;
 
     // Values when loading grid in
     private int expectedMethods;
@@ -135,6 +136,7 @@ public class GridManager : MonoBehaviour
             {
                 Debug.Log(masterTileGrid[j, i].TilePosition);
             }
+            Debug.Log("");
         }
     }
 }
