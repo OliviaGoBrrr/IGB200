@@ -46,6 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8b2d8fa25f7a794bae345e216e51286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  birds:
+  - {fileID: 9100000, guid: a941bcb61272e5345b45cce72accf0d9, type: 2}
+  - {fileID: 9100000, guid: 2800a78257549ab4683f8923f539b3d5, type: 2}
 --- !u!212 &4085802082616010031
 SpriteRenderer:
   m_ObjectHideFlags: 0
