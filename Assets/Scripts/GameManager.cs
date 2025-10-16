@@ -332,10 +332,7 @@ public class GameManager : MonoBehaviour
                 selectTile.tileState = changeState;
                 break;
         }
-        // Adds dry decorations to the dry deco action
         
-
-
         item.itemUses--;
         playerAnimator.Animate(selectTile);
 

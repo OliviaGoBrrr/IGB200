@@ -98,23 +98,13 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                 UpdateItemUIText();
                 FindAnyObjectByType<SceneAudio>().PlayGameSound(dragAudio, intensity);
 
-                if (itemUses <= 0)
+                if (gameManager.selectedDraggable.itemUses <= 0)
                 {
-                    DisableDraggable();
+                    gameManager.selectedDraggable.DisableDraggable();
                     if (gameManager.selectedDraggable.draggingIcon != null) { Destroy(gameManager.selectedDraggable.draggingIcon); }
                     gameManager.draggableSelected = false;
                     gameManager.selectedDraggable = null;
                 }
-            }
-
-            if (itemUses <= 0)
-            {
-                if (draggingIcon != null) { Destroy(draggingIcon); }
-                DisableDraggable();
-            }
-            else
-            {
-                EnableDraggable();
             }
 
             if (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1))
