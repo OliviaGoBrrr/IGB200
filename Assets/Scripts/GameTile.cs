@@ -1,11 +1,13 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using DG.Tweening;
+using NUnit.Framework;
 using Unity.VisualScripting;
 //using UnityEditor.EditorTools;
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.UI;
 using static GameTile;
-using System;
-using DG.Tweening;
 public struct GameTileData
 {
     public GameTileData(GameTile gameTile, int burnRounds, TileStates tileState, Vector3 tilePosition, bool canBeBurnt)
@@ -65,7 +67,8 @@ public class GameTile: MonoBehaviour
     public List<SproutableDecoration> sproutableDecorations;
     public List<FireDecoration> fireDecorations;
 
-   
+    [Header("Spawnable Decorations")]
+    [SerializeField] List<GameObject> dryDecorations;
 
 
     // Neighbours
@@ -85,8 +88,22 @@ public class GameTile: MonoBehaviour
         gridManager = GetComponentInParent<GridManager>();
         tilePosition = transform.position;
 
+        DecorationSpawn();
         DecorationUpdate();
 
+    }
+    public void DecorationSpawn()
+    {
+        if (tileState == TileStates.DRY_GRASS)
+        {
+            foreach (GameObject deco in dryDecorations)
+            {
+                for (int i = 0; i < UnityEngine.Random.Range(1, 3); i++)
+                {
+                    Instantiate(deco, transform);
+                }
+            }
+        }
     }
     public void DecorationUpdate()
     {

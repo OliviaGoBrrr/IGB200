@@ -143,6 +143,7 @@ MonoBehaviour:
   burnableDecorations: []
   sproutableDecorations: []
   fireDecorations: []
+  dryDecorations: []
   TL: 0
   T: 0
   TR: 0

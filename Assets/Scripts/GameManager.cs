@@ -338,7 +338,11 @@ public class GameManager : MonoBehaviour
         {
             foreach (GameObject deco in DryDecorations)
             {
-                Instantiate(deco, selectTile.transform);
+                for (int i = 0; i < Random.Range(1, 3); i++) 
+                {
+                    Instantiate(deco, selectTile.transform);
+                }
+                
             }
             selectTile.GetComponent<GameTile>().DecorationUpdate();
             // Also updates the score
