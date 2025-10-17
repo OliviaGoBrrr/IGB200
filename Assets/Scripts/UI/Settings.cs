@@ -23,6 +23,8 @@ public class Settings : UIAnimations
     private Sprite volumeOff;
     private Sprite musicOn;
     private Sprite musicOff;
+
+    [SerializeField] bool gameScene = true;
     
     [SerializeField] AudioMixer audioMixer;
 
@@ -70,7 +72,8 @@ public class Settings : UIAnimations
     {
         ButtonPressed(backButton);
         settings.style.display = DisplayStyle.None;
-        FindAnyObjectByType<MenuAudio>().PlayButtonClick(10);
+        if (gameScene) { FindAnyObjectByType<SceneAudio>().PlayButtonClick(10); }
+        else { FindAnyObjectByType<MenuAudio>().PlayButtonClick(10); }
     }
 
     private void OnVolumeButtonClicked()
@@ -94,7 +97,8 @@ public class Settings : UIAnimations
             
             volumeButton.style.backgroundImage = new StyleBackground(volumeOn);
         }
-        FindAnyObjectByType<MenuAudio>().PlayButtonClick(2);
+        if (gameScene) { FindAnyObjectByType<SceneAudio>().PlayButtonClick(2); }
+        else { FindAnyObjectByType<MenuAudio>().PlayButtonClick(2); }
     }
 
     private void OnMusicButtonClicked()
@@ -113,7 +117,9 @@ public class Settings : UIAnimations
             audioMixer.SetFloat("VolumeMusic", 0f);
             musicButton.style.backgroundImage = new StyleBackground(musicOn);
         }
-        FindAnyObjectByType<MenuAudio>().PlayButtonClick(6);
+        if (gameScene) { FindAnyObjectByType<SceneAudio>().PlayButtonClick(6); }
+        else { FindAnyObjectByType<MenuAudio>().PlayButtonClick(6); }
+            
 
         
     }

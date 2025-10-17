@@ -322,6 +322,7 @@ public class CustomiseMenu : UIAnimations
 
     private void CategoryClicked(Button newCategory, String categoryName, VisualElement optionsPanel)
     {
+        FindAnyObjectByType<MenuAudio>().PlayDrawer();
         // moves last category button down
         if (currentCategory != newCategory)
         {
@@ -364,6 +365,7 @@ public class CustomiseMenu : UIAnimations
 
     private void Clickable_clickedWithEventInfo(EventBase obj)
     {
+        FindAnyObjectByType<MenuAudio>().PlayRuffle();
         var button = (Button)obj.target;
         string onlyNumbersName;
         switch (currentCategorySwitch)

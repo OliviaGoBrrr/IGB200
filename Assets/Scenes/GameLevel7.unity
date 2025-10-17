@@ -127,6 +127,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -9161379809099199712, guid: e0265f6da2ac0d540b9f42452210f5a0, type: 3}
+      propertyPath: negativeOffset
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: -9161379809099199712, guid: e0265f6da2ac0d540b9f42452210f5a0, type: 3}
+      propertyPath: positiveOffset
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5269284984961239382, guid: e0265f6da2ac0d540b9f42452210f5a0, type: 3}
       propertyPath: m_Name
       value: BirdSpawner
@@ -726,6 +734,14 @@ PrefabInstance:
     - target: {fileID: -9161379809099199712, guid: e0265f6da2ac0d540b9f42452210f5a0, type: 3}
       propertyPath: goingRight
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -9161379809099199712, guid: e0265f6da2ac0d540b9f42452210f5a0, type: 3}
+      propertyPath: negativeOffset
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: -9161379809099199712, guid: e0265f6da2ac0d540b9f42452210f5a0, type: 3}
+      propertyPath: positiveOffset
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 5269284984961239382, guid: e0265f6da2ac0d540b9f42452210f5a0, type: 3}
       propertyPath: m_Name
@@ -1683,13 +1699,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410087039}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.40821788, y: 0.23456976, z: -0.10938167, w: 0.8754261}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 50, y: 30, z: 0}
 --- !u!114 &410087042
 MonoBehaviour:
   m_ObjectHideFlags: 0

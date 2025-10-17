@@ -10,6 +10,8 @@ public class MenuAudio : MonoBehaviour
 
     [SerializeField] AudioClip buttonClick;
     [SerializeField] AudioClip squeak;
+    [SerializeField] AudioClip drawer;
+    [SerializeField] AudioClip ruffle;
     public static MenuAudio Instance;
     void Awake()
     {
@@ -42,5 +44,17 @@ public class MenuAudio : MonoBehaviour
         yield return new WaitForSeconds(time);
         Destroy(gameObject);
         yield return null;
+    }
+    public void PlayDrawer()
+    {
+        UISoundFXAudio.pitch = 1;
+        UISoundFXAudio.resource = drawer;
+        UISoundFXAudio.PlayOneShot(drawer, 1);
+    }
+    public void PlayRuffle()
+    {
+        UISoundFXAudio.pitch = 1;
+        UISoundFXAudio.resource = ruffle;
+        UISoundFXAudio.PlayOneShot(ruffle, 1);
     }
 }

@@ -20,6 +20,7 @@ public class SproutableDecoration : MonoBehaviour
             if (particle != null) { triggerPar = particle; }
         }
         transform.localPosition = new Vector3(Random.Range(-0.4f, 0.4f), 0.58f, Random.Range(-0.4f, 0.4f));
+        transform.localRotation = Quaternion.Euler(30, 0, 0);
     }
     public void TriggerSprout()
     {

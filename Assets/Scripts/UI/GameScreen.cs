@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 using DG.Tweening;
+using UnityEngine.Rendering;
 public class GameScreen : UIAnimations
 {
     private SceneLoader sceneLoader;
@@ -153,8 +154,10 @@ public class GameScreen : UIAnimations
             stars[i].style.unityBackgroundImageTintColor = starColour;
         }
 
-
-        ScoreData.completedLevels[ScoreData.currentLevel] = true;
+        if (ScoreData.currentLevel < ScoreData.completedLevels.Length)
+        {
+            ScoreData.completedLevels[ScoreData.currentLevel] = true;
+        }
 
         gameOver.style.display = DisplayStyle.Flex;
 
@@ -190,6 +193,7 @@ public class GameScreen : UIAnimations
 
         ButtonPressed(playSimButton);
         gameManager.PlaySimulation();
+        FindAnyObjectByType<SceneAudio>().PlayButtonClick(0);
     }
 
     private void OnUndoButtonClicked()
@@ -199,6 +203,7 @@ public class GameScreen : UIAnimations
         dryGrassText.text = "x" + dryObject.itemUses.ToString();
         waterText.text = "x" + waterObject.itemUses.ToString();
         fireText.text = "x" + fireObject.itemUses.ToString();
+        FindAnyObjectByType<SceneAudio>().PlayButtonClick(4);
     }
 
     public void UpdateAllText()
@@ -212,13 +217,14 @@ public class GameScreen : UIAnimations
     {
         ButtonPressed(restartButton);
         sceneLoader.ReloadCurrentScene();
+        FindAnyObjectByType<SceneAudio>().PlayButtonClick(8);
     }
 
     private void OnSettingsButtonClicked()
     {
         ButtonPressed(settingsButton);
         settings.style.display = DisplayStyle.Flex; // visibility = true
-        FindAnyObjectByType<MenuAudio>().PlayButtonClick(10);
+        FindAnyObjectByType<SceneAudio>().PlayButtonClick(10);
     }
 
     private void OnBackButtonClicked()

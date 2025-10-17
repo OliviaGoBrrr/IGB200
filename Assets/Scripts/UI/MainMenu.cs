@@ -276,7 +276,7 @@ public class MainMenu : UIAnimations
         ButtonPressed(exitButton);
 
         print("Exit Pressed!");
-        //Application.Quit();
+        Application.Quit();
     }
 
 }

@@ -17,8 +17,8 @@ MonoBehaviour:
     m_Hash: 1008081451
     m_CategoryList: []
     m_OverrideEntries:
-    - m_Name: PlayerCharacter_Hair_08_0
-      m_Hash: 471030011
+    - m_Name: PlayerCharacter_Hair_00_0
+      m_Hash: 301992259
       m_Sprite: {fileID: 930129331, guid: 14ffa32f910808245a9e9bcaf71eaa04, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: 930129331, guid: 14ffa32f910808245a9e9bcaf71eaa04, type: 3}
@@ -28,33 +28,33 @@ MonoBehaviour:
     m_Hash: 6326692
     m_CategoryList: []
     m_OverrideEntries:
-    - m_Name: PlayerCharacter_Hair_08_1
-      m_Hash: 722757741
+    - m_Name: PlayerCharacter_Hair_00_1
+      m_Hash: 621230549
       m_Sprite: {fileID: 590444821, guid: 14ffa32f910808245a9e9bcaf71eaa04, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: 590444821, guid: 14ffa32f910808245a9e9bcaf71eaa04, type: 3}
-    - m_Name: PlayerCharacter_Hair_08_2
-      m_Hash: 840776151
+    - m_Name: PlayerCharacter_Hair_00_2
+      m_Hash: 1007577199
       m_Sprite: {fileID: -125590972, guid: 14ffa32f910808245a9e9bcaf71eaa04, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: -125590972, guid: 14ffa32f910808245a9e9bcaf71eaa04, type: 3}
-    - m_Name: PlayerCharacter_Hair_08_3
-      m_Hash: 85592385
+    - m_Name: PlayerCharacter_Hair_00_3
+      m_Hash: 185161977
       m_Sprite: {fileID: -1829385612, guid: 14ffa32f910808245a9e9bcaf71eaa04, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: -1829385612, guid: 14ffa32f910808245a9e9bcaf71eaa04, type: 3}
-    - m_Name: PlayerCharacter_Hair_08_4
-      m_Hash: 461282530
+    - m_Name: PlayerCharacter_Hair_00_4
+      m_Hash: 359517530
       m_Sprite: {fileID: -582025855, guid: 14ffa32f910808245a9e9bcaf71eaa04, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: -582025855, guid: 14ffa32f910808245a9e9bcaf71eaa04, type: 3}
-    - m_Name: PlayerCharacter_Hair_08_5
-      m_Hash: 746171508
+    - m_Name: PlayerCharacter_Hair_00_5
+      m_Hash: 577437132
       m_Sprite: {fileID: -117418934, guid: 14ffa32f910808245a9e9bcaf71eaa04, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: -117418934, guid: 14ffa32f910808245a9e9bcaf71eaa04, type: 3}
     m_FromMain: 0
     m_EntryOverrideCount: 5
   m_PrimaryLibraryGUID: 
-  m_ModificationHash: 638960717211060217
+  m_ModificationHash: 638963455143512302
   m_Version: 1

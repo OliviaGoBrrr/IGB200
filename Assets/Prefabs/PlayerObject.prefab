@@ -80,15 +80,15 @@ SpriteRenderer:
   m_SortingLayerID: 1589005665
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 590444821, guid: fc47bdb51ae790846ba587ea153b3cd2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 11, y: 11}
+  m_Size: {x: 1.024, y: 1.024}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &7184490841394215010
@@ -982,7 +982,7 @@ SpriteRenderer:
   m_SortingLayerID: 1589005665
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 1677851598, guid: 0bf6d7817a412de48b8b73a0a55339b1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -990,7 +990,7 @@ SpriteRenderer:
   m_Size: {x: 2.2, y: 2.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &5634441401324791256
@@ -1028,7 +1028,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Library: []
-  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: c57ccf6411d99ef478831f50edfcebcf, type: 3}
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 0ad2d1c2c0456b94b81a4d528bfe08a4, type: 3}
 --- !u!114 &6900157325052529473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1041,10 +1041,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CategoryHash: 0.009161512
-  m_labelHash: 1.0902657e-26
+  m_CategoryHash: 8.865584e-39
+  m_labelHash: 1.13171245e-17
   m_SpriteKey: 0
-  m_SpriteHash: 426917846
+  m_SpriteHash: 68848963
 --- !u!114 &7197678965580513180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1059,9 +1059,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 5
   ListAAA:
+  - {fileID: 7108339969198208228, guid: 0ad2d1c2c0456b94b81a4d528bfe08a4, type: 3}
   - {fileID: 7108339969198208228, guid: c57ccf6411d99ef478831f50edfcebcf, type: 3}
-  - {fileID: 7108339969198208228, guid: 8ca990a7e67034c46bd68ade96d9f79e, type: 3}
   - {fileID: 7108339969198208228, guid: 0743d3957d9c25248813b0af64d4bbc6, type: 3}
+  - {fileID: 7108339969198208228, guid: 181e6839df0cc61479e4d6126a8fc8d1, type: 3}
 --- !u!1 &5531871220699554396
 GameObject:
   m_ObjectHideFlags: 0

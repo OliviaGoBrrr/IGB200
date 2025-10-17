@@ -898,11 +898,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -9161379809099199712, guid: e0265f6da2ac0d540b9f42452210f5a0, type: 3}
       propertyPath: negativeOffset
-      value: -3
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: -9161379809099199712, guid: e0265f6da2ac0d540b9f42452210f5a0, type: 3}
       propertyPath: positiveOffset
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5269284984961239382, guid: e0265f6da2ac0d540b9f42452210f5a0, type: 3}
       propertyPath: m_Name
@@ -1321,7 +1321,7 @@ PrefabInstance:
     - target: {fileID: 3780565512708662375, guid: 1e6b6c5214b8c8447ba5db3c54a97060, type: 3}
       propertyPath: 'sproutableDecorations.Array.data[0]'
       value: 
-      objectReference: {fileID: 1711092319}
+      objectReference: {fileID: 0}
     - target: {fileID: 4572496508042570790, guid: 1e6b6c5214b8c8447ba5db3c54a97060, type: 3}
       propertyPath: m_Name
       value: HealthyGrass
@@ -1594,13 +1594,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410087039}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.40821788, y: 0.23456976, z: -0.10938167, w: 0.8754261}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 50, y: 30, z: 0}
 --- !u!114 &410087042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4291,17 +4291,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
---- !u!114 &1711092319 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6309020514730606229, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
-  m_PrefabInstance: {fileID: 1711092318}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3515384d47fc94c4497b9c78e73db61f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1711092320 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4731447007542266176, guid: 75686f1d7e9f7af4e864a0384ff1ce6d, type: 3}
@@ -4813,11 +4802,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -9161379809099199712, guid: e0265f6da2ac0d540b9f42452210f5a0, type: 3}
       propertyPath: negativeOffset
-      value: -3
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: -9161379809099199712, guid: e0265f6da2ac0d540b9f42452210f5a0, type: 3}
       propertyPath: positiveOffset
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5269284984961239382, guid: e0265f6da2ac0d540b9f42452210f5a0, type: 3}
       propertyPath: m_Name

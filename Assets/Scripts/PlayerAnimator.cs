@@ -108,8 +108,8 @@ public class PlayerAnimator : MonoBehaviour
             transform.DOMove(selectTile.transform.position + new Vector3(1, 1.1f, 0), 0.5f);
         }
 
-
-        StartCoroutine(QuickWalk(0.5f, 2, selectTile));
+        StartCoroutine(SpawnCloud(selectTile));
+        walkRoutine = StartCoroutine(QuickWalk(0.5f, 2, selectTile));
         
     }
     IEnumerator QuickWalk(float time, float speed, GameTile selectTile)
@@ -129,8 +129,14 @@ public class PlayerAnimator : MonoBehaviour
             animTarget.SetTrigger("Action");
         }
         yield return new WaitForSeconds(0.15f);
-        Instantiate(actionDustcloud, selectTile.transform.position + new Vector3(0, 1.1f, -0.5f), Quaternion.Euler(30, 0, 0));
+        StopCoroutine(walkRoutine);
         walkRoutine = StartCoroutine(WalkWait(2f));
+        yield return null;
+    }
+    IEnumerator SpawnCloud(GameTile selectTile)
+    {
+        yield return new WaitForSeconds(0.65f);
+        Instantiate(actionDustcloud, selectTile.transform.position + new Vector3(0, 1.1f, -0.5f), Quaternion.Euler(30, 0, 0));
         yield return null;
     }
     IEnumerator WalkWait(float additionalTime)

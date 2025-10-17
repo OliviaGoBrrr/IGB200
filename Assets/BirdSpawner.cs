@@ -10,6 +10,7 @@ public class BirdSpawner : MonoBehaviour
     public float maxFreq;
     public float negativeOffset;
     public float positiveOffset;
+    bool gamer = true;
 
     public Bird inst;
     void Start()
@@ -18,7 +19,15 @@ public class BirdSpawner : MonoBehaviour
     }
     IEnumerator SpawnBird()
     {
-        yield return new WaitForSeconds(Random.Range(minFreq, maxFreq));
+        if (gamer == true)
+        {
+            gamer = false;
+            yield return new WaitForSeconds(Random.Range(0, maxFreq/2));
+        }
+        else
+        {
+            yield return new WaitForSeconds(Random.Range(minFreq, maxFreq));
+        }   
         Bird instance = Instantiate(inst, transform);
         instance.SetValues(Random.Range(minSpeed, maxSpeed), goingRight, Random.Range(negativeOffset, positiveOffset));
         StartCoroutine(SpawnBird());

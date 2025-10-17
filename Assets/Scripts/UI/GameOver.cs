@@ -47,7 +47,7 @@ public class GameOver : UIAnimations
         if (sceneLoad == false)
         {
             sceneLoad = true;
-            //FindAnyObjectByType<MenuAudio>().PlayButtonClick(0);
+            FindAnyObjectByType<SceneAudio>().PlayButtonClick(4);
             sceneLoader.LoadNextScene("Main Menu");
             StartCoroutine(FindAnyObjectByType<SceneAudio>().DestroySelf(0.5f));
         }
@@ -59,9 +59,9 @@ public class GameOver : UIAnimations
         if (sceneLoad == false)
         {
             sceneLoad = true;
-            //FindAnyObjectByType<MenuAudio>().PlayButtonClick(0);
+            FindAnyObjectByType<SceneAudio>().PlayButtonClick(8);
             sceneLoader.LoadNextScene("GameLevel" + ScoreData.currentLevel);
-            StartCoroutine(FindAnyObjectByType<SceneAudio>().DestroySelf(0.5f));
+            FindAnyObjectByType<SceneAudio>().MagProgressWipe();
         }
     }
 
@@ -72,7 +72,7 @@ public class GameOver : UIAnimations
         if (sceneLoad == false)
         {
             sceneLoad = true;
-            //FindAnyObjectByType<MenuAudio>().PlayButtonClick(0);
+            FindAnyObjectByType<SceneAudio>().PlayButtonClick(0);
             if (ScoreData.currentLevel == 8)
             {
                 sceneLoader.LoadNextScene("Main Menu");
@@ -82,7 +82,7 @@ public class GameOver : UIAnimations
                 ScoreData.currentLevel += 1;
                 sceneLoader.LoadNextScene("GameLevel" + ScoreData.currentLevel);
             }
-            StartCoroutine(FindAnyObjectByType<SceneAudio>().DestroySelf(0.5f));
+            FindAnyObjectByType<SceneAudio>().MagProgressWipe();
         }
     }
     
@@ -93,7 +93,7 @@ public class GameOver : UIAnimations
         if (sceneLoad == false)
         {
             sceneLoad = true;
-            //FindAnyObjectByType<MenuAudio>().PlayButtonClick(0);
+            FindAnyObjectByType<SceneAudio>().PlayButtonClick(10);
             sceneLoader.LoadNextScene("Level Select");
             StartCoroutine(FindAnyObjectByType<SceneAudio>().DestroySelf(0.5f));
         }
