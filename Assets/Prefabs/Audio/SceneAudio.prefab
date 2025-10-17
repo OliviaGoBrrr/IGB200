@@ -448,6 +448,8 @@ MonoBehaviour:
   buttonClick: {fileID: 8300000, guid: 7b9396e59e3734d4ba01d305ec69f1d1, type: 3}
   scoreGained: {fileID: 8300000, guid: 66abe19fef1efe242b4a28ec5f5647d0, type: 3}
   scoreUnGained: {fileID: 8300000, guid: 94f4209fe2a527846b8f27ee8ed69606, type: 3}
+  scoreCountDone: {fileID: 8300000, guid: 13691bbdeadd9c248a8e5b6b921b3ab0, type: 3}
+  starSoundFX: {fileID: 8300000, guid: ed14706c4c9489f42a199f56acc429b7, type: 3}
 --- !u!1 &5155290320877517450
 GameObject:
   m_ObjectHideFlags: 0

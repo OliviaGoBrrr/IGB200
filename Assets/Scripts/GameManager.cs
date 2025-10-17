@@ -163,7 +163,9 @@ public class GameManager : MonoBehaviour
             if (timeBetweenTiles > 0.1f) { timeBetweenTiles -= 0.008f; }
             Debug.Log(ScoreTotal.ToString());
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.2f);
+        FindAnyObjectByType<SceneAudio>().ScoreCountOver();
+        yield return new WaitForSeconds(1.6f);
 
         int stars = 3;
         for (int i = 0; i < scoreThresholds.Length; i++)

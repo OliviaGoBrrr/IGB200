@@ -24,7 +24,7 @@ public class BurnableDecoration : MonoBehaviour
         }
         if (randomizePosition)
         {
-            transform.localPosition = new Vector3(Random.Range(-0.4f, 0.4f), 0.58f, Random.Range(-0.4f, 0.4f));
+            transform.localPosition = new Vector3(Random.Range(-0.35f, 0.35f), 0.58f, Random.Range(-0.4f, 0.4f));
         }
         if (scoreCountTriggerPar.Count > 0) { hasScoreCountPar = true; }
     }

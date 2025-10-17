@@ -9,6 +9,7 @@ public class SceneAudio : MonoBehaviour
     [SerializeField] List<int> untilNextMagnitude;
     int currentMag = 1;
     int nextMagProgress = 0;
+    int starMag = 1;
 
     bool crackleStart = false;
     [SerializeField] DrumBeatsScriptable drumBeats;
@@ -22,6 +23,8 @@ public class SceneAudio : MonoBehaviour
     [SerializeField] AudioClip buttonClick;
     [SerializeField] AudioClip scoreGained;
     [SerializeField] AudioClip scoreUnGained;
+    [SerializeField] AudioClip scoreCountDone;
+    [SerializeField] AudioClip starSoundFX;
     public static SceneAudio instance;
     void Awake()
     {
@@ -106,8 +109,23 @@ public class SceneAudio : MonoBehaviour
         gameSoundFXAudio.volume = 0.7f;
         gameSoundFXAudio.Play();
     }
+    public void ScoreCountOver()
+    {
+        gameSoundFXAudio.pitch = Mathf.Pow(1.059463f, currentMag);
+        gameSoundFXAudio.resource = scoreCountDone;
+        gameSoundFXAudio.volume = 1f;
+        gameSoundFXAudio.Play();
+    }
     public void MagProgressWipe()
     {
         nextMagProgress = 0;
+        currentMag = 1;
+    }
+    public void StarSoundFX()
+    {
+        gameSoundFXAudio.pitch = Mathf.Pow(1.059463f, starMag * 2);
+        gameSoundFXAudio.resource = starSoundFX;
+        starMag += 1;
+        gameSoundFXAudio.Play();
     }
 }
