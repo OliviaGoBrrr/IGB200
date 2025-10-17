@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1855816186931775847}
   - component: {fileID: 4085802082616010031}
   - component: {fileID: 3226409706005626950}
+  - component: {fileID: 2340009943827526671}
+  - component: {fileID: 3574533573897009558}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Untagged
@@ -47,8 +49,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   birds:
-  - {fileID: 9100000, guid: a941bcb61272e5345b45cce72accf0d9, type: 2}
-  - {fileID: 9100000, guid: 2800a78257549ab4683f8923f539b3d5, type: 2}
+  - {fileID: 7108339969198208228, guid: 3ce3dccc4ae049a49a855a3bc994e2dc, type: 3}
+  - {fileID: 7108339969198208228, guid: bcac20186e33ef347aa5e9a18e665f4d, type: 3}
 --- !u!212 &4085802082616010031
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -93,7 +95,7 @@ SpriteRenderer:
   m_SortingLayerID: 1589005665
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -607290965, guid: 2e76f833dd99d5f40915987601b97e81, type: 3}
+  m_Sprite: {fileID: 1208538513, guid: e1fe5b60dc1cea046a3b6d6a5a3f92fb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -126,3 +128,33 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2340009943827526671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5381417328859985917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29cff538c195c249b69c6f2236de67b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library: []
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 3ce3dccc4ae049a49a855a3bc994e2dc, type: 3}
+--- !u!114 &3574533573897009558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5381417328859985917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CategoryHash: 1.4194569e-12
+  m_labelHash: 1.0591665e-12
+  m_SpriteKey: 0
+  m_SpriteHash: 740048925

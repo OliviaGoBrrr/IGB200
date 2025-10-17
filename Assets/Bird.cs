@@ -1,15 +1,16 @@
-using NUnit.Framework;
+
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEditor.Animations;
+using UnityEngine.Animations;
+using UnityEngine.U2D.Animation;
 
 public class Bird : MonoBehaviour
 {
     float Speed = 0;
-    [SerializeField] List<AnimatorController> birds;
-    void Start()
+    [SerializeField] List<SpriteLibraryAsset> birds;
+    void Awake()
     {
-        GetComponent<Animator>().runtimeAnimatorController = birds[Random.Range(0, birds.Count)];
+        GetComponent<SpriteLibrary>().spriteLibraryAsset = birds[Random.Range(0, birds.Count)];
         Destroy(gameObject, 20);
     }
     public void SetValues(float speed, bool moveRight, float offset)
