@@ -24,11 +24,13 @@ public class CustomiseMenu : UIAnimations
     private Button settingsButton;
 
     private Button currentlySelectedSkin;
+    private Button currentlySelectedHat;
     private Button currentlySelectedClothes;
     private Button currentlySelectedHairColour;
     private Button currentlySelectedBangsStyle;
     private Button currentlySelectedHairStyle;
     private Button currentlySelectedEyes;
+    private Button currentlySelectedAccessory;
 
     private Button currentCategory; // last used category
     private string currentCategorySwitch = "Skin"; // used for switch
@@ -39,12 +41,14 @@ public class CustomiseMenu : UIAnimations
     private Button clothesCategory;
     private Button hairCategory;
     private Button eyesCategory;
+    private Button accessoryCategory;
 
     // Options Panels
     private VisualElement skinPanel;
     private VisualElement clothesPanel;
     private VisualElement hairPanel;
     private VisualElement eyesPanel;
+    private VisualElement accessoryPanel;
 
     // Option Buttons
     private Button[] skinColours = new Button[9];
@@ -56,6 +60,10 @@ public class CustomiseMenu : UIAnimations
 
     private Button[] hairOptions = new Button[9];
 
+    private Button[] accessoryOptions = new Button[5];
+
+    private Button[] hatOptions = new Button[4];
+
     // character display elements
     private VisualElement characterBangs;
     private VisualElement characterHighlights;
@@ -65,6 +73,7 @@ public class CustomiseMenu : UIAnimations
     private VisualElement characterBody;
     private VisualElement characterHair;
     private VisualElement characterHat;
+    private VisualElement characterAccessory;
 
     private Array allButtons;
 
@@ -77,6 +86,10 @@ public class CustomiseMenu : UIAnimations
     private Sprite[] bangsSprites = new Sprite[9];
 
     private Sprite[] hairSprites = new Sprite[9];
+
+    private Sprite[] accessorySprites = new Sprite[5];
+
+    private Sprite[] hatSprites = new Sprite[4];
 
     private Sprite eyeStyle;
     private Sprite highlightStyle;
@@ -107,7 +120,6 @@ public class CustomiseMenu : UIAnimations
             eyeColours[i] = ui.Q<Button>("EyesOption" + (i + 1));
         }
 
-
         for (int i = 0; i < bangsOptions.Length; i++)
         {
             bangsOptions[i] = ui.Q<Button>("BangsStyle" + (i + 1));
@@ -118,6 +130,18 @@ public class CustomiseMenu : UIAnimations
         {
             hairOptions[i] = ui.Q<Button>("HairStyle" + (i + 1));
             hairSprites[i] = Resources.Load<Sprite>("Sprites/PlayerCharacter/Hair/PlayerCharacter_Hair_0" + i);
+        }
+
+        for (int i = 0; i < accessoryOptions.Length; i++)
+        {
+            accessoryOptions[i] = ui.Q<Button>("AccessoryOption" + (i + 1));
+            accessorySprites[i] = Resources.Load<Sprite>("Sprites/PlayerCharacter/PlayerCharacter_Accessories_0" + i);
+        }
+
+        for (int i = 0; i < hatOptions.Length; i++)
+        {
+            hatOptions[i] = ui.Q<Button>("HatStyle" + (i + 1));
+            hatSprites[i] = Resources.Load<Sprite>("Sprites/PlayerCharacter/PlayerCharacter_Hat_0" + i);
         }
 
         eyeStyle = Resources.Load<Sprite>("Sprites/PlayerCharacter/PlayerCharacter_Eyes_0" + CustomiseData.eyeType);
@@ -153,6 +177,10 @@ public class CustomiseMenu : UIAnimations
         eyesCategory = ui.Q<Button>("EyesCategory");
         eyesCategory.clicked += eyesCategoryClicked;
 
+        accessoryPanel = ui.Q<VisualElement>("AccessoryOptionsPanel");
+        accessoryCategory = ui.Q<Button>("AccessoryCategory");
+        accessoryCategory.clicked += accessoryCategoryClicked;
+
         characterBangs = ui.Q<VisualElement>("CharacterBangs");
         characterHighlights = ui.Q<VisualElement>("CharacterHighlights");
         characterEyes = ui.Q<VisualElement>("CharacterEyes");
@@ -161,6 +189,7 @@ public class CustomiseMenu : UIAnimations
         characterBody = ui.Q<VisualElement>("CharacterBody");
         characterHair = ui.Q<VisualElement>("CharacterHair");
         characterHat = ui.Q<VisualElement>("CharacterHat");
+        characterAccessory = ui.Q<VisualElement>("CharacterAccessory");
 
 
         // setting a ton of vars so when checked for the first time they contain an object
@@ -170,6 +199,8 @@ public class CustomiseMenu : UIAnimations
         currentlySelectedHairColour = hairColours[CustomiseData.hairColourNumber];
         currentlySelectedBangsStyle = bangsOptions[CustomiseData.bangsType];
         currentlySelectedHairStyle = hairOptions[CustomiseData.hairType];
+        currentlySelectedAccessory = accessoryOptions[CustomiseData.accessoryType];
+        currentlySelectedHat = hatOptions[CustomiseData.hatType];
         currentlySelectedEyes = eyeColours[0];
         currentOptionsPanel = skinPanel;
 
@@ -203,6 +234,16 @@ public class CustomiseMenu : UIAnimations
             button.clickable.clickedWithEventInfo += Clickable_clickedWithEventInfo;
         }
 
+        foreach (Button button in accessoryOptions)
+        {
+            button.clickable.clickedWithEventInfo += Clickable_clickedWithEventInfo;
+        }
+
+        foreach (Button button in hatOptions)
+        {
+            button.clickable.clickedWithEventInfo += Clickable_clickedWithEventInfo;
+        }
+
         // set character base colours immediately
 
         ColorUtility.TryParseHtmlString(CustomiseData.skinColour, out newColour);
@@ -210,7 +251,12 @@ public class CustomiseMenu : UIAnimations
 
         ColorUtility.TryParseHtmlString(CustomiseData.clothesColour, out newColour);
         characterBody.style.unityBackgroundImageTintColor = newColour;
-        characterHat.style.unityBackgroundImageTintColor = newColour;
+
+        if (CustomiseData.crownMode == false)
+        {
+            characterHat.style.unityBackgroundImageTintColor = newColour;
+        }
+        
 
         ColorUtility.TryParseHtmlString(CustomiseData.hairColour, out newColour);
         characterHair.style.unityBackgroundImageTintColor = newColour;
@@ -234,11 +280,18 @@ public class CustomiseMenu : UIAnimations
         characterEyes.style.backgroundImage = new StyleBackground(eyeStyle);
         characterHighlights.style.backgroundImage = new StyleBackground(highlightStyle);
 
+        characterHat.style.backgroundImage = new StyleBackground(hatSprites[CustomiseData.hatType]);
+        characterAccessory.style.backgroundImage = new StyleBackground(accessorySprites[CustomiseData.accessoryType]);
 
+
+
+        // setting button borders
         OptionSelected(skinColours[CustomiseData.skinColourNumber], skinColours[0]);
         OptionSelected(clothesColours[CustomiseData.clothesColourNumber], clothesColours[0]);
         OptionSelected(hairColours[CustomiseData.hairColourNumber], hairColours[0]);
         OptionSelected(eyeColours[CustomiseData.eyeColourNumber], eyeColours[0]);
+
+        OptionSelected(accessoryOptions[CustomiseData.accessoryType], accessoryOptions[0]);
 
         OptionSelected(bangsOptions[CustomiseData.bangsType], bangsOptions[0]);
         OptionSelected(hairOptions[CustomiseData.hairType], hairOptions[0]);
@@ -261,6 +314,12 @@ public class CustomiseMenu : UIAnimations
     {
         CategoryClicked(eyesCategory, "Eyes", eyesPanel);
     }
+
+    private void accessoryCategoryClicked()
+    {
+        CategoryClicked(accessoryCategory, "Accessories", accessoryPanel);
+    }
+
     private void CategoryClicked(Button newCategory, String categoryName, VisualElement optionsPanel)
     {
         // moves last category button down
@@ -347,27 +406,69 @@ public class CustomiseMenu : UIAnimations
 
                 break;
             case "Clothes":
-                OptionSelected(button, currentlySelectedClothes);
+                string hatStyleType = button.text[0].ToString();
+                switch (hatStyleType)
+                {
+                    case "h":
+                        OptionSelected(button, currentlySelectedHat);
 
-                currentlySelectedClothes = button;
+                        currentlySelectedHat = button;
 
-                print("clothes colour changed to " + button.text);
-                CustomiseData.clothesColour = button.text;
+                        print("hat changed to " + button.text);
 
-                onlyNumbersName = Regex.Match(button.name, @"\d+").Value;
+                        if (button.name == "HatStyle4")
+                        {
+                            CustomiseData.crownMode = true;
+                        }
 
-                CustomiseData.clothesColourNumber = int.Parse(onlyNumbersName) - 1;
+                        int hatStyle = int.Parse(button.text[1].ToString());
 
-                ColorUtility.TryParseHtmlString(button.text, out newColour);
-                characterBody.style.unityBackgroundImageTintColor = newColour;
-                characterHat.style.unityBackgroundImageTintColor = newColour;
+                        CustomiseData.hatType = hatStyle - 1;
+                        
+                        if (CustomiseData.crownMode == true)
+                        {
+                            characterHat.style.unityBackgroundImageTintColor = new Color(1, 1, 1, 1);
+                        }
+                        else
+                        {
+                            ColorUtility.TryParseHtmlString(CustomiseData.clothesColour, out newColour);
+                            characterHat.style.unityBackgroundImageTintColor = newColour;
+                        }
+
+                            characterHat.style.backgroundImage = new StyleBackground(hatSprites[CustomiseData.hatType]);
+
+                        break;
+                    default:
+                        OptionSelected(button, currentlySelectedClothes);
+
+                        currentlySelectedClothes = button;
+
+                        print("clothes colour changed to " + button.text);
+                        CustomiseData.clothesColour = button.text;
+
+                        onlyNumbersName = Regex.Match(button.name, @"\d+").Value;
+
+                        CustomiseData.clothesColourNumber = int.Parse(onlyNumbersName) - 1;
+
+                        ColorUtility.TryParseHtmlString(button.text, out newColour);
+                        characterBody.style.unityBackgroundImageTintColor = newColour;
+
+                        if (CustomiseData.crownMode == false)
+                        {
+                            characterHat.style.unityBackgroundImageTintColor = newColour;
+                        }
+
+                        break;
+                }
+
+                
 
                 break;
             case "Hair":
                 string styleType = button.text[0].ToString();
                 switch (styleType)
                 {
-                    case "b":
+                    case "b": // bangs type
                         OptionSelected(button, currentlySelectedBangsStyle);
 
                         currentlySelectedBangsStyle = button;
@@ -382,7 +483,7 @@ public class CustomiseMenu : UIAnimations
                         characterBangs.style.backgroundImage = new StyleBackground(bangsSprites[CustomiseData.bangsType]);
 
                         break;
-                    case "h":
+                    case "h": // hair type
                         OptionSelected(button, currentlySelectedHairStyle);
 
                         currentlySelectedHairStyle = button;
@@ -396,7 +497,7 @@ public class CustomiseMenu : UIAnimations
                         characterHair.style.backgroundImage = new StyleBackground(hairSprites[CustomiseData.hairType]);
 
                         break;
-                    default:
+                    default: // hair colour
                         OptionSelected(button, currentlySelectedHairColour);
 
                         currentlySelectedHairColour = button;
@@ -430,6 +531,20 @@ public class CustomiseMenu : UIAnimations
                 ColorUtility.TryParseHtmlString(button.text, out newColour);
                 characterEyes.style.unityBackgroundImageTintColor = newColour;
 
+                break;
+            case "Accessories":
+                OptionSelected(button, currentlySelectedAccessory);
+
+                currentlySelectedAccessory = button;
+
+                print("accessory changed to " + button.text);
+
+                int accessoryStyle = int.Parse(button.text);
+
+                CustomiseData.accessoryType = accessoryStyle - 1;
+
+                characterAccessory.style.backgroundImage = new StyleBackground(accessorySprites[CustomiseData.accessoryType]);
+                characterHair.style.backgroundImage = new StyleBackground(hairSprites[CustomiseData.hairType]);
                 break;
         }
     }

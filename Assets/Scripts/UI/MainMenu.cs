@@ -35,11 +35,15 @@ public class MainMenu : UIAnimations
     private VisualElement characterBody;
     private VisualElement characterHair;
     private VisualElement characterHat;
+    private VisualElement characterAccessory;
 
     private Sprite bangsStyle;
     private Sprite hairStyle;
     private Sprite eyeStyle;
     private Sprite highlightStyle;
+
+    private Sprite accessoryStyle;
+    private Sprite hatStyle;
 
     [SerializeField] private Sprite characterFaceSmile;
     [SerializeField] private Sprite characterFaceNormal;
@@ -67,6 +71,9 @@ public class MainMenu : UIAnimations
         eyeStyle = Resources.Load<Sprite>("Sprites/PlayerCharacter/PlayerCharacter_Eyes_0" + CustomiseData.eyeType);
         highlightStyle = Resources.Load<Sprite>("Sprites/PlayerCharacter/PlayerCharacter_Highlight_0" + CustomiseData.highlightType);
 
+
+        accessoryStyle = Resources.Load<Sprite>("Sprites/PlayerCharacter/PlayerCharacter_Accessories_0" + CustomiseData.accessoryType);
+        hatStyle = Resources.Load<Sprite>("Sprites/PlayerCharacter/PlayerCharacter_Hat_0" + CustomiseData.hatType);
     }
 
     private void OnEnable()
@@ -116,6 +123,7 @@ public class MainMenu : UIAnimations
         characterHair = ui.Q<VisualElement>("CharacterHair");
         
         characterHat = ui.Q<VisualElement>("CharacterHat");
+        characterAccessory = ui.Q<VisualElement>("CharacterAccessory");
 
         // set character base colours
 
@@ -124,7 +132,11 @@ public class MainMenu : UIAnimations
 
         ColorUtility.TryParseHtmlString(CustomiseData.clothesColour, out newColour);
         characterBody.style.unityBackgroundImageTintColor = newColour;
-        characterHat.style.unityBackgroundImageTintColor = newColour;
+
+        if (CustomiseData.crownMode == false)
+        {
+            characterHat.style.unityBackgroundImageTintColor = newColour;
+        }
 
         ColorUtility.TryParseHtmlString(CustomiseData.hairColour, out newColour);
         characterHair.style.unityBackgroundImageTintColor = newColour;
@@ -151,7 +163,8 @@ public class MainMenu : UIAnimations
         characterBangs.style.backgroundImage = new StyleBackground(bangsStyle);
         characterHair.style.backgroundImage = new StyleBackground(hairStyle);
 
-        
+        characterAccessory.style.backgroundImage = new StyleBackground(accessoryStyle);
+        characterHat.style.backgroundImage = new StyleBackground(hatStyle);
     }
 
 

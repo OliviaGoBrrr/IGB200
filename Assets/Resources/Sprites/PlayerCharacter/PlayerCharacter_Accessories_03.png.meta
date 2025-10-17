@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f5eb6e2189f87024596f8cfb0df885a0
+guid: d6e33911f39c27141980bc61faddb15b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -149,7 +149,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlayerCharacter_Eyes_00_0
+      name: PlayerCharacter_Accessories_03_0
       rect:
         serializedVersion: 2
         x: 0
@@ -157,21 +157,21 @@ TextureImporter:
         width: 1100
         height: 1100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cbba565fd2ba1814ca6f457fd3b27515
-      internalID: -797711696
+      spriteID: 41409089f29f6f34baa3d2250d78e850
+      internalID: -1361064988
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerCharacter_Eyes_00_1
+      name: PlayerCharacter_Accessories_03_1
       rect:
         serializedVersion: 2
         x: 1100
@@ -179,21 +179,21 @@ TextureImporter:
         width: 1100
         height: 1100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03ff47baf7144974796d67cbe18b4919
-      internalID: 1132380634
+      spriteID: 1aff68f9fd2149b418ad399c164e5c72
+      internalID: -829148114
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerCharacter_Eyes_00_2
+      name: PlayerCharacter_Accessories_03_2
       rect:
         serializedVersion: 2
         x: 2200
@@ -201,21 +201,21 @@ TextureImporter:
         width: 1100
         height: 1100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9472ac9235f23a440802420cc3306eb3
-      internalID: -1167036950
+      spriteID: 7ef63c7d1aed897498ffb3d8aa5fa7c3
+      internalID: -1031172427
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerCharacter_Eyes_00_3
+      name: PlayerCharacter_Accessories_03_3
       rect:
         serializedVersion: 2
         x: 3300
@@ -223,68 +223,24 @@ TextureImporter:
         width: 1100
         height: 1100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 728b61d0f7414c743a49e88b460750c8
-      internalID: -287136689
+      spriteID: 62864e0a894aabe43a9263bcdd756f7e
+      internalID: 1727360740
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerCharacter_Eyes_00_4
+      name: PlayerCharacter_Accessories_03_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 1100
-        height: 1100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7f93821e171fe6344a207df940bac696
-      internalID: -1084133478
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerCharacter_Eyes_00_5
-      rect:
-        serializedVersion: 2
-        x: 1100
-        y: 0
-        width: 1100
-        height: 1100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0e0eeb6fd55fe2646b45081ca1a7848c
-      internalID: 997798649
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerCharacter_Eyes_00_6
-      rect:
-        serializedVersion: 2
-        x: 2200
         y: 0
         width: 1100
         height: 1100
@@ -296,8 +252,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16e0474e97335e54d87f062c1e508428
-      internalID: -2064387948
+      spriteID: 6c35acde0e4809145b903489c4038611
+      internalID: -1327594869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacter_Accessories_03_5
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 0
+        width: 1100
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13fde882a262aac49b83f8d48454c574
+      internalID: -1393329182
       vertices: []
       indices: 
       edges: []
@@ -316,13 +294,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PlayerCharacter_Eyes_00_0: -797711696
-      PlayerCharacter_Eyes_00_1: 1132380634
-      PlayerCharacter_Eyes_00_2: -1167036950
-      PlayerCharacter_Eyes_00_3: -287136689
-      PlayerCharacter_Eyes_00_4: -1084133478
-      PlayerCharacter_Eyes_00_5: 997798649
-      PlayerCharacter_Eyes_00_6: -2064387948
+      PlayerCharacter_Accessories_03_0: -1361064988
+      PlayerCharacter_Accessories_03_1: -829148114
+      PlayerCharacter_Accessories_03_2: -1031172427
+      PlayerCharacter_Accessories_03_3: 1727360740
+      PlayerCharacter_Accessories_03_4: -1327594869
+      PlayerCharacter_Accessories_03_5: -1393329182
+      PlayerCharacter_Accessories_03_6: 1022000902
+      PlayerCharacter_Accessories_03_7: 1853478572
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

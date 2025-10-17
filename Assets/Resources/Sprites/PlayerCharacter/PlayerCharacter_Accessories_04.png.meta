@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 928880798b0421845995c80a896c1f4b
+guid: f5eb6e2189f87024596f8cfb0df885a0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -149,7 +149,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlayerCharacter_Hat_0
+      name: PlayerCharacter_Accessories_04_0
       rect:
         serializedVersion: 2
         x: 0
@@ -164,14 +164,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b70fa9343cf19134182017f3a9ee88c5
-      internalID: -979968397
+      spriteID: a160ba82d305f344caf5c8c2ab2f18a4
+      internalID: 1787145337
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerCharacter_Hat_1
+      name: PlayerCharacter_Accessories_04_1
       rect:
         serializedVersion: 2
         x: 1100
@@ -186,14 +186,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a6992f858806e94b84c1745b4b4fe69
-      internalID: 1690865265
+      spriteID: 825c8f74c41ef244f97c460f56c63762
+      internalID: -1538369526
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerCharacter_Hat_2
+      name: PlayerCharacter_Accessories_04_2
       rect:
         serializedVersion: 2
         x: 2200
@@ -208,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59e29c5612960b643a39074c468fc540
-      internalID: -774784941
+      spriteID: fdf2049fa17267b4d971933bb1ba2203
+      internalID: 894787603
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerCharacter_Hat_3
+      name: PlayerCharacter_Accessories_04_3
       rect:
         serializedVersion: 2
         x: 3300
@@ -230,14 +230,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aeb194fa927388e42973f58d8d479307
-      internalID: -1306996767
+      spriteID: 1260abd325d403540af23555e7e921da
+      internalID: -252158519
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerCharacter_Hat_4
+      name: PlayerCharacter_Accessories_04_4
       rect:
         serializedVersion: 2
         x: 0
@@ -252,14 +252,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a22e9972b400e004b9c4d4a8e945c13c
-      internalID: -2025695896
+      spriteID: 3345c39b9b44cb943a741e7ae646a8cf
+      internalID: -162722785
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerCharacter_Hat_5
+      name: PlayerCharacter_Accessories_04_5
       rect:
         serializedVersion: 2
         x: 1100
@@ -274,8 +274,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b4d22deb7d1f2741bd4865d4a3599e6
-      internalID: 450038238
+      spriteID: 486a3515ea8633047a074ff9a9fca928
+      internalID: -566363541
       vertices: []
       indices: 
       edges: []
@@ -284,7 +284,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: fce6e5d567a68ff4b90a35ccfeef38e7
+    spriteID: 43548b6057849404baef5571ea604421
     internalID: 0
     vertices: []
     indices: 
@@ -294,12 +294,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PlayerCharacter_Hat_0: -979968397
-      PlayerCharacter_Hat_1: 1690865265
-      PlayerCharacter_Hat_2: -774784941
-      PlayerCharacter_Hat_3: -1306996767
-      PlayerCharacter_Hat_4: -2025695896
-      PlayerCharacter_Hat_5: 450038238
+      PlayerCharacter_Accessories_04_0: 1787145337
+      PlayerCharacter_Accessories_04_1: -1538369526
+      PlayerCharacter_Accessories_04_2: 894787603
+      PlayerCharacter_Accessories_04_3: -252158519
+      PlayerCharacter_Accessories_04_4: -162722785
+      PlayerCharacter_Accessories_04_5: -566363541
+      PlayerCharacter_Accessories_04_6: -2022251532
+      PlayerCharacter_Accessories_04_7: -725321497
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

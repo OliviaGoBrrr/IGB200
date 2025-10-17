@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d2ee4129b20c9c142a00c777677eb894
+guid: 5a1d8d9be685d6f458230652dd8a3313
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -149,7 +149,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlayerCharacter_Eyes_00_0
+      name: PlayerCharacter_Accessories_01_0
       rect:
         serializedVersion: 2
         x: 0
@@ -164,14 +164,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cbba565fd2ba1814ca6f457fd3b27515
-      internalID: -797711696
+      spriteID: 3555f9d6780c92145973741d31383140
+      internalID: -766922702
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerCharacter_Eyes_00_1
+      name: PlayerCharacter_Accessories_01_1
       rect:
         serializedVersion: 2
         x: 1100
@@ -186,14 +186,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03ff47baf7144974796d67cbe18b4919
-      internalID: 1132380634
+      spriteID: 71e0a994ffbab32458fefeedee9ea9e1
+      internalID: -1541596253
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerCharacter_Eyes_00_2
+      name: PlayerCharacter_Accessories_01_2
       rect:
         serializedVersion: 2
         x: 2200
@@ -208,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9472ac9235f23a440802420cc3306eb3
-      internalID: -1167036950
+      spriteID: 0b898937d24c77a4ca180c9aee2efee4
+      internalID: -1453615745
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerCharacter_Eyes_00_3
+      name: PlayerCharacter_Accessories_01_3
       rect:
         serializedVersion: 2
         x: 3300
@@ -230,14 +230,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 728b61d0f7414c743a49e88b460750c8
-      internalID: -287136689
+      spriteID: bbf0355ec465324448c5731daf246831
+      internalID: -1702771059
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerCharacter_Eyes_00_4
+      name: PlayerCharacter_Accessories_01_4
       rect:
         serializedVersion: 2
         x: 0
@@ -252,14 +252,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f93821e171fe6344a207df940bac696
-      internalID: -1084133478
+      spriteID: ed1b411082cd10740bd314d02691d8d6
+      internalID: -225874548
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerCharacter_Eyes_00_5
+      name: PlayerCharacter_Accessories_01_5
       rect:
         serializedVersion: 2
         x: 1100
@@ -274,30 +274,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e0eeb6fd55fe2646b45081ca1a7848c
-      internalID: 997798649
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerCharacter_Eyes_00_6
-      rect:
-        serializedVersion: 2
-        x: 2200
-        y: 0
-        width: 1100
-        height: 1100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 16e0474e97335e54d87f062c1e508428
-      internalID: -2064387948
+      spriteID: 4d630a2580a3f924a898795eebdf165b
+      internalID: -1846123168
       vertices: []
       indices: 
       edges: []
@@ -316,13 +294,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PlayerCharacter_Eyes_00_0: -797711696
-      PlayerCharacter_Eyes_00_1: 1132380634
-      PlayerCharacter_Eyes_00_2: -1167036950
-      PlayerCharacter_Eyes_00_3: -287136689
-      PlayerCharacter_Eyes_00_4: -1084133478
-      PlayerCharacter_Eyes_00_5: 997798649
-      PlayerCharacter_Eyes_00_6: -2064387948
+      PlayerCharacter_Accessories_01_0: -766922702
+      PlayerCharacter_Accessories_01_1: -1541596253
+      PlayerCharacter_Accessories_01_2: -1453615745
+      PlayerCharacter_Accessories_01_3: -1702771059
+      PlayerCharacter_Accessories_01_4: -225874548
+      PlayerCharacter_Accessories_01_5: -1846123168
+      PlayerCharacter_Accessories_01_6: -739640960
+      PlayerCharacter_Accessories_01_7: 1237347923
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

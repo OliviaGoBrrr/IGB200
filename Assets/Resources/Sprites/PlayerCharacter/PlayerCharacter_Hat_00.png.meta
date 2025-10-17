@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 928880798b0421845995c80a896c1f4b
+guid: 245421ce9affed04fbddb0ae766a8a7b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -50,7 +50,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 500
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -94,45 +94,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: tvOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -149,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlayerCharacter_Hat_0
+      name: PlayerCharacter_Hat_00_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1100
-        width: 1100
-        height: 1100
+        y: 512
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +125,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b70fa9343cf19134182017f3a9ee88c5
-      internalID: -979968397
+      spriteID: 26b7ba2c7f8f611419aa402176a577f1
+      internalID: 275121983
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerCharacter_Hat_1
+      name: PlayerCharacter_Hat_00_1
       rect:
         serializedVersion: 2
-        x: 1100
-        y: 1100
-        width: 1100
-        height: 1100
+        x: 512
+        y: 512
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,20 +147,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a6992f858806e94b84c1745b4b4fe69
-      internalID: 1690865265
+      spriteID: 5a5555ddf3fcaab418a290b45db7f894
+      internalID: -1356826034
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerCharacter_Hat_2
+      name: PlayerCharacter_Hat_00_2
       rect:
         serializedVersion: 2
-        x: 2200
-        y: 1100
-        width: 1100
-        height: 1100
+        x: 1024
+        y: 512
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +169,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59e29c5612960b643a39074c468fc540
-      internalID: -774784941
+      spriteID: 498a0cbfc0f198247b529d2b45fb4582
+      internalID: -2043164921
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerCharacter_Hat_3
+      name: PlayerCharacter_Hat_00_3
       rect:
         serializedVersion: 2
-        x: 3300
-        y: 1100
-        width: 1100
-        height: 1100
+        x: 1536
+        y: 512
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -230,20 +191,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aeb194fa927388e42973f58d8d479307
-      internalID: -1306996767
+      spriteID: b0f106f91d6ec3041ac1277faf94ef03
+      internalID: 1736373697
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerCharacter_Hat_4
+      name: PlayerCharacter_Hat_00_4
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1100
-        height: 1100
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,20 +213,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a22e9972b400e004b9c4d4a8e945c13c
-      internalID: -2025695896
+      spriteID: 781e4f409ab22f748afba14217864ace
+      internalID: -1764507381
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerCharacter_Hat_5
+      name: PlayerCharacter_Hat_00_5
       rect:
         serializedVersion: 2
-        x: 1100
+        x: 512
         y: 0
-        width: 1100
-        height: 1100
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -274,8 +235,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b4d22deb7d1f2741bd4865d4a3599e6
-      internalID: 450038238
+      spriteID: 1d77f11e7e9e229458d4e6622a21de5f
+      internalID: -1585155095
       vertices: []
       indices: 
       edges: []
@@ -284,7 +245,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: fce6e5d567a68ff4b90a35ccfeef38e7
+    spriteID: 77cf42f9346923043a9ca87c9ddb231f
     internalID: 0
     vertices: []
     indices: 
@@ -294,12 +255,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PlayerCharacter_Hat_0: -979968397
-      PlayerCharacter_Hat_1: 1690865265
-      PlayerCharacter_Hat_2: -774784941
-      PlayerCharacter_Hat_3: -1306996767
-      PlayerCharacter_Hat_4: -2025695896
-      PlayerCharacter_Hat_5: 450038238
+      PlayerCharacter_Hat_00_0: 275121983
+      PlayerCharacter_Hat_00_1: -1356826034
+      PlayerCharacter_Hat_00_2: -2043164921
+      PlayerCharacter_Hat_00_3: 1736373697
+      PlayerCharacter_Hat_00_4: -1764507381
+      PlayerCharacter_Hat_00_5: -1585155095
+      PlayerCharacter_Hat_00_6: 1203300985
+      PlayerCharacter_Hat_00_7: 1335255402
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
