@@ -253,6 +253,10 @@ public class GameTile: MonoBehaviour
     {
         if (scoreGained == true)
         {
+            foreach (BurnableDecoration deco in burnableDecorations)
+            {
+                if (deco.hasScoreCountPar) { deco.TriggerCount(); }
+            }
             foreach (SproutableDecoration deco in sproutableDecorations)
             {
                 deco.TriggerSprout();

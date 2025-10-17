@@ -36,6 +36,7 @@ Transform:
   - {fileID: 249087241016145762}
   - {fileID: 2313572255559694060}
   - {fileID: 26351497033925895}
+  - {fileID: 8695317639696109712}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
 --- !u!212 &8535225516306294078
@@ -111,9 +112,12 @@ MonoBehaviour:
   - {fileID: 1229620869400755747}
   - {fileID: 3638881671358791597}
   - {fileID: 6107793308242485527}
+  scoreCountTriggerPar:
+  - {fileID: 7696488477320731089}
   dryDeco: 1
   burntSprite: {fileID: 21300000, guid: f261395af61de2642918096f6c914eb0, type: 3}
   randomizePosition: 0
+  hasScoreCountPar: 0
 --- !u!1001 &1982205044193005845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -314,6 +318,73 @@ Transform:
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 3025806959469768376, guid: 31fc65d5b465804489eb2e6ece8d0921, type: 3}
   m_PrefabInstance: {fileID: 4312398067053829612}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4842134979751147369
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4495402644587585461}
+    m_Modifications:
+    - target: {fileID: 4294535502231054329, guid: 2455129ad79fc4047bee0d79ed29e855, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294535502231054329, guid: 2455129ad79fc4047bee0d79ed29e855, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294535502231054329, guid: 2455129ad79fc4047bee0d79ed29e855, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294535502231054329, guid: 2455129ad79fc4047bee0d79ed29e855, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294535502231054329, guid: 2455129ad79fc4047bee0d79ed29e855, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294535502231054329, guid: 2455129ad79fc4047bee0d79ed29e855, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294535502231054329, guid: 2455129ad79fc4047bee0d79ed29e855, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294535502231054329, guid: 2455129ad79fc4047bee0d79ed29e855, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294535502231054329, guid: 2455129ad79fc4047bee0d79ed29e855, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294535502231054329, guid: 2455129ad79fc4047bee0d79ed29e855, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6898214338122121013, guid: 2455129ad79fc4047bee0d79ed29e855, type: 3}
+      propertyPath: m_Name
+      value: KoalaHappyParticle
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2455129ad79fc4047bee0d79ed29e855, type: 3}
+--- !u!198 &7696488477320731089 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3025806959469768376, guid: 2455129ad79fc4047bee0d79ed29e855, type: 3}
+  m_PrefabInstance: {fileID: 4842134979751147369}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8695317639696109712 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4294535502231054329, guid: 2455129ad79fc4047bee0d79ed29e855, type: 3}
+  m_PrefabInstance: {fileID: 4842134979751147369}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5318872880704416867
 PrefabInstance:

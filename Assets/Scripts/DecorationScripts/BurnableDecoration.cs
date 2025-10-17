@@ -5,11 +5,14 @@ public class BurnableDecoration : MonoBehaviour
 {
     private SpriteRenderer sprite2D;
     [SerializeField] List<ParticleSystem> burnTriggerPar;
+    [SerializeField] List<ParticleSystem> scoreCountTriggerPar;
     private bool triggered = false;
     [SerializeField] bool dryDeco = true;
 
     [SerializeField] Sprite burntSprite;
     [SerializeField] bool randomizePosition = false;
+
+    public bool hasScoreCountPar = false;
     void Awake()
     {
         sprite2D = GetComponent<SpriteRenderer>();
@@ -23,6 +26,7 @@ public class BurnableDecoration : MonoBehaviour
         {
             transform.localPosition = new Vector3(Random.Range(-0.4f, 0.4f), 0.58f, Random.Range(-0.4f, 0.4f));
         }
+        if (scoreCountTriggerPar.Count > 0) { hasScoreCountPar = true; }
     }
     public void TriggerBurn()
     {
@@ -41,6 +45,13 @@ public class BurnableDecoration : MonoBehaviour
             {
                 particle.Play();
             }  
+        }
+    }
+    public void TriggerCount()
+    {
+        foreach (ParticleSystem particle in scoreCountTriggerPar)
+        {
+            particle.Play();
         }
     }
     public void UndoHelp(GameTile.TileStates transformInto)
