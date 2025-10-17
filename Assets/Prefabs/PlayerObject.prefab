@@ -982,7 +982,7 @@ SpriteRenderer:
   m_SortingLayerID: 1589005665
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1677851598, guid: 0bf6d7817a412de48b8b73a0a55339b1, type: 3}
+  m_Sprite: {fileID: 1690865265, guid: 928880798b0421845995c80a896c1f4b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1028,7 +1028,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Library: []
-  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 0ad2d1c2c0456b94b81a4d528bfe08a4, type: 3}
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: c57ccf6411d99ef478831f50edfcebcf, type: 3}
 --- !u!114 &6900157325052529473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1042,9 +1042,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: 8.865584e-39
-  m_labelHash: 1.13171245e-17
+  m_labelHash: 1.7056428e-17
   m_SpriteKey: 0
-  m_SpriteHash: 68848963
+  m_SpriteHash: 903271505
 --- !u!114 &7197678965580513180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1285,7 +1285,7 @@ SpriteRenderer:
   m_SortingLayerID: 1589005665
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1541596253, guid: 5a1d8d9be685d6f458230652dd8a3313, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1293,7 +1293,7 @@ SpriteRenderer:
   m_Size: {x: 2.2, y: 2.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &8481544645049346167
@@ -1331,7 +1331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Library: []
-  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 470aac72e89a9b346a1e7f4a6e83222a, type: 3}
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 38a0fc211d37f76469598d93348260e9, type: 3}
 --- !u!114 &5818665677697473573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1347,7 +1347,7 @@ MonoBehaviour:
   m_CategoryHash: 0.009161512
   m_labelHash: 2.1809982e-38
   m_SpriteKey: 0
-  m_SpriteHash: 972847796
+  m_SpriteHash: 859231396
 --- !u!114 &2010325359745751026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1363,10 +1363,10 @@ MonoBehaviour:
   type: 6
   ListAAA:
   - {fileID: 7108339969198208228, guid: 38a0fc211d37f76469598d93348260e9, type: 3}
-  - {fileID: 7108339969198208228, guid: 470aac72e89a9b346a1e7f4a6e83222a, type: 3}
   - {fileID: 7108339969198208228, guid: 9a8d942e7df476f43b71417a53977fb1, type: 3}
   - {fileID: 7108339969198208228, guid: 03e7c8a624f9b494faf11b0522af9924, type: 3}
   - {fileID: 7108339969198208228, guid: ce1ca6350b6ea68419760825ae45cd8c, type: 3}
+  - {fileID: 7108339969198208228, guid: 58a07eb1adc35ca44ba2a2aba3c3ce33, type: 3}
 --- !u!1 &6630486667898466398
 GameObject:
   m_ObjectHideFlags: 0

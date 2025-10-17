@@ -17,44 +17,44 @@ MonoBehaviour:
     m_Hash: 1008081451
     m_CategoryList: []
     m_OverrideEntries:
-    - m_Name: PlayerCharacter_Eyes_00_0
-      m_Hash: 15564123
-      m_Sprite: {fileID: -797711696, guid: 5a1d8d9be685d6f458230652dd8a3313, type: 3}
+    - m_Name: PlayerCharacter_Accessory_00
+      m_Hash: 566844542
+      m_Sprite: {fileID: 1677851598, guid: 0bf6d7817a412de48b8b73a0a55339b1, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: -797711696, guid: 5a1d8d9be685d6f458230652dd8a3313, type: 3}
+      m_SpriteOverride: {fileID: 1677851598, guid: 0bf6d7817a412de48b8b73a0a55339b1, type: 3}
     m_FromMain: 0
     m_EntryOverrideCount: 1
   - m_Name: Action
     m_Hash: 6326692
     m_CategoryList: []
     m_OverrideEntries:
-    - m_Name: PlayerCharacter_Eyes_00_1
-      m_Hash: 938102221
-      m_Sprite: {fileID: 1132380634, guid: 5a1d8d9be685d6f458230652dd8a3313, type: 3}
+    - m_Name: PlayerCharacter_Accessories_01
+      m_Hash: 1045271850
+      m_Sprite: {fileID: 1677851598, guid: 0bf6d7817a412de48b8b73a0a55339b1, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: 1132380634, guid: 5a1d8d9be685d6f458230652dd8a3313, type: 3}
-    - m_Name: PlayerCharacter_Eyes_00_2
-      m_Hash: 786635895
-      m_Sprite: {fileID: -1167036950, guid: 5a1d8d9be685d6f458230652dd8a3313, type: 3}
+      m_SpriteOverride: {fileID: 1677851598, guid: 0bf6d7817a412de48b8b73a0a55339b1, type: 3}
+    - m_Name: PlayerCharacter_Accessories_02
+      m_Hash: 658818192
+      m_Sprite: {fileID: 1677851598, guid: 0bf6d7817a412de48b8b73a0a55339b1, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: -1167036950, guid: 5a1d8d9be685d6f458230652dd8a3313, type: 3}
-    - m_Name: PlayerCharacter_Eyes_00_3
-      m_Hash: 434384097
-      m_Sprite: {fileID: -287136689, guid: 5a1d8d9be685d6f458230652dd8a3313, type: 3}
+      m_SpriteOverride: {fileID: 1677851598, guid: 0bf6d7817a412de48b8b73a0a55339b1, type: 3}
+    - m_Name: PlayerCharacter_Accessories_03
+      m_Hash: 272888838
+      m_Sprite: {fileID: 1677851598, guid: 0bf6d7817a412de48b8b73a0a55339b1, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: -287136689, guid: 5a1d8d9be685d6f458230652dd8a3313, type: 3}
-    - m_Name: PlayerCharacter_Eyes_00_4
-      m_Hash: 125876546
-      m_Sprite: {fileID: -1084133478, guid: 5a1d8d9be685d6f458230652dd8a3313, type: 3}
+      m_SpriteOverride: {fileID: 1677851598, guid: 0bf6d7817a412de48b8b73a0a55339b1, type: 3}
+    - m_Name: PlayerCharacter_Accessories_04
+      m_Hash: 237461925
+      m_Sprite: {fileID: 1677851598, guid: 0bf6d7817a412de48b8b73a0a55339b1, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: -1084133478, guid: 5a1d8d9be685d6f458230652dd8a3313, type: 3}
-    - m_Name: PlayerCharacter_Eyes_00_5
-      m_Hash: 814189012
-      m_Sprite: {fileID: 997798649, guid: 5a1d8d9be685d6f458230652dd8a3313, type: 3}
+      m_SpriteOverride: {fileID: 1677851598, guid: 0bf6d7817a412de48b8b73a0a55339b1, type: 3}
+    - m_Name: PlayerCharacter_Accessories_05
+      m_Hash: 958419251
+      m_Sprite: {fileID: 1677851598, guid: 0bf6d7817a412de48b8b73a0a55339b1, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: 997798649, guid: 5a1d8d9be685d6f458230652dd8a3313, type: 3}
+      m_SpriteOverride: {fileID: 1677851598, guid: 0bf6d7817a412de48b8b73a0a55339b1, type: 3}
     m_FromMain: 0
     m_EntryOverrideCount: 5
   m_PrimaryLibraryGUID: 
-  m_ModificationHash: 638961570165524393
+  m_ModificationHash: 638963480965799370
   m_Version: 1
