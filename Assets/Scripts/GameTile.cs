@@ -412,6 +412,10 @@ public class GameTile: MonoBehaviour
         {
             deco.UndoHelp(transformInto);
         }
+        foreach (SproutableDecoration deco in sproutableDecorations)
+        {
+            deco.UndoHelp(transformInto);
+        }
         foreach (FireDecoration deco in fireDecorations)
         {
             deco.Extinguish();

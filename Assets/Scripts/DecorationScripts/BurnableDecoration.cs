@@ -1,12 +1,15 @@
-using DG.Tweening;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class BurnableDecoration : MonoBehaviour
 {
     private SpriteRenderer sprite2D;
-    [SerializeField] ParticleSystem triggerPar;
+    [SerializeField] List<ParticleSystem> burnTriggerPar;
     private bool triggered = false;
-    public bool dryDeco = true;
+    [SerializeField] bool dryDeco = true;
+
+    [SerializeField] Sprite burntSprite;
+    [SerializeField] bool randomizePosition = false;
     void Awake()
     {
         sprite2D = GetComponent<SpriteRenderer>();
@@ -14,7 +17,11 @@ public class BurnableDecoration : MonoBehaviour
         {
             GameObject child = childTransform.gameObject;
             ParticleSystem particle = child.GetComponent<ParticleSystem>();
-            if (particle != null) { triggerPar = particle; }
+            if (particle != null && burnTriggerPar.Count == 0) { burnTriggerPar.Add(particle); } // Grabs particle in case it hasn't been attached manually
+        }
+        if (randomizePosition)
+        {
+            transform.localPosition = new Vector3(Random.Range(-0.4f, 0.4f), 0.58f, Random.Range(-0.4f, 0.4f));
         }
     }
     public void TriggerBurn()
@@ -22,8 +29,18 @@ public class BurnableDecoration : MonoBehaviour
         if (triggered == false)
         {
             triggered = true;
-            sprite2D.enabled = false;
-            triggerPar.Play();
+            if (burntSprite == null) 
+            {
+                sprite2D.enabled = false;
+            }
+            else
+            {
+                sprite2D.sprite = burntSprite;
+            }
+            foreach (ParticleSystem particle in burnTriggerPar)
+            {
+                particle.Play();
+            }  
         }
     }
     public void UndoHelp(GameTile.TileStates transformInto)

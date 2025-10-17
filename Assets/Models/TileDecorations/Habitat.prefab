@@ -101,7 +101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e680a049840388f4abb1c4d07661cd07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerPar: {fileID: 0}
+  burnTriggerPar: []
+  dryDeco: 1
+  burntSprite: {fileID: 21300000, guid: f261395af61de2642918096f6c914eb0, type: 3}
 --- !u!1001 &4312398067053829612
 PrefabInstance:
   m_ObjectHideFlags: 0

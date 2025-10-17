@@ -101,7 +101,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e680a049840388f4abb1c4d07661cd07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerPar: {fileID: 250223760674174368}
+  burnTriggerPar: []
+  dryDeco: 1
+  burntSprite: {fileID: 0}
+  randomizePosition: 1
 --- !u!1001 &3063901621818825496
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -159,11 +162,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31fc65d5b465804489eb2e6ece8d0921, type: 3}
---- !u!198 &250223760674174368 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3025806959469768376, guid: 31fc65d5b465804489eb2e6ece8d0921, type: 3}
-  m_PrefabInstance: {fileID: 3063901621818825496}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1232978061281475809 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4294535502231054329, guid: 31fc65d5b465804489eb2e6ece8d0921, type: 3}

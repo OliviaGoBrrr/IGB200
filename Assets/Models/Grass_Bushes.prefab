@@ -254,8 +254,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e680a049840388f4abb1c4d07661cd07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerPar: {fileID: 0}
+  burnTriggerPar: []
   dryDeco: 1
+  burntSprite: {fileID: 0}
 --- !u!1 &8936070230859452387
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,8 +358,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e680a049840388f4abb1c4d07661cd07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerPar: {fileID: 0}
+  burnTriggerPar: []
   dryDeco: 1
+  burntSprite: {fileID: 0}
 --- !u!1 &9043990298170086730
 GameObject:
   m_ObjectHideFlags: 0

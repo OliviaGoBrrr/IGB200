@@ -19,6 +19,7 @@ public class SproutableDecoration : MonoBehaviour
             ParticleSystem particle = child.GetComponent<ParticleSystem>();
             if (particle != null) { triggerPar = particle; }
         }
+        transform.localPosition = new Vector3(Random.Range(-0.4f, 0.4f), 0.58f, Random.Range(-0.4f, 0.4f));
     }
     public void TriggerSprout()
     {
@@ -27,6 +28,15 @@ public class SproutableDecoration : MonoBehaviour
             triggered = true;
             sprite2D.DOFade(1, 2);
             triggerPar.Play();
+        }
+    }
+    public void UndoHelp(GameTile.TileStates transformInto)
+    {
+        switch (transformInto)
+        {
+            case GameTile.TileStates.GRASS:
+                Destroy(gameObject);
+                break;
         }
     }
 }
