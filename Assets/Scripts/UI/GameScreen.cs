@@ -20,6 +20,8 @@ public class GameScreen : UIAnimations
     private Button undoButton;
     private Button restartButton;
 
+    private Button nextLevelButton;
+
     private Button dryGrassButton;
     private Button waterButton;
     private Button fireButton;
@@ -85,6 +87,8 @@ public class GameScreen : UIAnimations
         settings = ui.Q<TemplateContainer>("Settings");
         settings.style.display = DisplayStyle.None;
 
+        nextLevelButton = ui.Q<Button>("NextLevelButton");
+
         gameOver = ui.Q<TemplateContainer>("GameOver");
         gameOver.style.display = DisplayStyle.None;
 
@@ -142,11 +146,15 @@ public class GameScreen : UIAnimations
     {
         winPage.style.display = DisplayStyle.Flex;
         losePage.style.display = DisplayStyle.None;
+        nextLevelButton.style.display = DisplayStyle.Flex;
 
         for (int i = 0; i < starCount; i++)
         {
             stars[i].style.unityBackgroundImageTintColor = starColour;
         }
+
+
+        ScoreData.completedLevels[ScoreData.currentLevel] = true;
 
         gameOver.style.display = DisplayStyle.Flex;
 
@@ -157,6 +165,7 @@ public class GameScreen : UIAnimations
     {
         losePage.style.display = DisplayStyle.Flex;
         winPage.style.display = DisplayStyle.None;
+        nextLevelButton.style.display = DisplayStyle.None;
 
         gameOver.style.display = DisplayStyle.Flex;
     }
@@ -257,14 +266,14 @@ public class GameScreen : UIAnimations
 
             DOTween.To(() => scale, x => scale = x, 1f, 0.4f).SetEase(Ease.OutElastic).OnUpdate(() =>
             {
-                star3.style.scale = new Vector2(scale, scale);
+                star2.style.scale = new Vector2(scale, scale);
             }).OnComplete(() =>
             {
                 scale = 0f;
 
                 DOTween.To(() => scale, x => scale = x, 1f, 0.4f).SetEase(Ease.OutElastic).OnUpdate(() =>
                 {
-                    star2.style.scale = new Vector2(scale, scale);
+                    star3.style.scale = new Vector2(scale, scale);
                 });
             });
         });

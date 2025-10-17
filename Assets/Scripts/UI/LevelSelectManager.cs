@@ -126,8 +126,8 @@ public class LevelSelectManager : UIAnimations
 
     private void SetLevelUnlock(int level, VisualElement levelContainer)
     {
-        print(ScoreData.levelStarRequirements[level] + " , " + starTotal);
-        if (ScoreData.levelStarRequirements[level] <= starTotal)
+        //print(ScoreData.levelStarRequirements[level] + " , " + starTotal);
+        if (ScoreData.completedLevels[level] == true)
         {
             levelContainer.Q<Button>("LevelButton").style.color = new StyleColor(new Color(0.94f, 0.87f, 0.815f, 1f));
             levelContainer.Q<VisualElement>("LockIcon").style.display = DisplayStyle.None;

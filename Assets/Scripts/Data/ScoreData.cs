@@ -9,6 +9,8 @@ public static class ScoreData
 
     public static int[] levelStarRequirements = new int[8] { 0, 3, 5, 8, 10, 13, 15, 18 };
 
+    public static bool[] completedLevels = new bool[8] { true, false, false, false, false, false, false, false };
+
     public static int TotalStars()
     {
         int sumScore = 0;

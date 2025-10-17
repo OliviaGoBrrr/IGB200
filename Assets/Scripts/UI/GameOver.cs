@@ -12,6 +12,7 @@ public class GameOver : UIAnimations
 
     private Button homeButton;
     private Button restartButton;
+    private Button nextLevelButton;
     private Button levelSelectButton;
 
 
@@ -34,6 +35,9 @@ public class GameOver : UIAnimations
 
         levelSelectButton = ui.Q<Button>("LevelSelectButton");
         levelSelectButton.clicked += OnBackButtonClicked;
+
+        nextLevelButton = ui.Q<Button>("NextLevelButton");
+        nextLevelButton.clicked += OnNextLevelButtonClicked;
     }
 
 
@@ -61,7 +65,7 @@ public class GameOver : UIAnimations
         }
     }
 
-    /*
+    
     private void OnNextLevelButtonClicked()
     {
         ButtonPressed(nextLevelButton);
@@ -81,7 +85,7 @@ public class GameOver : UIAnimations
             StartCoroutine(FindAnyObjectByType<SceneAudio>().DestroySelf(0.5f));
         }
     }
-    */
+    
 
     private void OnBackButtonClicked()
     {
