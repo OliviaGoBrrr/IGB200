@@ -96,7 +96,6 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             {
                 gameManager.PlayerActionTaken(gameManager.selectedDraggable.changeState, gameManager.selectedDraggable, gameManager.selectedDraggable.dragAudio, gameManager.selectedDraggable.intensity);
                 UpdateItemUIText();
-                //FindAnyObjectByType<SceneAudio>().PlayGameSound(dragAudio, intensity);
 
                 if (gameManager.selectedDraggable.itemUses <= 0)
                 {
