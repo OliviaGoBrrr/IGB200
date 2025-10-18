@@ -360,7 +360,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 91029eee83ff29244b82c73d7cce4926, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0284af1b9963d5346ae1a7d6b50b2e1d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -491,6 +491,7 @@ MonoBehaviour:
   scoreCountTriggerPar: []
   dryDeco: 1
   burntSprite: {fileID: 0}
+  originalSprite: {fileID: 0}
   randomizePosition: 0
   hasScoreCountPar: 0
 --- !u!212 &189325356
@@ -3261,6 +3262,7 @@ MonoBehaviour:
   scoreCountTriggerPar: []
   dryDeco: 1
   burntSprite: {fileID: 0}
+  originalSprite: {fileID: 0}
   randomizePosition: 0
   hasScoreCountPar: 0
 --- !u!212 &1514809310
@@ -3621,6 +3623,7 @@ MonoBehaviour:
   scoreCountTriggerPar: []
   dryDeco: 1
   burntSprite: {fileID: 0}
+  originalSprite: {fileID: 0}
   randomizePosition: 0
   hasScoreCountPar: 0
 --- !u!1 &1611640552

@@ -634,6 +634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bb2e975348c5484791891d1924fc8be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  draggingIcon: {fileID: 0}
   changeState: 1
   itemUses: 2
   dragIconScale: 0.7
@@ -2554,7 +2555,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 91029eee83ff29244b82c73d7cce4926, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0284af1b9963d5346ae1a7d6b50b2e1d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2576,6 +2577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bb2e975348c5484791891d1924fc8be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  draggingIcon: {fileID: 0}
   changeState: 5
   itemUses: 1
   dragIconScale: 0.7
@@ -6018,6 +6020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bb2e975348c5484791891d1924fc8be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  draggingIcon: {fileID: 0}
   changeState: 6
   itemUses: 3
   dragIconScale: 0.7
