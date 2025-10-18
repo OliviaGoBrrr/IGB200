@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library:
+  - m_Name: Idle
+    m_Hash: 1008081451
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: PlayerCharacter_Accessories_00
+      m_Hash: 155887036
+      m_Sprite: {fileID: 1787145337, guid: 9be58ea29d6d6d7488e3da9f709b7080, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1787145337, guid: 9be58ea29d6d6d7488e3da9f709b7080, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  - m_Name: Action
+    m_Hash: 6326692
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: PlayerCharacter_Accessories_01
+      m_Hash: 1045271850
+      m_Sprite: {fileID: -1538369526, guid: 9be58ea29d6d6d7488e3da9f709b7080, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1538369526, guid: 9be58ea29d6d6d7488e3da9f709b7080, type: 3}
+    - m_Name: PlayerCharacter_Accessories_02
+      m_Hash: 658818192
+      m_Sprite: {fileID: 894787603, guid: 9be58ea29d6d6d7488e3da9f709b7080, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 894787603, guid: 9be58ea29d6d6d7488e3da9f709b7080, type: 3}
+    - m_Name: PlayerCharacter_Accessories_03
+      m_Hash: 272888838
+      m_Sprite: {fileID: -252158519, guid: 9be58ea29d6d6d7488e3da9f709b7080, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -252158519, guid: 9be58ea29d6d6d7488e3da9f709b7080, type: 3}
+    - m_Name: PlayerCharacter_Accessories_04
+      m_Hash: 237461925
+      m_Sprite: {fileID: -162722785, guid: 9be58ea29d6d6d7488e3da9f709b7080, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -162722785, guid: 9be58ea29d6d6d7488e3da9f709b7080, type: 3}
+    - m_Name: PlayerCharacter_Accessories_05
+      m_Hash: 958419251
+      m_Sprite: {fileID: -566363541, guid: 9be58ea29d6d6d7488e3da9f709b7080, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -566363541, guid: 9be58ea29d6d6d7488e3da9f709b7080, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 5
+  m_PrimaryLibraryGUID: 
+  m_ModificationHash: 638963871731564895
+  m_Version: 1
