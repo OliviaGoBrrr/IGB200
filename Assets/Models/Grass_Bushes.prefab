@@ -259,6 +259,7 @@ MonoBehaviour:
   scoreCountTriggerPar: []
   dryDeco: 1
   burntSprite: {fileID: 0}
+  originalSprite: {fileID: 0}
   randomizePosition: 0
   hasScoreCountPar: 0
 --- !u!1 &8936070230859452387
@@ -366,6 +367,7 @@ MonoBehaviour:
   scoreCountTriggerPar: []
   dryDeco: 1
   burntSprite: {fileID: 0}
+  originalSprite: {fileID: 0}
   randomizePosition: 0
   hasScoreCountPar: 0
 --- !u!1 &9043990298170086730

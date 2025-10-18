@@ -8,8 +8,7 @@ public class SequentialUIController : MonoBehaviour
     
     private const string StepContainerName = "Steps-Container"; 
     private const string NextButtonName = "ForwardButton";
-    private const string BackButtonName = "BackButton";
-    private const string StartButtonName = "StartButton";
+   
 
     
     private List<VisualElement> _steps = new List<VisualElement>();
@@ -17,8 +16,7 @@ public class SequentialUIController : MonoBehaviour
 
     
     private Button _forwardsButton;
-    private Button _backButton;
-    private Button _startButton;
+    
 
     void OnEnable()
     {
@@ -33,21 +31,14 @@ public class SequentialUIController : MonoBehaviour
 
         
         _forwardsButton = root.Q<Button>(NextButtonName);
-        _backButton = root.Q<Button>(BackButtonName);
-        _startButton = root.Q<Button>(StartButtonName);
+        
 
         if (_forwardsButton != null)
         {
             _forwardsButton.clicked += OnNextClicked;
         }
-        if (_backButton != null)
-        {
-            _backButton.clicked += OnBackClicked;
-        }
-        if (_startButton != null)
-        {
-            _startButton.clicked += OnFinishClicked;
-        }
+        
+        
 
         // 2. Automatically populate the list of steps
         PopulateStepsList(root);
@@ -77,6 +68,8 @@ public class SequentialUIController : MonoBehaviour
         {
             Debug.LogWarning($"The container '{StepContainerName}' has no children (steps) defined.");
         }
+
+        
     }
 
     
@@ -86,30 +79,32 @@ public class SequentialUIController : MonoBehaviour
         UpdateStepVisibility();
     }
 
-   
+
     private void OnNextClicked()
     {
+        
         if (_currentStepIndex < _steps.Count - 1)
         {
+            
             _currentStepIndex++;
             UpdateStepVisibility();
         }
-    }
-
-    
-    private void OnBackClicked()
-    {
-        if (_currentStepIndex > 0)
+        
+        else if (_currentStepIndex == _steps.Count - 1)
         {
-            _currentStepIndex--;
-            UpdateStepVisibility();
+            HideTutorialUI();
+        }
+        
+        else if (_steps.Count == 1)
+        {
+            HideTutorialUI();
         }
     }
 
-   
-    private void OnFinishClicked()
+
+    private void HideTutorialUI()
     {
-        Debug.Log("Tutorial/Wizard finished! Closing UI.");
+        Debug.Log("Tutorial finished! Closing UI.");
         GetComponent<UIDocument>().rootVisualElement.style.display = DisplayStyle.None;
     }
 
