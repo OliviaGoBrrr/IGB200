@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8535225516306294078}
   - component: {fileID: 1731051368523417998}
   m_Layer: 0
-  m_Name: Dry_Tree
+  m_Name: Healthy_Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: 1589005665
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bedd37af612fa2c4db68bb03ae13fce9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a3660ab5d2df0b44fb309078bda671be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -113,8 +113,8 @@ MonoBehaviour:
   - {fileID: 1657809019330263025}
   scoreCountTriggerPar: []
   dryDeco: 1
-  burntSprite: {fileID: 21300000, guid: ca02090c0e9f7464ea4e4fb624bd3959, type: 3}
-  originalSprite: {fileID: 21300000, guid: bedd37af612fa2c4db68bb03ae13fce9, type: 3}
+  burntSprite: {fileID: 21300000, guid: a3660ab5d2df0b44fb309078bda671be, type: 3}
+  originalSprite: {fileID: 21300000, guid: f261395af61de2642918096f6c914eb0, type: 3}
   randomizePosition: 0
   hasScoreCountPar: 0
 --- !u!1001 &1982205044193005845
