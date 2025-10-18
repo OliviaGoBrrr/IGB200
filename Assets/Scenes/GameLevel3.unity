@@ -3177,8 +3177,6 @@ MonoBehaviour:
   burntSprite: {fileID: 0}
   randomizePosition: 0
   hasScoreCountPar: 0
-<<<<<<< Updated upstream
-=======
 --- !u!4 &1670527934 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4495402644587585461, guid: a1d32cebdac6ec0469706d5c8a83fd58, type: 3}
@@ -3253,7 +3251,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
->>>>>>> Stashed changes
 --- !u!1001 &1710542034
 PrefabInstance:
   m_ObjectHideFlags: 0
