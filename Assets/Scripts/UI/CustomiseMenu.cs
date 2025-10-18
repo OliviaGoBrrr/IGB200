@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using DG.Tweening;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using System.Text.RegularExpressions;
 using static UnityEngine.Rendering.DebugUI.MessageBox;
@@ -98,6 +99,8 @@ public class CustomiseMenu : UIAnimations
 
     private Color lockedColour = new Color(0.25f, 0.25f, 0.25f, 1);
     private Sprite lockedSprite;
+
+    
 
     void Awake()
     {
@@ -348,32 +351,30 @@ public class CustomiseMenu : UIAnimations
     private void CategoryClicked(Button newCategory, String categoryName, VisualElement optionsPanel)
     {
         FindAnyObjectByType<MenuAudio>().PlayDrawer();
+
         // moves last category button down
         if (currentCategory != newCategory)
         {
             float butPosY = currentCategory.transform.position.y;
 
-            DOTween.Kill("increaseCategory"); // kill other tween so no overlap
+            DOTween.Kill(currentCategory); // kill other tween so no overlap
 
-            DOTween.To(() => butPosY, x => butPosY = x, 0.0f, 0.25f).SetId("decreaseCategory").SetEase(Ease.OutCubic).OnUpdate(() =>
+            Button buttonToBeTweened = currentCategory;
+
+            Tween tweenDown = DOTween.To(() => butPosY, x => butPosY = x, 0.0f, 0.25f).SetId("decreaseCategory").SetEase(Ease.OutCubic).OnUpdate(() =>
             {
-                currentCategory.transform.position = new Vector2(0, butPosY);
-            }).OnComplete(() =>
-            {
-                currentCategory = newCategory;
+                buttonToBeTweened.transform.position = new Vector2(0, butPosY);
             });
 
-            //currentCategory.transform.position = new Vector2(0, 0);
+            currentCategory = newCategory;
             currentOptionsPanel.style.display = DisplayStyle.None;
-
         }
 
-        
         // moves selected category button up
 
         float catPosY = newCategory.transform.position.y;
 
-        //DOTween.Kill("decreaseCategory"); // kill other tween so no overlap
+        DOTween.Kill(newCategory); // kill other tween so no overlap
 
         DOTween.To(() => catPosY, x => catPosY = x, -15.0f, 0.25f).SetId("increaseCategory").SetEase(Ease.OutCubic).OnUpdate(() =>
         {
