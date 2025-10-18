@@ -148,10 +148,27 @@ public class MainMenu : UIAnimations
         if (CustomiseData.alienMode == true)
         {
             characterSclera.style.display = DisplayStyle.None;
+
+            if (CustomiseData.alienEars == true)
+            {
+                ColorUtility.TryParseHtmlString(CustomiseData.skinColour, out newColour);
+                characterAccessory.style.unityBackgroundImageTintColor = newColour;
+            }
         }
         else
         {
             characterSclera.style.display = DisplayStyle.Flex;
+
+            if (CustomiseData.alienEars == true)
+            {
+                
+                ColorUtility.TryParseHtmlString(CustomiseData.lastAlienColour, out newColour);
+                characterAccessory.style.unityBackgroundImageTintColor = newColour;
+            }
+            else
+            {
+                characterAccessory.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
+            }
         }
 
         characterEyes.style.backgroundImage = new StyleBackground(eyeStyle);

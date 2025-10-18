@@ -4,6 +4,8 @@ using UnityEngine.UIElements;
 public static class CustomiseData
 {
     public static bool alienMode = false;
+    public static bool alienEars = false;
+    public static string lastAlienColour = "#63FFA4";
     public static bool crownMode = false;
 
     public static int bangsType = 0;

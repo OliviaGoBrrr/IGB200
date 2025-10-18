@@ -275,10 +275,27 @@ public class CustomiseMenu : UIAnimations
         if (CustomiseData.alienMode == true)
         {
             characterSclera.style.display = DisplayStyle.None;
+
+            if (CustomiseData.alienEars == true)
+            {
+                ColorUtility.TryParseHtmlString(CustomiseData.skinColour, out newColour);
+                characterAccessory.style.unityBackgroundImageTintColor = newColour;
+            }
         }
         else
         {
             characterSclera.style.display = DisplayStyle.Flex;
+
+            if (CustomiseData.alienEars == true)
+            {
+
+                ColorUtility.TryParseHtmlString(CustomiseData.lastAlienColour, out newColour);
+                characterAccessory.style.unityBackgroundImageTintColor = newColour;
+            }
+            else
+            {
+                characterAccessory.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
+            }
         }
 
         characterBangs.style.backgroundImage = new StyleBackground(bangsSprites[CustomiseData.bangsType]);
@@ -299,6 +316,7 @@ public class CustomiseMenu : UIAnimations
         OptionSelected(eyeColours[CustomiseData.eyeColourNumber], eyeColours[0]);
 
         OptionSelected(accessoryOptions[CustomiseData.accessoryType], accessoryOptions[0]);
+        OptionSelected(hatOptions[CustomiseData.hatType], hatOptions[0]);
 
         OptionSelected(bangsOptions[CustomiseData.bangsType], bangsOptions[0]);
         OptionSelected(hairOptions[CustomiseData.hairType], hairOptions[0]);
@@ -381,15 +399,21 @@ public class CustomiseMenu : UIAnimations
 
                 currentlySelectedSkin = button;
 
-                if (button.name == "SkinOption9")
+                if (button.name == "SkinOption9" || button.name == "SkinOption10" || button.name == "SkinOption11" || button.name == "SkinOption12")
                 {
                     CustomiseData.alienMode = true;
+                    CustomiseData.lastAlienColour = button.text;
                     CustomiseData.eyeType = 1;
                     CustomiseData.highlightType = 1;
                     characterEyes.style.backgroundImage = new StyleBackground(Resources.Load<Sprite>("Sprites/PlayerCharacter/PlayerCharacter_Eyes_01"));
                     characterHighlights.style.backgroundImage = new StyleBackground(Resources.Load<Sprite>("Sprites/PlayerCharacter/PlayerCharacter_Highlight_01"));
                     characterSclera.style.display = DisplayStyle.None;
 
+                    if (CustomiseData.alienEars == true)
+                    {
+                        ColorUtility.TryParseHtmlString(button.text, out newColour);
+                        characterAccessory.style.unityBackgroundImageTintColor = newColour;
+                    }
                 }
                 else
                 {
@@ -428,8 +452,12 @@ public class CustomiseMenu : UIAnimations
                         {
                             CustomiseData.crownMode = true;
                         }
+                        else
+                        {
+                            CustomiseData.crownMode = false;
+                        }
 
-                        int hatStyle = int.Parse(button.text[1].ToString());
+                            int hatStyle = int.Parse(button.text[1].ToString());
 
                         CustomiseData.hatType = hatStyle - 1;
                         
@@ -543,7 +571,24 @@ public class CustomiseMenu : UIAnimations
             case "Accessories":
                 OptionSelected(button, currentlySelectedAccessory);
 
-                currentlySelectedAccessory = button;
+                if (CustomiseData.alienMode == true && button.name == "AccessoryOption5")
+                {
+                    CustomiseData.alienEars = true;
+                    ColorUtility.TryParseHtmlString(CustomiseData.skinColour, out newColour);
+                    characterAccessory.style.unityBackgroundImageTintColor = newColour;
+                } else if (button.name == "AccessoryOption5")
+                {
+                    CustomiseData.alienEars = true;
+                    ColorUtility.TryParseHtmlString(CustomiseData.lastAlienColour, out newColour);
+                    characterAccessory.style.unityBackgroundImageTintColor = newColour;
+                }
+                else
+                {
+                    CustomiseData.alienEars = false;
+                    characterAccessory.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
+                }
+
+                    currentlySelectedAccessory = button;
 
                 print("accessory changed to " + button.text);
 

@@ -63,11 +63,28 @@ public class PlayerAnimator : MonoBehaviour
         {
             animTargets[4].GetComponent<SpriteRenderer>().material.color = new Color(0, 0, 0, 0);
             animTargets[4].GetComponent<SpriteRenderer>().enabled = false;
+
+            if (CustomiseData.alienEars == true)
+            {
+                ColorUtility.TryParseHtmlString(CustomiseData.skinColour, out newColour);
+                animTargets[8].GetComponent<SpriteRenderer>().material.color = newColour;
+            }
         }
         else
         {
             animTargets[4].GetComponent<SpriteRenderer>().material.color = new Color(1, 1, 1, 1);
             animTargets[4].GetComponent<SpriteRenderer>().enabled = true;
+
+            if (CustomiseData.alienEars == true)
+            {
+
+                ColorUtility.TryParseHtmlString(CustomiseData.lastAlienColour, out newColour);
+                animTargets[8].GetComponent<SpriteRenderer>().material.color = newColour;
+            }
+            else
+            {
+                animTargets[8].GetComponent<SpriteRenderer>().material.color = new Color(1f, 1f, 1f, 1f);
+            }
         }
 
         //characterEyes.style.backgroundImage = new StyleBackground(eyeStyle);
