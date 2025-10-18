@@ -10,6 +10,7 @@ public class BurnableDecoration : MonoBehaviour
     [SerializeField] bool dryDeco = true;
 
     [SerializeField] Sprite burntSprite;
+    [SerializeField] Sprite originalSprite;
     [SerializeField] bool randomizePosition = false;
 
     public bool hasScoreCountPar = false;
@@ -82,6 +83,10 @@ public class BurnableDecoration : MonoBehaviour
                     sprite2D.enabled = false;
                 }
                     break;
+        }
+        if (originalSprite != null)
+        {
+            sprite2D.sprite = originalSprite;
         }
     }
 }

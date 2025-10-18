@@ -102,10 +102,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e680a049840388f4abb1c4d07661cd07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  burnTriggerPar: []
+  burnTriggerPar:
+  - {fileID: 5015524626684892360}
+  - {fileID: 3755414961841645903}
+  scoreCountTriggerPar: []
   dryDeco: 1
   burntSprite: {fileID: 0}
+  originalSprite: {fileID: 0}
   randomizePosition: 0
+  hasScoreCountPar: 0
 --- !u!1001 &2152783737280759799
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -168,6 +173,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4294535502231054329, guid: 31fc65d5b465804489eb2e6ece8d0921, type: 3}
   m_PrefabInstance: {fileID: 2152783737280759799}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &3755414961841645903 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3025806959469768376, guid: 31fc65d5b465804489eb2e6ece8d0921, type: 3}
+  m_PrefabInstance: {fileID: 2152783737280759799}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7811329137592728176
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -225,6 +235,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31fc65d5b465804489eb2e6ece8d0921, type: 3}
+--- !u!198 &5015524626684892360 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3025806959469768376, guid: 31fc65d5b465804489eb2e6ece8d0921, type: 3}
+  m_PrefabInstance: {fileID: 7811329137592728176}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6340552878324080009 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4294535502231054329, guid: 31fc65d5b465804489eb2e6ece8d0921, type: 3}

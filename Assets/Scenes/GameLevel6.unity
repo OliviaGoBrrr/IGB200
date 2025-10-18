@@ -967,6 +967,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1842397484}
     m_Modifications:
+    - target: {fileID: 280874614014980226, guid: 7d881fc8ba0c7c6498e3705ffcf9e232, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012922574770284776, guid: 7d881fc8ba0c7c6498e3705ffcf9e232, type: 3}
+      propertyPath: burnTriggerPar.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4195247979046227877, guid: 7d881fc8ba0c7c6498e3705ffcf9e232, type: 3}
       propertyPath: m_Name
       value: ExtraDecoration_Bush (1)
@@ -1024,7 +1032,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4713496446488917395, guid: 7d881fc8ba0c7c6498e3705ffcf9e232, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d881fc8ba0c7c6498e3705ffcf9e232, type: 3}
@@ -1965,9 +1974,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1734294125}
     m_Modifications:
+    - target: {fileID: 1866704458327276931, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
+      propertyPath: burnTriggerPar.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5788823746205640376, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
       propertyPath: m_Name
       value: ExtraDecoration_DryBush
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340552878324080009, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9095485530587497157, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
       propertyPath: m_LocalScale.x
@@ -2022,7 +2039,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4781512200812361922, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
@@ -2213,6 +2231,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1224323532}
     m_Modifications:
+    - target: {fileID: 280874614014980226, guid: 7d881fc8ba0c7c6498e3705ffcf9e232, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012922574770284776, guid: 7d881fc8ba0c7c6498e3705ffcf9e232, type: 3}
+      propertyPath: burnTriggerPar.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4195247979046227877, guid: 7d881fc8ba0c7c6498e3705ffcf9e232, type: 3}
       propertyPath: m_Name
       value: ExtraDecoration_Bush
@@ -2258,7 +2284,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4713496446488917395, guid: 7d881fc8ba0c7c6498e3705ffcf9e232, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d881fc8ba0c7c6498e3705ffcf9e232, type: 3}
@@ -2722,6 +2749,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 409338164}
     m_Modifications:
+    - target: {fileID: 280874614014980226, guid: 7d881fc8ba0c7c6498e3705ffcf9e232, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012922574770284776, guid: 7d881fc8ba0c7c6498e3705ffcf9e232, type: 3}
+      propertyPath: burnTriggerPar.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4195247979046227877, guid: 7d881fc8ba0c7c6498e3705ffcf9e232, type: 3}
       propertyPath: m_Name
       value: ExtraDecoration_Bush
@@ -2767,7 +2802,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4713496446488917395, guid: 7d881fc8ba0c7c6498e3705ffcf9e232, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d881fc8ba0c7c6498e3705ffcf9e232, type: 3}
@@ -3712,9 +3748,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1734294125}
     m_Modifications:
+    - target: {fileID: 1866704458327276931, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
+      propertyPath: burnTriggerPar.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5788823746205640376, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
       propertyPath: m_Name
       value: ExtraDecoration_DryBush (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340552878324080009, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9095485530587497157, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
       propertyPath: m_LocalScale.x
@@ -3769,7 +3813,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4781512200812361922, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
@@ -4371,9 +4416,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1319754512}
     m_Modifications:
+    - target: {fileID: 1866704458327276931, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
+      propertyPath: burnTriggerPar.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5788823746205640376, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
       propertyPath: m_Name
       value: ExtraDecoration_DryBush
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340552878324080009, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9095485530587497157, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
       propertyPath: m_LocalScale.x
@@ -4428,7 +4481,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4781512200812361922, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
@@ -5475,6 +5529,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 836362579}
     m_Modifications:
+    - target: {fileID: 1731051368523417998, guid: a1d32cebdac6ec0469706d5c8a83fd58, type: 3}
+      propertyPath: dryDeco
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1759435369402081442, guid: a1d32cebdac6ec0469706d5c8a83fd58, type: 3}
       propertyPath: m_Name
       value: Flower

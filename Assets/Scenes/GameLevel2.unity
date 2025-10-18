@@ -771,6 +771,7 @@ MonoBehaviour:
   scoreCountTriggerPar: []
   dryDeco: 1
   burntSprite: {fileID: 0}
+  originalSprite: {fileID: 0}
   randomizePosition: 0
   hasScoreCountPar: 0
 --- !u!1 &330585543
@@ -2702,7 +2703,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2056413846885173340, guid: a1d32cebdac6ec0469706d5c8a83fd58, type: 3}
+    - {fileID: 450074978541120556, guid: a1d32cebdac6ec0469706d5c8a83fd58, type: 3}
+    - {fileID: 4916054580168158752, guid: a1d32cebdac6ec0469706d5c8a83fd58, type: 3}
+    - {fileID: 7446367371064127406, guid: a1d32cebdac6ec0469706d5c8a83fd58, type: 3}
+    - {fileID: 2595769480156778324, guid: a1d32cebdac6ec0469706d5c8a83fd58, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1d32cebdac6ec0469706d5c8a83fd58, type: 3}
@@ -3383,7 +3389,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2056413846885173340, guid: a1d32cebdac6ec0469706d5c8a83fd58, type: 3}
+    - {fileID: 450074978541120556, guid: a1d32cebdac6ec0469706d5c8a83fd58, type: 3}
+    - {fileID: 4916054580168158752, guid: a1d32cebdac6ec0469706d5c8a83fd58, type: 3}
+    - {fileID: 7446367371064127406, guid: a1d32cebdac6ec0469706d5c8a83fd58, type: 3}
+    - {fileID: 2595769480156778324, guid: a1d32cebdac6ec0469706d5c8a83fd58, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1d32cebdac6ec0469706d5c8a83fd58, type: 3}
@@ -3492,6 +3503,7 @@ MonoBehaviour:
   scoreCountTriggerPar: []
   dryDeco: 1
   burntSprite: {fileID: 0}
+  originalSprite: {fileID: 0}
   randomizePosition: 0
   hasScoreCountPar: 0
 --- !u!1 &1611640552

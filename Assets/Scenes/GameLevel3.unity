@@ -127,9 +127,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 433406464}
     m_Modifications:
+    - target: {fileID: 1866704458327276931, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
+      propertyPath: burnTriggerPar.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5788823746205640376, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
       propertyPath: m_Name
       value: ExtraDecoration_DryBush
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340552878324080009, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9095485530587497157, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
       propertyPath: m_LocalScale.x
@@ -184,7 +192,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4781512200812361922, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
@@ -440,6 +449,7 @@ MonoBehaviour:
   scoreCountTriggerPar: []
   dryDeco: 1
   burntSprite: {fileID: 0}
+  originalSprite: {fileID: 0}
   randomizePosition: 0
   hasScoreCountPar: 0
 --- !u!1 &330585543
@@ -1102,9 +1112,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115363519}
     m_Modifications:
+    - target: {fileID: 1866704458327276931, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
+      propertyPath: burnTriggerPar.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5788823746205640376, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
       propertyPath: m_Name
       value: ExtraDecoration_DryBush (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340552878324080009, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9095485530587497157, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
       propertyPath: m_LocalScale.x
@@ -1159,7 +1177,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4781512200812361922, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
@@ -1372,9 +1391,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 806482505}
     m_Modifications:
+    - target: {fileID: 1866704458327276931, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
+      propertyPath: burnTriggerPar.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5788823746205640376, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
       propertyPath: m_Name
       value: ExtraDecoration_DryBush (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340552878324080009, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9095485530587497157, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
       propertyPath: m_LocalScale.x
@@ -1429,7 +1456,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4781512200812361922, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b606d33d53085d429728a2309e85ea6, type: 3}
@@ -2930,6 +2958,7 @@ MonoBehaviour:
   scoreCountTriggerPar: []
   dryDeco: 1
   burntSprite: {fileID: 0}
+  originalSprite: {fileID: 0}
   randomizePosition: 0
   hasScoreCountPar: 0
 --- !u!1 &1611640552
@@ -3068,6 +3097,7 @@ MonoBehaviour:
   scoreCountTriggerPar: []
   dryDeco: 1
   burntSprite: {fileID: 0}
+  originalSprite: {fileID: 0}
   randomizePosition: 0
   hasScoreCountPar: 0
 --- !u!1 &1656893490
@@ -3175,6 +3205,7 @@ MonoBehaviour:
   scoreCountTriggerPar: []
   dryDeco: 1
   burntSprite: {fileID: 0}
+  originalSprite: {fileID: 0}
   randomizePosition: 0
   hasScoreCountPar: 0
 --- !u!4 &1670527934 stripped
