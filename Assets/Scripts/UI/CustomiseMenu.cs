@@ -51,7 +51,7 @@ public class CustomiseMenu : UIAnimations
     private VisualElement accessoryPanel;
 
     // Option Buttons
-    private Button[] skinColours = new Button[9];
+    private Button[] skinColours = new Button[12];
     private Button[] clothesColours = new Button[9];
     private Button[] hairColours = new Button[13];
     private Button[] eyeColours = new Button[9];
@@ -60,7 +60,7 @@ public class CustomiseMenu : UIAnimations
 
     private Button[] hairOptions = new Button[9];
 
-    private Button[] accessoryOptions = new Button[5];
+    private Button[] accessoryOptions = new Button[9];
 
     private Button[] hatOptions = new Button[4];
 
@@ -87,12 +87,17 @@ public class CustomiseMenu : UIAnimations
 
     private Sprite[] hairSprites = new Sprite[9];
 
-    private Sprite[] accessorySprites = new Sprite[5];
+    private Sprite[] accessorySprites = new Sprite[9];
 
     private Sprite[] hatSprites = new Sprite[4];
 
     private Sprite eyeStyle;
     private Sprite highlightStyle;
+
+
+
+    private Color lockedColour = new Color(0.25f, 0.25f, 0.25f, 1);
+    private Sprite lockedSprite;
 
     void Awake()
     {
@@ -147,6 +152,8 @@ public class CustomiseMenu : UIAnimations
         eyeStyle = Resources.Load<Sprite>("Sprites/PlayerCharacter/PlayerCharacter_Eyes_0" + CustomiseData.eyeType);
         highlightStyle = Resources.Load<Sprite>("Sprites/PlayerCharacter/PlayerCharacter_Highlight_0" + CustomiseData.highlightType);
 
+        lockedSprite = Resources.Load<Sprite>("Sprites/LockIcon");
+        SetLockedContent();
     }
 
     private void OnEnable()
@@ -332,7 +339,6 @@ public class CustomiseMenu : UIAnimations
 
             DOTween.To(() => butPosY, x => butPosY = x, 0.0f, 0.25f).SetId("decreaseCategory").SetEase(Ease.OutCubic).OnUpdate(() =>
             {
-                print(butPosY);
                 currentCategory.transform.position = new Vector2(0, butPosY);
             }).OnComplete(() =>
             {
@@ -597,6 +603,86 @@ public class CustomiseMenu : UIAnimations
             button.style.borderRightWidth = buttonRight;
         });
         
+    }
+
+
+    private void SetLockedContent()
+    {
+        // 3 Stars
+        if ( ScoreData.TotalStars() < 3)
+        {
+            print("star 3 locked");
+            LockItem(accessoryOptions[2]); // nerd
+        }
+
+        // 6 Stars
+        if (ScoreData.TotalStars() < 6)
+        {
+            print("star 6 locked");
+            LockItem(accessoryOptions[4]); // antenna
+            LockItem(skinColours[8]); // green skin
+        }
+
+        // 9 Stars
+        if (ScoreData.TotalStars() < 9)
+        {
+            print("star 9 locked");
+            LockItem(accessoryOptions[8]); // sunnies
+            LockItem(skinColours[9]); // pink skin
+        }
+
+        // 12 Stars
+        if (ScoreData.TotalStars() < 12)
+        {
+            print("star 12 locked");
+            LockItem(accessoryOptions[1]); // cool
+            LockItem(accessoryOptions[7]); // bow
+
+            
+        }
+
+        // 15 Stars
+        if (ScoreData.TotalStars() < 15)
+        {
+            print("star 15 locked");
+            LockItem(hatOptions[2]); // witch
+            LockItem(skinColours[10]); // blue skin
+        }
+
+        // 18 Stars
+        if (ScoreData.TotalStars() < 18)
+        {
+            print("star 18 locked");
+            LockItem(accessoryOptions[5]); // eyepatch
+            LockItem(accessoryOptions[3]); // earring
+        }
+
+        // 21 Stars
+        if (ScoreData.TotalStars() < 21)
+        {
+            print("star 21 locked");
+            LockItem(accessoryOptions[6]); // moustache
+            LockItem(skinColours[11]); // purple skin
+        }
+
+        // 24 Stars
+        if (ScoreData.TotalStars() < 24)
+        {
+            print("star 24 locked");
+            LockItem(hatOptions[3]); // crown
+        }
+    }
+
+    private void LockItem(Button button)
+    {
+        button.style.backgroundImage = new StyleBackground(lockedSprite);
+        button.style.backgroundColor = new StyleColor(lockedColour);
+        button.style.unityBackgroundImageTintColor = new StyleColor(new Color(1, 1, 1, 1));
+        button.style.backgroundPositionX = new BackgroundPosition(0f);
+        button.style.backgroundPositionY = new BackgroundPosition(0f);
+        button.style.backgroundSize = BackgroundPropertyHelper.ConvertScaleModeToBackgroundSize(ScaleMode.ScaleAndCrop);
+
+        button.pickingMode = PickingMode.Ignore;
     }
 
     private void OnSettingsButtonClicked()

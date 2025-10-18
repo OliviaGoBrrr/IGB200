@@ -7,19 +7,19 @@ public static class ScoreData
 
     public static int[] levelScores = new int[8] { 0, 0, 0, 0, 0, 0, 0, 0 };
 
-    public static int[] levelStarRequirements = new int[8] { 0, 3, 5, 8, 10, 13, 15, 18 };
-
     public static bool[] completedLevels = new bool[8] { true, false, false, false, false, false, false, false };
 
     public static int TotalStars()
     {
         int sumScore = 0;
-        foreach (int i in levelScores)
+
+        for (int i = 0; i < levelScores.Length; i++)
         {
-            Debug.Log("level " + i + " is score " + levelScores[i]);
+            Debug.Log("level " + i + " is " + levelScores[i]);
             sumScore += levelScores[i];
         }
 
+        Debug.Log(sumScore);
         return sumScore;
     }
     
