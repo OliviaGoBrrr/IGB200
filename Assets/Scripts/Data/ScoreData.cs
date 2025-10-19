@@ -9,6 +9,8 @@ public static class ScoreData
 
     public static bool[] completedLevels = new bool[8] { true, false, false, false, false, false, false, false };
 
+    public static bool[] unlockablesUnlocked = new bool[8] { false, false, false, false, false, false, false, false };
+
     public static int TotalStars()
     {
         int sumScore = 0;
@@ -52,6 +54,24 @@ public static class ScoreData
                 IsScoreHighscore(score, 8);
                 break;
         }
+    }
+
+    public static bool CheckUnlockableTrue()
+    {
+        for (int i = 3; i < unlockablesUnlocked.Length * 3; i += 3)
+        {
+            if (unlockablesUnlocked[i / 3] != true)
+            {
+                Debug.Log((unlockablesUnlocked[i / 3]));
+                if (TotalStars() >= i)
+                {
+                    unlockablesUnlocked[i / 3] = true;
+                    Debug.Log(i / 3 + " Unlocked");
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     private static void IsScoreHighscore(int score, int level)

@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using DG.Tweening;
 using UnityEngine.Rendering;
+using System.Collections;
 public class GameScreen : UIAnimations
 {
     private SceneLoader sceneLoader;
@@ -53,6 +54,8 @@ public class GameScreen : UIAnimations
     [SerializeField] private GameObject fire;
 
 
+    private Button newCosmeticButton;
+
     private Color starColour = new Color(1, 0.866f, 0.2f);
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -95,6 +98,9 @@ public class GameScreen : UIAnimations
 
         backButton = ui.Q<Button>("BackButton");
         backButton.clicked += OnBackButtonClicked;
+
+        newCosmeticButton = ui.Q<Button>("NewCosmetic");
+        newCosmeticButton.clicked += OnNewCosmeticClicked;
 
         winPage = gameOver.Q<VisualElement>("Win");
         losePage = gameOver.Q<VisualElement>("Lose");
@@ -141,6 +147,8 @@ public class GameScreen : UIAnimations
             fireButton.style.display = DisplayStyle.Flex;
             fireText.text = fireObject.itemUses.ToString();
         }
+
+        newCosmeticButton.style.translate = new Translate(0, -120);
     }
 
     public void DisplayGameWin(int starCount)
@@ -153,6 +161,14 @@ public class GameScreen : UIAnimations
         {
             stars[i].style.unityBackgroundImageTintColor = starColour;
         }
+
+        ScoreData.CalculateLevel(starCount); // send off to score data where itll save for level select
+
+        if (ScoreData.CheckUnlockableTrue() == true)
+        {
+            StartCoroutine(NewCosmeticAvailable());
+        }
+
 
         if (ScoreData.currentLevel < ScoreData.completedLevels.Length)
         {
@@ -172,6 +188,41 @@ public class GameScreen : UIAnimations
 
         gameOver.style.display = DisplayStyle.Flex;
     }
+    private void OnNewCosmeticClicked()
+    {
+        if (sceneLoad == false)
+        {
+            sceneLoad = true;
+            FindAnyObjectByType<SceneAudio>().PlayButtonClick(10);
+            sceneLoader.LoadNextScene("Customise Menu");
+            StartCoroutine(FindAnyObjectByType<SceneAudio>().DestroySelf(0.5f));
+        }
+    }
+
+
+    IEnumerator NewCosmeticAvailable()
+    {
+        yield return new WaitForSeconds(1f);
+
+        TweenNewCosmetic(0f);
+
+        yield return new WaitForSeconds(3);
+
+        TweenNewCosmetic(-120f);
+    }
+
+    private void TweenNewCosmetic(float position)
+    {
+        float buttonPosY = newCosmeticButton.transform.position.y;
+
+        DOTween.To(() => buttonPosY, x => buttonPosY = x, position, 0.5f).SetEase(Ease.OutSine).OnUpdate(() =>
+        {
+            newCosmeticButton.style.translate = new Translate(0, buttonPosY);
+        });
+        
+    }
+
+    
 
     private void OnPlaySimButtonClicked()
     {

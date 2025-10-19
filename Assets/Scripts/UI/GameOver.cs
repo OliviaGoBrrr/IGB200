@@ -1,4 +1,5 @@
 using System.Linq;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -14,6 +15,7 @@ public class GameOver : UIAnimations
     private Button restartButton;
     private Button nextLevelButton;
     private Button levelSelectButton;
+    
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -38,6 +40,8 @@ public class GameOver : UIAnimations
 
         nextLevelButton = ui.Q<Button>("NextLevelButton");
         nextLevelButton.clicked += OnNextLevelButtonClicked;
+
+        
     }
 
 
@@ -98,4 +102,8 @@ public class GameOver : UIAnimations
             StartCoroutine(FindAnyObjectByType<SceneAudio>().DestroySelf(0.5f));
         }
     }
+
+    
+
+    
 }

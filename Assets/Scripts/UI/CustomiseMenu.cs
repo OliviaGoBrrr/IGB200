@@ -53,9 +53,9 @@ public class CustomiseMenu : UIAnimations
 
     // Option Buttons
     private Button[] skinColours = new Button[12];
-    private Button[] clothesColours = new Button[9];
+    private Button[] clothesColours = new Button[12];
     private Button[] hairColours = new Button[13];
-    private Button[] eyeColours = new Button[9];
+    private Button[] eyeColours = new Button[12];
 
     private Button[] bangsOptions = new Button[9];
 
