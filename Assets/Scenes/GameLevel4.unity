@@ -2162,15 +2162,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7824181801414860680, guid: 310c7d9ff9c1a4f49b73d5d00d2a24f6, type: 3}
       propertyPath: 'scoreThresholds.Array.data[0]'
-      value: 2300
+      value: 2100
       objectReference: {fileID: 0}
     - target: {fileID: 7824181801414860680, guid: 310c7d9ff9c1a4f49b73d5d00d2a24f6, type: 3}
       propertyPath: 'scoreThresholds.Array.data[1]'
-      value: 2200
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 7824181801414860680, guid: 310c7d9ff9c1a4f49b73d5d00d2a24f6, type: 3}
       propertyPath: 'scoreThresholds.Array.data[2]'
-      value: 1700
+      value: 1500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

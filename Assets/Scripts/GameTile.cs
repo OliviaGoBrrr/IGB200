@@ -146,6 +146,8 @@ public class GameTile: MonoBehaviour
                 tileScore = 50;
                 scoreWhenBurnt = false;
                 break;
+            case TileStates.BURNING:
+                break;
             default:
                 tileScore = 0;
                 break;
@@ -441,6 +443,7 @@ public class GameTile: MonoBehaviour
         {
             deco.Extinguish();
         }
+        DecorationUpdate();
     }
 }
 

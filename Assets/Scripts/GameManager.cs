@@ -333,7 +333,7 @@ public class GameManager : MonoBehaviour
                 break;
         }
         // Adds dry decorations to the dry deco action
-        
+        selectTile.GetComponent<GameTile>().SetTileScore();
 
 
         item.itemUses--;
@@ -357,10 +357,7 @@ public class GameManager : MonoBehaviour
                 Instantiate(deco, selectTile.transform);
             }
             selectTile.GetComponent<GameTile>().DecorationUpdate();
-            // Also updates the score
-            selectTile.GetComponent<GameTile>().SetTileScore();
             selectTile.GetComponent<GameTile>().UndoTrigger(changeState);
-            
         }
         yield return null;
     }
@@ -388,6 +385,7 @@ public class GameManager : MonoBehaviour
         tilesChanged.RemoveAt(tilesChanged.Count - 1);
 
         lastTile.GameTile.UndoTrigger(lastTile.TileState);
+        lastTile.GameTile.SetTileScore();
 
         lastItem.EnableDraggable(1);
         itemsUsed.RemoveAt(itemsUsed.Count - 1);
