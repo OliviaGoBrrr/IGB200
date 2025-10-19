@@ -80,7 +80,6 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                 draggingIcon.GetComponent<Image>().color = draggableStaticIcon.color;
                 //new Color(draggableStaticIcon.color.r, draggableStaticIcon.color.g, draggableStaticIcon.color.b, 1.0f);
 
-
                 if (RectTransformUtility.ScreenPointToWorldPointInRectangle(canvasRectTransform, mouseScreenPositon, null, out localPoint))
                 {
                     rt.position = localPoint;
@@ -89,8 +88,8 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                 }
             }
         }
-
-        if(gameManager.draggableSelected)
+        
+        if (gameManager.draggableSelected)
         {
             if (Input.GetMouseButtonDown(0))
             {

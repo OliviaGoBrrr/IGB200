@@ -38,6 +38,8 @@ public class GameManager : MonoBehaviour
     private GameState prevGameState;
     public int roundCount = 1;
 
+    private GameScreen UIToolkitGameScript;
+
     public List<GameTile.TileStates> burnableTileStates = new List<GameTile.TileStates>();
     public List<GameTile.TileStates> rewardableStates = new List<GameTile.TileStates>();
     public List<GameTileData> rewardTiles = new List<GameTileData>();
@@ -65,6 +67,7 @@ public class GameManager : MonoBehaviour
     {
         gridManager = FindAnyObjectByType<GridManager>();
         uiManager = FindAnyObjectByType<UIManager>();
+        UIToolkitGameScript = FindFirstObjectByType<GameScreen>();
         sceneCamera = FindFirstObjectByType<Camera>();
         playerAnimator = FindFirstObjectByType<PlayerAnimator>();
         FindFirstObjectByType<SceneAudio>().MagProgressWipe();
@@ -92,14 +95,24 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        // highlight colours
+        if (draggableSelected == true)
+        {
+            UIToolkitGameScript.CheckItemTypeForColourChange(selectedDraggable);
+        }
+        else
+        {
+            UIToolkitGameScript.ChangeToNormalColour();
+        }
+
         // Pausing
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(state != GameState.PAUSED)
+            if (state != GameState.PAUSED)
             {
                 SetGameState(GameState.PAUSED);
             }
-            else if(state == GameState.PAUSED)
+            else if (state == GameState.PAUSED)
             {
                 SetGameState(prevGameState);
             }

@@ -53,6 +53,7 @@ public class GameScreen : UIAnimations
     [SerializeField] private GameObject water;
     [SerializeField] private GameObject fire;
 
+    private Button[] allButtons = new Button[3];
 
     private Button newCosmeticButton;
 
@@ -149,6 +150,11 @@ public class GameScreen : UIAnimations
         }
 
         newCosmeticButton.style.translate = new Translate(0, -120);
+
+
+        //ActuallyChangeColour(fireButton, highlightedBorderColour, highlightedBackgroundColour);
+
+        allButtons = new Button[3] { dryGrassButton, waterButton, fireButton };
     }
 
     public void DisplayGameWin(int starCount)
@@ -198,13 +204,11 @@ public class GameScreen : UIAnimations
             StartCoroutine(FindAnyObjectByType<SceneAudio>().DestroySelf(0.5f));
         }
     }
-
-
     IEnumerator NewCosmeticAvailable()
     {
         yield return new WaitForSeconds(1f);
 
-        TweenNewCosmetic(0f);
+        TweenNewCosmetic(10f);
 
         yield return new WaitForSeconds(3);
 
@@ -215,7 +219,7 @@ public class GameScreen : UIAnimations
     {
         float buttonPosY = newCosmeticButton.transform.position.y;
 
-        DOTween.To(() => buttonPosY, x => buttonPosY = x, position, 0.5f).SetEase(Ease.OutSine).OnUpdate(() =>
+        DOTween.To(() => buttonPosY, x => buttonPosY = x, position, 0.2f).SetEase(Ease.OutSine).OnUpdate(() =>
         {
             newCosmeticButton.style.translate = new Translate(0, buttonPosY);
         });
@@ -335,4 +339,54 @@ public class GameScreen : UIAnimations
             });
         });
     }
+
+
+    
+
+    public void CheckItemTypeForColourChange(DraggableItem item)
+    {
+        if (item == dryObject)
+        {
+            ChangeToHighlightColour(dryGrassButton);
+        }
+        else if (item == waterObject)
+        {
+            ChangeToHighlightColour(waterButton);
+        }
+        else if (item == fireObject)
+        {
+            ChangeToHighlightColour(fireButton);
+        }
+        else
+        {
+            ChangeToHighlightColour(null);
+        }
+    }
+
+    private void ChangeToHighlightColour(Button button)
+    {
+        
+        button.style.borderTopColor = new Color(0.957f, 1f, 0.388f, 1f);
+        button.style.borderBottomColor = new Color(0.957f, 1f, 0.388f, 1f);
+        button.style.borderLeftColor = new Color(0.957f, 1f, 0.388f, 1f);
+        button.style.borderRightColor = new Color(0.957f, 1f, 0.388f, 1f);
+
+        button.style.backgroundColor = new Color(0.972f, 1f, 0.603f, 1f);
+
+
+    }
+
+    public void ChangeToNormalColour()
+    {
+        for (int i = 0; i < allButtons.Length; i++)
+        {
+            allButtons[i].style.borderTopColor = new Color(0.223f, 0.063f, 0.019f, 1f);
+            allButtons[i].style.borderBottomColor = new Color(0.223f, 0.063f, 0.019f, 1f);
+            allButtons[i].style.borderLeftColor = new Color(0.223f, 0.063f, 0.019f, 1f);
+            allButtons[i].style.borderRightColor = new Color(0.223f, 0.063f, 0.019f, 1f);
+
+            allButtons[i].style.backgroundColor = new Color(0.447f, 0.207f, 0.094f, 1f);
+        }
+    }
+
 }
