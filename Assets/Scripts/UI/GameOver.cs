@@ -80,13 +80,15 @@ public class GameOver : UIAnimations
             if (ScoreData.currentLevel == 8)
             {
                 sceneLoader.LoadNextScene("Main Menu");
+                StartCoroutine(FindAnyObjectByType<SceneAudio>().DestroySelf(0.5f));
             }
             else
             {
                 ScoreData.currentLevel += 1;
                 sceneLoader.LoadNextScene("GameLevel" + ScoreData.currentLevel);
+                FindAnyObjectByType<SceneAudio>().MagProgressWipe();
             }
-            FindAnyObjectByType<SceneAudio>().MagProgressWipe();
+            
         }
     }
     

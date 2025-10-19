@@ -9,7 +9,7 @@ public static class ScoreData
 
     public static bool[] completedLevels = new bool[8] { true, false, false, false, false, false, false, false };
 
-    public static bool[] unlockablesUnlocked = new bool[8] { false, false, false, false, false, false, false, false };
+    public static bool[] unlockablesUnlocked = new bool[9] { false, false, false, false, false, false, false, false, false };
 
     public static int TotalStars()
     {
@@ -58,11 +58,12 @@ public static class ScoreData
 
     public static bool CheckUnlockableTrue()
     {
-        for (int i = 3; i < unlockablesUnlocked.Length * 3; i += 3)
+        Debug.Log("check is run");
+        for (int i = 0; i < unlockablesUnlocked.Length * 3; i += 3)
         {
+            Debug.Log("int i = " + i);
             if (unlockablesUnlocked[i / 3] != true)
             {
-                Debug.Log((unlockablesUnlocked[i / 3]));
                 if (TotalStars() >= i)
                 {
                     unlockablesUnlocked[i / 3] = true;
@@ -79,7 +80,6 @@ public static class ScoreData
         if (levelScores[level-1] < score)
         {
             levelScores[level - 1] = score;
-            Debug.Log(score);
         }
     }
 }
