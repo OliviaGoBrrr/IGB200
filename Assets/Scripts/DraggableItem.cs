@@ -52,6 +52,9 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         {
             draggingIcon = new GameObject("icon");
 
+            gameManager.draggableSelected = true;
+            gameManager.selectedDraggable = this;
+
             draggingIcon.transform.SetParent(canvas.transform, false);
             draggingIcon.transform.SetAsLastSibling();
 
@@ -63,13 +66,15 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
             SetDraggedPosition(eventData);
         }
+
+        gameManager.PlayerSetActive();
     }
 
     private void Update()
-    {
+    {       
         if (gameManager.draggableSelected)
         {
-            if(draggingIcon != null)
+            if (draggingIcon != null)
             {
                 Vector3 mouseScreenPositon = Input.mousePosition;
 
@@ -87,13 +92,10 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                     rt.localScale = new Vector3(dragIconScale, dragIconScale, 1f);
                 }
             }
-        }
-        
-        if (gameManager.draggableSelected)
-        {
+
             if (Input.GetMouseButtonDown(0))
             {
-                gameManager.PlayerActionTaken(gameManager.selectedDraggable.changeState, gameManager.selectedDraggable, gameManager.selectedDraggable.dragAudio, gameManager.selectedDraggable.intensity);
+                gameManager.PlayerActionTaken();
                 UpdateItemUIText();
 
                 if (gameManager.selectedDraggable.itemUses <= 0)
@@ -118,7 +120,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-
+        gameManager.PlayerSetActive();
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -149,6 +151,8 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                 iconTransform = canvas.transform as RectTransform;
 
                 iconTransform.localScale = new Vector3(dragIconScale, dragIconScale, 1f);
+
+                gameManager.PlayerSetActive();
             }
         }
     }
@@ -167,6 +171,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         if(draggingIcon != null)
         {
             SetDraggedPosition(eventData);
+            gameManager.PlayerSetActive();
         }
     }
 
@@ -191,11 +196,14 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
         if (draggingIcon != null) { Destroy(draggingIcon); }
 
-        gameManager.PlayerActionTaken(changeState, this, dragAudio, intensity);
+        gameManager.PlayerActionTaken();
         UpdateItemUIText();
-        
 
-        if(itemUses <= 0)
+        gameManager.draggableSelected = false;
+        gameManager.selectedDraggable = null;
+
+
+        if (itemUses <= 0)
         {
             DisableDraggable();
         }

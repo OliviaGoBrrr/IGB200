@@ -26,20 +26,20 @@ public class GameManager : MonoBehaviour
     public static event System.Action OnPlayerAction;
     public static event System.Action OnGameOver;
 
-    public bool draggableSelected;
-    public DraggableItem selectedDraggable;
-
-    public bool devKeysOn;
-    [SerializeField] private GridManager gridManager;
-    [SerializeField] private UIManager uiManager;
+    [Header("References")]
     public Camera sceneCamera;
     public PlayerAnimator playerAnimator;
     public GameState state;
     private GameState prevGameState;
     public int roundCount = 1;
-
+    public bool draggableSelected;
+    public DraggableItem selectedDraggable;
     private GameScreen UIToolkitGameScript;
+    private Vector3 lastMousePosition;
+    [SerializeField] private GridManager gridManager;
+    [SerializeField] private UIManager uiManager;
 
+    [Header("Tile Logic")]
     public List<GameTile.TileStates> burnableTileStates = new List<GameTile.TileStates>();
     public List<GameTile.TileStates> rewardableStates = new List<GameTile.TileStates>();
     public List<GameTileData> rewardTiles = new List<GameTileData>();
@@ -47,6 +47,9 @@ public class GameManager : MonoBehaviour
     [Header("Player Actions")]
     public List<GameTileData> tilesChanged = new List<GameTileData>();
     public List<DraggableItem> itemsUsed = new List<DraggableItem>();
+    public float playerInactivityDuration = 8f;
+    private float playerInactivityTimer;
+    private bool playerInactive;
 
     [Header("Game Scoring")]
     [SerializeField] private int playerScore;
@@ -54,7 +57,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float initialGrassPercent;
     [SerializeField] private float finalGrassPercent;
     [HideInInspector] public int currentActionCount;
-    private Vector3 lastMousePosition;
+
 
     [Header("Simulation Settings")]
     [SerializeField] private float simTime = 1.0f;
@@ -90,6 +93,7 @@ public class GameManager : MonoBehaviour
         }
 
         state = GameState.PREP_PHASE;
+        playerInactivityTimer = playerInactivityDuration;
         uiManager.LoadingScreen.SetActive(false);
     }
 
@@ -115,19 +119,6 @@ public class GameManager : MonoBehaviour
             else if (state == GameState.PAUSED)
             {
                 SetGameState(prevGameState);
-            }
-        }
-
-        if (devKeysOn)
-        {
-            if (Input.GetKeyDown(KeyCode.P))
-            {
-                GameWin(2);
-            }
-
-            if (Input.GetKeyDown(KeyCode.O))
-            {
-                GameOver();
             }
         }
 
@@ -159,6 +150,35 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        PlayerInactivityTimer();
+
+    }
+
+    private void PlayerInactivityTimer()
+    {
+        if (state == GameState.PREP_PHASE)
+        {
+            if (playerInactivityTimer < 0 && !playerInactive)
+            {
+                playerInactive = true;
+                Debug.Log($"Player inactive for {playerInactivityDuration} seconds.");
+            }
+            else
+            {
+                playerInactivityTimer -= Time.deltaTime;
+            }
+        }
+    }
+
+    public void PlayerSetActive()
+    {
+        if (playerInactive)
+        {
+            Debug.Log("Player is no longer inactive");
+            playerInactive = false;
+        }
+        
+        playerInactivityTimer = playerInactivityDuration;
     }
 
     IEnumerator ScoreCount()
@@ -296,12 +316,14 @@ public class GameManager : MonoBehaviour
     /// Executes logic when a player makes an action in game. 
     /// Updates tiles accordingly.
     /// </summary>
-    public void PlayerActionTaken(GameTile.TileStates changeState, DraggableItem item, AudioClip actionSound, float intensity)
+    public void PlayerActionTaken()
     {
         // Find the tile on the grid
         var tileGrid = gridManager.masterTileGrid;
 
         Vector3 selectCellPos = GetSelectedGridPosition(true);
+
+        PlayerSetActive();
 
         // Therefore, if y is less than 0, don't do the action
         if (selectCellPos.y < 0)
@@ -321,17 +343,17 @@ public class GameManager : MonoBehaviour
 
         // Can the player change the tile's state
 
-        if (!selectTile.CanBeChanged(changeState)) { return; }
+        if (!selectTile.CanBeChanged(selectedDraggable.changeState)) { return; }
 
-        selectTile.tileState = changeState;
+        selectTile.tileState = selectedDraggable.changeState;
 
         tilesChanged.Add(selectTile.tileData);
-        itemsUsed.Add(item);
+        itemsUsed.Add(selectedDraggable);
 
         Debug.Log(selectTile.tileData.TileState);
 
         // Use a switch statement to handle different actions
-        switch (changeState)
+        switch (selectedDraggable.changeState)
         {
             case GameTile.TileStates.DRY_GRASS:
                 selectTile.wetness = 0;
@@ -342,18 +364,18 @@ public class GameManager : MonoBehaviour
                 break;
 
             default:
-                selectTile.tileState = changeState;
+                selectTile.tileState = selectedDraggable.changeState;
                 break;
         }
         // Adds dry decorations to the dry deco action
         selectTile.GetComponent<GameTile>().SetTileScore();
 
 
-        item.itemUses--;
+        selectedDraggable.itemUses--;
         playerAnimator.Animate(selectTile);
 
         // Update tile visual and state based on the new wetness value
-        StartCoroutine(JustADelay(selectTile, changeState, actionSound, intensity));
+        StartCoroutine(JustADelay(selectTile, selectedDraggable.changeState, selectedDraggable.dragAudio, selectedDraggable.intensity));
 
         OnPlayerAction?.Invoke();
     }
