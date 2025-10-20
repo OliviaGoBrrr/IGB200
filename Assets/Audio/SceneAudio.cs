@@ -120,10 +120,11 @@ public class SceneAudio : MonoBehaviour
     {
         nextMagProgress = 0;
         currentMag = 1;
+        starMag = 1;
     }
     public void StarSoundFX()
     {
-        gameSoundFXAudio.pitch = Mathf.Pow(1.059463f, starMag * 2);
+        gameSoundFXAudio.pitch = Mathf.Pow(1.059463f, starMag);
         gameSoundFXAudio.resource = starSoundFX;
         starMag += 1;
         gameSoundFXAudio.Play();
