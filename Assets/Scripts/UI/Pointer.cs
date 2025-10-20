@@ -7,10 +7,11 @@ public class Pointer : MonoBehaviour
     private RectTransform pointerRect;
     private Image pointerImage;
 
-    [SerializeField] private Vector3 startPosition;
-    [SerializeField] private Vector3 endPosition;
+    private Vector3 startPosition;
+    private Vector3 endPosition;
     [SerializeField] private float duration;
     [SerializeField] private float fadeSpeed;
+    [SerializeField] private float opacityMax = 1.0f;
 
     [SerializeField] public Sequence pointerSequence;
     [SerializeField] private GameManager gameManager;
@@ -19,13 +20,16 @@ public class Pointer : MonoBehaviour
     {
         pointerRect = GetComponent<RectTransform>();
         pointerImage = GetComponent<Image>();
-        startPosition = pointerRect.localPosition;
+
+        startPosition = pointerRect.anchoredPosition;
+
+        endPosition = new Vector2(Screen.width / 2 + startPosition.x, startPosition.y);
 
         Debug.Log(pointerImage.name);
 
         pointerSequence = DOTween.Sequence();
 
-        pointerSequence.Append(pointerImage.DOFade(1, fadeSpeed))
+        pointerSequence.Append(pointerImage.DOFade(opacityMax, fadeSpeed))
             .Append(pointerRect.DOAnchorPos(endPosition, duration))
             .Append(pointerImage.DOFade(0, fadeSpeed))
             .Append(pointerRect.DOAnchorPos(startPosition, 0.5f));

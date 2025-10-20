@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
     private float playerInactivityTimer;
     private bool playerInactive;
     public Pointer pointer;
+    public bool tutorialFinished = false;
 
     [Header("Game Scoring")]
     [SerializeField] private int playerScore;
@@ -153,8 +154,10 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        PlayerInactivityTimer();
-
+        if (tutorialFinished)
+        {
+            PlayerInactivityTimer();
+        }
     }
 
     private void PlayerInactivityTimer()

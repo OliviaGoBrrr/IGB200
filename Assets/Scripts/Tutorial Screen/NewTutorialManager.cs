@@ -106,6 +106,7 @@ public class SequentialUIController : MonoBehaviour
     {
         Debug.Log("Tutorial finished! Closing UI.");
         GetComponent<UIDocument>().rootVisualElement.style.display = DisplayStyle.None;
+        FindFirstObjectByType<GameManager>().tutorialFinished = true;
     }
 
     
