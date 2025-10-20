@@ -253,6 +253,7 @@ public class GameTile: MonoBehaviour
 
     public void ScoreCounted(bool scoreGained)
     {
+        DecorationUpdate();
         if (scoreGained == true)
         {
             foreach (BurnableDecoration deco in burnableDecorations)
