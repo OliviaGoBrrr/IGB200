@@ -7,6 +7,9 @@ public class Pointer : MonoBehaviour
     private RectTransform pointerRect;
     private Image pointerImage;
 
+    [SerializeField] private Vector3 startPosOffset;
+    [SerializeField] private Vector3 endPosOffset;
+
     private Vector3 startPosition;
     private Vector3 endPosition;
     [SerializeField] private float duration;
@@ -23,9 +26,9 @@ public class Pointer : MonoBehaviour
 
         pointerImage.DOFade(0, 0);
 
-        startPosition = new Vector3(FindFirstObjectByType<Canvas>().GetComponent<RectTransform>().rect.xMin + 130f, pointerRect.anchoredPosition.y, 0);
+        startPosition = new Vector3(FindFirstObjectByType<Canvas>().GetComponent<RectTransform>().rect.xMin + startPosOffset.x, pointerRect.anchoredPosition.y, 0);
 
-        endPosition = new Vector2(FindFirstObjectByType<Canvas>().GetComponent<RectTransform>().rect.center.x, startPosition.y / 2);
+        endPosition = new Vector2(FindFirstObjectByType<Canvas>().GetComponent<RectTransform>().rect.center.x, startPosition.y + endPosOffset.y);
 
         pointerSequence = DOTween.Sequence();
 
