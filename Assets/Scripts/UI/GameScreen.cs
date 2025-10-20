@@ -183,7 +183,7 @@ public class GameScreen : UIAnimations
 
         gameOver.style.display = DisplayStyle.Flex;
 
-        AnimateStars();
+        AnimateStars(starCount);
     }
 
     public void DisplayGameLose()
@@ -310,28 +310,28 @@ public class GameScreen : UIAnimations
         });
     }
 
-    private void AnimateStars()
+    private void AnimateStars(int starCount)
     {
         float scale = 0f;
 
         star1.style.scale = new Vector2(0f, 0f);
         star2.style.scale = new Vector2(0f, 0f);
         star3.style.scale = new Vector2(0f, 0f);
-
+        if (starCount >= 1) { FindAnyObjectByType<SceneAudio>().StarSoundFX(); }
         DOTween.To(() => scale, x => scale = x, 1f, 0.4f).SetEase(Ease.OutElastic).OnUpdate(() =>
         {
             star1.style.scale = new Vector2(scale, scale);
         }).OnComplete(() =>
         {
             scale = 0f;
-
+            if (starCount >= 2) { FindAnyObjectByType<SceneAudio>().StarSoundFX(); }
             DOTween.To(() => scale, x => scale = x, 1f, 0.4f).SetEase(Ease.OutElastic).OnUpdate(() =>
             {
                 star2.style.scale = new Vector2(scale, scale);
             }).OnComplete(() =>
             {
                 scale = 0f;
-
+                if (starCount >= 3) { FindAnyObjectByType<SceneAudio>().StarSoundFX(); }
                 DOTween.To(() => scale, x => scale = x, 1f, 0.4f).SetEase(Ease.OutElastic).OnUpdate(() =>
                 {
                     star3.style.scale = new Vector2(scale, scale);
