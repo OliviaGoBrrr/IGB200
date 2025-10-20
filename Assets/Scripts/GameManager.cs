@@ -294,6 +294,11 @@ public class GameManager : MonoBehaviour
         if (gridManager.tileList.Exists(tile => tile.tileState == GameTile.TileStates.BURNING) == false)
         {
             Debug.LogError("There are no Burning tiles to start simulation. Please make one tile a Burning tile");
+            var fireWarningText = FindFirstObjectByType<FireWarning>(FindObjectsInactive.Include);
+            if (fireWarningText != null)
+            {
+                fireWarningText.ShowWarning();
+            }
             return false;
         }
 

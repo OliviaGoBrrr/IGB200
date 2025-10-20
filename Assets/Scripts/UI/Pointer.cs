@@ -21,11 +21,11 @@ public class Pointer : MonoBehaviour
         pointerRect = GetComponent<RectTransform>();
         pointerImage = GetComponent<Image>();
 
-        startPosition = pointerRect.anchoredPosition;
+        pointerImage.DOFade(0, 0);
 
-        endPosition = new Vector2(Screen.width / 2 + startPosition.x, startPosition.y);
+        startPosition = new Vector3(FindFirstObjectByType<Canvas>().GetComponent<RectTransform>().rect.xMin + 130f, pointerRect.anchoredPosition.y, 0);
 
-        Debug.Log(pointerImage.name);
+        endPosition = new Vector2(FindFirstObjectByType<Canvas>().GetComponent<RectTransform>().rect.center.x, startPosition.y / 2);
 
         pointerSequence = DOTween.Sequence();
 

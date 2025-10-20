@@ -98,7 +98,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                 gameManager.PlayerActionTaken();
                 UpdateItemUIText();
 
-                if (gameManager.selectedDraggable.itemUses <= 0)
+                if (gameManager.selectedDraggable != null && gameManager.selectedDraggable.itemUses <= 0)
                 {
                     gameManager.selectedDraggable.DisableDraggable();
                     if (gameManager.selectedDraggable.draggingIcon != null) { Destroy(gameManager.selectedDraggable.draggingIcon); }
