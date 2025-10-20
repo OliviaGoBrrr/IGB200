@@ -22,6 +22,8 @@ public class GameScreen : UIAnimations
     private Button undoButton;
     private Button restartButton;
 
+    private VisualElement playShadow;
+
     private Button nextLevelButton;
 
     private Button dryGrassButton;
@@ -113,6 +115,8 @@ public class GameScreen : UIAnimations
         dryGrassButton = ui.Q<Button>("GrassButton");
         waterButton = ui.Q<Button>("WaterButton");
         fireButton = ui.Q<Button>("FireButton");
+
+        playShadow = ui.Q<VisualElement>("PlayShadow");
 
         dryGrassText = ui.Q<Label>("GrassText");
         waterText = ui.Q<Label>("WaterText");
@@ -266,6 +270,17 @@ public class GameScreen : UIAnimations
         dryGrassText.text = "x" + dryObject.itemUses.ToString();
         waterText.text = "x" + waterObject.itemUses.ToString();
         fireText.text = "x" + fireObject.itemUses.ToString();
+
+        print(fireObject.itemUses);
+
+        if (fireObject.itemUses == 0)
+        {
+            TweenPlaySimButton(true);
+        }
+        else
+        {
+            TweenPlaySimButton(false);
+        }
     }
 
     private void OnRestartButtonClicked()
@@ -395,4 +410,31 @@ public class GameScreen : UIAnimations
         }
     }
 
+    
+    public void TweenPlaySimButton(bool isTweening)
+    {
+        float scale = playSimButton.transform.scale.x;
+
+        DOTween.Kill("foreverTween");
+
+        if (isTweening == true)
+        {
+            DOTween.To(() => scale, x => scale = x, 1.2f, 0.6f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.OutSine).SetId("foreverTween").OnUpdate(() =>
+            {
+                playSimButton.transform.scale = new Vector2(scale, scale);
+                playShadow.transform.scale = new Vector2(scale, scale);
+            });
+        }
+        else if (isTweening == false)
+        {
+            DOTween.To(() => scale, x => scale = x, 1f, 0.4f).SetEase(Ease.OutSine).OnUpdate(() =>
+            {
+                playSimButton.transform.scale = new Vector2(scale, scale);
+                playShadow.transform.scale = new Vector2(scale, scale);
+            });
+        }
+
+        
+    }
+    
 }

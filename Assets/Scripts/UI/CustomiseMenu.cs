@@ -75,6 +75,7 @@ public class CustomiseMenu : UIAnimations
     private VisualElement characterHair;
     private VisualElement characterHat;
     private VisualElement characterAccessory;
+    private bool chrisBool;
 
     private Array allButtons;
 
