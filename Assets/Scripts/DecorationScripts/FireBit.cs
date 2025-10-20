@@ -15,13 +15,11 @@ public class FireBit : MonoBehaviour
     }
     public void FadeIn()
     {
-        Debug.Log("fadein");
         GetComponent<SpriteRenderer>().DOFade(1, 0.5f);
         DOTween.To(()=> bobSpeed, x=>bobSpeed = x, 0.02f, 0.5f);
     }
     public void FadeOut()
     {
-        Debug.Log("fadeout");
         GetComponent<SpriteRenderer>().DOFade(0, 0.5f);
         DOTween.To(() => bobSpeed, x => bobSpeed = x, 0, 0.5f);
     }

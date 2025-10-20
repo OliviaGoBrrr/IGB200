@@ -6,6 +6,7 @@ using UnityEditor;
 using UnityEngine;
 using System.Collections;
 using DG.Tweening.Core.Easing;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
@@ -50,6 +51,7 @@ public class GameManager : MonoBehaviour
     public float playerInactivityDuration = 8f;
     private float playerInactivityTimer;
     private bool playerInactive;
+    public Pointer pointer;
 
     [Header("Game Scoring")]
     [SerializeField] private int playerScore;
@@ -74,6 +76,7 @@ public class GameManager : MonoBehaviour
         sceneCamera = FindFirstObjectByType<Camera>();
         playerAnimator = FindFirstObjectByType<PlayerAnimator>();
         FindFirstObjectByType<SceneAudio>().MagProgressWipe();
+        pointer = FindFirstObjectByType<Pointer>();
     }
 
     void GameReady()
@@ -162,6 +165,7 @@ public class GameManager : MonoBehaviour
             {
                 playerInactive = true;
                 Debug.Log($"Player inactive for {playerInactivityDuration} seconds.");
+                pointer.pointerSequence.Play();
             }
             else
             {
@@ -174,8 +178,9 @@ public class GameManager : MonoBehaviour
     {
         if (playerInactive)
         {
-            Debug.Log("Player is no longer inactive");
             playerInactive = false;
+            pointer.pointerSequence.Restart();
+            pointer.pointerSequence.Pause();
         }
         
         playerInactivityTimer = playerInactivityDuration;
