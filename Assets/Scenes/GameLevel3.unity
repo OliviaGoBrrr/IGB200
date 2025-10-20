@@ -1619,11 +1619,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -9161379809099199712, guid: e0265f6da2ac0d540b9f42452210f5a0, type: 3}
       propertyPath: negativeOffset
-      value: -0.5
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: -9161379809099199712, guid: e0265f6da2ac0d540b9f42452210f5a0, type: 3}
       propertyPath: positiveOffset
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5269284984961239382, guid: e0265f6da2ac0d540b9f42452210f5a0, type: 3}
       propertyPath: m_Name
@@ -3144,11 +3144,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -9161379809099199712, guid: e0265f6da2ac0d540b9f42452210f5a0, type: 3}
       propertyPath: negativeOffset
-      value: -0.5
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: -9161379809099199712, guid: e0265f6da2ac0d540b9f42452210f5a0, type: 3}
       propertyPath: positiveOffset
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5269284984961239382, guid: e0265f6da2ac0d540b9f42452210f5a0, type: 3}
       propertyPath: m_Name
@@ -4008,6 +4008,10 @@ PrefabInstance:
     - target: {fileID: 7722088227048037826, guid: 310c7d9ff9c1a4f49b73d5d00d2a24f6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824181801414860680, guid: 310c7d9ff9c1a4f49b73d5d00d2a24f6, type: 3}
+      propertyPath: simTime
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 7824181801414860680, guid: 310c7d9ff9c1a4f49b73d5d00d2a24f6, type: 3}
       propertyPath: playerInactivityDuration

@@ -335,12 +335,18 @@ public class GameScreen : UIAnimations
                 DOTween.To(() => scale, x => scale = x, 1f, 0.4f).SetEase(Ease.OutElastic).OnUpdate(() =>
                 {
                     star3.style.scale = new Vector2(scale, scale);
+                    if (starCount >= 3) { StartCoroutine(Fanfare()); }
                 });
             });
         });
     }
 
-
+    IEnumerator Fanfare()
+    {
+        yield return new WaitForSeconds(0.1f);
+        FindAnyObjectByType<SceneAudio>().ScoreCountOver();
+        yield return null;
+    }
     
 
     public void CheckItemTypeForColourChange(DraggableItem item)

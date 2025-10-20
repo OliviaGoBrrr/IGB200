@@ -18,6 +18,7 @@ public class SceneAudio : MonoBehaviour
     [SerializeField] AudioSource drumMusicAudio;
     [SerializeField] AudioSource crackleMusicAudio;
     [SerializeField] AudioSource gameSoundFXAudio;
+    [SerializeField] AudioSource anotherOne;
     [SerializeField] AudioSource UISoundFXAudio;
 
     [SerializeField] AudioClip buttonClick;
@@ -111,10 +112,10 @@ public class SceneAudio : MonoBehaviour
     }
     public void ScoreCountOver()
     {
-        gameSoundFXAudio.pitch = Mathf.Pow(1.059463f, currentMag);
-        gameSoundFXAudio.resource = scoreCountDone;
-        gameSoundFXAudio.volume = 0.6f;
-        gameSoundFXAudio.Play();
+        anotherOne.pitch = 1;
+        anotherOne.resource = scoreCountDone;
+        anotherOne.volume = 0.7f;
+        anotherOne.Play();
     }
     public void MagProgressWipe()
     {
