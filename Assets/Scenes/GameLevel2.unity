@@ -2288,7 +2288,7 @@ PrefabInstance:
     - {fileID: 355163138467730794, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3243998631120185392, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
-      insertIndex: 0
+      insertIndex: 1
       addedObject: {fileID: 1671133403}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2879472156350886897, guid: 2b73c88d43a012a4c854f3fd236fb12c, type: 3}
@@ -3845,7 +3845,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 135}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -410.99997, y: 157.99997}
+  m_AnchoredPosition: {x: -400, y: 100}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1671133404
@@ -3861,7 +3861,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPosition: {x: 0, y: 0, z: 0}
-  endPosition: {x: 0, y: 100, z: 0}
+  endPosition: {x: 0, y: 0, z: 0}
   duration: 3
   fadeSpeed: 0.5
   gameManager: {fileID: 0}
