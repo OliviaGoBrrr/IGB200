@@ -27,6 +27,9 @@ public class Pointer : MonoBehaviour
         pointerImage.DOFade(0, 0);
 
         startPosition = new Vector3(FindFirstObjectByType<Canvas>().GetComponent<RectTransform>().rect.xMin + startPosOffset.x, pointerRect.anchoredPosition.y, 0);
+        //startPosition = new Vector3(pointerRect.anchoredPosition.x, pointerRect.anchoredPosition.y, 0);
+
+        Debug.Log(FindFirstObjectByType<Canvas>().GetComponent<RectTransform>().rect.xMin);
 
         endPosition = new Vector2(FindFirstObjectByType<Canvas>().GetComponent<RectTransform>().rect.center.x, startPosition.y + endPosOffset.y);
 
