@@ -288,6 +288,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public bool PlaySimulation()
     {
+        PlayerSetActive();
         // Checks to see if theres at least one burning tile on the grid
         if (gridManager.tileList.Exists(tile => tile.tileState == GameTile.TileStates.BURNING) == false)
         {

@@ -12,10 +12,9 @@ public class PlayerAnimator : MonoBehaviour
 {
     [Header("Currently used character parts. 0 ~ 8 is Bangs, Hair, Eyes, Highlight, Sclera, Head, Body, Hat and Accessory respectively")]
     public List<Animator> animTargets;
-    
 
-    [Header("Character parts with variants")]
-
+    public SpriteRenderer bubble;
+    public SpriteRenderer bubbleIcon;
     //[SerializeField] private SpriteRenderer 
 
     private Color newColour;
@@ -25,6 +24,8 @@ public class PlayerAnimator : MonoBehaviour
     bool firstCall = true;
 
     [SerializeField] GameObject actionDustcloud;
+
+    private Coroutine bubbleActive;
 
     private enum PlayerState
     {
@@ -219,6 +220,20 @@ public class PlayerAnimator : MonoBehaviour
             animTarget.SetTrigger("Blink");
         }
         StartCoroutine(BlinkLoop());
+        yield return null;
+    }
+    public void FadeInBubble()
+    {
+        if (bubbleActive != null) { StopCoroutine(bubbleActive); }
+        bubbleActive = StartCoroutine(ShowBubble());
+    }
+    IEnumerator ShowBubble()
+    { 
+        bubble.DOFade(1, 0.5f);
+        bubbleIcon.DOFade(1, 0.5f);
+        yield return new WaitForSeconds(3);
+        bubble.DOFade(0, 0.5f);
+        bubbleIcon.DOFade(0, 0.5f);
         yield return null;
     }
 }

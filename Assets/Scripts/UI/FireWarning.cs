@@ -24,5 +24,5 @@ public class FireWarning : MonoBehaviour
         }
     }
 
-    public void ShowWarning() { gameObject.SetActive(true); warningTimer = 0; }
+    public void ShowWarning() { FindFirstObjectByType<PlayerAnimator>().FadeInBubble(); warningTimer = 0; }
 }
